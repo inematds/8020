@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 7.6: Avaliacao de desempenho comercial | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors"><span class="text-3xl">💰</span><span class="font-bold text-xl hidden sm:inline">8020</span></a>
+          <span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Metodo</span></a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Diagnostico</span></a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Gestao</span></a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Estrategia</span></a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Treinamento</span></a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-orange-500/10 text-orange-400"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Ferramentas</span></a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-red-400 hover:bg-red-500/10 transition-all"><span class="sm:hidden">T8</span><span class="hidden sm:inline">Avancado</span></a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2"><span id="theme-icon" class="text-lg">🌙</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- Header -->
+    <div class="mb-8">
+      <div class="flex items-center space-x-3 mb-4">
+        <a href="index.html" class="text-orange-400 hover:text-orange-300 text-sm transition-colors">← Trilha 7</a>
+        <span class="text-neutral-600">|</span>
+        <span class="text-neutral-400 text-sm">Modulo 7.6</span>
+      </div>
+      <div class="bg-gradient-to-r from-orange-900/30 to-dark-800 border border-orange-500/20 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-start space-x-4">
+          <span class="text-4xl sm:text-5xl">📊</span>
+          <div>
+            <h1 class="text-2xl sm:text-3xl font-bold text-neutral-100 mb-2">Avaliacao de desempenho comercial</h1>
+            <p class="text-neutral-300 text-lg">Voce nao pode melhorar o que nao mede. Mas medir errado e pior que nao medir — gera decisoes erradas. Neste modulo: indicadores certos por perfil, templates prontos para usar e o modelo completo de avaliacao e desenvolvimento.</p>
+            <div class="flex flex-wrap gap-3 mt-4">
+              <span class="px-3 py-1 bg-orange-900/20 text-orange-400 rounded-full text-sm font-medium">5 Topicos</span>
+              <span class="px-3 py-1 bg-orange-900/20 text-orange-400 rounded-full text-sm font-medium">~45 min</span>
+              <span class="px-3 py-1 bg-orange-900/20 text-orange-400 rounded-full text-sm font-medium">Pratico</span>
+              <span class="px-3 py-1 bg-orange-900/20 text-orange-400 rounded-full text-sm font-medium">Avaliacao</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Topico 1 -->
+    <section class="mb-10">
+      <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">📏</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-orange-400">1. Indicadores por perfil</h2>
+        </div>
+        <p class="text-neutral-300 mb-6">O erro mais comum: medir todo mundo com a mesma regua. O vendedor talentoso (Grupo A) precisa de indicadores diferentes do treinavel (Grupo B) e do resistente (Grupo C). Cada perfil tem KPIs que fazem sentido para sua funcao e nivel.</p>
+
+        <div class="bg-orange-900/20 border border-orange-500/20 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-orange-400 mb-4">Tabela de indicadores por grupo</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-dark-600">
+                  <th class="text-left py-3 px-3 text-neutral-400 font-semibold">Indicador</th>
+                  <th class="text-center py-3 px-3 text-emerald-400 font-semibold">Grupo A (Talentoso)</th>
+                  <th class="text-center py-3 px-3 text-blue-400 font-semibold">Grupo B (Treinavel)</th>
+                  <th class="text-center py-3 px-3 text-orange-400 font-semibold">Grupo C (Resistente)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-dark-600/50">
+                  <td class="py-3 px-3 text-neutral-100 font-medium">Taxa de conversao</td>
+                  <td class="py-3 px-3 text-center"><span class="bg-emerald-900/30 text-emerald-400 px-2 py-1 rounded text-xs font-bold">Principal</span></td>
+                  <td class="py-3 px-3 text-center"><span class="bg-blue-900/30 text-blue-400 px-2 py-1 rounded text-xs font-bold">Evolucao</span></td>
+                  <td class="py-3 px-3 text-center text-neutral-500">Nao aplicavel</td>
+                </tr>
+                <tr class="border-b border-dark-600/50">
+                  <td class="py-3 px-3 text-neutral-100 font-medium">Ticket medio</td>
+                  <td class="py-3 px-3 text-center"><span class="bg-emerald-900/30 text-emerald-400 px-2 py-1 rounded text-xs font-bold">Principal</span></td>
+                  <td class="py-3 px-3 text-center text-neutral-400">Secundario</td>
+                  <td class="py-3 px-3 text-center text-neutral-500">Nao aplicavel</td>
+                </tr>
+                <tr class="border-b border-dark-600/50">
+                  <td class="py-3 px-3 text-neutral-100 font-medium">Ciclo de venda</td>
+                  <td class="py-3 px-3 text-center"><span class="bg-emerald-900/30 text-emerald-400 px-2 py-1 rounded text-xs font-bold">Principal</span></td>
+                  <td class="py-3 px-3 text-center text-neutral-400">Secundario</td>
+                  <td class="py-3 px-3 text-center text-neutral-500">Nao aplicavel</td>
+                </tr>
+                <tr class="border-b border-dark-600/50">
+                  <td class="py-3 px-3 text-neutral-100 font-medium">Aderencia ao script</td>
+                  <td class="py-3 px-3 text-center text-neutral-400">Secundario</td>
+                  <td class="py-3 px-3 text-center"><span class="bg-blue-900/30 text-blue-400 px-2 py-1 rounded text-xs font-bold">Principal</span></td>
+                  <td class="py-3 px-3 text-center text-neutral-400">Secundario</td>
+                </tr>
+                <tr class="border-b border-dark-600/50">
+                  <td class="py-3 px-3 text-neutral-100 font-medium">Volume de atividade</td>
+                  <td class="py-3 px-3 text-center text-neutral-400">Secundario</td>
+                  <td class="py-3 px-3 text-center"><span class="bg-blue-900/30 text-blue-400 px-2 py-1 rounded text-xs font-bold">Principal</span></td>
+                  <td class="py-3 px-3 text-center text-neutral-400">Secundario</td>
+                </tr>
+                <tr class="border-b border-dark-600/50">
+                  <td class="py-3 px-3 text-neutral-100 font-medium">Evolucao de conversao</td>
+                  <td class="py-3 px-3 text-center text-neutral-400">Monitorar</td>
+                  <td class="py-3 px-3 text-center"><span class="bg-blue-900/30 text-blue-400 px-2 py-1 rounded text-xs font-bold">Principal</span></td>
+                  <td class="py-3 px-3 text-center text-neutral-400">Monitorar</td>
+                </tr>
+                <tr class="border-b border-dark-600/50">
+                  <td class="py-3 px-3 text-neutral-100 font-medium">Leads qualificados</td>
+                  <td class="py-3 px-3 text-center text-neutral-500">Nao aplicavel</td>
+                  <td class="py-3 px-3 text-center text-neutral-400">Secundario</td>
+                  <td class="py-3 px-3 text-center"><span class="bg-orange-900/30 text-orange-400 px-2 py-1 rounded text-xs font-bold">Principal</span></td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-3 text-neutral-100 font-medium">Conteudo gerado</td>
+                  <td class="py-3 px-3 text-center text-neutral-500">Nao aplicavel</td>
+                  <td class="py-3 px-3 text-center text-neutral-500">Nao aplicavel</td>
+                  <td class="py-3 px-3 text-center"><span class="bg-orange-900/30 text-orange-400 px-2 py-1 rounded text-xs font-bold">Principal</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-dark-700 border border-emerald-500/20 rounded-xl p-4">
+            <div class="font-semibold text-emerald-400 mb-2">Grupo A: resultado puro</div>
+            <p class="text-neutral-300 text-sm">Meca pelo que entrega: quanto converte, quanto fatura, quanto tempo leva. Nao micro-gerencie o processo — dê liberdade e cobre resultado.</p>
+          </div>
+          <div class="bg-dark-700 border border-blue-500/20 rounded-xl p-4">
+            <div class="font-semibold text-blue-400 mb-2">Grupo B: evolucao e processo</div>
+            <p class="text-neutral-300 text-sm">Meca pela melhoria: esta convertendo mais que mes passado? Segue o script? Faz o volume necessario? O caminho e tao importante quanto o destino.</p>
+          </div>
+          <div class="bg-dark-700 border border-orange-500/20 rounded-xl p-4">
+            <div class="font-semibold text-orange-400 mb-2">Grupo C: contribuicao indireta</div>
+            <p class="text-neutral-300 text-sm">Meca pela contribuicao ao sistema: quantos leads qualificou, quanto conteudo gerou, como apoiou a operacao. Metricas de suporte, nao de fechamento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section class="mb-10">
+      <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">📋</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-orange-400">2. Modelo de acompanhamento mensal</h2>
+        </div>
+        <p class="text-neutral-300 mb-6">Template pronto para usar. Preencha todo mes para cada vendedor. Em 3 meses voce tem um historico que permite decisoes precisas sobre promocao, treinamento, reposicionamento ou desligamento.</p>
+
+        <div class="bg-orange-900/20 border border-orange-500/20 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-orange-400 mb-4">Template: ficha de acompanhamento mensal</h3>
+          <div class="bg-dark-700 rounded-lg p-4 font-mono text-sm space-y-2">
+            <div class="text-orange-400 font-bold text-base">ACOMPANHAMENTO MENSAL — [MES/ANO]</div>
+            <div class="border-t border-dark-600 my-2"></div>
+            <div class="grid grid-cols-2 gap-2">
+              <div><span class="text-neutral-400">Vendedor:</span> <span class="text-neutral-100">_______________</span></div>
+              <div><span class="text-neutral-400">Grupo:</span> <span class="text-neutral-100">[ ] A  [ ] B  [ ] C</span></div>
+            </div>
+            <div class="border-t border-dark-600 my-2"></div>
+            <div class="text-neutral-100 font-bold">METRICAS DO MES</div>
+            <div class="grid grid-cols-2 gap-2 text-neutral-300">
+              <div>Meta de receita: R$ ___</div>
+              <div>Resultado: R$ ___</div>
+              <div>Leads recebidos: ___</div>
+              <div>Propostas enviadas: ___</div>
+              <div>Fechamentos: ___</div>
+              <div>Taxa de conversao: ___%</div>
+              <div>Ticket medio: R$ ___</div>
+              <div>Ciclo medio: ___ dias</div>
+            </div>
+            <div class="border-t border-dark-600 my-2"></div>
+            <div class="text-neutral-100 font-bold">EVOLUCAO vs MES ANTERIOR</div>
+            <div class="grid grid-cols-2 gap-2 text-neutral-300">
+              <div>Conversao: ___% → ___% (Δ ___)</div>
+              <div>Ticket: R$___ → R$___ (Δ ___)</div>
+              <div>Volume: ___ → ___ (Δ ___)</div>
+              <div>Aderencia script: ___%  → ___% </div>
+            </div>
+            <div class="border-t border-dark-600 my-2"></div>
+            <div class="text-neutral-100 font-bold">OBSERVACOES QUALITATIVAS</div>
+            <div class="text-neutral-300">Pontos fortes este mes: ___</div>
+            <div class="text-neutral-300">Pontos a melhorar: ___</div>
+            <div class="text-neutral-300">Participacao em treinamentos: ___</div>
+            <div class="border-t border-dark-600 my-2"></div>
+            <div class="text-neutral-100 font-bold">PROXIMO PASSO</div>
+            <div class="text-neutral-300">Acao prioritaria para o proximo mes: ___</div>
+            <div class="text-neutral-300">Suporte necessario do gestor: ___</div>
+            <div class="text-neutral-300">Data do proximo 1:1 de avaliacao: ___/___/___</div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700 border border-dark-600 rounded-xl p-5">
+          <h3 class="font-bold text-neutral-100 mb-3">Como usar este template</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2"><span class="text-orange-400 mt-1">1.</span><span>Preencha os dados quantitativos antes do 1:1 — va preparado com os numeros.</span></li>
+            <li class="flex items-start space-x-2"><span class="text-orange-400 mt-1">2.</span><span>Na reuniao, peca ao vendedor se auto-avaliar primeiro. Compare com seus dados.</span></li>
+            <li class="flex items-start space-x-2"><span class="text-orange-400 mt-1">3.</span><span>Definam juntos o proximo passo — comprometimento bilateral.</span></li>
+            <li class="flex items-start space-x-2"><span class="text-orange-400 mt-1">4.</span><span>Guarde as fichas. Em 3 meses voce tem um historico que conta uma historia clara.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section class="mb-10">
+      <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">📊</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-orange-400">3. Como dar feedback baseado em dados</h2>
+        </div>
+        <p class="text-neutral-300 mb-6">Sem achismo. Feedback eficaz comeca com um numero, compara com uma meta, e termina com uma pergunta e uma sugestao. E um processo, nao um julgamento. Aqui esta o modelo completo.</p>
+
+        <div class="bg-orange-900/20 border border-orange-500/20 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-orange-400 mb-4">Modelo de conversa de feedback em 4 passos</h3>
+          <div class="space-y-4">
+            <div class="bg-dark-700 rounded-lg p-4 border-l-4 border-orange-500">
+              <div class="font-semibold text-neutral-100 mb-2">Passo 1: Mostrar o numero</div>
+              <p class="text-neutral-300 text-sm mb-2">Comece com fato, nao opiniao. Deixe o dado falar.</p>
+              <div class="bg-dark-800 rounded p-3 text-sm italic text-neutral-400">"Maria, sua taxa de conversao este mes foi de 12%. No mes passado estava em 18%."</div>
+            </div>
+            <div class="bg-dark-700 rounded-lg p-4 border-l-4 border-yellow-500">
+              <div class="font-semibold text-neutral-100 mb-2">Passo 2: Comparar com a meta</div>
+              <p class="text-neutral-300 text-sm mb-2">Contextualize. O numero sozinho nao diz nada — precisa de referencia.</p>
+              <div class="bg-dark-800 rounded p-3 text-sm italic text-neutral-400">"Nossa meta para o seu nivel e 20%. Voce esta 8 pontos abaixo, e caiu 6 pontos em relacao ao mes passado."</div>
+            </div>
+            <div class="bg-dark-700 rounded-lg p-4 border-l-4 border-blue-500">
+              <div class="font-semibold text-neutral-100 mb-2">Passo 3: Perguntar o que aconteceu</div>
+              <p class="text-neutral-300 text-sm mb-2">Nao acuse — investigue. O vendedor quase sempre sabe o que aconteceu. Deixe ele falar.</p>
+              <div class="bg-dark-800 rounded p-3 text-sm italic text-neutral-400">"O que voce acha que mudou? O que aconteceu de diferente este mes nas suas conversas?"</div>
+            </div>
+            <div class="bg-dark-700 rounded-lg p-4 border-l-4 border-emerald-500">
+              <div class="font-semibold text-neutral-100 mb-2">Passo 4: Sugerir ajuste</div>
+              <p class="text-neutral-300 text-sm mb-2">Com base no diagnostico, ofereca uma acao concreta e mensuravel.</p>
+              <div class="bg-dark-800 rounded p-3 text-sm italic text-neutral-400">"Pelo que estou vendo, o diagnostico ficou mais curto nas suas calls. Que tal esta semana focar em usar todas as 4 perguntas e medirmos o impacto na proxima sexta?"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-red-900/20 border border-red-500/20 rounded-xl p-4">
+            <h4 class="font-bold text-red-400 mb-2">Feedback por achismo</h4>
+            <div class="text-neutral-300 text-sm italic">"Sinto que voce nao esta se esforçando o suficiente. Precisa melhorar."</div>
+            <div class="text-red-400 text-xs mt-2">Resultado: defesa, frustacao, zero melhoria</div>
+          </div>
+          <div class="bg-emerald-900/20 border border-emerald-500/20 rounded-xl p-4">
+            <h4 class="font-bold text-emerald-400 mb-2">Feedback por dados</h4>
+            <div class="text-neutral-300 text-sm italic">"Sua conversao caiu de 18% para 12%. O que mudou? Vamos analisar suas calls juntos."</div>
+            <div class="text-emerald-400 text-xs mt-2">Resultado: diagnostico, direcao, melhoria real</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section class="mb-10">
+      <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">🗺️</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-orange-400">4. Plano de desenvolvimento individual</h2>
+        </div>
+        <p class="text-neutral-300 mb-6">Cada vendedor precisa de um plano de desenvolvimento proprio. Nao existe "treinamento generico" que resolva tudo. O PDI (Plano de Desenvolvimento Individual) e o mapa que guia o crescimento de cada pessoa — revisado a cada trimestre.</p>
+
+        <div class="bg-orange-900/20 border border-orange-500/20 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-orange-400 mb-4">Template: PDI por vendedor (trimestral)</h3>
+          <div class="bg-dark-700 rounded-lg p-4 font-mono text-sm space-y-2">
+            <div class="text-orange-400 font-bold text-base">PLANO DE DESENVOLVIMENTO INDIVIDUAL</div>
+            <div class="text-neutral-400">Periodo: [TRIMESTRE/ANO] | Revisao: [DATA]</div>
+            <div class="border-t border-dark-600 my-2"></div>
+            <div class="grid grid-cols-2 gap-2">
+              <div><span class="text-neutral-400">Vendedor:</span> <span class="text-neutral-100">_______________</span></div>
+              <div><span class="text-neutral-400">Grupo atual:</span> <span class="text-neutral-100">___</span></div>
+              <div><span class="text-neutral-400">Gestor responsavel:</span> <span class="text-neutral-100">_______________</span></div>
+              <div><span class="text-neutral-400">Tempo na funcao:</span> <span class="text-neutral-100">___</span></div>
+            </div>
+            <div class="border-t border-dark-600 my-2"></div>
+            <div class="text-neutral-100 font-bold">PONTOS FORTES</div>
+            <div class="text-neutral-300">1. ___</div>
+            <div class="text-neutral-300">2. ___</div>
+            <div class="text-neutral-300">3. ___</div>
+            <div class="border-t border-dark-600 my-2"></div>
+            <div class="text-neutral-100 font-bold">PONTOS A DESENVOLVER</div>
+            <div class="text-neutral-300">1. ___</div>
+            <div class="text-neutral-300">2. ___</div>
+            <div class="border-t border-dark-600 my-2"></div>
+            <div class="text-neutral-100 font-bold">ACOES ESPECIFICAS</div>
+            <div class="text-neutral-300">
+              <div class="grid grid-cols-4 gap-1 text-xs border-b border-dark-600 pb-1 mb-1">
+                <span class="text-neutral-400 font-semibold">Acao</span>
+                <span class="text-neutral-400 font-semibold">Prazo</span>
+                <span class="text-neutral-400 font-semibold">Responsavel</span>
+                <span class="text-neutral-400 font-semibold">Status</span>
+              </div>
+              <div class="grid grid-cols-4 gap-1 text-xs mb-1">
+                <span>1. ___</span><span>___/___</span><span>___</span><span>[ ] Feito</span>
+              </div>
+              <div class="grid grid-cols-4 gap-1 text-xs mb-1">
+                <span>2. ___</span><span>___/___</span><span>___</span><span>[ ] Feito</span>
+              </div>
+              <div class="grid grid-cols-4 gap-1 text-xs">
+                <span>3. ___</span><span>___/___</span><span>___</span><span>[ ] Feito</span>
+              </div>
+            </div>
+            <div class="border-t border-dark-600 my-2"></div>
+            <div class="text-neutral-100 font-bold">META DO TRIMESTRE</div>
+            <div class="text-neutral-300">Indicador principal: ___ | Meta: ___ | Atual: ___</div>
+            <div class="text-neutral-300">Indicador secundario: ___ | Meta: ___ | Atual: ___</div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700 border border-dark-600 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-neutral-100 mb-3">Exemplo preenchido: vendedor Grupo B</h3>
+          <div class="space-y-3 text-sm">
+            <div>
+              <span class="text-neutral-400 font-semibold">Vendedor:</span>
+              <span class="text-neutral-300"> Joao Silva | Grupo B | 6 meses na funcao</span>
+            </div>
+            <div>
+              <span class="text-emerald-400 font-semibold">Pontos fortes:</span>
+              <span class="text-neutral-300"> Volume alto de atividade, boa energia em calls, persistente em follow-up</span>
+            </div>
+            <div>
+              <span class="text-orange-400 font-semibold">Desenvolver:</span>
+              <span class="text-neutral-300"> Diagnostico mais profundo antes de apresentar preco, lidar com objecao "esta caro"</span>
+            </div>
+            <div>
+              <span class="text-blue-400 font-semibold">Acoes:</span>
+              <span class="text-neutral-300"> (1) Treinar 4 perguntas de diagnostico ate 15/mar — Gestor | (2) Role play semanal sobre objecao de preco — Joao | (3) Revisar 2 calls gravadas por semana — ambos</span>
+            </div>
+            <div>
+              <span class="text-neutral-100 font-semibold">Meta:</span>
+              <span class="text-neutral-300"> Conversao de 12% para 18% | Aderencia ao script de 60% para 85%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700 border border-dark-600 rounded-xl p-5">
+          <h3 class="font-bold text-neutral-100 mb-3">Quando revisar o PDI</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="text-center bg-dark-800 rounded-lg p-3">
+              <div class="text-orange-400 font-bold">Mensalmente</div>
+              <div class="text-neutral-400 text-sm">Check rapido: as acoes estao sendo feitas? Precisa ajustar algo?</div>
+            </div>
+            <div class="text-center bg-dark-800 rounded-lg p-3">
+              <div class="text-orange-400 font-bold">Trimestralmente</div>
+              <div class="text-neutral-400 text-sm">Revisao completa: atingiu as metas? Novo PDI para o proximo trimestre.</div>
+            </div>
+            <div class="text-center bg-dark-800 rounded-lg p-3">
+              <div class="text-orange-400 font-bold">Se mudar de grupo</div>
+              <div class="text-neutral-400 text-sm">Se o vendedor evolui de B para A (ou regride), o PDI precisa ser recalibrado.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section class="mb-10">
+      <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">📈</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-orange-400">5. Dashboard de equipe</h2>
+        </div>
+        <p class="text-neutral-300 mb-6">O gestor precisa de uma visao consolidada — nao de planilhas espalhadas. O dashboard de equipe reune tudo em um lugar: pipeline, conversao por vendedor, evolucao mensal e distribuicao por grupo. Aqui esta o modelo.</p>
+
+        <div class="bg-orange-900/20 border border-orange-500/20 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-orange-400 mb-4">Template visual: dashboard da equipe comercial</h3>
+          <div class="space-y-4">
+
+            <!-- Metricas gerais -->
+            <div>
+              <div class="text-sm font-semibold text-neutral-400 mb-2 uppercase tracking-wide">Metricas gerais do mes</div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div class="bg-dark-700 rounded-lg p-3 text-center">
+                  <div class="text-2xl font-bold text-orange-400">R$ ___</div>
+                  <div class="text-neutral-400 text-xs">Pipeline total</div>
+                </div>
+                <div class="bg-dark-700 rounded-lg p-3 text-center">
+                  <div class="text-2xl font-bold text-emerald-400">___%</div>
+                  <div class="text-neutral-400 text-xs">Conversao media</div>
+                </div>
+                <div class="bg-dark-700 rounded-lg p-3 text-center">
+                  <div class="text-2xl font-bold text-blue-400">R$ ___</div>
+                  <div class="text-neutral-400 text-xs">Receita fechada</div>
+                </div>
+                <div class="bg-dark-700 rounded-lg p-3 text-center">
+                  <div class="text-2xl font-bold text-yellow-400">___</div>
+                  <div class="text-neutral-400 text-xs">Negocios em aberto</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Conversao por vendedor -->
+            <div>
+              <div class="text-sm font-semibold text-neutral-400 mb-2 uppercase tracking-wide">Conversao por vendedor</div>
+              <div class="bg-dark-700 rounded-lg p-4 space-y-3">
+                <div>
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-neutral-300 text-sm">Vendedor A1 <span class="text-emerald-400 text-xs">(Grupo A)</span></span>
+                    <span class="text-emerald-400 text-sm font-bold">28%</span>
+                  </div>
+                  <div class="w-full bg-dark-600 rounded-full h-2"><div class="bg-emerald-500 h-2 rounded-full" style="width: 93%"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-neutral-300 text-sm">Vendedor B1 <span class="text-blue-400 text-xs">(Grupo B)</span></span>
+                    <span class="text-blue-400 text-sm font-bold">18%</span>
+                  </div>
+                  <div class="w-full bg-dark-600 rounded-full h-2"><div class="bg-blue-500 h-2 rounded-full" style="width: 60%"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-neutral-300 text-sm">Vendedor B2 <span class="text-blue-400 text-xs">(Grupo B)</span></span>
+                    <span class="text-yellow-400 text-sm font-bold">14%</span>
+                  </div>
+                  <div class="w-full bg-dark-600 rounded-full h-2"><div class="bg-yellow-500 h-2 rounded-full" style="width: 47%"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-neutral-300 text-sm">Vendedor C1 <span class="text-orange-400 text-xs">(Grupo C — pre-venda)</span></span>
+                    <span class="text-neutral-400 text-sm font-bold">N/A</span>
+                  </div>
+                  <div class="w-full bg-dark-600 rounded-full h-2"><div class="bg-dark-500 h-2 rounded-full" style="width: 0%"></div></div>
+                </div>
+                <div class="text-neutral-500 text-xs text-center mt-1">Meta: 20% | Linha vermelha: abaixo de 10% por 2 meses = intervencao</div>
+              </div>
+            </div>
+
+            <!-- Evolucao mensal -->
+            <div>
+              <div class="text-sm font-semibold text-neutral-400 mb-2 uppercase tracking-wide">Evolucao mensal (ultimos 3 meses)</div>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                  <thead>
+                    <tr class="border-b border-dark-600">
+                      <th class="text-left py-2 px-3 text-neutral-400">Vendedor</th>
+                      <th class="text-center py-2 px-3 text-neutral-400">Mes -2</th>
+                      <th class="text-center py-2 px-3 text-neutral-400">Mes -1</th>
+                      <th class="text-center py-2 px-3 text-neutral-400">Mes atual</th>
+                      <th class="text-center py-2 px-3 text-neutral-400">Tendencia</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-dark-600/50">
+                      <td class="py-2 px-3 text-neutral-100">A1</td>
+                      <td class="py-2 px-3 text-center text-neutral-300">25%</td>
+                      <td class="py-2 px-3 text-center text-neutral-300">26%</td>
+                      <td class="py-2 px-3 text-center text-neutral-100 font-bold">28%</td>
+                      <td class="py-2 px-3 text-center text-emerald-400">↑ Subindo</td>
+                    </tr>
+                    <tr class="border-b border-dark-600/50">
+                      <td class="py-2 px-3 text-neutral-100">B1</td>
+                      <td class="py-2 px-3 text-center text-neutral-300">12%</td>
+                      <td class="py-2 px-3 text-center text-neutral-300">15%</td>
+                      <td class="py-2 px-3 text-center text-neutral-100 font-bold">18%</td>
+                      <td class="py-2 px-3 text-center text-emerald-400">↑ Subindo</td>
+                    </tr>
+                    <tr class="border-b border-dark-600/50">
+                      <td class="py-2 px-3 text-neutral-100">B2</td>
+                      <td class="py-2 px-3 text-center text-neutral-300">16%</td>
+                      <td class="py-2 px-3 text-center text-neutral-300">15%</td>
+                      <td class="py-2 px-3 text-center text-neutral-100 font-bold">14%</td>
+                      <td class="py-2 px-3 text-center text-red-400">↓ Caindo</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Distribuicao por grupo -->
+            <div>
+              <div class="text-sm font-semibold text-neutral-400 mb-2 uppercase tracking-wide">Distribuicao da equipe por grupo</div>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="bg-emerald-900/20 border border-emerald-500/20 rounded-lg p-3 text-center">
+                  <div class="text-2xl font-bold text-emerald-400">1</div>
+                  <div class="text-neutral-400 text-xs">Grupo A (20%)</div>
+                  <div class="text-neutral-500 text-xs">Ideal: 20-30%</div>
+                </div>
+                <div class="bg-blue-900/20 border border-blue-500/20 rounded-lg p-3 text-center">
+                  <div class="text-2xl font-bold text-blue-400">2</div>
+                  <div class="text-neutral-400 text-xs">Grupo B (40%)</div>
+                  <div class="text-neutral-500 text-xs">Ideal: 50-60%</div>
+                </div>
+                <div class="bg-orange-900/20 border border-orange-500/20 rounded-lg p-3 text-center">
+                  <div class="text-2xl font-bold text-orange-400">1</div>
+                  <div class="text-neutral-400 text-xs">Grupo C (20%)</div>
+                  <div class="text-neutral-500 text-xs">Ideal: &lt;20%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700 border border-dark-600 rounded-xl p-5">
+          <h3 class="font-bold text-neutral-100 mb-3">Metricas-chave para o dashboard</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex items-start space-x-2">
+              <span class="text-orange-400 mt-1">▸</span>
+              <span class="text-neutral-300 text-sm"><strong class="text-neutral-100">Pipeline total:</strong> valor somado de todos os negocios em andamento. Mostra a saude futura da operacao.</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-orange-400 mt-1">▸</span>
+              <span class="text-neutral-300 text-sm"><strong class="text-neutral-100">Conversao media:</strong> % de leads que viram clientes. Referencia: entre 15-25% e saudavel para B2B.</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-orange-400 mt-1">▸</span>
+              <span class="text-neutral-300 text-sm"><strong class="text-neutral-100">Receita por vendedor:</strong> quanto cada um gera. Identifica quem carrega o time e quem precisa de ajuda.</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-orange-400 mt-1">▸</span>
+              <span class="text-neutral-300 text-sm"><strong class="text-neutral-100">Velocidade do funil:</strong> quanto tempo do lead ao fechamento. Quanto menor, mais eficiente a operacao.</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-orange-400 mt-1">▸</span>
+              <span class="text-neutral-300 text-sm"><strong class="text-neutral-100">Taxa de perda por etapa:</strong> onde os negocios morrem. Indica gargalos especificos no processo.</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-orange-400 mt-1">▸</span>
+              <span class="text-neutral-300 text-sm"><strong class="text-neutral-100">Atividade vs resultado:</strong> quem trabalha muito e converte pouco precisa de treino, nao de mais volume.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegacao -->
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mt-12 mb-8">
+      <a href="modulo-7-5.html" class="w-full sm:w-auto flex items-center justify-center space-x-2 px-6 py-3 bg-dark-800 border border-dark-600 rounded-xl text-neutral-300 hover:text-orange-400 hover:border-orange-500/30 transition-all">
+        <span>←</span><span>Modulo anterior</span>
+      </a>
+      <a href="../trilha8/index.html" class="w-full sm:w-auto flex items-center justify-center space-x-2 px-6 py-3 bg-orange-600 hover:bg-orange-500 text-white font-bold rounded-xl transition-all">
+        <span>Trilha 8 — Referencias e Pensamento Avancado</span><span>→</span>
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4"><span class="text-2xl">💰</span><span class="font-bold text-neutral-200">8020</span><span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a></div>
+        <div class="text-neutral-500 text-sm">Modulo 7.6: Avaliacao de desempenho comercial</div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() { const html = document.documentElement; const icon = document.getElementById('theme-icon'); if (html.classList.contains('dark')) { html.classList.remove('dark'); icon.textContent = '☀️'; localStorage.setItem('theme', 'light'); } else { html.classList.add('dark'); icon.textContent = '🌙'; localStorage.setItem('theme', 'dark'); } }
+    if (localStorage.getItem('theme') === 'light') { document.documentElement.classList.remove('dark'); document.getElementById('theme-icon').textContent = '☀️'; }
+  </script>
+
+</body>
+</html>
