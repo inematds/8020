@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 3.1: Os 4 fatores do perfil comercial | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-purple-500/10 text-purple-400">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Diagnostico</span>
+            </a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Gestao</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Estrategia</span>
+            </a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Treinamento</span>
+            </a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all">
+              <span class="sm:hidden">T7</span>
+              <span class="hidden sm:inline">Ferramentas</span>
+            </a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all">
+              <span class="sm:hidden">T8</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2">
+              <span id="theme-icon" class="text-lg">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Breadcrumb -->
+      <div class="flex items-center space-x-2 mb-4 text-sm">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <a href="index.html" class="text-neutral-500 hover:text-neutral-300">Trilha 3</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-purple-400 font-medium">Modulo 3.1</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">
+        MODULO 3.1
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🧬 Os 4 fatores do perfil comercial</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        Entenda os 4 fatores que determinam o potencial comercial de qualquer profissional e como combina-los em uma formula objetiva de avaliacao.
+      </p>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-purple-400">5</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-purple-400">~60</div>
+          <div class="text-xs text-neutral-400">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-purple-400">Gestao</div>
+          <div class="text-xs text-neutral-400">Nivel</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-purple-400">Base</div>
+          <div class="text-xs text-neutral-400">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteudo Principal -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 font-bold">1</span>
+        <h2 class="text-2xl font-bold">🗣️ Aptidao natural</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Aptidao natural e a <strong class="text-purple-400">facilidade inata para comunicacao, persuasao e leitura de pessoas</strong>. E o fator que mais se nota de imediato: aquela pessoa que entra em uma sala e naturalmente cativa, que percebe sinais nao-verbais, que adapta o tom de voz e o discurso instintivamente.
+      </p>
+
+      <!-- Box Principal -->
+      <div class="bg-gradient-to-br from-purple-900/20 to-dark-800 rounded-xl p-6 border border-purple-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-4">Os 5 componentes da aptidao natural</h3>
+        <ul class="space-y-3 text-neutral-300">
+          <li class="flex items-start space-x-3">
+            <span class="text-purple-400 mt-1">✓</span>
+            <span><strong>Comunicacao fluida</strong> — Articula ideias com clareza, sem esforco visivel</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-purple-400 mt-1">✓</span>
+            <span><strong>Persuasao natural</strong> — Conduz conversas para onde deseja sem parecer manipulador</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-purple-400 mt-1">✓</span>
+            <span><strong>Leitura de pessoas</strong> — Percebe humor, objecoes ocultas e sinais de compra</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-purple-400 mt-1">✓</span>
+            <span><strong>Adaptacao de discurso</strong> — Muda a abordagem conforme o perfil do interlocutor</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-purple-400 mt-1">✓</span>
+            <span><strong>Carisma</strong> — Gera conexao e confianca rapidamente</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Grid de Comparacao -->
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/30">
+          <h4 class="font-bold text-purple-400 mb-4">✓ Alta Aptidao</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>"Conversa com qualquer pessoa naturalmente"</li>
+            <li>"Percebe quando o cliente esta hesitante"</li>
+            <li>"Adapta o tom em tempo real"</li>
+            <li>"Gera confianca em minutos"</li>
+          </ul>
+        </div>
+        <div class="bg-red-900/20 rounded-xl p-6 border border-red-500/30">
+          <h4 class="font-bold text-red-400 mb-4">✗ Baixa Aptidao</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>"Segue um script rigido, sem adaptar"</li>
+            <li>"Nao percebe sinais nao-verbais"</li>
+            <li>"Usa o mesmo tom com todos"</li>
+            <li>"Demora para criar rapport"</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dica Pratica -->
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Importante</h3>
+        <p class="text-neutral-300">
+          Aptidao natural <strong class="text-primary">nao e determinante sozinha</strong>. Um vendedor com baixa aptidao mas alta vontade e capacidade de aprender pode superar um vendedor com alta aptidao que nao se esforça. Aptidao e ponto de partida, nao destino.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 font-bold">2</span>
+        <h2 class="text-2xl font-bold">🔥 Vontade de vender</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Vontade de vender e o <strong class="text-purple-400">desejo genuino de estar no jogo comercial</strong>. Nao e so "aceitar" a funcao - e gostar do desafio, aguentar os "naos", ter fome de bater meta e sentir prazer ao fechar um negocio. E o combustivel que mantem o vendedor em movimento mesmo nos dias ruins.
+      </p>
+
+      <!-- Box de Detalhamento -->
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-4">Sinais de alta vontade de vender</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+              <span class="text-purple-400 font-bold text-sm">1</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Proatividade</h4>
+              <p class="text-sm text-neutral-400">Busca leads por conta propria, nao espera a empresa trazer. Liga, manda mensagem, prospecta.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+              <span class="text-purple-400 font-bold text-sm">2</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Resiliencia</h4>
+              <p class="text-sm text-neutral-400">Ouve 10 "naos" e liga para o 11o com a mesma energia. Nao leva rejeicao para o pessoal.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+              <span class="text-purple-400 font-bold text-sm">3</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Fome de meta</h4>
+              <p class="text-sm text-neutral-400">Olha para a meta nao como pressao, mas como jogo. Quer bater, quer superar, quer ser o melhor.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+              <span class="text-purple-400 font-bold text-sm">4</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Prazer no fechamento</h4>
+              <p class="text-sm text-neutral-400">Sente satisfacao real ao converter. O "sim" do cliente e recompensa emocional genuina.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Insight -->
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Perspectiva</h3>
+        <p class="text-neutral-300">
+          A vontade e o fator que mais <strong class="text-blue-400">determina a permanencia</strong> de um vendedor. Vendedores com alta aptidao mas sem vontade abandonam a area em meses. Vendedores com vontade alta persistem, aprendem e eventualmente performam.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 font-bold">3</span>
+        <h2 class="text-2xl font-bold">📈 Capacidade de aprender</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A capacidade de aprender - ou <strong class="text-purple-400">coachability</strong> - e a habilidade de receber feedback, processar, ajustar o discurso e evoluir rapidamente. E o fator mais subestimado pelos gestores e, paradoxalmente, o mais determinante no medio prazo.
+      </p>
+
+      <!-- Box de Conceito -->
+      <div class="bg-gradient-to-br from-purple-900/20 to-dark-800 rounded-xl p-6 border border-purple-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-4">O ciclo de aprendizagem comercial</h3>
+        <div class="grid grid-cols-4 gap-4 text-center">
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <div class="text-2xl mb-1">📋</div>
+            <div class="text-xs text-neutral-400">Recebe feedback</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <div class="text-2xl mb-1">🧠</div>
+            <div class="text-xs text-neutral-400">Processa e entende</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <div class="text-2xl mb-1">🔄</div>
+            <div class="text-xs text-neutral-400">Ajusta a pratica</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <div class="text-2xl mb-1">📈</div>
+            <div class="text-xs text-neutral-400">Evolui o resultado</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparacao -->
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/30">
+          <h4 class="font-bold text-purple-400 mb-4">✓ Alta capacidade de aprender</h4>
+          <ul class="space-y-2 text-sm text-neutral-300">
+            <li>→ Pede feedback proativamente</li>
+            <li>→ Ajusta discurso na ligacao seguinte</li>
+            <li>→ Estuda por conta propria</li>
+            <li>→ Aceita critica sem defensividade</li>
+          </ul>
+        </div>
+        <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600">
+          <h4 class="font-bold text-neutral-200 mb-4">Baixa capacidade de aprender</h4>
+          <ul class="space-y-2 text-sm text-neutral-400">
+            <li>→ Repete os mesmos erros</li>
+            <li>→ Justifica em vez de ajustar</li>
+            <li>→ So faz o que e mandado</li>
+            <li>→ Fica na defensiva com feedback</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dica -->
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Como testar na pratica</h3>
+        <p class="text-neutral-300">
+          De um feedback especifico apos uma ligacao ou reuniao. Observe se na proxima interacao o vendedor <strong class="text-primary">tentou aplicar o que voce sugeriu</strong>. Nao precisa ter acertado - precisa ter tentado. Isso e coachability.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 font-bold">4</span>
+        <h2 class="text-2xl font-bold">⚙️ Execucao consistente</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Execucao consistente e a capacidade de <strong class="text-purple-400">transformar potencial em rotina e resultado</strong>. E fazer todos os dias o que precisa ser feito: ligar, prospectar, fazer follow-up, atualizar CRM, preparar reunioes. Nao so quando esta motivado, mas sempre.
+      </p>
+
+      <!-- Box Visual -->
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-4">O abismo entre potencial e resultado</h3>
+        <div class="flex items-center justify-between text-center">
+          <div class="flex-1">
+            <div class="text-4xl mb-2">💎</div>
+            <div class="font-semibold text-neutral-200">Potencial</div>
+            <div class="text-xs text-neutral-500">O que poderia entregar</div>
+          </div>
+          <div class="flex-1 px-4">
+            <div class="h-1 bg-gradient-to-r from-purple-500 to-red-500 rounded-full mb-2"></div>
+            <div class="text-xs text-neutral-400">← Gap de Execucao →</div>
+            <div class="text-xs text-red-400 mt-1">Onde se perde receita</div>
+          </div>
+          <div class="flex-1">
+            <div class="text-4xl mb-2">📊</div>
+            <div class="font-semibold text-neutral-200">Resultado</div>
+            <div class="text-xs text-neutral-500">O que realmente entrega</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Box -->
+      <div class="bg-gradient-to-br from-purple-900/20 to-dark-800 rounded-xl p-6 border border-purple-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-4">Os pilares da execucao consistente</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">📅</div>
+            <div class="font-semibold text-neutral-200 text-sm">Rotina diaria</div>
+            <div class="text-xs text-neutral-400">Cumpre as atividades todos os dias</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">📊</div>
+            <div class="font-semibold text-neutral-200 text-sm">Gestao de pipeline</div>
+            <div class="text-xs text-neutral-400">Mantem o funil organizado e atualizado</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🔄</div>
+            <div class="font-semibold text-neutral-200 text-sm">Follow-up sistematico</div>
+            <div class="text-xs text-neutral-400">Nunca deixa lead esfriar</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🎯</div>
+            <div class="font-semibold text-neutral-200 text-sm">Foco no resultado</div>
+            <div class="text-xs text-neutral-400">Prioriza atividades de alto impacto</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Insight -->
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 A verdade incomoda</h3>
+        <p class="text-neutral-300">
+          A maioria dos vendedores que "nao batem meta" nao tem problema de talento ou vontade. Tem problema de <strong class="text-blue-400">execucao</strong>. Nao fazem as ligacoes, nao atualizam o CRM, nao preparam reunioes. O basico mal feito mata qualquer potencial.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 font-bold">5</span>
+        <h2 class="text-2xl font-bold">🧮 A formula de potencial</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A formula de potencial combina os 4 fatores com <strong class="text-purple-400">pesos que refletem sua importancia relativa</strong>. Aptidao tem o maior peso porque e o acelerador inicial, mas vontade, aprendizagem e execucao juntos superam a aptidao - exatamente como acontece na pratica.
+      </p>
+
+      <!-- Formula Principal -->
+      <div class="bg-gradient-to-br from-purple-900/20 to-dark-800 rounded-xl p-6 border border-purple-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-4 text-center">A Formula</h3>
+        <div class="bg-dark-800/50 rounded-lg p-6 text-center mb-4">
+          <p class="text-xl font-bold text-purple-400">
+            P = (A x 0,35) + (V x 0,25) + (L x 0,20) + (E x 0,20)
+          </p>
+          <p class="text-sm text-neutral-400 mt-2">Onde: A = Aptidao | V = Vontade | L = Learning (Aprendizagem) | E = Execucao</p>
+        </div>
+        <div class="grid grid-cols-4 gap-3 text-center">
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <div class="text-lg font-bold text-purple-400">35%</div>
+            <div class="text-xs text-neutral-400">Aptidao</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <div class="text-lg font-bold text-purple-400">25%</div>
+            <div class="text-xs text-neutral-400">Vontade</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <div class="text-lg font-bold text-purple-400">20%</div>
+            <div class="text-xs text-neutral-400">Aprendizagem</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <div class="text-lg font-bold text-purple-400">20%</div>
+            <div class="text-xs text-neutral-400">Execucao</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exemplo Pratico -->
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-4">Exemplo pratico: 2 vendedores</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+            <h4 class="font-semibold text-neutral-200 mb-2">Carlos (Talento natural)</h4>
+            <p class="text-xs text-neutral-400 mb-2">A=23, V=15, L=12, E=11</p>
+            <p class="text-sm text-purple-400 font-bold">P = (23x0,35)+(15x0,25)+(12x0,20)+(11x0,20)</p>
+            <p class="text-sm text-purple-400 font-bold">P = 8,05 + 3,75 + 2,40 + 2,20 = 16,40</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+            <h4 class="font-semibold text-neutral-200 mb-2">Ana (Esforco e metodo)</h4>
+            <p class="text-xs text-neutral-400 mb-2">A=14, V=23, L=22, E=21</p>
+            <p class="text-sm text-purple-400 font-bold">P = (14x0,35)+(23x0,25)+(22x0,20)+(21x0,20)</p>
+            <p class="text-sm text-purple-400 font-bold">P = 4,90 + 5,75 + 4,40 + 4,20 = 19,25</p>
+          </div>
+        </div>
+        <p class="text-neutral-300 text-sm mt-4">Ana supera Carlos mesmo com aptidao muito menor. A combinacao de vontade, aprendizagem e execucao compensou e superou o talento natural.</p>
+      </div>
+
+      <!-- Dica -->
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Como usar a formula</h3>
+        <p class="text-neutral-300">
+          A formula nao e para ranquear vendedores entre si. E para <strong class="text-primary">entender onde investir no desenvolvimento de cada um</strong>. Se o vendedor tem score baixo em execucao mas alto nos outros, o foco e claro: disciplina e rotina.
+        </p>
+      </div>
+    </section>
+
+    <!-- Resumo Final -->
+    <section class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+      <h2 class="text-2xl font-bold mb-6 flex items-center">
+        <span class="mr-3">📝</span> Resumo do Modulo
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-purple-400 mb-4">O que voce aprendeu:</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2">
+              <span class="text-purple-400">✓</span>
+              <span>Aptidao natural e o acelerador inicial</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-purple-400">✓</span>
+              <span>Vontade e o combustivel que mantem tudo</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-purple-400">✓</span>
+              <span>Capacidade de aprender e o melhor preditor</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-purple-400">✓</span>
+              <span>Execucao transforma potencial em resultado</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-purple-400">✓</span>
+              <span>A formula pondera os 4 fatores objetivamente</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-purple-400 mb-4">Proximo modulo:</h3>
+          <div class="bg-dark-700/50 rounded-xl p-4 border border-dark-600">
+            <span class="text-purple-400 font-bold text-sm">3.2</span>
+            <h4 class="font-bold mt-1">📊 O quadrante Aptidao x Vontade</h4>
+            <p class="text-neutral-400 text-sm mt-2">
+              Mapear cada vendedor em um quadrante cruzando aptidao e vontade para definir a estrategia de desenvolvimento ideal.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+          ← Voltar para Trilha 3
+        </a>
+        <a href="modulo-3-2.html" class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors">
+          Proximo: Modulo 3.2 →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Modulo 3.1: Os 4 fatores do perfil comercial</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+  </script>
+
+</body>
+</html>

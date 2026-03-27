@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 4.2: Trilha para o vendedor talentoso | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Diagnostico</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-amber-500/10 text-amber-400">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Gestao</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Estrategia</span>
+            </a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Treinamento</span>
+            </a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all">
+              <span class="sm:hidden">T7</span>
+              <span class="hidden sm:inline">Ferramentas</span>
+            </a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all">
+              <span class="sm:hidden">T8</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2">
+              <span id="theme-icon" class="text-lg">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4 text-sm">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <a href="index.html" class="text-neutral-500 hover:text-neutral-300">Trilha 4</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-amber-400 font-medium">Modulo 4.2</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">
+        MODULO 4.2
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">⭐ Trilha para o vendedor talentoso</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        O talentoso ja sabe vender, mas precisa de metodo para ser consistente. Aprenda a desenvolver, desafiar e reter seus melhores vendedores.
+      </p>
+
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-amber-400">5</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-amber-400">~60</div>
+          <div class="text-xs text-neutral-400">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-amber-400">Inter.</div>
+          <div class="text-xs text-neutral-400">Nivel</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-amber-400">Perfil</div>
+          <div class="text-xs text-neutral-400">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteudo Principal -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold">1</span>
+        <h2 class="text-2xl font-bold">🧠 O que o talentoso ainda precisa aprender</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O vendedor talentoso tem um dom natural para conectar, persuadir e fechar. Mas <strong class="text-amber-400">talento sem metodo e como um carro potente sem volante</strong> — vai rapido, mas nem sempre na direcao certa. O primeiro passo e mostrar ao talentoso que ele ainda tem gaps.
+      </p>
+
+      <div class="bg-gradient-to-br from-amber-900/20 to-dark-800 rounded-xl p-6 border border-amber-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-amber-400 mb-4">Gaps comuns do vendedor talentoso</h3>
+        <ul class="space-y-3 text-neutral-300">
+          <li class="flex items-start space-x-3">
+            <span class="text-amber-400 mt-1">✓</span>
+            <span>Nao registra o processo — vende, mas ninguem sabe como replicar</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-amber-400 mt-1">✓</span>
+            <span>Oscila — tem semanas excelentes e semanas mediocres</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-amber-400 mt-1">✓</span>
+            <span>Depende do "feeling" e nao sabe explicar por que funciona</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-amber-400 mt-1">✓</span>
+            <span>Resiste a processos que ele acha que limitam sua liberdade</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Exercicio Pratico</h3>
+        <p class="text-neutral-300">
+          Peca ao talentoso que grave sua proxima ligacao de venda. Depois, peca que ele explique cada decisao que tomou durante a conversa. Voce vai ver que ele nao consegue articular a maioria. Esse e o gap: <strong class="text-primary">competencia inconsciente que precisa virar consciente</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold">2</span>
+        <h2 class="text-2xl font-bold">🔧 Refinar tecnica com metodo</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O objetivo nao e substituir o instinto do talentoso por um script rigido. E <strong class="text-amber-400">dar nome ao que ele ja faz bem</strong> e adicionar ferramentas para os momentos em que o instinto nao basta.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-amber-400 mb-4">Framework de refinamento</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center">
+              <span class="text-amber-400 font-bold text-sm">1</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Gravar e analisar</h4>
+              <p class="text-sm text-neutral-400">Gravar calls de sucesso, identificar padroes. O que ele faz naturalmente que funciona? Nomear essas tecnicas.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center">
+              <span class="text-amber-400 font-bold text-sm">2</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Adicionar frameworks</h4>
+              <p class="text-sm text-neutral-400">Introduzir SPIN Selling, BANT, ou outros frameworks como ferramentas complementares — nao substitutivas.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center">
+              <span class="text-amber-400 font-bold text-sm">3</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Criar playbook pessoal</h4>
+              <p class="text-sm text-neutral-400">Documentar o "jeito dele" em um playbook proprio. Isso o faz dono do processo e facilita replicar nos dias ruins.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Perspectiva</h3>
+        <p class="text-neutral-300">
+          Atletas de elite tem tecnica refinada E talento. Nenhum corredor olimpico ignora biomecanica so porque "corre bem naturalmente". O talentoso comercial que incorpora metodo se torna <strong class="text-blue-400">um closer de elite</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold">3</span>
+        <h2 class="text-2xl font-bold">🔓 Dar autonomia com responsabilidade</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O talentoso <strong class="text-amber-400">sufoca com microgestao</strong>. Ele precisa de espaco para operar, experimentar e criar. Mas autonomia sem accountability vira zona de conforto. O segredo e o equilibrio.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-amber-900/20 rounded-xl p-6 border border-amber-500/30">
+          <h4 class="font-bold text-amber-400 mb-4">✓ Autonomia eficaz</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>"Voce decide como abordar, mas preciso ver o resultado"</li>
+            <li>"Liberdade no metodo, clareza na meta"</li>
+            <li>"Reporte semanal, nao diario"</li>
+            <li>"Seus numeros falam por voce"</li>
+          </ul>
+        </div>
+        <div class="bg-red-900/20 rounded-xl p-6 border border-red-500/30">
+          <h4 class="font-bold text-red-400 mb-4">✗ Erros com o talentoso</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>"Preciso aprovar cada proposta sua"</li>
+            <li>"Siga o script exatamente assim"</li>
+            <li>"Reporte cada ligacao que fizer"</li>
+            <li>"Nao tente nada diferente do padrao"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Modelo pratico</h3>
+        <p class="text-neutral-300">
+          Defina <strong class="text-primary">3 indicadores-chave</strong> com o talentoso: um de atividade (ligacoes/reunioes), um de qualidade (taxa de conversao) e um de resultado (receita). Enquanto os 3 estiverem no alvo, ele tem total liberdade no "como". Se algum cair, voce entra para ajustar.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold">4</span>
+        <h2 class="text-2xl font-bold">🚀 Desafiar com metas maiores</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O talentoso que bate meta facil demais <strong class="text-amber-400">para de crescer e comeca a procurar desafios fora</strong>. O gestor inteligente cria uma escada de desafios progressivos que mantem o engajamento.
+      </p>
+
+      <div class="bg-gradient-to-br from-amber-900/20 to-dark-800 rounded-xl p-6 border border-amber-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-amber-400 mb-4">Escada de desafios para o talentoso</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">📈</div>
+            <div class="font-semibold text-neutral-200 text-sm">Metas stretch</div>
+            <div class="text-xs text-neutral-400">10-20% acima do que ele ja entrega</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🏆</div>
+            <div class="font-semibold text-neutral-200 text-sm">Projetos especiais</div>
+            <div class="text-xs text-neutral-400">Clientes complexos, contas estrategicas</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🎓</div>
+            <div class="font-semibold text-neutral-200 text-sm">Mentoria de novos</div>
+            <div class="text-xs text-neutral-400">Formar outros vendedores</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🗺️</div>
+            <div class="font-semibold text-neutral-200 text-sm">Novos mercados</div>
+            <div class="text-xs text-neutral-400">Abrir territorios ou segmentos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Por que isso importa?</h3>
+        <p class="text-neutral-300">
+          Pesquisas mostram que <strong class="text-blue-400">70% dos top performers que saem</strong> citam "falta de desafio" como motivo principal — nao salario. Desafio e a moeda mais valiosa para reter talentos.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold">5</span>
+        <h2 class="text-2xl font-bold">🏆 Preparar para alta performance</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A transicao de bom para excelente nao e incremental — e uma <strong class="text-amber-400">mudanca de nivel</strong>. O vendedor de alta performance nao apenas vende mais: ele influencia a equipe, cria padroes e se torna referencia.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-amber-400 mb-4">Pilares da alta performance comercial</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center">
+              <span class="text-amber-400 font-bold text-sm">1</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Exposicao a complexidade</h4>
+              <p class="text-sm text-neutral-400">Clientes enterprise, negociacoes complexas, vendas consultivas de alto valor. Isso expande o repertorio.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center">
+              <span class="text-amber-400 font-bold text-sm">2</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Habilidades de lideranca</h4>
+              <p class="text-sm text-neutral-400">Mentoria, apresentacoes, articulacao estrategica. Preparar para papeis de lideranca comercial.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center">
+              <span class="text-amber-400 font-bold text-sm">3</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Visao de negocio</h4>
+              <p class="text-sm text-neutral-400">Entender margens, unit economics, estrategia da empresa. O vendedor de elite pensa como dono.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 A boa noticia</h3>
+        <p class="text-neutral-300">
+          O vendedor de alta performance nao e apenas um recurso — e um <strong class="text-primary">multiplicador</strong>. Ele eleva o padrao de toda a equipe, inspira os treinaveis e mostra que e possivel crescer dentro da empresa.
+        </p>
+      </div>
+    </section>
+
+    <!-- Resumo Final -->
+    <section class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+      <h2 class="text-2xl font-bold mb-6 flex items-center">
+        <span class="mr-3">📝</span> Resumo do Modulo
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-amber-400 mb-4">O que voce aprendeu:</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2">
+              <span class="text-amber-400">✓</span>
+              <span>Talentosos tem gaps que precisam ser nomeados</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-amber-400">✓</span>
+              <span>Metodo amplifica talento, nao substitui</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-amber-400">✓</span>
+              <span>Autonomia com accountability e a formula</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-amber-400">✓</span>
+              <span>Desafio e a principal ferramenta de retencao</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-amber-400">✓</span>
+              <span>Alta performance e uma mudanca de nivel, nao de grau</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-amber-400 mb-4">Proximo modulo:</h3>
+          <div class="bg-dark-700/50 rounded-xl p-4 border border-dark-600">
+            <span class="text-amber-400 font-bold text-sm">4.3</span>
+            <h4 class="font-bold mt-1">📏 Trilha para o vendedor treinavel</h4>
+            <p class="text-neutral-400 text-sm mt-2">
+              O grupo mais importante da equipe. Como disciplina e processo transformam potencial em resultado consistente.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="modulo-4-1.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+          ← Modulo 4.1
+        </a>
+        <a href="modulo-4-3.html" class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors">
+          Proximo: Modulo 4.3 →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Modulo 4.2: Trilha para o vendedor talentoso</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+  </script>
+
+</body>
+</html>

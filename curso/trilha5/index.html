@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha 5: Estrategia por Nivel de Consciencia | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Diagnostico</span>
+            </a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Gestao</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-rose-500/10 text-rose-400">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Estrategia</span>
+            </a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Treinamento</span>
+            </a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all">
+              <span class="sm:hidden">T7</span>
+              <span class="hidden sm:inline">Ferramentas</span>
+            </a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all">
+              <span class="sm:hidden">T8</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2">
+              <span id="theme-icon" class="text-lg">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300 text-sm">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-rose-400 text-sm font-medium">Trilha 5</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">
+        TRILHA 5 - ESTRATEGIA
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🎯 Estrategia por Nivel de Consciencia</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        Domine a arte de comunicar com cada tipo de cliente de acordo com seu nivel de consciencia. Da ignorancia total a decisao de compra, cada nivel exige uma estrategia diferente.
+      </p>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-rose-400">7</div>
+          <div class="text-xs text-neutral-400">Modulos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-rose-400">~35</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-rose-400">~7h</div>
+          <div class="text-xs text-neutral-400">Duracao</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-rose-400">Estrategico</div>
+          <div class="text-xs text-neutral-400">Foco</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Modulos -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Modulo 5.1 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-rose-400 font-bold">5.1</span>
+          <span class="text-xs text-neutral-500">~60 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">🙈 Estrategia para o Publico Inconsciente</h3>
+        <p class="text-neutral-400 text-sm">Alcance quem ainda nao sabe que tem um problema. Educacao como porta de entrada.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🤷</span>
+            <div class="flex-1">
+              <span class="font-medium">Quem e o inconsciente</span>
+              <span class="text-neutral-500 text-sm ml-2">- Nao percebe que tem um problema</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">O publico inconsciente nao sabe que tem um problema. Acha que sua situacao e normal. Nao busca solucoes porque nao percebe que precisa de uma. E o nivel mais distante da compra.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">A maioria do mercado esta nesse nivel. Se voce so fala com quem ja quer comprar, perde 80% das oportunidades. Saber despertar consciencia e o maior diferencial estrategico.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Nivel de consciencia, publico frio, educacao de mercado, despertar a dor, normalizacao do problema.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">📚</span>
+            <div class="flex-1">
+              <span class="font-medium">Educacao como estrategia</span>
+              <span class="text-neutral-500 text-sm ml-2">- Conteudo que gera identificacao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Educar o mercado e criar conteudo que faz a pessoa pensar "nossa, isso acontece comigo". Nao e vender — e fazer a pessoa se reconhecer no problema antes de saber que existe solucao.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vender para quem nao sabe que precisa e impossivel. Educar e o unico caminho para mover o inconsciente para o proximo nivel de consciencia.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Marketing educacional, conteudo de identificacao, espelho do problema, empatia estrategica.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">🎯</span>
+            <div class="flex-1">
+              <span class="font-medium">Tipos de conteudo que funcionam</span>
+              <span class="text-neutral-500 text-sm ml-2">- Historias, dados, comparacoes</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Para o inconsciente, funcionam historias que espelham a situacao dele, dados chocantes que revelam o problema e comparacoes do tipo antes/depois que mostram o que ele nao ve.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Conteudo tecnico nao funciona para inconscientes. Eles precisam de conteudo emocional e relacional. Saber o formato certo poupa tempo e aumenta conversao.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Storytelling, dados de impacto, comparacao visual, conteudo relacional, gatilho de identificacao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">📡</span>
+            <div class="flex-1">
+              <span class="font-medium">Canais ideais</span>
+              <span class="text-neutral-500 text-sm ml-2">- Onde encontrar esse publico</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">O publico inconsciente nao esta buscando ativamente. Ele esta em redes sociais, em grupos, consumindo conteudo de entretenimento. Voce precisa ir ate ele, nao esperar que ele venha.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Investir em Google Ads para inconscientes e jogar dinheiro fora. Cada nivel de consciencia tem canais ideais. Errar o canal e desperdicar orcamento.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Midia paga vs organica, interrupcao vs intencao, redes sociais, trafego frio, alcance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">💬</span>
+            <div class="flex-1">
+              <span class="font-medium">Exemplos praticos de comunicacao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Copys e abordagens reais</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Exemplos reais de posts, anuncios, videos e mensagens que funcionam para o publico inconsciente. Templates prontos para adaptar ao seu nicho e produto.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Teoria sem exemplo e abstrata demais. Ver copys reais que funcionam acelera a curva de aprendizado e da modelos para replicar imediatamente.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Copywriting para topo de funil, headlines de identificacao, CTAs educacionais, sequencias de aquecimento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-5-1.html')" class="px-4 py-2 text-sm bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-5-1.html" class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 5.2 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-rose-400 font-bold">5.2</span>
+          <span class="text-xs text-neutral-500">~60 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">😣 Estrategia para Consciente do Problema</h3>
+        <p class="text-neutral-400 text-sm">Aprofunde a dor de quem ja sabe que tem um problema mas nao conhece a solucao.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🔍</span>
+            <div class="flex-1">
+              <span class="font-medium">O que caracteriza esse nivel</span>
+              <span class="text-neutral-500 text-sm ml-2">- Sabe que tem dor, nao conhece solucao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">A pessoa sente a dor mas nao sabe o que fazer. Ela busca informacao, le artigos, assiste videos. Esta no modo "descoberta" — aberta a aprender mas ainda nao decidiu agir.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Este e o nivel onde a maioria dos leads qualificados esta. Saber comunicar aqui e fundamental para nao perder oportunidades reais de conversao.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Consciencia do problema, busca ativa, dor reconhecida, interesse latente, qualificacao natural.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">💉</span>
+            <div class="flex-1">
+              <span class="font-medium">Aprofundar a dor</span>
+              <span class="text-neutral-500 text-sm ml-2">- Fazer sentir o custo da inacao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Mostrar o custo real de nao resolver o problema. Quanto dinheiro perde por mes? Quanto tempo desperdicado? Que oportunidades escapam? Quantificar a inacao gera urgencia.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Pessoas toleram dor cronica. Quando voce mostra o custo acumulado, a tolerancia se transforma em necessidade de agir.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Custo da inacao, dor quantificada, projecao de perda, gatilho de urgencia interna.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">🔮</span>
+            <div class="flex-1">
+              <span class="font-medium">Mostrar consequencia</span>
+              <span class="text-neutral-500 text-sm ml-2">- Projetar o futuro sem solucao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Projetar cenarios futuros caso a pessoa nao resolva o problema. Onde ela vai estar em 6 meses, 1 ano, 5 anos mantendo o mesmo comportamento.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">O futuro negativo e um motivador poderoso. Quando a pessoa visualiza as consequencias, a urgencia de agir aumenta significativamente.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Projecao negativa, cenario futuro, consequencia visivel, motivacao por aversao a perda.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">⏰</span>
+            <div class="flex-1">
+              <span class="font-medium">Gerar urgencia interna</span>
+              <span class="text-neutral-500 text-sm ml-2">- Sem pressao externa, com clareza interna</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Urgencia interna e diferente de pressao externa. Nao e "compre agora" — e fazer a pessoa sentir que precisa agir por convencimento proprio, nao por manipulacao.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Urgencia artificial gera desconfianca. Urgencia interna gera acao sustentavel e clientes mais qualificados que compram por convicao.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Urgencia interna vs externa, auto-convencimento, motivacao intrinseca, decisao consciente.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">💬</span>
+            <div class="flex-1">
+              <span class="font-medium">Exemplos de conteudo e abordagem</span>
+              <span class="text-neutral-500 text-sm ml-2">- Copys e formatos para esse nivel</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Exemplos reais de conteudo para conscientes do problema: posts que aprofundam a dor, videos que mostram consequencias, emails que quantificam perdas.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Modelos prontos de abordagem reduzem o tempo de criacao e aumentam a eficacia. Ver o que funciona e o atalho para resultados.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Copy de aprofundamento, conteudo de meio de funil, sequencia de nurturing, automacao de consciencia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-5-2.html')" class="px-4 py-2 text-sm bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-5-2.html" class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 5.3 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-rose-400 font-bold">5.3</span>
+          <span class="text-xs text-neutral-500">~60 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">🔎 Estrategia para Consciente da Solucao</h3>
+        <p class="text-neutral-400 text-sm">Posicione-se como a melhor opcao para quem ja sabe que existem caminhos.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🧭</span>
+            <div class="flex-1">
+              <span class="font-medium">O que caracteriza esse nivel</span>
+              <span class="text-neutral-500 text-sm ml-2">- Sabe que existem caminhos</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">A pessoa sabe que existem solucoes para seu problema, mas ainda nao te conhece. Esta pesquisando opcoes, comparando abordagens, avaliando caminhos possiveis.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Este e o momento de aparecer como referencia. Se voce nao se posiciona aqui, o concorrente captura esse lead.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Consciencia da solucao, pesquisa ativa, comparacao de opcoes, posicionamento estrategico.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">⭐</span>
+            <div class="flex-1">
+              <span class="font-medium">Mostrar diferenciais</span>
+              <span class="text-neutral-500 text-sm ml-2">- Por que sua abordagem e diferente</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Comunicar o que torna sua abordagem unica. Nao e sobre ser "melhor" genericamente — e sobre mostrar o metodo, a perspectiva, o resultado especifico que so voce entrega.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Em um mercado saturado, quem nao se diferencia vira commodity. Diferenciais claros atraem os clientes certos e afastam os errados.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Proposta de valor unica, diferenciacao, posicionamento, mecanismo unico, abordagem proprietaria.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">🤝</span>
+            <div class="flex-1">
+              <span class="font-medium">Posicionar sem atacar concorrente</span>
+              <span class="text-neutral-500 text-sm ml-2">- Comparacao inteligente</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Comparar categorias de solucao sem demonizar concorrentes. "Existem 3 caminhos: A, B e C. Nos usamos o C por essas razoes." Elegancia gera mais confianca que agressividade.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Atacar concorrente gera desconfianca e parece desespero. Posicionar com classe mostra seguranca e profissionalismo.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Comparacao de categorias, posicionamento por contraste, elegancia competitiva, educacao sobre opcoes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">🏆</span>
+            <div class="flex-1">
+              <span class="font-medium">Conteudo de autoridade</span>
+              <span class="text-neutral-500 text-sm ml-2">- Provar que voce domina o assunto</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Conteudo que demonstra dominio profundo do assunto: analises detalhadas, cases de estudo, frameworks proprios, opinioes fundamentadas que so um especialista daria.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Autoridade nao e declarada, e percebida. O conteudo certo posiciona voce como referencia sem precisar se auto-proclamar expert.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Marketing de autoridade, lideranca de pensamento, conteudo aprofundado, prova de competencia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">💬</span>
+            <div class="flex-1">
+              <span class="font-medium">Exemplos de comunicacao para esse nivel</span>
+              <span class="text-neutral-500 text-sm ml-2">- Copys e modelos reais</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Templates de conteudo para conscientes da solucao: comparativos, analises de mercado, estudos de caso, webinars de posicionamento.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Exemplos concretos eliminam a duvida de "como fazer" e permitem aplicacao imediata no seu negocio.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Copy de posicionamento, conteudo comparativo, sequencia de autoridade, funil de consideracao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-5-3.html')" class="px-4 py-2 text-sm bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-5-3.html" class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 5.4 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-rose-400 font-bold">5.4</span>
+          <span class="text-xs text-neutral-500">~60 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">🛒 Estrategia para Consciente do Produto</h3>
+        <p class="text-neutral-400 text-sm">Convenca quem ja conhece sua oferta e esta comparando com alternativas.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🏷️</span>
+            <div class="flex-1">
+              <span class="font-medium">O que caracteriza esse nivel</span>
+              <span class="text-neutral-500 text-sm ml-2">- Conhece sua oferta, esta comparando</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">A pessoa conhece seu produto ou servico. Ja viu sua oferta, sabe o preco, entende o que voce faz. Mas ainda esta avaliando — comparando com outras opcoes, buscando seguranca para decidir.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Este e o momento mais critico do funil. Um erro aqui perde o lead para o concorrente. A comunicacao precisa eliminar objecoes e gerar confianca.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Consciencia do produto, fase de comparacao, eliminacao de objecoes, gatilho de decisao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">⭐</span>
+            <div class="flex-1">
+              <span class="font-medium">Prova social</span>
+              <span class="text-neutral-500 text-sm ml-2">- Depoimentos, casos, resultados</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Depoimentos, estudos de caso e resultados de clientes reais. Numeros, prints, videos de clientes satisfeitos. A prova de que outras pessoas ja obtiveram sucesso com voce.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Prova social e o gatilho mais poderoso nesse nivel. As pessoas confiam mais em outros clientes do que em voce. Um bom depoimento vale mais que mil argumentos.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Social proof, depoimentos, case studies, resultados tangiveis, endosso de terceiros.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">🛡️</span>
+            <div class="flex-1">
+              <span class="font-medium">Reducao de risco percebido</span>
+              <span class="text-neutral-500 text-sm ml-2">- Garantias, testes, demonstracoes</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Garantias de satisfacao, periodos de teste, demonstracoes gratuitas, amostras, trials. Tudo que reduz o medo de "e se nao funcionar para mim?"</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">O medo de errar e a principal barreira de compra. Quem reduz o risco percebido converte mais, mesmo com precos maiores.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Risk reversal, garantia, trial, demonstracao, reducao de fricao, inversao de risco.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">🏆</span>
+            <div class="flex-1">
+              <span class="font-medium">Autoridade e confianca</span>
+              <span class="text-neutral-500 text-sm ml-2">- Por que escolher voce</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Credenciais, experiencia, premios, aparicoes em midia, parcerias, numeros de clientes atendidos. Tudo que comunica "voce esta em boas maos".</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Confianca e o ultimo filtro antes da compra. Sem confianca, mesmo a melhor oferta fracassa. Autoridade construida elimina a hesitacao final.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Autoridade percebida, confianca, credibilidade, endosso, reputacao, track record.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">💬</span>
+            <div class="flex-1">
+              <span class="font-medium">Exemplos de abordagem para esse nivel</span>
+              <span class="text-neutral-500 text-sm ml-2">- Copys e estrategias reais</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Templates de paginas de venda, sequencias de email de conversao, scripts de follow-up e formatos de prova social que convertem conscientes do produto.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Este nivel exige precisao cirurgica na comunicacao. Exemplos prontos eliminam tentativa e erro e aceleram conversoes.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Copy de conversao, pagina de vendas, follow-up, sequencia de fechamento, gatilhos de decisao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-5-4.html')" class="px-4 py-2 text-sm bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-5-4.html" class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 5.5 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-rose-400 font-bold">5.5</span>
+          <span class="text-xs text-neutral-500">~60 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">🚀 Estrategia para Muito Consciente</h3>
+        <p class="text-neutral-400 text-sm">Conduza ao fechamento quem ja esta pronto para comprar.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">✅</span>
+            <div class="flex-1">
+              <span class="font-medium">O que caracteriza esse nivel</span>
+              <span class="text-neutral-500 text-sm ml-2">- Pronto para comprar, falta o empurrao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">A pessoa ja decidiu que quer comprar de voce. Conhece o produto, confia em voce, sabe o preco. So falta um gatilho final — uma condicao, um bonus, um prazo, uma oferta especial.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Perder um muito consciente e o pior desperdicio do funil. A venda esta ali — so precisa ser colhida. A comunicacao errada aqui pode afastar quem estava pronto.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Muito consciente, pronto para compra, gatilho final, facilitacao de decisao, fechamento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">🎯</span>
+            <div class="flex-1">
+              <span class="font-medium">Oferta clara e direta</span>
+              <span class="text-neutral-500 text-sm ml-2">- Sem rodeios, com condicao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Para o muito consciente, clareza e tudo. Preco, condicao, o que esta incluso, prazo, forma de pagamento. Sem enrolacao, sem longas cartas de venda. Direto ao ponto.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Overcomplicar a oferta para quem ja quer comprar cria fricao. Simplicidade e clareza sao os maiores aceleradores nesse nivel.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Oferta direta, clareza de proposta, simplicidade, condicao especial, facilitacao de compra.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">⏳</span>
+            <div class="flex-1">
+              <span class="font-medium">Urgencia real</span>
+              <span class="text-neutral-500 text-sm ml-2">- Prazo, escassez, bonus</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Urgencia real e baseada em fatos: vagas limitadas, bonus por tempo, preco que vai aumentar, turma que fecha. Nao e manipulacao — e realidade que motiva acao.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sem urgencia, o muito consciente procrastina. "Vou comprar depois" e o assassino silencioso de vendas. Urgencia real transforma intencao em acao.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Escassez real, deadline, bonus temporal, FOMO legitimo, acelerador de decisao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">📢</span>
+            <div class="flex-1">
+              <span class="font-medium">Chamada para acao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Como conduzir ao fechamento</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">A CTA (Call to Action) para muito conscientes e direta: "Compre agora", "Garanta sua vaga", "Comece hoje". Sem hesitacao, sem "saiba mais". O proximo passo e claro e unico.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Uma CTA fraca perde vendas garantidas. O muito consciente quer que voce facilite a compra, nao que crie mais etapas.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">CTA direta, botao de compra, facilitacao, checkout, reducao de cliques, comando claro.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">💬</span>
+            <div class="flex-1">
+              <span class="font-medium">Exemplos de comunicacao para muito conscientes</span>
+              <span class="text-neutral-500 text-sm ml-2">- Copys de fechamento</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Exemplos de emails de fechamento, mensagens de WhatsApp, paginas de checkout otimizadas e scripts de venda para muito conscientes.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">O fechamento e onde o dinheiro entra. Ter modelos prontos de alta conversao e indispensavel para qualquer operacao comercial.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Copy de fechamento, email de ultima chance, oferta irrecusavel, sequencia de conversao final.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-5-5.html')" class="px-4 py-2 text-sm bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-5-5.html" class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 5.6 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-rose-400 font-bold">5.6</span>
+          <span class="text-xs text-neutral-500">~60 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">📋 Plano de Conteudo para Todos os Niveis</h3>
+        <p class="text-neutral-400 text-sm">Monte um plano de conteudo completo que atenda todos os niveis de consciencia.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">⚖️</span>
+            <div class="flex-1">
+              <span class="font-medium">A regra 60/40</span>
+              <span class="text-neutral-500 text-sm ml-2">- Proporcao educacao vs oferta</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">60% do conteudo deve educar, entreter e gerar valor. 40% pode ser oferta direta. Essa proporcao mantem a audiencia engajada sem ser invasivo.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Quem so vende afasta. Quem so educa nunca converte. O equilibrio 60/40 e o ponto ideal comprovado por profissionais de marketing de conteudo.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Proporcao conteudo/oferta, marketing de conteudo, valor antes da venda, equilibrio editorial.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">📡</span>
+            <div class="flex-1">
+              <span class="font-medium">Distribuicao por canal</span>
+              <span class="text-neutral-500 text-sm ml-2">- O que funciona onde</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cada canal tem seu formato ideal: Instagram para visual, YouTube para aprofundamento, email para conversao, WhatsApp para relacionamento. Adaptar conteudo ao canal multiplica resultados.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Publicar o mesmo conteudo em todos os canais e desperdicar potencial. Cada plataforma tem sua linguagem e seu publico em niveis diferentes de consciencia.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Distribuicao multicanal, formato nativo, adaptacao de conteudo, estrategia por plataforma.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">📅</span>
+            <div class="flex-1">
+              <span class="font-medium">Calendario de conteudo por nivel</span>
+              <span class="text-neutral-500 text-sm ml-2">- Template semanal</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Um calendario semanal que distribui conteudo para cada nivel de consciencia. Segunda: topo de funil. Terca: meio. Quarta: autoridade. Quinta: prova social. Sexta: oferta.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sem calendario, a producao de conteudo e catica. Com calendario, vira sistema. E sistemas escalam.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Calendario editorial, planejamento semanal, distribuicao por nivel, consistencia de publicacao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">🎬</span>
+            <div class="flex-1">
+              <span class="font-medium">Frequencia e formato</span>
+              <span class="text-neutral-500 text-sm ml-2">- Video, texto, imagem, audio</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cada nivel de consciencia responde melhor a formatos diferentes. Inconscientes: video curto. Conscientes do problema: artigos. Muito conscientes: email direto. A frequencia ideal varia por canal.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Formato errado = publico errado. Frequencia errada = irrelevancia ou saturacao. Acertar os dois maximiza ROI de conteudo.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Formato de conteudo, frequencia de publicacao, multimidia, adaptacao de formato, ROI de conteudo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">🤖</span>
+            <div class="flex-1">
+              <span class="font-medium">Automacao vs humano</span>
+              <span class="text-neutral-500 text-sm ml-2">- O que automatizar e o que manter pessoal</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Emails de topo de funil podem ser automatizados. Fechamento de venda complexa exige contato humano. Saber o que automatizar e o que personalizar e decisivo para escala com qualidade.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Automatizar tudo perde a conexao humana. Fazer tudo manual nao escala. O equilibrio e o segredo de operacoes lucrativas.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Automacao de marketing, personalizacao, escala vs qualidade, pontos de contato humano.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg mr-2">📄</span>
+            <div class="flex-1">
+              <span class="font-medium">Template completo de plano de conteudo</span>
+              <span class="text-neutral-500 text-sm ml-2">- Modelo pronto para usar</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Um template completo com todos os campos necessarios: nivel de consciencia, canal, formato, frequencia, tema, CTA, metricas de acompanhamento. Pronto para copiar e adaptar.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Ter um template evita comecara do zero. E o atalho entre aprender a teoria e aplicar na pratica imediatamente.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Template de conteudo, plano editorial, framework de publicacao, sistema de conteudo, planejamento mensal.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-5-6.html')" class="px-4 py-2 text-sm bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-5-6.html" class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 5.7 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-rose-400 font-bold">5.7</span>
+          <span class="text-xs text-neutral-500">~60 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">🤝 Integrando Equipe e Estrategia</h3>
+        <p class="text-neutral-400 text-sm">Monte a operacao integrada: marketing, vendas e gestao alinhados por nivel de consciencia.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">👤</span>
+            <div class="flex-1">
+              <span class="font-medium">Qual perfil de vendedor atende melhor cada nivel</span>
+              <span class="text-neutral-500 text-sm ml-2">- Perfil ideal por nivel</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cada nivel de consciencia exige um perfil diferente de vendedor. Inconscientes precisam de educadores. Conscientes do produto precisam de closers. Muito conscientes precisam de facilitadores.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Colocar o vendedor errado no nivel errado e desperdicar talento e perder vendas. Alinhamento de perfil com nivel multiplica resultados.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Perfil de vendedor, hunter vs farmer, closer vs consultor, alinhamento de equipe.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">📣</span>
+            <div class="flex-1">
+              <span class="font-medium">O papel do marketing em cada nivel</span>
+              <span class="text-neutral-500 text-sm ml-2">- Responsabilidades por nivel</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Marketing lidera nos niveis iniciais (inconsciente e consciente do problema) com conteudo e educacao. Nos niveis finais, marketing suporta vendas com materiais de apoio e prova social.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Definir onde marketing lidera e onde marketing apoia elimina conflitos entre departamentos e otimiza recursos.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Marketing de topo de funil, sales enablement, materiais de apoio, nurturing, qualificacao de leads.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">🎯</span>
+            <div class="flex-1">
+              <span class="font-medium">O papel do vendedor em cada nivel</span>
+              <span class="text-neutral-500 text-sm ml-2">- Atuacao estrategica</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vendedores entram com forca a partir do consciente da solucao. Nos niveis iniciais, atuam como consultores. No consciente do produto, como negociadores. No muito consciente, como facilitadores.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vendedor que tenta fechar um inconsciente queima o lead. Vendedor que consulta um muito consciente perde a venda. Cada nivel exige uma postura diferente.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Venda consultiva, negociacao, fechamento, facilitacao, postura por nivel, abordagem adaptativa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">📈</span>
+            <div class="flex-1">
+              <span class="font-medium">Quando escalar a operacao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Sinais de prontidao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sinais de que e hora de escalar: taxas de conversao estaveis, processo validado, equipe treinada, metricas claras. Escalar sem esses sinais e amplificar problemas.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Escalar cedo demais quebra a operacao. Escalar tarde demais perde oportunidade. Saber o momento certo e tao importante quanto saber como escalar.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Escala, validacao de processo, metricas de prontidao, growth, timing de crescimento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">🔄</span>
+            <div class="flex-1">
+              <span class="font-medium">O modelo integrado: marketing + vendas + gestao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Operacao unificada</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">O modelo 8020 integrado: marketing gera consciencia, vendas converte, gestao otimiza. Todos alinhados pelo mesmo framework de niveis de consciencia. Uma linguagem unica para toda a operacao.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Empresas onde marketing e vendas falam linguas diferentes perdem dinheiro. O modelo integrado alinha todos e maximiza resultados.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Integracao marketing-vendas, revenue operations, modelo unificado, alinhamento organizacional, framework 8020.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-5-7.html')" class="px-4 py-2 text-sm bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-5-7.html" class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Navegacao -->
+    <div class="mt-12 flex flex-col sm:flex-row gap-4">
+      <a href="../trilha4/index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+        ← Trilha 4 - Gestao
+      </a>
+      <a href="../trilha6/index.html" class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors">
+        Proxima: Trilha 6 - Treinamento →
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Trilha 5: Estrategia por Nivel de Consciencia</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Overlay -->
+  <div id="modal-overlay" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+    <div class="relative flex items-start justify-center min-h-screen p-4 pt-8 overflow-y-auto">
+      <div class="relative bg-dark-800 rounded-2xl border border-dark-600 w-full max-w-4xl max-h-[90vh] overflow-hidden shadow-2xl">
+        <div class="sticky top-0 z-10 flex items-center justify-between p-4 bg-dark-800 border-b border-dark-600">
+          <h3 class="font-bold text-lg text-rose-400">Conteudo do Modulo</h3>
+          <button onclick="closeModal()" class="p-2 hover:bg-dark-700 rounded-lg transition-colors text-neutral-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="modal-content" class="p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
+          <div class="flex items-center justify-center py-12">
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-rose-400"></div>
+            <span class="ml-3 text-neutral-400">Carregando...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) {
+          exp.classList.remove('active');
+        }
+      });
+
+      explanation.classList.toggle('active');
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+
+    function openModal(moduloUrl) {
+      const modal = document.getElementById('modal-overlay');
+      const content = document.getElementById('modal-content');
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      content.innerHTML = `
+        <div class="flex items-center justify-center py-12">
+          <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-rose-400"></div>
+          <span class="ml-3 text-neutral-400">Carregando...</span>
+        </div>
+      `;
+
+      fetch(moduloUrl)
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const mainContent = doc.querySelector('main');
+
+          if (mainContent) {
+            content.innerHTML = mainContent.innerHTML;
+          } else {
+            content.innerHTML = '<p class="text-neutral-400">Conteudo nao encontrado.</p>';
+          }
+        })
+        .catch(err => {
+          content.innerHTML = '<p class="text-red-400">Erro ao carregar conteudo.</p>';
+        });
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal-overlay');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>

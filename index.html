@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8020 | Vendas, Gestao e Estrategia Comercial</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+    html:not(.dark) .text-neutral-500 { color: #94a3b8; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium transition-colors">INEMA.CLUB</a>
+        </div>
+
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="curso/trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="curso/trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="curso/trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Diagnostico</span>
+            </a>
+            <a href="curso/trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Gestao</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="curso/trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Estrategia</span>
+            </a>
+            <a href="curso/trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Treinamento</span>
+            </a>
+            <a href="curso/trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all">
+              <span class="sm:hidden">T7</span>
+              <span class="hidden sm:inline">Ferramentas</span>
+            </a>
+            <a href="curso/trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all">
+              <span class="sm:hidden">T8</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2" title="Alternar tema">
+              <span id="theme-icon" class="text-lg">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/30 via-blue-900/20 to-purple-900/30"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="text-center">
+        <span class="inline-block px-4 py-1.5 bg-yellow-500/20 text-yellow-400 text-sm font-semibold rounded-full mb-6">
+          CURSO COMPLETO
+        </span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+          Vendas, Gestao e<br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400">
+            Estrategia Comercial
+          </span>
+        </h1>
+        <p class="text-lg text-neutral-400 max-w-2xl mx-auto mb-8">
+          Domine a arte de construir valor antes de falar em preco. Aprenda a diagnosticar sua equipe, treinar vendedores e criar estrategias para todos os niveis de consciencia do consumidor.
+        </p>
+
+        <!-- Features Pills -->
+        <div class="flex flex-wrap gap-3 justify-center mb-8">
+          <div class="flex items-center space-x-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full">
+            <span class="text-emerald-400 text-lg">📋</span>
+            <span class="text-emerald-300 font-medium text-sm">Scripts Prontos</span>
+          </div>
+          <div class="flex items-center space-x-2 px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full">
+            <span class="text-blue-400 text-lg">🎯</span>
+            <span class="text-blue-300 font-medium text-sm">Diagnostico de Equipe</span>
+          </div>
+          <div class="flex items-center space-x-2 px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full">
+            <span class="text-purple-400 text-lg">📊</span>
+            <span class="text-purple-300 font-medium text-sm">Estrategia por Nivel</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="curso/trilha1/index.html" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl transition-colors text-lg">
+            Comecar Agora
+          </a>
+          <a href="#trilhas" class="px-8 py-4 bg-dark-700 hover:bg-dark-600 text-neutral-200 font-semibold rounded-xl transition-colors text-lg border border-dark-600">
+            Ver Trilhas
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats Section -->
+  <section class="border-y border-dark-600 bg-dark-800/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-3xl sm:text-4xl font-bold text-emerald-400">8</div>
+          <div class="text-neutral-400 text-sm mt-1">Trilhas</div>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-bold text-blue-400">51</div>
+          <div class="text-neutral-400 text-sm mt-1">Modulos</div>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-bold text-purple-400">5</div>
+          <div class="text-neutral-400 text-sm mt-1">Niveis de Consciencia</div>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-bold text-amber-400">4</div>
+          <div class="text-neutral-400 text-sm mt-1">Perfis Comerciais</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trilhas Section -->
+  <section id="trilhas" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Sua Jornada de Aprendizado</h2>
+      <p class="text-neutral-400 max-w-2xl mx-auto">
+        Oito trilhas que cobrem desde fundamentos de vendas ate estrategia avancada de gestao comercial.
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-6 max-w-3xl mx-auto">
+
+      <!-- Trilha 1 -->
+      <a href="curso/trilha1/index.html" class="group block bg-dark-800 rounded-2xl border border-dark-600 hover:border-emerald-500/50 transition-all overflow-hidden">
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded-full">TRILHA 1</span>
+            <span class="text-neutral-500 text-sm">8 modulos</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 group-hover:text-emerald-400 transition-colors">
+            Fundamentos de Vendas
+          </h3>
+          <p class="text-neutral-400 mb-4">
+            Base conceitual para qualquer perfil. O que e vender de verdade, niveis de consciencia, construcao de valor e a arte de perguntar.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Valor antes do Preco</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Niveis de Consciencia</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Perguntas</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Objecoes</span>
+          </div>
+        </div>
+        <div class="px-8 py-4 bg-emerald-900/20 border-t border-dark-600 group-hover:bg-emerald-900/30 transition-colors">
+          <span class="text-emerald-400 font-semibold text-sm">Publico: Todos | Nivel: Iniciante</span>
+        </div>
+      </a>
+
+      <!-- Trilha 2 -->
+      <a href="curso/trilha2/index.html" class="group block bg-dark-800 rounded-2xl border border-dark-600 hover:border-blue-500/50 transition-all overflow-hidden">
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold rounded-full">TRILHA 2</span>
+            <span class="text-neutral-500 text-sm">7 modulos</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
+            Metodo Pratico de Vendas
+          </h3>
+          <p class="text-neutral-400 mb-4">
+            Script, roteiro e execucao para qualquer pessoa. O roteiro de valor em 5 passos, respostas para objecoes e treinamento de 7 dias.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Script Pronto</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">5 Passos</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Objecoes</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Treino 7 Dias</span>
+          </div>
+        </div>
+        <div class="px-8 py-4 bg-blue-900/20 border-t border-dark-600 group-hover:bg-blue-900/30 transition-colors">
+          <span class="text-blue-400 font-semibold text-sm">Publico: Vendedores | Nivel: Pratico</span>
+        </div>
+      </a>
+
+      <!-- Trilha 3 -->
+      <a href="curso/trilha3/index.html" class="group block bg-dark-800 rounded-2xl border border-dark-600 hover:border-purple-500/50 transition-all overflow-hidden">
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-bold rounded-full">TRILHA 3</span>
+            <span class="text-neutral-500 text-sm">6 modulos</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 group-hover:text-purple-400 transition-colors">
+            Diagnostico Comercial
+          </h3>
+          <p class="text-neutral-400 mb-4">
+            Identificar perfis na equipe: vendedor nato, treinavel, resistente ou sem fit. Matriz de avaliacao com score e acao por grupo.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">4 Fatores</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Quadrante</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Score</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Grupos A-D</span>
+          </div>
+        </div>
+        <div class="px-8 py-4 bg-purple-900/20 border-t border-dark-600 group-hover:bg-purple-900/30 transition-colors">
+          <span class="text-purple-400 font-semibold text-sm">Publico: Gestores | Nivel: Gestao</span>
+        </div>
+      </a>
+
+      <!-- Trilha 4 -->
+      <a href="curso/trilha4/index.html" class="group block bg-dark-800 rounded-2xl border border-dark-600 hover:border-amber-500/50 transition-all overflow-hidden">
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-bold rounded-full">TRILHA 4</span>
+            <span class="text-neutral-500 text-sm">7 modulos</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 group-hover:text-amber-400 transition-colors">
+            Gestao de Equipe Comercial
+          </h3>
+          <p class="text-neutral-400 mb-4">
+            Coordenar perfis diferentes. Trilha para cada tipo de vendedor, matriz vendedor x nivel de consciencia e rotina de gestao.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Talentoso</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Treinavel</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Resistente</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Rotina</span>
+          </div>
+        </div>
+        <div class="px-8 py-4 bg-amber-900/20 border-t border-dark-600 group-hover:bg-amber-900/30 transition-colors">
+          <span class="text-amber-400 font-semibold text-sm">Publico: Gestores | Nivel: Gestao</span>
+        </div>
+      </a>
+
+      <!-- Trilha 5 -->
+      <a href="curso/trilha5/index.html" class="group block bg-dark-800 rounded-2xl border border-dark-600 hover:border-rose-500/50 transition-all overflow-hidden">
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-bold rounded-full">TRILHA 5</span>
+            <span class="text-neutral-500 text-sm">7 modulos</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 group-hover:text-rose-400 transition-colors">
+            Estrategia por Nivel de Consciencia
+          </h3>
+          <p class="text-neutral-400 mb-4">
+            Plano de conteudo e abordagem para cada nivel do consumidor. Do inconsciente ao muito consciente, com estrategia integrada.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Inconsciente</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Problema</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Solucao</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Produto</span>
+          </div>
+        </div>
+        <div class="px-8 py-4 bg-rose-900/20 border-t border-dark-600 group-hover:bg-rose-900/30 transition-colors">
+          <span class="text-rose-400 font-semibold text-sm">Publico: Gestores | Nivel: Estrategico</span>
+        </div>
+      </a>
+
+      <!-- Trilha 6 -->
+      <a href="curso/trilha6/index.html" class="group block bg-dark-800 rounded-2xl border border-dark-600 hover:border-cyan-500/50 transition-all overflow-hidden">
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-bold rounded-full">TRILHA 6</span>
+            <span class="text-neutral-500 text-sm">6 modulos</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">
+            Plano Estrategico de Treinamento
+          </h3>
+          <p class="text-neutral-400 mb-4">
+            Montar e executar o plano de capacitacao da equipe. Treinamento por perfil, metodo de 7 dias, simulacao e metricas.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Programa</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">7 Dias</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Role Play</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Metricas</span>
+          </div>
+        </div>
+        <div class="px-8 py-4 bg-cyan-900/20 border-t border-dark-600 group-hover:bg-cyan-900/30 transition-colors">
+          <span class="text-cyan-400 font-semibold text-sm">Publico: Gestores | Nivel: Execucao</span>
+        </div>
+      </a>
+
+      <!-- Trilha 7 -->
+      <a href="curso/trilha7/index.html" class="group block bg-dark-800 rounded-2xl border border-dark-600 hover:border-orange-500/50 transition-all overflow-hidden">
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 bg-orange-500/20 text-orange-400 text-xs font-bold rounded-full">TRILHA 7</span>
+            <span class="text-neutral-500 text-sm">6 modulos</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 group-hover:text-orange-400 transition-colors">
+            Avaliacao e Ferramentas
+          </h3>
+          <p class="text-neutral-400 mb-4">
+            Ferramentas praticas, templates e checklists. Questionario de diagnostico, scripts prontos, mapa de objecoes e plano de conteudo.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Questionario</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Scripts</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Checklists</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Templates</span>
+          </div>
+        </div>
+        <div class="px-8 py-4 bg-orange-900/20 border-t border-dark-600 group-hover:bg-orange-900/30 transition-colors">
+          <span class="text-orange-400 font-semibold text-sm">Publico: Todos | Nivel: Pratico</span>
+        </div>
+      </a>
+
+      <!-- Trilha 8 -->
+      <a href="curso/trilha8/index.html" class="group block bg-dark-800 rounded-2xl border border-dark-600 hover:border-indigo-500/50 transition-all overflow-hidden">
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 bg-indigo-500/20 text-indigo-400 text-xs font-bold rounded-full">TRILHA 8</span>
+            <span class="text-neutral-500 text-sm">4 modulos</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 group-hover:text-indigo-400 transition-colors">
+            Referencias e Pensamento Avancado
+          </h3>
+          <p class="text-neutral-400 mb-4">
+            Os 10 livros essenciais, pensamento avancado em vendas 2026, B2B vs B2C e o futuro com IA.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">10 Livros</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Tendencias 2026</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">B2B vs B2C</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">IA + Vendas</span>
+          </div>
+        </div>
+        <div class="px-8 py-4 bg-indigo-900/20 border-t border-dark-600 group-hover:bg-indigo-900/30 transition-colors">
+          <span class="text-indigo-400 font-semibold text-sm">Publico: Todos | Nivel: Avancado</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Conceito Central -->
+  <section class="bg-dark-800/50 border-y border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Os 3 Eixos do Curso</h2>
+        <p class="text-neutral-400">O sistema completo que conecta vendedor, cliente e gestor</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-dark-800 rounded-xl p-6 text-center border border-dark-600">
+          <div class="text-3xl mb-3">🎯</div>
+          <div class="font-semibold text-neutral-200 mb-2">O Vendedor</div>
+          <div class="text-sm text-neutral-400">Perfis diferentes precisam de trilhas diferentes. Talentoso, treinavel, resistente ou sem fit.</div>
+        </div>
+        <div class="bg-dark-800 rounded-xl p-6 text-center border border-dark-600">
+          <div class="text-3xl mb-3">👤</div>
+          <div class="font-semibold text-neutral-200 mb-2">O Cliente</div>
+          <div class="text-sm text-neutral-400">5 niveis de consciencia trabalhados simultaneamente. Nao so fundo de funil.</div>
+        </div>
+        <div class="bg-dark-800 rounded-xl p-6 text-center border border-dark-600">
+          <div class="text-3xl mb-3">📊</div>
+          <div class="font-semibold text-neutral-200 mb-2">O Gestor</div>
+          <div class="text-sm text-neutral-400">Diagnostica equipe, entende cliente, cruza os dois e coordena tudo.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="bg-gradient-to-br from-emerald-900/30 via-blue-900/30 to-purple-900/30 rounded-3xl p-12 text-center border border-dark-600">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Pronto para Comecar?</h2>
+      <p class="text-neutral-400 max-w-xl mx-auto mb-8">
+        Comece pela Trilha 1 e construa uma base solida sobre o que e vender de verdade.
+      </p>
+      <a href="curso/trilha1/index.html" class="inline-block px-10 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl transition-colors text-lg">
+        Iniciar Trilha 1: Fundamentos
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-lg text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">
+          Vendas, Gestao e Estrategia Comercial
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+  </script>
+
+</body>
+</html>

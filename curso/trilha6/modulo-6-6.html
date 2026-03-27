@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 6.6: Treinamento continuo vs pontual | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors"><span class="text-3xl">💰</span><span class="font-bold text-xl hidden sm:inline">8020</span></a>
+          <span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Metodo</span></a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Diagnostico</span></a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Gestao</span></a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Estrategia</span></a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-cyan-500/10 text-cyan-400"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Treinamento</span></a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Ferramentas</span></a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-red-400 hover:bg-red-500/10 transition-all"><span class="sm:hidden">T8</span><span class="hidden sm:inline">Avancado</span></a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2"><span id="theme-icon" class="text-lg">🌙</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- Header -->
+    <div class="mb-8">
+      <div class="flex items-center space-x-3 mb-4">
+        <a href="index.html" class="text-cyan-400 hover:text-cyan-300 text-sm transition-colors">← Trilha 6</a>
+        <span class="text-neutral-600">|</span>
+        <span class="text-neutral-400 text-sm">Modulo 6.6</span>
+      </div>
+      <div class="bg-gradient-to-r from-cyan-900/30 to-dark-800 border border-cyan-500/20 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-start space-x-4">
+          <span class="text-4xl sm:text-5xl">🔄</span>
+          <div>
+            <h1 class="text-2xl sm:text-3xl font-bold text-neutral-100 mb-2">Treinamento continuo vs pontual</h1>
+            <p class="text-neutral-300 text-lg">O treinamento pontual e como tomar remedio uma vez e esperar ficar curado para sempre. O treinamento continuo e como exercicio fisico — so funciona com consistencia. Aqui voce entende por que e como transformar treino em habito.</p>
+            <div class="flex flex-wrap gap-3 mt-4">
+              <span class="px-3 py-1 bg-cyan-900/20 text-cyan-400 rounded-full text-sm font-medium">4 Topicos</span>
+              <span class="px-3 py-1 bg-cyan-900/20 text-cyan-400 rounded-full text-sm font-medium">~30 min</span>
+              <span class="px-3 py-1 bg-cyan-900/20 text-cyan-400 rounded-full text-sm font-medium">Execucao</span>
+              <span class="px-3 py-1 bg-cyan-900/20 text-cyan-400 rounded-full text-sm font-medium">Cultura</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Topico 1 -->
+    <section class="mb-10">
+      <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">📉</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-cyan-400">1. Por que treinar uma vez nao resolve</h2>
+        </div>
+        <p class="text-neutral-300 mb-6">Em 1885, o psicologo Hermann Ebbinghaus demonstrou algo que todo gestor precisa entender: sem reforco, o ser humano esquece a maior parte do que aprendeu em questao de horas. Treinamento pontual sem acompanhamento e literalmente jogar dinheiro fora.</p>
+
+        <div class="bg-cyan-900/20 border border-cyan-500/20 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-cyan-400 mb-4">A curva de esquecimento de Ebbinghaus</h3>
+          <div class="bg-dark-700 rounded-xl p-5">
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-neutral-300 text-sm font-medium">Imediatamente apos o treino</span>
+                  <span class="text-emerald-400 text-sm font-bold">100%</span>
+                </div>
+                <div class="w-full bg-dark-600 rounded-full h-3"><div class="bg-emerald-500 h-3 rounded-full" style="width: 100%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-neutral-300 text-sm font-medium">Apos 20 minutos</span>
+                  <span class="text-yellow-400 text-sm font-bold">58%</span>
+                </div>
+                <div class="w-full bg-dark-600 rounded-full h-3"><div class="bg-yellow-500 h-3 rounded-full" style="width: 58%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-neutral-300 text-sm font-medium">Apos 1 hora</span>
+                  <span class="text-orange-400 text-sm font-bold">44%</span>
+                </div>
+                <div class="w-full bg-dark-600 rounded-full h-3"><div class="bg-orange-500 h-3 rounded-full" style="width: 44%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-neutral-300 text-sm font-medium">Apos 24 horas</span>
+                  <span class="text-red-400 text-sm font-bold">33%</span>
+                </div>
+                <div class="w-full bg-dark-600 rounded-full h-3"><div class="bg-red-500 h-3 rounded-full" style="width: 33%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-neutral-300 text-sm font-medium">Apos 6 dias</span>
+                  <span class="text-red-400 text-sm font-bold">25%</span>
+                </div>
+                <div class="w-full bg-dark-600 rounded-full h-3"><div class="bg-red-500 h-3 rounded-full" style="width: 25%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-neutral-300 text-sm font-medium">Apos 31 dias</span>
+                  <span class="text-red-400 text-sm font-bold">21%</span>
+                </div>
+                <div class="w-full bg-dark-600 rounded-full h-3"><div class="bg-red-500 h-3 rounded-full" style="width: 21%"></div></div>
+              </div>
+            </div>
+          </div>
+          <p class="text-neutral-400 text-sm mt-3 text-center">Em 24 horas, seu vendedor ja perdeu cerca de 70% do que aprendeu no treinamento. Em um mes, restam apenas 21%.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-red-900/20 border border-red-500/20 rounded-xl p-4">
+            <h4 class="font-bold text-red-400 mb-2">Treinamento pontual</h4>
+            <ul class="space-y-2 text-neutral-300 text-sm">
+              <li>✗ Workshop de 8 horas uma vez por ano</li>
+              <li>✗ Informacao massiva sem pratica</li>
+              <li>✗ Sem acompanhamento posterior</li>
+              <li>✗ Retencao: ~20% apos 30 dias</li>
+              <li>✗ Custo alto, retorno baixo</li>
+            </ul>
+          </div>
+          <div class="bg-emerald-900/20 border border-emerald-500/20 rounded-xl p-4">
+            <h4 class="font-bold text-emerald-400 mb-2">Treinamento continuo</h4>
+            <ul class="space-y-2 text-neutral-300 text-sm">
+              <li>✓ Microtreinamentos diarios/semanais</li>
+              <li>✓ Doses pequenas com pratica imediata</li>
+              <li>✓ Reforco constante do aprendizado</li>
+              <li>✓ Retencao: 80%+ com repeticao espacada</li>
+              <li>✓ Custo baixo, retorno exponencial</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section class="mb-10">
+      <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">⏰</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-cyan-400">2. Microtreinamentos diarios</h2>
+        </div>
+        <p class="text-neutral-300 mb-6">15 minutos por dia. E so isso. Nao precisa de sala, projetor, coffee break ou palestrante externo. Precisa de intencao e consistencia. Tres formatos simples que transformam a equipe sem parar a operacao.</p>
+
+        <div class="space-y-4 mb-6">
+          <div class="bg-cyan-900/20 border border-cyan-500/20 rounded-xl p-5">
+            <div class="flex items-center space-x-3 mb-3">
+              <span class="bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">1</span>
+              <h3 class="font-bold text-neutral-100">Uma objecao por dia</h3>
+            </div>
+            <p class="text-neutral-300 mb-3">Escolha uma objecao real que apareceu no dia anterior. Em 15 minutos: apresente a objecao (2 min), cada vendedor escreve sua resposta (5 min), discutem as melhores (5 min), elegem a resposta padrao (3 min).</p>
+            <div class="bg-dark-700 rounded-lg p-3">
+              <div class="text-sm text-neutral-400"><strong class="text-neutral-100">Exemplo de segunda-feira:</strong> "O concorrente e mais barato." → Cada um escreve como responderia → Comparam → Melhor resposta vira parte do repertorio.</div>
+            </div>
+          </div>
+
+          <div class="bg-cyan-900/20 border border-cyan-500/20 rounded-xl p-5">
+            <div class="flex items-center space-x-3 mb-3">
+              <span class="bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">2</span>
+              <h3 class="font-bold text-neutral-100">Um role play rapido</h3>
+            </div>
+            <p class="text-neutral-300 mb-3">Duas pessoas, 5 minutos de simulacao, 10 minutos de feedback. Cenario do dia anterior. Nao precisa ser perfeito — precisa ser frequente. Quanto mais praticam, mais natural fica.</p>
+            <div class="bg-dark-700 rounded-lg p-3">
+              <div class="text-sm text-neutral-400"><strong class="text-neutral-100">Exemplo de terca-feira:</strong> Simular a abertura de uma call com lead frio. Um faz o vendedor, outro faz o lead cético. Feedback da equipe: o que funcionou, o que melhorar.</div>
+            </div>
+          </div>
+
+          <div class="bg-cyan-900/20 border border-cyan-500/20 rounded-xl p-5">
+            <div class="flex items-center space-x-3 mb-3">
+              <span class="bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">3</span>
+              <h3 class="font-bold text-neutral-100">Uma revisao de ligacao</h3>
+            </div>
+            <p class="text-neutral-300 mb-3">Ouvir juntos 5-10 minutos de uma ligacao real (com permissao). Analisar: o que foi bem, o que poderia melhorar, qual o momento decisivo. Aprender com caso real e 5x mais eficaz que teoria.</p>
+            <div class="bg-dark-700 rounded-lg p-3">
+              <div class="text-sm text-neutral-400"><strong class="text-neutral-100">Exemplo de quarta-feira:</strong> Escutar os 5 primeiros minutos da call do Joao com o cliente X. Foco: como ele fez o diagnostico? Usou as perguntas certas? O cliente se abriu?</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700 border border-dark-600 rounded-xl p-5">
+          <h3 class="font-bold text-neutral-100 mb-3">Por que 15 minutos supera 8 horas</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-cyan-400 mb-1">75 min</div>
+              <div class="text-neutral-400 text-sm">por semana (15 min x 5 dias)</div>
+              <div class="text-neutral-300 text-xs mt-1">vs 8h de curso pontual</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-cyan-400 mb-1">80%+</div>
+              <div class="text-neutral-400 text-sm">retencao com repeticao espacada</div>
+              <div class="text-neutral-300 text-xs mt-1">vs 21% do treinamento pontual</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-cyan-400 mb-1">R$ 0</div>
+              <div class="text-neutral-400 text-sm">custo adicional</div>
+              <div class="text-neutral-300 text-xs mt-1">vs milhares em cursos externos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section class="mb-10">
+      <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">📆</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-cyan-400">3. Cadencia ideal</h2>
+        </div>
+        <p class="text-neutral-300 mb-6">Microtreinamento diario e a base. Mas a cadencia completa tem tres ciclos: semanal, quinzenal e mensal. Cada ciclo cumpre uma funcao diferente — pratica, ajuste e avaliacao.</p>
+
+        <div class="bg-cyan-900/20 border border-cyan-500/20 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-cyan-400 mb-4">Template de calendario de treinamento</h3>
+          <div class="space-y-4">
+            <div class="bg-dark-700 rounded-lg p-4 border-l-4 border-cyan-500">
+              <div class="flex items-center space-x-2 mb-2">
+                <span class="bg-cyan-600 text-white text-xs font-bold px-2 py-1 rounded">SEMANAL</span>
+                <span class="text-neutral-100 font-semibold">Simulacao em equipe — toda sexta, 30 min</span>
+              </div>
+              <p class="text-neutral-300 text-sm mb-2">Pratica coletiva com cenario real. Rotacionar papeis. Feedback imediato. Fechar com um aprendizado chave que todos aplicam na semana seguinte.</p>
+              <div class="bg-dark-800 rounded p-3 text-sm">
+                <span class="text-cyan-400 font-semibold">Template:</span>
+                <span class="text-neutral-300"> Cenario da semana → Simulacao (10 min) → Feedback coletivo (15 min) → Compromisso da semana (5 min)</span>
+              </div>
+            </div>
+
+            <div class="bg-dark-700 rounded-lg p-4 border-l-4 border-blue-500">
+              <div class="flex items-center space-x-2 mb-2">
+                <span class="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">QUINZENAL</span>
+                <span class="text-neutral-100 font-semibold">Revisao de resultados e ajuste — 45 min</span>
+              </div>
+              <p class="text-neutral-300 text-sm mb-2">Olhar para os numeros das ultimas 2 semanas. O que mudou? Os compromissos de treinamento foram aplicados? Que impacto teve nos resultados? Ajustar o foco do proximo ciclo.</p>
+              <div class="bg-dark-800 rounded p-3 text-sm">
+                <span class="text-blue-400 font-semibold">Template:</span>
+                <span class="text-neutral-300"> Metricas do periodo → Analise de evolucao → O que funcionou no treino → O que precisa mudar → Novo foco para as proximas 2 semanas</span>
+              </div>
+            </div>
+
+            <div class="bg-dark-700 rounded-lg p-4 border-l-4 border-purple-500">
+              <div class="flex items-center space-x-2 mb-2">
+                <span class="bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded">MENSAL</span>
+                <span class="text-neutral-100 font-semibold">Avaliacao de evolucao por perfil — 60 min</span>
+              </div>
+              <p class="text-neutral-300 text-sm mb-2">Avaliacao individual: como cada vendedor evoluiu no mes. Comparar metricas, aderencia ao processo, qualidade das interacoes. Definir plano de desenvolvimento individual para o proximo mes.</p>
+              <div class="bg-dark-800 rounded p-3 text-sm">
+                <span class="text-purple-400 font-semibold">Template:</span>
+                <span class="text-neutral-300"> Evolucao por vendedor → Comparativo com meta → Pontos fortes do mes → Ponto de desenvolvimento → Plano do proximo mes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700 border border-dark-600 rounded-xl p-5">
+          <h3 class="font-bold text-neutral-100 mb-3">Visao mensal consolidada</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-dark-600">
+                  <th class="text-left py-2 px-3 text-neutral-400">Semana</th>
+                  <th class="text-left py-2 px-3 text-neutral-400">Diario (15 min)</th>
+                  <th class="text-left py-2 px-3 text-neutral-400">Semanal (30 min)</th>
+                  <th class="text-left py-2 px-3 text-neutral-400">Extra</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-dark-600/50">
+                  <td class="py-2 px-3 text-neutral-100 font-medium">Semana 1</td>
+                  <td class="py-2 px-3 text-neutral-300">Objecao + Role play + Revisao</td>
+                  <td class="py-2 px-3 text-neutral-300">Simulacao equipe</td>
+                  <td class="py-2 px-3 text-neutral-400">—</td>
+                </tr>
+                <tr class="border-b border-dark-600/50">
+                  <td class="py-2 px-3 text-neutral-100 font-medium">Semana 2</td>
+                  <td class="py-2 px-3 text-neutral-300">Objecao + Role play + Revisao</td>
+                  <td class="py-2 px-3 text-neutral-300">Simulacao equipe</td>
+                  <td class="py-2 px-3 text-blue-400">+ Revisao quinzenal</td>
+                </tr>
+                <tr class="border-b border-dark-600/50">
+                  <td class="py-2 px-3 text-neutral-100 font-medium">Semana 3</td>
+                  <td class="py-2 px-3 text-neutral-300">Objecao + Role play + Revisao</td>
+                  <td class="py-2 px-3 text-neutral-300">Simulacao equipe</td>
+                  <td class="py-2 px-3 text-neutral-400">—</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 text-neutral-100 font-medium">Semana 4</td>
+                  <td class="py-2 px-3 text-neutral-300">Objecao + Role play + Revisao</td>
+                  <td class="py-2 px-3 text-neutral-300">Simulacao equipe</td>
+                  <td class="py-2 px-3 text-purple-400">+ Avaliacao mensal</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-neutral-400 text-sm mt-3">Investimento total: ~7 horas/mes por vendedor. Retorno: equipe que melhora continuamente e nao depende de cursos pontuais.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section class="mb-10">
+      <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">🏛️</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-cyan-400">4. Cultura de treino</h2>
+        </div>
+        <p class="text-neutral-300 mb-6">O objetivo final nao e ter um programa de treinamento — e ter uma cultura onde treinar e natural como respirar. Quando a equipe pede treino ao inves de fugir dele, voce venceu. Aqui esta o caminho para construir isso em 30 dias.</p>
+
+        <div class="bg-cyan-900/20 border border-cyan-500/20 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-cyan-400 mb-4">De obrigacao para habito: 4 estagios</h3>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-4">
+              <div class="bg-red-600/20 text-red-400 border border-red-500/30 rounded-xl w-12 h-12 flex items-center justify-center text-lg font-bold flex-shrink-0">1</div>
+              <div>
+                <div class="font-semibold text-neutral-100">Resistencia (Semana 1-2)</div>
+                <p class="text-neutral-300 text-sm">"Nao tenho tempo para isso." "Ja sei vender." "Isso e perda de tempo." Normal. A equipe resiste porque nunca treinou de verdade. Persista. Mantenha os 15 minutos curtos e relevantes. Use casos reais deles — nao teoria abstrata.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="bg-yellow-600/20 text-yellow-400 border border-yellow-500/30 rounded-xl w-12 h-12 flex items-center justify-center text-lg font-bold flex-shrink-0">2</div>
+              <div>
+                <div class="font-semibold text-neutral-100">Aceitacao (Semana 2-3)</div>
+                <p class="text-neutral-300 text-sm">"Ate que nao e tao ruim." A resistencia diminui quando percebem que e rapido, pratico e sobre a realidade deles. Comecam a participar sem reclamar. Ainda nao pedem — mas nao fogem.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="bg-blue-600/20 text-blue-400 border border-blue-500/30 rounded-xl w-12 h-12 flex items-center justify-center text-lg font-bold flex-shrink-0">3</div>
+              <div>
+                <div class="font-semibold text-neutral-100">Engajamento (Semana 3-4)</div>
+                <p class="text-neutral-300 text-sm">"Ontem usei aquela tecnica e funcionou!" O momento magico. Quando o treino gera resultado real, a equipe conecta causa e efeito. Comecam a trazer casos para discutir. O treino vira parte do dia.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 rounded-xl w-12 h-12 flex items-center justify-center text-lg font-bold flex-shrink-0">4</div>
+              <div>
+                <div class="font-semibold text-neutral-100">Cultura (Mes 2 em diante)</div>
+                <p class="text-neutral-300 text-sm">"Vamos treinar aquela objecao nova?" A equipe pede treino. Traz cenarios. Sugere temas. O gestor nao precisa mais "empurrar" — a cultura se sustenta sozinha. Novos vendedores ja entram nesse ritmo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700 border border-dark-600 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-neutral-100 mb-3">Sinais de maturidade — como saber que deu certo</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex items-start space-x-2">
+              <span class="text-cyan-400 mt-1">▸</span>
+              <span class="text-neutral-300 text-sm">Vendedores trazem objecoes que ouviram para discutir em grupo</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-cyan-400 mt-1">▸</span>
+              <span class="text-neutral-300 text-sm">Pedem feedback apos ligacoes dificeis</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-cyan-400 mt-1">▸</span>
+              <span class="text-neutral-300 text-sm">Praticam entre si sem o gestor pedir</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-cyan-400 mt-1">▸</span>
+              <span class="text-neutral-300 text-sm">Compartilham tecnicas que funcionaram</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-cyan-400 mt-1">▸</span>
+              <span class="text-neutral-300 text-sm">Novos vendedores sao treinados pelos proprios colegas</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-cyan-400 mt-1">▸</span>
+              <span class="text-neutral-300 text-sm">A equipe reclama quando um treino e cancelado</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-cyan-900/20 border border-cyan-500/20 rounded-xl p-5">
+          <h3 class="font-bold text-cyan-400 mb-3">Plano de 30 dias para construir cultura de treino</h3>
+          <div class="space-y-3">
+            <div class="flex items-start space-x-3">
+              <span class="text-neutral-100 font-bold text-sm w-20 flex-shrink-0">Dias 1-7</span>
+              <span class="text-neutral-300 text-sm">Comece com 15 min/dia de microtreinamento. Use apenas casos reais da equipe. Nao explique a metodologia — apenas faca. Celebre qualquer participacao.</span>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="text-neutral-100 font-bold text-sm w-20 flex-shrink-0">Dias 8-14</span>
+              <span class="text-neutral-300 text-sm">Adicione a simulacao semanal (sexta, 30 min). Peca para alguem da equipe trazer o cenario. Comece a conectar treino com resultado: "Joao, aquela tecnica que treinamos gerou fechamento?"</span>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="text-neutral-100 font-bold text-sm w-20 flex-shrink-0">Dias 15-21</span>
+              <span class="text-neutral-300 text-sm">Peca para vendedores liderarem um microtreinamento. Quando alguem da equipe ensina, o engajamento dispara. Comece a documentar as melhores praticas que surgirem.</span>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="text-neutral-100 font-bold text-sm w-20 flex-shrink-0">Dias 22-30</span>
+              <span class="text-neutral-300 text-sm">Faca a primeira avaliacao mensal. Mostre a evolucao de cada um. Celebre o progresso. Pergunte a equipe: "O que querem treinar no proximo mes?" A cultura esta nascendo.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegacao -->
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mt-12 mb-8">
+      <a href="modulo-6-5.html" class="w-full sm:w-auto flex items-center justify-center space-x-2 px-6 py-3 bg-dark-800 border border-dark-600 rounded-xl text-neutral-300 hover:text-cyan-400 hover:border-cyan-500/30 transition-all">
+        <span>←</span><span>Modulo anterior</span>
+      </a>
+      <a href="../trilha7/index.html" class="w-full sm:w-auto flex items-center justify-center space-x-2 px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl transition-all">
+        <span>Trilha 7 — Avaliacao e Ferramentas</span><span>→</span>
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4"><span class="text-2xl">💰</span><span class="font-bold text-neutral-200">8020</span><span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a></div>
+        <div class="text-neutral-500 text-sm">Modulo 6.6: Treinamento continuo vs pontual</div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() { const html = document.documentElement; const icon = document.getElementById('theme-icon'); if (html.classList.contains('dark')) { html.classList.remove('dark'); icon.textContent = '☀️'; localStorage.setItem('theme', 'light'); } else { html.classList.add('dark'); icon.textContent = '🌙'; localStorage.setItem('theme', 'dark'); } }
+    if (localStorage.getItem('theme') === 'light') { document.documentElement.classList.remove('dark'); document.getElementById('theme-icon').textContent = '☀️'; }
+  </script>
+
+</body>
+</html>

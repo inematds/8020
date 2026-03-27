@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha 3: Diagnostico Comercial | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-purple-500/10 text-purple-400">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Diagnostico</span>
+            </a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Gestao</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Estrategia</span>
+            </a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Treinamento</span>
+            </a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all">
+              <span class="sm:hidden">T7</span>
+              <span class="hidden sm:inline">Ferramentas</span>
+            </a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all">
+              <span class="sm:hidden">T8</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2">
+              <span id="theme-icon" class="text-lg">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300 text-sm">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-purple-400 text-sm font-medium">Trilha 3</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">
+        TRILHA 3 - DIAGNOSTICO COMERCIAL
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🔍 Diagnostico Comercial</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        Aprenda a avaliar o perfil comercial de cada membro da equipe, classificar por potencial e criar planos de desenvolvimento individuais baseados em dados, nao em achismo.
+      </p>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-purple-400">6</div>
+          <div class="text-xs text-neutral-400">Modulos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-purple-400">~30</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-purple-400">~6h</div>
+          <div class="text-xs text-neutral-400">Duracao</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-purple-400">Gestao</div>
+          <div class="text-xs text-neutral-400">Foco</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Modulos -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Modulo 3.1 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-purple-400 font-bold">3.1</span>
+          <span class="text-xs text-neutral-500">~60 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">🧬 Os 4 fatores do perfil comercial</h3>
+        <p class="text-neutral-400 text-sm">Entender os 4 fatores que determinam o potencial comercial de um profissional: aptidao, vontade, aprendizagem e execucao.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🗣️</span>
+            <div class="flex-1">
+              <span class="font-medium">Aptidao natural</span>
+              <span class="text-neutral-500 text-sm ml-2">- Facilidade para comunicacao e persuasao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Aptidao natural e a facilidade inata para comunicacao, persuasao e leitura de pessoas. Inclui carisma, empatia, capacidade de criar rapport e habilidade de adaptar o discurso ao interlocutor.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Identificar a aptidao natural permite entender o ponto de partida de cada vendedor. Quem tem alta aptidao pode ser acelerado. Quem tem baixa precisa de mais metodo e treinamento estruturado.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Comunicacao interpessoal, persuasao natural, leitura de pessoas, rapport, carisma, empatia comercial.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">🔥</span>
+            <div class="flex-1">
+              <span class="font-medium">Vontade de vender</span>
+              <span class="text-neutral-500 text-sm ml-2">- Gosta do jogo comercial, tem fome de meta</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vontade de vender e o desejo genuino de estar na area comercial. Inclui gostar do jogo de vendas, aguentar rejeicoes ("naos"), ter fome de meta e sentir prazer em fechar negocios.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">A vontade e o combustivel. Sem ela, ate o mais talentoso desiste. Com ela, ate quem tem menos aptidao encontra caminhos para performar.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Motivacao intrinseca, resiliencia comercial, tolerancia a rejeicao, fome de meta, prazer no fechamento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">📈</span>
+            <div class="flex-1">
+              <span class="font-medium">Capacidade de aprender</span>
+              <span class="text-neutral-500 text-sm ml-2">- Recebe feedback, ajusta discurso, evolui</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Capacidade de aprender e a habilidade de receber feedback, ajustar o discurso comercial e evoluir rapidamente. Inclui coachability, humildade tecnica e velocidade de adaptacao.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vendedores que aprendem rapido compensam qualquer deficiencia de aptidao. E o fator mais subestimado e mais determinante no medio prazo.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Coachability, feedback loop, ajuste de discurso, evolucao rapida, humildade tecnica, growth mindset.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">⚙️</span>
+            <div class="flex-1">
+              <span class="font-medium">Execucao consistente</span>
+              <span class="text-neutral-500 text-sm ml-2">- Transforma potencial em rotina e resultado</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Execucao consistente e a capacidade de transformar potencial em rotina e resultado. Nao basta saber vender em dias bons - e preciso manter o padrao todos os dias, com disciplina e processo.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">A execucao separa quem tem potencial de quem entrega resultado. Muitos vendedores talentosos fracassam por falta de consistencia na rotina.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Disciplina comercial, rotina de vendas, consistencia, processo diario, gestao de pipeline, follow-up sistematico.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">🧮</span>
+            <div class="flex-1">
+              <span class="font-medium">A formula de potencial</span>
+              <span class="text-neutral-500 text-sm ml-2">- (A x 0,35) + (V x 0,25) + (L x 0,20) + (E x 0,20)</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">A formula de potencial combina os 4 fatores com pesos especificos: Aptidao (35%) + Vontade (25%) + aprendizagem (20%) + Execucao (20%). Gera um score unico que permite comparar e classificar vendedores.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Ter uma formula objetiva elimina o achismo na avaliacao da equipe. Permite decisoes baseadas em dados, nao em preferencias pessoais ou impressoes superficiais.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Score ponderado, peso dos fatores, avaliacao objetiva, classificacao por potencial, decisao baseada em dados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-3-1.html')" class="px-4 py-2 text-sm bg-purple-600/20 hover:bg-purple-600/30 text-purple-400 border border-purple-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-3-1.html" class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 3.2 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-purple-400 font-bold">3.2</span>
+          <span class="text-xs text-neutral-500">~50 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">📊 O quadrante Aptidao x Vontade</h3>
+        <p class="text-neutral-400 text-sm">Mapear cada vendedor em um quadrante que cruza aptidao natural com vontade de vender para definir a estrategia de desenvolvimento.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🚀</span>
+            <div class="flex-1">
+              <span class="font-medium">Alta aptidao + alta vontade</span>
+              <span class="text-neutral-500 text-sm ml-2">- Vendedor nato / aceleravel</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Profissional que combina talento natural para vendas com desejo genuino de vender. E o perfil ideal: aprende rapido, se motiva sozinho e entrega resultados desde cedo.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Identificar esse perfil permite acelerar o desenvolvimento e dar desafios maiores rapidamente. O erro mais comum e nao aproveitar esse potencial e perder o profissional por falta de desafio.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vendedor nato, perfil aceleravel, alto potencial, fast track, desafio como retencao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">🎭</span>
+            <div class="flex-1">
+              <span class="font-medium">Alta aptidao + baixa vontade</span>
+              <span class="text-neutral-500 text-sm ml-2">- Tem talento mas rejeita vendas</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Profissional que tem talento natural para comunicacao e persuasao, mas nao quer vender. Pode ter preconceito com vendas, estar na funcao errada, ou ter tido experiencias negativas anteriores.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Esse perfil e o mais frustrante para gestores. O potencial esta la, mas a resistencia impede resultados. E preciso entender a raiz da rejeicao antes de investir em desenvolvimento.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Resistencia comercial, preconceito com vendas, desalinhamento de funcao, talento desperdicado, investigacao de bloqueio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">📚</span>
+            <div class="flex-1">
+              <span class="font-medium">Baixa aptidao + alta vontade</span>
+              <span class="text-neutral-500 text-sm ml-2">- Nao nasceu pronto mas pode aprender</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Profissional que nao tem facilidade natural para vendas, mas quer muito aprender e performar. E dedicado, aceita feedback e se esforça. Precisa de metodo e treinamento estruturado.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Esse perfil e frequentemente subestimado. Com o metodo certo, pode se tornar um excelente vendedor. A vontade compensa a falta de aptidao natural no medio e longo prazo.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vendedor construido, desenvolvimento por metodo, vontade como motor, treinamento intensivo, curva de aprendizado.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">⚠️</span>
+            <div class="flex-1">
+              <span class="font-medium">Baixa aptidao + baixa vontade</span>
+              <span class="text-neutral-500 text-sm ml-2">- Baixo fit comercial</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Profissional que nao tem aptidao natural nem vontade de estar em vendas. Pode ser excelente em outras funcoes, mas a area comercial nao e o lugar certo para ele.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Reconhecer esse perfil cedo evita investimento de tempo e recursos em desenvolvimento que nao dara retorno. O melhor caminho e redirecionar para outra area onde o profissional pode brilhar.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Fit comercial, redirecionamento, realocacao, honestidade no diagnostico, custo de manter no lugar errado.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-3-2.html')" class="px-4 py-2 text-sm bg-purple-600/20 hover:bg-purple-600/30 text-purple-400 border border-purple-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-3-2.html" class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 3.3 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-purple-400 font-bold">3.3</span>
+          <span class="text-xs text-neutral-500">~70 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">📝 Matriz de avaliacao com score</h3>
+        <p class="text-neutral-400 text-sm">Ferramenta pratica com 20 perguntas para avaliar cada fator e gerar um score objetivo de classificacao.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🗣️</span>
+            <div class="flex-1">
+              <span class="font-medium">Bloco 1: 5 perguntas de aptidao natural</span>
+              <span class="text-neutral-500 text-sm ml-2">- Avaliando comunicacao e persuasao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cinco perguntas que medem a aptidao natural do vendedor: facilidade de comunicacao, capacidade de persuasao, leitura de pessoas, adaptacao de discurso e carisma natural. Cada pergunta recebe nota de 1 a 5.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Ter perguntas padronizadas garante que a avaliacao seja consistente entre diferentes avaliadores e momentos. Elimina o vies de "acho que ele e bom".</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Avaliacao padronizada, escala 1-5, comunicacao, persuasao, leitura de pessoas, adaptacao, carisma.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">🔥</span>
+            <div class="flex-1">
+              <span class="font-medium">Bloco 2: 5 perguntas de vontade</span>
+              <span class="text-neutral-500 text-sm ml-2">- Avaliando desejo e resiliencia</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cinco perguntas que medem a vontade de vender: prazer no jogo comercial, tolerancia a rejeicao, fome de meta, auto-motivacao e persistencia. Cada pergunta recebe nota de 1 a 5.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">A vontade e o fator que mais determina a permanencia e evolucao de um vendedor. Medir isso de forma objetiva evita surpresas como desistencias inesperadas.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Motivacao, resiliencia, fome de meta, auto-motivacao, persistencia, jogo comercial.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">📈</span>
+            <div class="flex-1">
+              <span class="font-medium">Bloco 3: 5 perguntas de aprendizagem</span>
+              <span class="text-neutral-500 text-sm ml-2">- Avaliando coachability e evolucao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cinco perguntas que medem a capacidade de aprendizado: receptividade a feedback, velocidade de ajuste, busca ativa por conhecimento, aplicacao do aprendido e evolucao visivel. Cada pergunta recebe nota de 1 a 5.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">A capacidade de aprender e o melhor preditor de evolucao futura. Um vendedor que aprende rapido hoje sera um top performer amanha, independente do ponto de partida.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Coachability, feedback, velocidade de ajuste, busca por conhecimento, aplicacao pratica, evolucao mensuravel.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">⚙️</span>
+            <div class="flex-1">
+              <span class="font-medium">Bloco 4: 5 perguntas de execucao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Avaliando disciplina e consistencia</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cinco perguntas que medem a execucao: disciplina na rotina, cumprimento de atividades, gestao do pipeline, follow-up consistente e entrega de resultados. Cada pergunta recebe nota de 1 a 5.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Execucao e o que transforma potencial em resultado. Sem medir execucao, voce pode estar investindo em vendedores que sabem mas nao fazem.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Disciplina, rotina comercial, pipeline, follow-up, consistencia, entrega de resultados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">🏷️</span>
+            <div class="flex-1">
+              <span class="font-medium">Classificacao e interpretacao de scores</span>
+              <span class="text-neutral-500 text-sm ml-2">- 21-25 alta, 14-20 media, 5-13 baixa</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sistema de classificacao dos scores: 21-25 pontos = alta (destaque no fator), 14-20 pontos = media (potencial com espaco para crescer), 5-13 pontos = baixa (necessidade de desenvolvimento ou redirecionamento).</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">A interpretacao correta dos scores e tao importante quanto a avaliacao. Um score medio nao e ruim - depende do contexto e da combinacao com outros fatores.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Faixas de classificacao, interpretacao contextual, combinacao de fatores, score ponderado, visao holistica.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-3-3.html')" class="px-4 py-2 text-sm bg-purple-600/20 hover:bg-purple-600/30 text-purple-400 border border-purple-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-3-3.html" class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 3.4 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-purple-400 font-bold">3.4</span>
+          <span class="text-xs text-neutral-500">~55 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">🏷️ Grupos A, B, C e D</h3>
+        <p class="text-neutral-400 text-sm">Classificar vendedores em 4 grupos com estrategias de desenvolvimento especificas para cada perfil.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">⭐</span>
+            <div class="flex-1">
+              <span class="font-medium">Grupo A — Talento natural</span>
+              <span class="text-neutral-500 text-sm ml-2">- Aptidao alta + vontade media/alta</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vendedores com aptidao alta e vontade media ou alta. Sao talentos naturais que ja demonstram facilidade para vendas. A estrategia e desenvolver para performance maxima com desafios crescentes.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Esses profissionais sao o motor da equipe. Se bem geridos, se tornam top performers rapidamente. Se mal geridos, se desmotivam e saem.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Aceleracao, desafio como retencao, mentoria avancada, metas ambiciosas, autonomia progressiva.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">🔨</span>
+            <div class="flex-1">
+              <span class="font-medium">Grupo B — Talento construivel</span>
+              <span class="text-neutral-500 text-sm ml-2">- Aptidao media/baixa, vontade e aprendizagem altas</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vendedores com aptidao media ou baixa, mas com alta vontade e capacidade de aprendizagem. Nao nasceram prontos, mas querem muito e aprendem rapido. A estrategia e desenvolver com metodo.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Esse grupo e onde o gestor mais gera impacto. Com treinamento estruturado, podem se tornar vendedores excelentes. Sao frequentemente mais leais e gratos pelo investimento.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Desenvolvimento por metodo, treinamento intensivo, scripts e playbooks, acompanhamento proximo, evolucao gradual.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">🚧</span>
+            <div class="flex-1">
+              <span class="font-medium">Grupo C — Resistencia comercial</span>
+              <span class="text-neutral-500 text-sm ml-2">- Pode ter aptidao mas rejeita vender</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vendedores que podem ter aptidao para vendas mas rejeitam a atividade. A resistencia pode vir de preconceitos, experiencias ruins ou desalinhamento de valores. A estrategia e entender o bloqueio.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Antes de desistir desse perfil, e preciso investigar a causa da resistencia. Algumas vezes o bloqueio e removivel (ex: crenca limitante sobre vendas). Outras vezes, e definitivo.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Investigacao de bloqueio, crencas limitantes, ressignificacao de vendas, conversa franca, prazo de decisao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">🔄</span>
+            <div class="flex-1">
+              <span class="font-medium">Grupo D — Sem fit comercial</span>
+              <span class="text-neutral-500 text-sm ml-2">- Baixa aptidao e baixa vontade. Redirecionar</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vendedores com baixa aptidao e baixa vontade para vendas. Nao e um julgamento de valor - a pessoa pode ser excelente em outras funcoes. A estrategia e redirecionar com respeito e clareza.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Manter alguem sem fit comercial na equipe de vendas prejudica a pessoa e a equipe. Redirecionar cedo e um ato de respeito, nao de exclusao.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Redirecionamento, realocacao, conversa humanizada, custo de oportunidade, fit profissional.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-3-4.html')" class="px-4 py-2 text-sm bg-purple-600/20 hover:bg-purple-600/30 text-purple-400 border border-purple-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-3-4.html" class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 3.5 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-purple-400 font-bold">3.5</span>
+          <span class="text-xs text-neutral-500">~65 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">🔬 Diagnostico na pratica</h3>
+        <p class="text-neutral-400 text-sm">Como aplicar a avaliacao, dar devolutiva e evitar erros comuns na classificacao da equipe comercial.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">📋</span>
+            <div class="flex-1">
+              <span class="font-medium">Como aplicar a avaliacao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Momento, ambiente, formato</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Guia pratico de como aplicar a avaliacao: melhor momento (apos 30-60 dias de trabalho), ambiente (reservado e tranquilo), formato (individual, confidencial) e quem deve avaliar (gestor direto + auto-avaliacao).</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">A melhor ferramenta de avaliacao falha se aplicada no contexto errado. O momento e o ambiente impactam diretamente na qualidade das respostas.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Timing de avaliacao, ambiente seguro, confidencialidade, auto-avaliacao cruzada, primeiro diagnostico.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">💬</span>
+            <div class="flex-1">
+              <span class="font-medium">Como dar devolutiva</span>
+              <span class="text-neutral-500 text-sm ml-2">- Transparencia sem desmotivar</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Tecnicas para compartilhar o resultado da avaliacao com o vendedor de forma transparente mas construtiva. Inclui framework de devolutiva: pontos fortes primeiro, areas de desenvolvimento, plano de acao conjunto.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Uma devolutiva mal dada pode destruir a motivacao de um bom vendedor. Uma devolutiva bem dada pode transformar um vendedor medio em excelente.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Feedback construtivo, devolutiva estruturada, plano de acao conjunto, transparencia respeitosa, foco no desenvolvimento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">⚠️</span>
+            <div class="flex-1">
+              <span class="font-medium">Erros comuns do gestor ao classificar</span>
+              <span class="text-neutral-500 text-sm ml-2">- Vieses e armadilhas</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Os erros mais comuns: efeito halo (uma qualidade contamina tudo), viés de recencia (so lembra do ultimo mes), favoritismo, confundir simpatia com aptidao, e projetar suas proprias qualidades no avaliado.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Conhecer os vieses e o primeiro passo para evita-los. Um diagnostico enviesado e pior que nenhum diagnostico, porque gera falsa confianca em decisoes erradas.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Efeito halo, vies de recencia, favoritismo, projecao, ancoragem, confirmacao, vies de similaridade.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">🔄</span>
+            <div class="flex-1">
+              <span class="font-medium">Quando a classificacao esta errada</span>
+              <span class="text-neutral-500 text-sm ml-2">- Sinais de reavaliacao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sinais de que a classificacao precisa ser revista: resultados consistentemente acima ou abaixo do esperado para o grupo, mudanca de comportamento, eventos pessoais que alteraram motivacao.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Nenhum diagnostico e permanente. Pessoas mudam, contextos mudam. Saber quando reavaliar evita que voce trate alguem com base em uma foto que ja nao reflete a realidade.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Reavaliacao, sinais de mudanca, diagnostico dinamico, flexibilidade, atualizacao de perfil.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">📖</span>
+            <div class="flex-1">
+              <span class="font-medium">Estudo de caso: diagnosticando uma equipe real</span>
+              <span class="text-neutral-500 text-sm ml-2">- Aplicacao completa</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Estudo de caso completo: uma equipe de 6 vendedores avaliada com a matriz, classificada nos grupos e com planos de acao individuais. Mostra o processo do inicio ao fim com resultados reais.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Ver o processo aplicado em um caso real conecta a teoria a pratica. Voce entende as nuances que so aparecem na aplicacao e sai preparado para fazer o seu proprio diagnostico.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Caso pratico, aplicacao real, nuances do diagnostico, plano de acao individual, resultados apos intervencao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-3-5.html')" class="px-4 py-2 text-sm bg-purple-600/20 hover:bg-purple-600/30 text-purple-400 border border-purple-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-3-5.html" class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 3.6 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-purple-400 font-bold">3.6</span>
+          <span class="text-xs text-neutral-500">~50 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">🔄 Reavaliacao e evolucao</h3>
+        <p class="text-neutral-400 text-sm">Quando e como reavaliar, medir progresso, mudar alguem de grupo e manter o diagnostico vivo e atualizado.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">📅</span>
+            <div class="flex-1">
+              <span class="font-medium">Quando reavaliar</span>
+              <span class="text-neutral-500 text-sm ml-2">- Frequencia e gatilhos</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Define a frequencia ideal de reavaliacao (trimestral como padrao) e os gatilhos que pedem reavaliacao imediata: mudanca brusca de performance, evento pessoal relevante, mudanca de funcao ou territorio.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Diagnostico sem reavaliacao vira rotulo. E preciso manter o processo vivo para que continue sendo uma ferramenta de desenvolvimento, nao de engessamento.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Frequencia trimestral, gatilhos de reavaliacao, diagnostico dinamico, anti-rotulo, processo vivo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">📊</span>
+            <div class="flex-1">
+              <span class="font-medium">Como medir progresso</span>
+              <span class="text-neutral-500 text-sm ml-2">- Indicadores por fator</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Indicadores especificos para medir evolucao em cada fator: aptidao (taxa de conversao), vontade (proatividade e volume), aprendizagem (velocidade de ajuste apos feedback) e execucao (aderencia ao processo).</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sem indicadores claros, o progresso vira opiniao. Com indicadores, voce pode mostrar para o vendedor exatamente onde ele esta evoluindo e onde precisa melhorar.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">KPIs por fator, medicao de evolucao, baseline, progresso mensuravel, historico de scores.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">🔀</span>
+            <div class="flex-1">
+              <span class="font-medium">Quando mudar alguem de grupo</span>
+              <span class="text-neutral-500 text-sm ml-2">- Criterios objetivos</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Criterios objetivos para promover ou rebaixar alguem de grupo: minimo 2 avaliacoes consecutivas com score compativel com o novo grupo, evidencia comportamental consistente e resultados alinhados.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Mudar de grupo sem criterio gera instabilidade e desconfianca. Ter regras claras da credibilidade ao processo e mostra que a evolucao e possivel e reconhecida.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Criterios de transicao, duas avaliacoes consecutivas, evidencia comportamental, mobilidade entre grupos, reconhecimento de evolucao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">💎</span>
+            <div class="flex-1">
+              <span class="font-medium">Frase-chave: talento ajuda a entrar rapido...</span>
+              <span class="text-neutral-500 text-sm ml-2">- Vontade e aprendizado determinam quem fica bom</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">A sintese de toda a trilha: "Talento ajuda a entrar rapido, vontade e aprendizado determinam quem fica bom." Aptidao acelera o inicio, mas nao garante permanencia no topo. Vontade e aprendizado sao os verdadeiros diferenciais de longo prazo.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Essa frase encapsula a filosofia do diagnostico comercial e deve guiar todas as decisoes de desenvolvimento da equipe. E a bussola do gestor.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Talento vs vontade, curto vs longo prazo, sustentabilidade do desempenho, filosofia do diagnostico, bussola do gestor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-3-6.html')" class="px-4 py-2 text-sm bg-purple-600/20 hover:bg-purple-600/30 text-purple-400 border border-purple-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-3-6.html" class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Navegacao -->
+    <div class="mt-12 flex flex-col sm:flex-row gap-4">
+      <a href="../trilha2/index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+        ← Trilha 2 - Metodo
+      </a>
+      <a href="../trilha4/index.html" class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors">
+        Proxima: Trilha 4 - Gestao →
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Trilha 3: Diagnostico Comercial</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Overlay -->
+  <div id="modal-overlay" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+    <div class="relative flex items-start justify-center min-h-screen p-4 pt-8 overflow-y-auto">
+      <div class="relative bg-dark-800 rounded-2xl border border-dark-600 w-full max-w-4xl max-h-[90vh] overflow-hidden shadow-2xl">
+        <div class="sticky top-0 z-10 flex items-center justify-between p-4 bg-dark-800 border-b border-dark-600">
+          <h3 class="font-bold text-lg text-purple-400">Conteudo do Modulo</h3>
+          <button onclick="closeModal()" class="p-2 hover:bg-dark-700 rounded-lg transition-colors text-neutral-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="modal-content" class="p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
+          <div class="flex items-center justify-center py-12">
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-400"></div>
+            <span class="ml-3 text-neutral-400">Carregando...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) {
+          exp.classList.remove('active');
+        }
+      });
+
+      explanation.classList.toggle('active');
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+
+    function openModal(moduloUrl) {
+      const modal = document.getElementById('modal-overlay');
+      const content = document.getElementById('modal-content');
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      content.innerHTML = `
+        <div class="flex items-center justify-center py-12">
+          <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-400"></div>
+          <span class="ml-3 text-neutral-400">Carregando...</span>
+        </div>
+      `;
+
+      fetch(moduloUrl)
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const mainContent = doc.querySelector('main');
+
+          if (mainContent) {
+            content.innerHTML = mainContent.innerHTML;
+          } else {
+            content.innerHTML = '<p class="text-neutral-400">Conteudo nao encontrado.</p>';
+          }
+        })
+        .catch(err => {
+          content.innerHTML = '<p class="text-red-400">Erro ao carregar conteudo.</p>';
+        });
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal-overlay');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>

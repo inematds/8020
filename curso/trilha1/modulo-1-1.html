@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 1.1: O que e vender de verdade | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-emerald-500/10 text-emerald-400">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Diagnostico</span>
+            </a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Gestao</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Estrategia</span>
+            </a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Treinamento</span>
+            </a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all">
+              <span class="sm:hidden">T7</span>
+              <span class="hidden sm:inline">Ferramentas</span>
+            </a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all">
+              <span class="sm:hidden">T8</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2">
+              <span id="theme-icon" class="text-lg">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4 text-sm">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <a href="index.html" class="text-neutral-500 hover:text-neutral-300">Trilha 1</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-emerald-400 font-medium">Modulo 1.1</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">
+        MODULO 1.1
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🎯 O que e vender de verdade</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        Quebrar a ideia de que vender e empurrar produto e substituir por uma visao de resolucao de problemas. Este modulo muda sua mentalidade sobre vendas.
+      </p>
+
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-emerald-400">6</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-emerald-400">~60</div>
+          <div class="text-xs text-neutral-400">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-emerald-400">Basico</div>
+          <div class="text-xs text-neutral-400">Nivel</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-emerald-400">Mental</div>
+          <div class="text-xs text-neutral-400">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteudo Principal -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">1</span>
+        <h2 class="text-2xl font-bold">🔑 Vender nao e empurrar</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O primeiro passo para se tornar um vendedor profissional e entender que <strong class="text-emerald-400">vender nao e empurrar produto</strong>. Vender e identificar um problema real que o cliente tem e oferecer uma solucao genuina para esse problema. Quando voce muda essa perspectiva, tudo muda: a forma como aborda, como escuta, como apresenta e como fecha.
+      </p>
+
+      <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">O que muda na pratica?</h3>
+        <ul class="space-y-3 text-neutral-300">
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-400 mt-1">✓</span>
+            <span>Voce para de falar sobre o produto e comeca a perguntar sobre o problema</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-400 mt-1">✓</span>
+            <span>O cliente deixa de se sentir pressionado e comeca a se sentir compreendido</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-400 mt-1">✓</span>
+            <span>A conversa vira uma consultoria, nao um pitch de vendas</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-400 mt-1">✓</span>
+            <span>A taxa de fechamento sobe porque a oferta se encaixa na necessidade real</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-emerald-900/20 rounded-xl p-6 border border-emerald-500/30">
+          <h4 class="font-bold text-emerald-400 mb-4">✓ Mentalidade Profissional</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>"Como posso ajudar esse cliente?"</li>
+            <li>"Qual e o problema real dele?"</li>
+            <li>"Minha solucao se encaixa aqui?"</li>
+            <li>"Como posso gerar valor primeiro?"</li>
+          </ul>
+        </div>
+        <div class="bg-red-900/20 rounded-xl p-6 border border-red-500/30">
+          <h4 class="font-bold text-red-400 mb-4">✗ Mentalidade Amadora</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>"Preciso bater minha meta"</li>
+            <li>"Vou empurrar esse produto"</li>
+            <li>"Se eu falar bastante, ele compra"</li>
+            <li>"Preco baixo resolve tudo"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Exercicio Pratico</h3>
+        <p class="text-neutral-300">
+          Pense na ultima vez que voce comprou algo com satisfacao. O vendedor tentou empurrar ou ele entendeu sua necessidade? Agora pense: como voce pode replicar essa experiencia para seus clientes?
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">2</span>
+        <h2 class="text-2xl font-bold">🧭 A diferenca entre convencer e conduzir</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Existe uma diferenca fundamental entre <strong class="text-emerald-400">convencer</strong> e <strong class="text-emerald-400">conduzir</strong>. Convencer pressupoe que o cliente esta contra voce e voce precisa mudar a mente dele. Conduzir pressupoe que o cliente tem um problema e voce vai guia-lo ate a melhor solucao — que pode ou nao ser a sua.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">Convencer vs Conduzir</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center">
+              <span class="text-red-400 font-bold text-sm">✗</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Convencer</h4>
+              <p class="text-sm text-neutral-400">Forca, pressao, argumentacao excessiva. O cliente sente que esta sendo manipulado. Mesmo que compre, pode se arrepender.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
+              <span class="text-emerald-400 font-bold text-sm">✓</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Conduzir</h4>
+              <p class="text-sm text-neutral-400">Perguntas, escuta, apresentacao de valor. O cliente sente que tomou a decisao sozinho. Compra com confianca e indica.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Perspectiva</h3>
+        <p class="text-neutral-300">
+          Pesquisas mostram que clientes conduzidos tem <strong class="text-blue-400">3x mais chance de indicar</strong> e <strong class="text-blue-400">2x mais chance de comprar novamente</strong> do que clientes convencidos. A conducao gera um ciclo virtuoso de vendas.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">3</span>
+        <h2 class="text-2xl font-bold">💎 O papel do valor antes do preco</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Quando o cliente percebe o valor antes de ouvir o preco, a equacao muda completamente. O preco deixa de ser uma barreira e passa a ser um <strong class="text-emerald-400">investimento justificado</strong>. Valor e a percepcao de que a solucao resolve um problema que custa mais do que o preco pedido.
+      </p>
+
+      <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">A equacao fundamental da venda</h3>
+        <div class="grid grid-cols-3 gap-4 text-center">
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <div class="text-2xl mb-1">💎</div>
+            <div class="text-xs text-neutral-400">Valor Percebido</div>
+            <div class="font-bold text-emerald-400">ALTO</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <div class="text-2xl mb-1">➡️</div>
+            <div class="text-xs text-neutral-400">Comparado com</div>
+            <div class="font-bold text-neutral-300">vs</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <div class="text-2xl mb-1">💰</div>
+            <div class="text-xs text-neutral-400">Preco</div>
+            <div class="font-bold text-emerald-400">JUSTO</div>
+          </div>
+        </div>
+        <p class="text-neutral-400 text-sm mt-4 text-center">Se Valor Percebido > Preco = Venda acontece naturalmente</p>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Regra Pratica</h3>
+        <p class="text-neutral-300">
+          Nunca revele o preco antes de construir valor. A sequencia correta e: <strong class="text-primary">Problema → Consequencia → Solucao → Resultado → Preco</strong>. Quando o preco aparece no final, ele parece pequeno comparado ao valor construido.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">4</span>
+        <h2 class="text-2xl font-bold">🩺 O vendedor como solucionador</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Pense no vendedor como um medico. Um bom medico <strong class="text-emerald-400">nunca prescreve sem antes diagnosticar</strong>. Ele faz perguntas, examina, entende o historico, e so depois recomenda o tratamento. O vendedor profissional faz exatamente a mesma coisa: primeiro entende, depois oferece.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">O Processo do Vendedor-Medico</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
+              <span class="text-emerald-400 font-bold text-sm">1</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Anamnese (Perguntas)</h4>
+              <p class="text-sm text-neutral-400">"O que esta acontecendo? Ha quanto tempo? O que ja tentou?"</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
+              <span class="text-emerald-400 font-bold text-sm">2</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Diagnostico (Entendimento)</h4>
+              <p class="text-sm text-neutral-400">"Entendi. Seu problema e X, causado por Y, com consequencia Z."</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
+              <span class="text-emerald-400 font-bold text-sm">3</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Prescricao (Solucao)</h4>
+              <p class="text-sm text-neutral-400">"Para resolver isso, recomendo A, que funciona fazendo B, com resultado C."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Por que isso funciona?</h3>
+        <p class="text-neutral-300">
+          Quando voce diagnostica antes de prescrever, o cliente sente que a solucao foi <strong class="text-blue-400">feita sob medida</strong>. Isso elimina a sensacao de "produto generico" e cria a percepcao de consultoria personalizada — mesmo que o produto seja o mesmo para todos.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">5</span>
+        <h2 class="text-2xl font-bold">⚖️ Venda consultiva vs venda transacional</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Existem dois grandes modelos de venda: a <strong class="text-emerald-400">transacional</strong> (rapida, focada em preco e conveniencia) e a <strong class="text-emerald-400">consultiva</strong> (baseada em relacionamento, diagnostico e solucao). Nenhuma e melhor que a outra — cada uma serve a um contexto.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600">
+          <h4 class="font-bold text-neutral-200 mb-4">Venda Transacional</h4>
+          <ul class="space-y-2 text-sm text-neutral-400">
+            <li>→ Produto simples, preco baixo</li>
+            <li>→ Decisao rapida, pouco risco</li>
+            <li>→ Foco em conveniencia e preco</li>
+            <li>→ Exemplo: comprar um cafe, gasolina</li>
+          </ul>
+        </div>
+        <div class="bg-emerald-900/20 rounded-xl p-6 border border-emerald-500/30">
+          <h4 class="font-bold text-emerald-400 mb-4">Venda Consultiva</h4>
+          <ul class="space-y-2 text-sm text-neutral-300">
+            <li>→ Solucao complexa, ticket alto</li>
+            <li>→ Decisao demorada, alto risco</li>
+            <li>→ Foco em valor e relacionamento</li>
+            <li>→ Exemplo: software B2B, consultoria</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Quando usar cada modelo?</h3>
+        <p class="text-neutral-300">
+          Regra simples: quanto maior o <strong class="text-primary">ticket medio</strong>, o <strong class="text-primary">risco percebido</strong> e a <strong class="text-primary">complexidade da solucao</strong>, mais consultiva deve ser a venda. O erro e tentar vender consultivamente um produto de R$10 ou transacionalmente um projeto de R$100.000.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 6 -->
+    <section id="topico-6" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">6</span>
+        <h2 class="text-2xl font-bold">🧠 A mentalidade do vendedor profissional</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O vendedor profissional nao depende de carisma, sorte ou "dia bom". Ele segue um <strong class="text-emerald-400">processo replicavel</strong> que funciona independente das circunstancias. Processo supera improviso. Metodo supera talento isolado. Consistencia supera lampejos de genialidade.
+      </p>
+
+      <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">Os 4 pilares da mentalidade profissional</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">📋</div>
+            <div class="font-semibold text-neutral-200 text-sm">Processo</div>
+            <div class="text-xs text-neutral-400">Segue etapas definidas</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">📊</div>
+            <div class="font-semibold text-neutral-200 text-sm">Metricas</div>
+            <div class="text-xs text-neutral-400">Mede o que importa</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🔄</div>
+            <div class="font-semibold text-neutral-200 text-sm">Iteracao</div>
+            <div class="text-xs text-neutral-400">Melhora continuamente</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🎯</div>
+            <div class="font-semibold text-neutral-200 text-sm">Foco</div>
+            <div class="text-xs text-neutral-400">Prioriza o que funciona</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 O 8020 e exatamente isso</h3>
+        <p class="text-neutral-300">
+          Este curso e um metodo estruturado para vendas. Voce nao vai "descobrir sozinho" ou "ir no feeling" — vai seguir um caminho testado que <strong class="text-blue-400">funciona de forma previsivel e escalavel</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Resumo Final -->
+    <section class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+      <h2 class="text-2xl font-bold mb-6 flex items-center">
+        <span class="mr-3">📝</span> Resumo do Modulo
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-emerald-400 mb-4">O que voce aprendeu:</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Vender e resolver problemas, nao empurrar produtos</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Conduzir e mais eficaz que convencer</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Valor vem antes do preco — sempre</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Diagnosticar antes de prescrever</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Venda consultiva vs transacional</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Processo supera improviso</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-emerald-400 mb-4">Proximo modulo:</h3>
+          <div class="bg-dark-700/50 rounded-xl p-4 border border-dark-600">
+            <span class="text-emerald-400 font-bold text-sm">1.2</span>
+            <h4 class="font-bold mt-1">🧠 Os 5 niveis de consciencia do consumidor</h4>
+            <p class="text-neutral-400 text-sm mt-2">
+              Entender onde o cliente esta na jornada de compra muda completamente como voce se comunica com ele.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+          ← Voltar para Trilha 1
+        </a>
+        <a href="modulo-1-2.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">
+          Proximo: Modulo 1.2 →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Modulo 1.1: O que e vender de verdade</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+  </script>
+
+</body>
+</html>

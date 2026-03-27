@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 2.2: As 4 perguntas que mudam tudo | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-blue-500/10 text-blue-400">
+              <span class="sm:hidden">T2</span><span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span><span class="hidden sm:inline">Diagnostico</span>
+            </a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span><span class="hidden sm:inline">Gestao</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span><span class="hidden sm:inline">Estrategia</span>
+            </a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all">
+              <span class="sm:hidden">T6</span><span class="hidden sm:inline">Treinamento</span>
+            </a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all">
+              <span class="sm:hidden">T7</span><span class="hidden sm:inline">Ferramentas</span>
+            </a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all">
+              <span class="sm:hidden">T8</span><span class="hidden sm:inline">Avancado</span>
+            </a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2">
+              <span id="theme-icon" class="text-lg">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4 text-sm">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <a href="index.html" class="text-neutral-500 hover:text-neutral-300">Trilha 2</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-blue-400 font-medium">Modulo 2.2</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MODULO 2.2</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">❓ As 4 perguntas que mudam tudo</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        Quatro perguntas estrategicas que revelam a dor, quantificam o problema e deixam o cliente pronto para comprar.
+      </p>
+
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-blue-400">5</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-blue-400">~50</div>
+          <div class="text-xs text-neutral-400">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-blue-400">Pratico</div>
+          <div class="text-xs text-neutral-400">Nivel</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-blue-400">Tecnica</div>
+          <div class="text-xs text-neutral-400">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 font-bold">1</span>
+        <h2 class="text-2xl font-bold">😣 "O que hoje mais incomoda voce nisso?"</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Essa e a pergunta de <strong class="text-blue-400">abertura de diagnostico</strong>. Nao e "como posso ajudar?" que e generica demais. E uma pergunta que forca o cliente a refletir sobre o que mais doi naquele momento especifico.
+      </p>
+
+      <div class="bg-gradient-to-br from-blue-900/20 to-dark-800 rounded-xl p-6 border border-blue-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">Por que essa pergunta funciona</h3>
+        <ul class="space-y-3 text-neutral-300">
+          <li class="flex items-start space-x-3">
+            <span class="text-blue-400 mt-1">✓</span>
+            <span><strong>E especifica:</strong> "mais incomoda" forca uma escolha, nao uma lista</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-blue-400 mt-1">✓</span>
+            <span><strong>E emocional:</strong> "incomoda" conecta com sentimento, nao com logica</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-blue-400 mt-1">✓</span>
+            <span><strong>E presente:</strong> "hoje" ancora no momento atual, nao em teoria</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-blue-400 mt-1">✓</span>
+            <span><strong>E aberta:</strong> nao pode ser respondida com sim ou nao</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">Variacoes da Pergunta 1</h3>
+        <div class="space-y-3">
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <p class="text-neutral-300 text-sm">"Se pudesse resolver uma unica coisa nessa area, o que seria?"</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <p class="text-neutral-300 text-sm">"O que mais te frustra no jeito que isso funciona hoje?"</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <p class="text-neutral-300 text-sm">"Qual e o maior gargalo que voce enfrenta nisso?"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Exercicio Pratico</h3>
+        <p class="text-neutral-300">
+          Nas proximas 5 conversas (pessoais ou profissionais), use essa pergunta e observe a reacao. Anote o que as pessoas respondem. Voce vai perceber que quase todo mundo tem uma dor pronta para compartilhar — so precisa de alguem que pergunte.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 font-bold">2</span>
+        <h2 class="text-2xl font-bold">📊 "Quanto isso custa em tempo, dinheiro ou desgaste?"</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A segunda pergunta <strong class="text-blue-400">transforma a dor em numero</strong>. Uma reclamacao abstrata vira um custo concreto. "Estou insatisfeito" vira "perco R$ 10.000 por mes". A diferenca de impacto e brutal.
+      </p>
+
+      <div class="bg-gradient-to-br from-blue-900/20 to-dark-800 rounded-xl p-6 border border-blue-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">Os 3 tipos de custo</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+            <div class="text-2xl mb-2">⏰</div>
+            <div class="font-semibold text-neutral-200 text-sm">Tempo</div>
+            <div class="text-xs text-neutral-400">"Quantas horas por semana voce gasta lidando com isso?"</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+            <div class="text-2xl mb-2">💰</div>
+            <div class="font-semibold text-neutral-200 text-sm">Dinheiro</div>
+            <div class="text-xs text-neutral-400">"Quanto isso representa em faturamento perdido por mes?"</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+            <div class="text-2xl mb-2">😤</div>
+            <div class="font-semibold text-neutral-200 text-sm">Desgaste</div>
+            <div class="text-xs text-neutral-400">"Quanto estresse isso gera para voce e sua equipe?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+          <h4 class="font-bold text-blue-400 mb-4">✓ Com quantificacao</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>"Perco 10h/semana nesse processo"</li>
+            <li>"Deixo de faturar R$ 8k/mes"</li>
+            <li>"Ja perdi 3 funcionarios por causa disso"</li>
+          </ul>
+          <p class="text-xs text-blue-400 mt-3">→ Cria urgencia real para resolver</p>
+        </div>
+        <div class="bg-red-900/20 rounded-xl p-6 border border-red-500/30">
+          <h4 class="font-bold text-red-400 mb-4">✗ Sem quantificacao</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>"E complicado"</li>
+            <li>"Nao funciona bem"</li>
+            <li>"A equipe reclama"</li>
+          </ul>
+          <p class="text-xs text-red-400 mt-3">→ Facil de ignorar e adiar</p>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Perspectiva</h3>
+        <p class="text-neutral-300">
+          Quando o cliente coloca um numero na dor, ele cria sua propria <strong class="text-blue-400">ancora de referencia</strong>. Agora qualquer solucao que custe menos que esse numero parece um bom negocio. Voce nao precisa convencer — a matematica convence.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 font-bold">3</span>
+        <h2 class="text-2xl font-bold">⏳ "O que acontece se nada mudar?"</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A terceira pergunta <strong class="text-blue-400">projeta o futuro negativo</strong>. Faz o cliente imaginar a vida daqui a 6, 12 meses sem resolver o problema. E ativa o principio mais poderoso da psicologia de decisao: a aversao a perda.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">A projecao do futuro negativo</h3>
+        <div class="flex items-center justify-between text-center">
+          <div class="flex-1">
+            <div class="text-4xl mb-2">📍</div>
+            <div class="font-semibold text-neutral-200">Hoje</div>
+            <div class="text-xs text-neutral-500">Problema presente</div>
+          </div>
+          <div class="flex-1 px-4">
+            <div class="h-1 bg-gradient-to-r from-amber-500 to-red-600 rounded-full mb-2"></div>
+            <div class="text-xs text-neutral-400">← Sem acao →</div>
+          </div>
+          <div class="flex-1">
+            <div class="text-4xl mb-2">🔥</div>
+            <div class="font-semibold text-neutral-200">6 meses</div>
+            <div class="text-xs text-neutral-500">Problema pior</div>
+          </div>
+          <div class="flex-1 px-4">
+            <div class="h-1 bg-gradient-to-r from-red-600 to-red-900 rounded-full mb-2"></div>
+            <div class="text-xs text-neutral-400">← Continuando →</div>
+          </div>
+          <div class="flex-1">
+            <div class="text-4xl mb-2">💀</div>
+            <div class="font-semibold text-neutral-200">12 meses</div>
+            <div class="text-xs text-neutral-500">Crise real</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-900/20 to-dark-800 rounded-xl p-6 border border-blue-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">Exemplo na pratica</h3>
+        <div class="space-y-3">
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <p class="text-neutral-300 text-sm"><strong class="text-blue-400">Vendedor:</strong> "Voce disse que perde R$ 15 mil por mes com dias fracos. Se nada mudar nos proximos 12 meses, quanto isso representa?"</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <p class="text-neutral-300 text-sm"><strong class="text-neutral-200">Cliente:</strong> "R$ 180 mil... Nossa, nunca tinha pensado assim."</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <p class="text-neutral-300 text-sm"><strong class="text-blue-400">Vendedor:</strong> "E alem do financeiro, como isso afeta sua motivacao? Sua equipe?"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Cuidado importante</h3>
+        <p class="text-neutral-300">
+          Essa pergunta nao e para assustar ou manipular. E para ajudar o cliente a ver o que ele ja sabe mas nao parou para calcular. <strong class="text-primary">O tom deve ser de parceiro, nao de ameaca.</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 font-bold">4</span>
+        <h2 class="text-2xl font-bold">✨ "O que seria uma boa solucao para voce?"</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A quarta pergunta e a mais poderosa porque <strong class="text-blue-400">inverte a dinamica</strong>. Em vez de voce apresentar a solucao, o cliente descreve o que ele considera ideal. Se seu produto se encaixa no que ele acabou de descrever, a venda praticamente se fecha sozinha.
+      </p>
+
+      <div class="bg-gradient-to-br from-blue-900/20 to-dark-800 rounded-xl p-6 border border-blue-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">A mecanica do auto-convencimento</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
+              <span class="text-blue-400 font-bold text-sm">1</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Cliente descreve o ideal</h4>
+              <p class="text-sm text-neutral-400">"Eu precisaria de algo que trouxesse clientes durante a semana, sem eu ter que ficar postando todo dia em rede social"</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
+              <span class="text-blue-400 font-bold text-sm">2</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Voce confirma o fit</h4>
+              <p class="text-sm text-neutral-400">"E exatamente isso que a gente faz. Criamos campanhas automatizadas que atraem clientes nos dias fracos sem voce precisar mexer em rede social."</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
+              <span class="text-emerald-400 font-bold text-sm">✓</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-emerald-500/30">
+              <h4 class="font-semibold text-emerald-400 mb-1">Cliente se convenceu sozinho</h4>
+              <p class="text-sm text-neutral-400">Ele nao sente que voce vendeu — sente que encontrou o que precisava.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Por que isso e tao eficaz?</h3>
+        <p class="text-neutral-300">
+          Psicologia basica: <strong class="text-blue-400">pessoas confiam mais nas proprias conclusoes do que nas dos outros</strong>. Quando o cliente desenha a solucao e voce mostra que tem exatamente aquilo, ele sente que tomou a decisao sozinho. Nao ha objecao contra a propria ideia.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 font-bold">5</span>
+        <h2 class="text-2xl font-bold">🔗 Como encadear as 4 perguntas em uma conversa natural</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        As 4 perguntas nao sao um interrogatorio. Sao <strong class="text-blue-400">transicoes naturais dentro de uma conversa</strong>. Entre cada pergunta, voce ouve, valida, comenta e so entao faz a proxima. O segredo e a naturalidade.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">O fluxo natural das 4 perguntas</h3>
+        <div class="space-y-4">
+          <div class="bg-dark-800/50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-xs text-blue-400 font-semibold mb-1">PERGUNTA 1 → DOR</p>
+            <p class="text-neutral-300 text-sm">"O que hoje mais incomoda voce nisso?"</p>
+            <p class="text-neutral-500 text-xs mt-1">→ Ouvir, validar: "Entendo, faz sentido..."</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 border-l-4 border-amber-500">
+            <p class="text-xs text-amber-400 font-semibold mb-1">PERGUNTA 2 → CUSTO</p>
+            <p class="text-neutral-300 text-sm">"E quanto isso te custa? Em tempo, dinheiro, desgaste?"</p>
+            <p class="text-neutral-500 text-xs mt-1">→ Repetir o numero: "Entao sao R$ X por mes..."</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 border-l-4 border-red-500">
+            <p class="text-xs text-red-400 font-semibold mb-1">PERGUNTA 3 → CONSEQUENCIA</p>
+            <p class="text-neutral-300 text-sm">"E se continuar assim, o que acontece?"</p>
+            <p class="text-neutral-500 text-xs mt-1">→ Ajudar a calcular: "Em 12 meses, isso vira R$ Y..."</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 border-l-4 border-emerald-500">
+            <p class="text-xs text-emerald-400 font-semibold mb-1">PERGUNTA 4 → SOLUCAO IDEAL</p>
+            <p class="text-neutral-300 text-sm">"O que seria uma boa solucao para voce?"</p>
+            <p class="text-neutral-500 text-xs mt-1">→ Conectar: "Olha, e exatamente isso que a gente faz..."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+          <h4 class="font-bold text-blue-400 mb-4">✓ Transicoes naturais</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>"Faz sentido. E me diz..."</li>
+            <li>"Entendo. Deixa eu te perguntar..."</li>
+            <li>"Interessante. E voce ja calculou..."</li>
+            <li>"Legal. Entao na sua visao..."</li>
+          </ul>
+        </div>
+        <div class="bg-red-900/20 rounded-xl p-6 border border-red-500/30">
+          <h4 class="font-bold text-red-400 mb-4">✗ Transicoes roboticas</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>"Agora a pergunta numero 2..."</li>
+            <li>"Passando para o proximo ponto..."</li>
+            <li>"Seguindo meu roteiro..."</li>
+            <li>"A proxima questao e..."</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Exercicio Final</h3>
+        <p class="text-neutral-300">
+          Grave-se fazendo as 4 perguntas com um amigo simulando o cliente. Assista a gravacao e avalie: <strong class="text-primary">parece uma conversa ou um interrogatorio?</strong> Ajuste ate que pareca natural. Isso pode levar 5-10 tentativas — e normal.
+        </p>
+      </div>
+    </section>
+
+    <!-- Resumo Final -->
+    <section class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+      <h2 class="text-2xl font-bold mb-6 flex items-center">
+        <span class="mr-3">📝</span> Resumo do Modulo
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-blue-400 mb-4">O que voce aprendeu:</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Pergunta 1: Encontrar a dor principal</span></li>
+            <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Pergunta 2: Quantificar o problema</span></li>
+            <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Pergunta 3: Projetar a consequencia</span></li>
+            <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Pergunta 4: Deixar o cliente desenhar a solucao</span></li>
+            <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Encadear tudo em conversa natural</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-blue-400 mb-4">Proximo modulo:</h3>
+          <div class="bg-dark-700/50 rounded-xl p-4 border border-dark-600">
+            <span class="text-blue-400 font-bold text-sm">2.3</span>
+            <h4 class="font-bold mt-1">📝 Script completo para iniciantes</h4>
+            <p class="text-neutral-400 text-sm mt-2">Um script palavra por palavra para quem esta comecando. Pronto para adaptar ao seu negocio.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="modulo-2-1.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Modulo 2.1</a>
+        <a href="modulo-2-3.html" class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors">Proximo: Modulo 2.3 →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Modulo 2.2: As 4 perguntas que mudam tudo</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) { html.classList.remove('dark'); icon.textContent = '☀️'; localStorage.setItem('theme', 'light'); }
+      else { html.classList.add('dark'); icon.textContent = '🌙'; localStorage.setItem('theme', 'dark'); }
+    }
+    if (localStorage.getItem('theme') === 'light') { document.documentElement.classList.remove('dark'); document.getElementById('theme-icon').textContent = '☀️'; }
+  </script>
+</body>
+</html>

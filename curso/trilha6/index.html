@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha 6: Treinamento | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Diagnostico</span>
+            </a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Gestao</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Estrategia</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-cyan-500/10 text-cyan-400">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Treinamento</span>
+            </a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all">
+              <span class="sm:hidden">T7</span>
+              <span class="hidden sm:inline">Ferramentas</span>
+            </a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all">
+              <span class="sm:hidden">T8</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2">
+              <span id="theme-icon" class="text-lg">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300 text-sm">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-cyan-400 text-sm font-medium">Trilha 6</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">
+        TRILHA 6 - TREINAMENTO
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🏋️ Plano Estrategico de Treinamento</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        Monte um programa de treinamento completo, personalizado por perfil, com metodo de 7 dias, simulacoes praticas e metricas de evolucao. Transforme conhecimento em habilidade real.
+      </p>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-cyan-400">6</div>
+          <div class="text-xs text-neutral-400">Modulos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-cyan-400">~30</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-cyan-400">~6h</div>
+          <div class="text-xs text-neutral-400">Duracao</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-cyan-400">Execucao</div>
+          <div class="text-xs text-neutral-400">Foco</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Modulos -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Modulo 6.1 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-cyan-400 font-bold">6.1</span>
+          <span class="text-xs text-neutral-500">~60 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">📋 Como montar um programa de treinamento</h3>
+        <p class="text-neutral-400 text-sm">Estruturar um programa de treinamento do zero, com diagnostico, objetivos e calendario pratico.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🔍</span>
+            <div class="flex-1">
+              <span class="font-medium">Diagnostico antes de treinar</span>
+              <span class="text-neutral-500 text-sm ml-2">- Entender o ponto de partida</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Antes de ensinar qualquer coisa, voce precisa mapear onde cada pessoa esta. Diagnostico e avaliar habilidades atuais, lacunas de conhecimento e comportamentos que precisam mudar. Sem isso, voce treina no escuro.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Treinamento generico desperdiça tempo e desmotiva. Quando voce sabe exatamente onde cada pessoa falha, pode criar intervencoes cirurgicas que geram resultado rapido.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Avaliacao de competencias, gap analysis, linha de base, mapeamento de habilidades, diagnostico individual vs coletivo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">🎯</span>
+            <div class="flex-1">
+              <span class="font-medium">Definir objetivos claros</span>
+              <span class="text-neutral-500 text-sm ml-2">- O que cada pessoa precisa aprender</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Objetivos de treinamento precisam ser especificos e mensuaveis. Nao e "melhorar vendas" - e "conseguir fazer as 4 perguntas de diagnostico em 100% dos atendimentos ate o dia X".</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sem objetivo claro, nao existe como saber se o treinamento funcionou. Objetivos bem definidos dao direcao ao treinador e ao treinando.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Objetivos SMART, indicadores de aprendizagem, meta comportamental, criterio de sucesso, alinhamento com resultados do negocio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">🧱</span>
+            <div class="flex-1">
+              <span class="font-medium">Estrutura minima viavel</span>
+              <span class="text-neutral-500 text-sm ml-2">- Comecar simples e evoluir</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Um programa de treinamento nao precisa ser perfeito para comecar. A estrutura minima viavel inclui: tema do dia, pratica guiada e feedback. Com esses tres elementos, voce ja tem um programa funcional.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Muitas empresas nunca treinam porque acham que precisam de uma "universidade corporativa". Na verdade, 15 minutos por dia com estrutura ja mudam o jogo.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">MVP de treinamento, iteracao, simplicidade funcional, treinamento enxuto, melhoria continua.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">📅</span>
+            <div class="flex-1">
+              <span class="font-medium">Calendario de implementacao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Quando, quem, como</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">O calendario define quando cada sessao acontece, quem participa e qual formato sera usado. Inclui frequencia (diaria, semanal), duracao e responsavel por conduzir cada sessao.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sem calendario, treinamento vira "quando der". E quando algo vira "quando der", nunca da. O calendario cria compromisso e ritmo.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Planejamento de sessoes, frequencia otima, rotina de treinamento, responsabilidade, cadencia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">🛠️</span>
+            <div class="flex-1">
+              <span class="font-medium">Recursos necessarios</span>
+              <span class="text-neutral-500 text-sm ml-2">- O que precisa para funcionar</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Identificar o que voce precisa: espaco fisico ou virtual, materiais de apoio, scripts impressos, formularios de avaliacao, gravador de audio/video para simulacoes. A maioria custa zero.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Planejar recursos evita improvisos que matam a credibilidade do programa. Tambem mostra que nao precisa de orcamento grande para treinar bem.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Inventario de recursos, materiais de apoio, infraestrutura de treinamento, custo zero, ferramentas essenciais.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-6-1.html')" class="px-4 py-2 text-sm bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-6-1.html" class="px-4 py-2 text-sm bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 6.2 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-cyan-400 font-bold">6.2</span>
+          <span class="text-xs text-neutral-500">~60 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">👥 Treinamento por perfil</h3>
+        <p class="text-neutral-400 text-sm">Personalizar o treinamento para cada grupo: A (top performers), B (meio) e C (baixo desempenho).</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">⭐</span>
+            <div class="flex-1">
+              <span class="font-medium">O que ensinar ao Grupo A</span>
+              <span class="text-neutral-500 text-sm ml-2">- Refinamento e autonomia</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">O Grupo A ja domina o basico. O treinamento para eles foca em refinamento: negociacoes complexas, upsell, cross-sell, mentoria dos demais. Eles precisam de desafios, nao de revisao.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Se voce treina o Grupo A como treina o Grupo C, eles se entediam e perdem motivacao. O melhor uso do Grupo A e como multiplicador do metodo.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Mentoria, autonomia, desafios avancados, papel de multiplicador, desenvolvimento de lideranca.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">📊</span>
+            <div class="flex-1">
+              <span class="font-medium">O que ensinar ao Grupo B</span>
+              <span class="text-neutral-500 text-sm ml-2">- Script, metodo, repeticao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">O Grupo B tem potencial mas falta consistencia. O treinamento foca em: seguir o script, repetir ate automatizar, corrigir erros pontuais. Eles precisam de estrutura e acompanhamento proximo.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">O Grupo B e onde esta o maior retorno sobre investimento. Com o treinamento certo, muitos do B migram para o A. Sao o "meio do funil" da sua equipe.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Script como guia, repeticao deliberada, acompanhamento semanal, correcao de rota, potencial de crescimento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">🔄</span>
+            <div class="flex-1">
+              <span class="font-medium">O que ensinar ao Grupo C</span>
+              <span class="text-neutral-500 text-sm ml-2">- Reposicionamento e funcao alternativa</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">O Grupo C precisa de intervencao intensiva ou reposicionamento. O treinamento foca no basico absoluto: postura, escuta, perguntas iniciais. Se nao evoluir em 30 dias, considerar outra funcao.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Nao e sobre desistir de ninguem - e sobre ser honesto. Nem todos nascem para vendas. Dar uma chance justa com treinamento intensivo e respeitar a pessoa e o negocio.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Intervencao intensiva, prazo de evolucao, reposicionamento, funcoes alternativas, decisao baseada em dados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">⚡</span>
+            <div class="flex-1">
+              <span class="font-medium">Intensidade e formato por perfil</span>
+              <span class="text-neutral-500 text-sm ml-2">- Carga diferente para cada grupo</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Grupo A: sessoes quinzenais, foco em mentoria. Grupo B: sessoes semanais, foco em pratica. Grupo C: sessoes diarias, foco em fundamentos. O formato tambem muda: video, presencial, role play.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Aplicar a mesma carga para todos e como dar o mesmo remedio para doencas diferentes. Personalizar intensidade maximiza resultado e minimiza desperdicio.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Carga de treinamento, formato por perfil, frequencia diferenciada, personalizacao, eficiencia do treinamento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">⏳</span>
+            <div class="flex-1">
+              <span class="font-medium">Duracao e expectativa por perfil</span>
+              <span class="text-neutral-500 text-sm ml-2">- Prazo realista de evolucao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Grupo A: evolucao em 1-2 semanas. Grupo B: evolucao visivel em 30-60 dias. Grupo C: avaliacao definitiva em 30 dias. Definir expectativas realistas evita frustracao de ambos os lados.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sem prazo definido, o treinamento vira eterno. Com prazo, voce cria urgencia e criterios objetivos para avaliar se o investimento em cada pessoa esta dando retorno.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Prazo de evolucao, expectativa realista, marcos de progresso, avaliacao de retorno, decisao por dados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-6-2.html')" class="px-4 py-2 text-sm bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-6-2.html" class="px-4 py-2 text-sm bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 6.3 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-cyan-400 font-bold">6.3</span>
+          <span class="text-xs text-neutral-500">~75 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">📆 O metodo de 7 dias na pratica</h3>
+        <p class="text-neutral-400 text-sm">Um roteiro dia a dia para treinar um vendedor do zero em uma semana completa.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">❓</span>
+            <div class="flex-1">
+              <span class="font-medium">Dia 1: Perguntas</span>
+              <span class="text-neutral-500 text-sm ml-2">- Ensinar as 4 perguntas fundamentais</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">No primeiro dia, o foco e ensinar as 4 perguntas de diagnostico que todo vendedor precisa dominar. Sao perguntas que revelam a situacao real do cliente, suas dores e o que ele realmente precisa.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Perguntas sao a base de tudo. Um vendedor que pergunta bem ja esta 70% do caminho. Comecar por aqui garante que o fundamento esta solido antes de construir o resto.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Perguntas de diagnostico, escuta ativa, perguntas abertas vs fechadas, sequencia logica, rapport.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">💔</span>
+            <div class="flex-1">
+              <span class="font-medium">Dia 2: Dor e desejo</span>
+              <span class="text-neutral-500 text-sm ml-2">- Identificar o que move o cliente</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">No segundo dia, o vendedor aprende a identificar dor (o que o cliente quer evitar) e desejo (o que ele quer conquistar). Toda venda acontece na intersecao desses dois motores emocionais.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vendedores que falam de produto perdem para vendedores que falam de dor e desejo. O cliente nao compra o que voce vende - compra a solucao para o que ele sente.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Dor do cliente, desejo do cliente, motivacao de compra, gatilhos emocionais, conexao emocional.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">💎</span>
+            <div class="flex-1">
+              <span class="font-medium">Dia 3: Valor</span>
+              <span class="text-neutral-500 text-sm ml-2">- Transformar caracteristicas em impacto</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">No terceiro dia, o vendedor aprende a traduzir caracteristicas do produto em valor para o cliente. Nao e "tem 10GB de espaco" - e "voce nunca mais vai perder um arquivo importante".</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Caracteristica nao vende. Beneficio vende. E beneficio conectado a dor do cliente vende ainda mais. Essa habilidade e a ponte entre diagnostico e proposta.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Caracteristica vs beneficio, proposta de valor, impacto tangivel, linguagem de resultado, traducao de valor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">📝</span>
+            <div class="flex-1">
+              <span class="font-medium">Dia 4: Script</span>
+              <span class="text-neutral-500 text-sm ml-2">- Seguir o roteiro completo</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">No quarto dia, o vendedor pratica o script completo de atendimento: abertura, diagnostico, proposta de valor, fechamento. O script nao e para ser robotico - e uma estrutura que garante que nada seja esquecido.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vendedores sem script pulam etapas, esquecem perguntas e perdem vendas por desorganizacao. O script e o trilho que mantem o trem nos eixos.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Script de vendas, roteiro de atendimento, etapas da venda, fluxo de conversa, naturalizacao do script.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">🛡️</span>
+            <div class="flex-1">
+              <span class="font-medium">Dia 5: Objecoes</span>
+              <span class="text-neutral-500 text-sm ml-2">- Treinar as 5 respostas prontas</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">No quinto dia, o vendedor memoriza e pratica as respostas para as 5 objecoes mais comuns: "esta caro", "vou pensar", "preciso falar com meu socio", "ja tenho fornecedor", "nao preciso agora".</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">80% das vendas sao perdidas em objecoes previsiveis. Se o vendedor ja tem a resposta pronta, ele nao congela e nao improvisa errado.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Contorno de objecoes, respostas prontas, antecipacao, objecoes reais vs cortina de fumaca, tecnica de reformulacao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg mr-2">🎭</span>
+            <div class="flex-1">
+              <span class="font-medium">Dia 6: Simulacao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Gravar e revisar</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">No sexto dia, o vendedor faz uma simulacao completa de atendimento gravada em video ou audio. Depois, assiste junto com o treinador para identificar pontos de melhoria.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Ninguem melhora o que nao ve. A gravacao e um espelho brutal mas necessario. O vendedor percebe vicios que nunca notaria de outra forma.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Role play, gravacao de simulacao, auto-avaliacao, revisao guiada, feedback construtivo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
+            <span class="text-lg mr-2">🚀</span>
+            <div class="flex-1">
+              <span class="font-medium">Dia 7: Atendimento real</span>
+              <span class="text-neutral-500 text-sm ml-2">- Com supervisao e feedback</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">No setimo dia, o vendedor atende um cliente real com o supervisor por perto. Depois do atendimento, feedback imediato sobre o que funcionou e o que precisa ajustar.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">A transicao de simulacao para realidade e o momento critico. Com supervisao, o vendedor tem seguranca para aplicar o metodo sem medo de errar sozinho.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Supervisao de campo, feedback imediato, atendimento assistido, transicao simulacao-realidade, consolidacao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-6-3.html')" class="px-4 py-2 text-sm bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-6-3.html" class="px-4 py-2 text-sm bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 6.4 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-cyan-400 font-bold">6.4</span>
+          <span class="text-xs text-neutral-500">~60 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">🎭 Simulacao e role play</h3>
+        <p class="text-neutral-400 text-sm">Dominar a tecnica de simulacao como ferramenta principal de desenvolvimento de vendedores.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🧪</span>
+            <div class="flex-1">
+              <span class="font-medium">Por que simulacao funciona</span>
+              <span class="text-neutral-500 text-sm ml-2">- A ciencia do treino pratico</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Simulacao funciona porque ativa as mesmas redes neurais do atendimento real, mas sem o risco. O cerebro nao diferencia completamente treino de realidade, por isso atletas treinam antes de competir.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Entender a ciencia por tras da simulacao motiva a equipe a levar o treino a serio. Nao e "brincar de vender" - e treinamento neuromuscular para vendas.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Neuroplasticidade, pratica deliberada, memoria muscular, repeticao espacada, aprendizagem ativa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">🏗️</span>
+            <div class="flex-1">
+              <span class="font-medium">Como montar cenarios reais</span>
+              <span class="text-neutral-500 text-sm ml-2">- Basear em situacoes do dia a dia</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cenarios devem ser baseados em situacoes REAIS que a equipe enfrenta. Use atendimentos gravados, reclamacoes frequentes, objecoes reais. Quanto mais realista, mais util o treino.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cenarios genericos geram treinos genericos. Cenarios reais preparam para situacoes reais. A equipe reconhece o cenario e se engaja porque sabe que vai enfrentar aquilo.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cenarios baseados em dados, situacoes reais, perfis de clientes, banco de cenarios, atualizacao continua.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">🎪</span>
+            <div class="flex-1">
+              <span class="font-medium">Papeis na simulacao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Quem faz o vendedor, quem faz o cliente</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Tres papeis: vendedor (quem treina), cliente (quem simula objecoes e comportamentos reais) e observador (quem anota pontos de melhoria). Rotacionar papeis enriquece o aprendizado de todos.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Fazer o papel do cliente ensina empatia. Observar ensina analise critica. Cada papel desenvolve uma habilidade diferente e complementar.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Rotacao de papeis, papel do observador, empatia com o cliente, ficha de observacao, aprendizagem 360 graus.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">📋</span>
+            <div class="flex-1">
+              <span class="font-medium">Como avaliar a simulacao</span>
+              <span class="text-neutral-500 text-sm ml-2">- O que observar e anotar</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Usar checklist com criterios objetivos: fez as perguntas de diagnostico? Identificou a dor? Apresentou valor conectado a dor? Contornou objecao? Tentou fechamento? Cada item e sim ou nao.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Avaliacao subjetiva ("foi bom") nao ensina nada. Checklist objetivo mostra exatamente o que faltou e o que ja funciona. Transforma opiniao em dado.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Checklist de avaliacao, criterios objetivos, scoring, pontos fortes e fracos, registro de evolucao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">💬</span>
+            <div class="flex-1">
+              <span class="font-medium">Feedback que muda comportamento</span>
+              <span class="text-neutral-500 text-sm ml-2">- Como corrigir sem desmotivar</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Feedback eficaz segue a formula: elogiar o que funcionou, apontar UMA coisa para melhorar, mostrar COMO melhorar. Nunca mais que um ponto de melhoria por vez. E sempre terminar com encorajamento.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Feedback mal dado destroi motivacao e cria resistencia ao treinamento. Feedback bem dado acelera evolucao e cria confianca. A diferenca esta na tecnica, nao na intencao.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Feedback sanduiche, foco em comportamento, um ponto por vez, feedback imediato, reforco positivo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-6-4.html')" class="px-4 py-2 text-sm bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-6-4.html" class="px-4 py-2 text-sm bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 6.5 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-cyan-400 font-bold">6.5</span>
+          <span class="text-xs text-neutral-500">~60 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">📈 Metricas de evolucao</h3>
+        <p class="text-neutral-400 text-sm">Medir o progresso do treinamento com indicadores objetivos e dashboards praticos.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">📊</span>
+            <div class="flex-1">
+              <span class="font-medium">O que medir</span>
+              <span class="text-neutral-500 text-sm ml-2">- Indicadores que importam</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Os indicadores essenciais de treinamento: taxa de conversao antes/depois, ticket medio, numero de perguntas de diagnostico feitas, taxa de contorno de objecoes, NPS do cliente pos-atendimento.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sem metricas, treinamento vira ato de fe. Com metricas, voce prova ROI e justifica continuar investindo. Dados transformam opiniao em fato.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">KPIs de treinamento, antes e depois, indicadores de processo, indicadores de resultado, correlacao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">👥</span>
+            <div class="flex-1">
+              <span class="font-medium">Metricas por perfil</span>
+              <span class="text-neutral-500 text-sm ml-2">- O que esperar de cada grupo</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Grupo A: espere 5-10% de melhoria em ticket medio. Grupo B: espere 20-40% de melhoria em conversao. Grupo C: espere atingir o baseline minimo ou nao. Cada grupo tem metas diferentes.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Comparar um C com um A e injusto e desmotivador. Cada perfil evolui em ritmo e magnitude diferentes. Metas personalizadas sao justas e motivadoras.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Metas por perfil, baseline individual, evolucao relativa, comparacao justa, expectativa calibrada.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">✅</span>
+            <div class="flex-1">
+              <span class="font-medium">Como saber se o treinamento funciona</span>
+              <span class="text-neutral-500 text-sm ml-2">- Sinais de progresso</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sinais de que o treinamento funciona: vendedores usam as perguntas espontaneamente, objecoes deixam de ser problema, clientes elogiam o atendimento, numeros sobem de forma consistente.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Saber ler os sinais de progresso evita abandonar um programa que esta funcionando so porque os resultados ainda nao apareceram nos numeros finais.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Indicadores antecedentes, sinais qualitativos, mudanca comportamental, lag vs lead indicators, paciencia estrategica.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">📱</span>
+            <div class="flex-1">
+              <span class="font-medium">Dashboard simples de acompanhamento</span>
+              <span class="text-neutral-500 text-sm ml-2">- Template pratico</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Um painel visual simples que mostra: nome do vendedor, grupo (A/B/C), metricas da semana anterior, metricas da semana atual, tendencia (subindo/descendo/estavel). Pode ser uma planilha.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Visibilidade gera responsabilidade. Quando todos veem os numeros, a equipe se auto-regula. O dashboard e a ferramenta de gestao mais simples e poderosa que existe.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Dashboard operacional, visualizacao de dados, transparencia, tendencia, acompanhamento semanal.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">🔧</span>
+            <div class="flex-1">
+              <span class="font-medium">Quando ajustar o programa</span>
+              <span class="text-neutral-500 text-sm ml-2">- Gatilhos de mudanca</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Gatilhos para ajustar: metricas estagnaram por 2 semanas, equipe desmotivada com o formato, novo produto lancado, mudanca no perfil do cliente, feedback consistente de que algo nao funciona.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Um programa que nunca muda fica obsoleto. Um que muda demais nunca consolida. Saber os gatilhos certos de ajuste e equilibrar estabilidade com adaptacao.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Gatilhos de ajuste, iteracao do programa, feedback loop, adaptacao, melhoria continua.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-6-5.html')" class="px-4 py-2 text-sm bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-6-5.html" class="px-4 py-2 text-sm bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 6.6 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-cyan-400 font-bold">6.6</span>
+          <span class="text-xs text-neutral-500">~45 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">🔄 Treinamento continuo vs pontual</h3>
+        <p class="text-neutral-400 text-sm">Transformar treinamento de evento isolado em cultura permanente de desenvolvimento.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">📉</span>
+            <div class="flex-1">
+              <span class="font-medium">Por que treinar uma vez nao resolve</span>
+              <span class="text-neutral-500 text-sm ml-2">- A curva de esquecimento</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">A curva de Ebbinghaus mostra que esquecemos 70% do que aprendemos em 24 horas e 90% em 7 dias, sem revisao. Um treinamento pontual gera entusiasmo temporario e resultado zero.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Muitas empresas gastam fortunas em "treinamentoes" de um dia. O efeito some em uma semana. Entender a neurociencia evita esse desperdicio e redireciona o investimento.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Curva de esquecimento, retencao, revisao espacada, consolidacao de memoria, neurociencia da aprendizagem.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">⚡</span>
+            <div class="flex-1">
+              <span class="font-medium">Microtreinamentos diarios</span>
+              <span class="text-neutral-500 text-sm ml-2">- 15 minutos que fazem diferenca</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sessoes de 10-15 minutos antes do expediente focadas em um unico tema: praticar uma objecao, revisar um conceito, compartilhar um caso de sucesso. Curto, focado, diario.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">15 minutos por dia = 5 horas por mes de treinamento. Mais do que a maioria das empresas investe em um ano inteiro. E sem tirar ninguem da operacao.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Microlearning, habito diario, foco em um tema, morning huddle, aprendizagem just-in-time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">🗓️</span>
+            <div class="flex-1">
+              <span class="font-medium">Cadencia ideal</span>
+              <span class="text-neutral-500 text-sm ml-2">- Semanal, quinzenal ou mensal</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">A cadencia ideal combina: microtreinamentos diarios (15min), sessao de role play semanal (30-45min), revisao de metricas quinzenal (30min), e avaliacao completa mensal (60min).</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cadencia cria ritmo. Ritmo cria habito. Habito cria resultado. A cadencia ideal equilibra intensidade com sustentabilidade - nem tanto que canse, nem tao pouco que nao mude nada.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cadencia de treinamento, ritmo sustentavel, camadas de frequencia, calendario fixo, compromisso coletivo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-cyan-500/20 text-cyan-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">🏆</span>
+            <div class="flex-1">
+              <span class="font-medium">Cultura de treino</span>
+              <span class="text-neutral-500 text-sm ml-2">- De obrigacao para habito</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cultura de treino e quando a equipe QUER treinar, nao precisa ser obrigada. Acontece quando o treinamento e relevante, gera resultado visivel e e conduzido com respeito ao tempo de todos.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Treinamento imposto gera resistencia. Treinamento desejado gera engajamento. A diferenca esta em mostrar resultado, nao em cobrar presenca.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cultura organizacional, motivacao intrinseca, relevancia percebida, engajamento voluntario, lideranca pelo exemplo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-6-6.html')" class="px-4 py-2 text-sm bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-6-6.html" class="px-4 py-2 text-sm bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Navegacao -->
+    <div class="mt-12 flex flex-col sm:flex-row gap-4">
+      <a href="../trilha5/index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+        ← Trilha 5: Estrategia
+      </a>
+      <a href="../trilha7/index.html" class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors">
+        Proxima: Trilha 7 - Ferramentas →
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Trilha 6: Plano Estrategico de Treinamento</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Overlay -->
+  <div id="modal-overlay" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+    <div class="relative flex items-start justify-center min-h-screen p-4 pt-8 overflow-y-auto">
+      <div class="relative bg-dark-800 rounded-2xl border border-dark-600 w-full max-w-4xl max-h-[90vh] overflow-hidden shadow-2xl">
+        <div class="sticky top-0 z-10 flex items-center justify-between p-4 bg-dark-800 border-b border-dark-600">
+          <h3 class="font-bold text-lg text-cyan-400">Conteudo do Modulo</h3>
+          <button onclick="closeModal()" class="p-2 hover:bg-dark-700 rounded-lg transition-colors text-neutral-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="modal-content" class="p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
+          <div class="flex items-center justify-center py-12">
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-400"></div>
+            <span class="ml-3 text-neutral-400">Carregando...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) {
+          exp.classList.remove('active');
+        }
+      });
+
+      explanation.classList.toggle('active');
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+
+    function openModal(moduloUrl) {
+      const modal = document.getElementById('modal-overlay');
+      const content = document.getElementById('modal-content');
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      content.innerHTML = `
+        <div class="flex items-center justify-center py-12">
+          <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-400"></div>
+          <span class="ml-3 text-neutral-400">Carregando...</span>
+        </div>
+      `;
+
+      fetch(moduloUrl)
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const mainContent = doc.querySelector('main');
+
+          if (mainContent) {
+            content.innerHTML = mainContent.innerHTML;
+          } else {
+            content.innerHTML = '<p class="text-neutral-400">Conteudo nao encontrado.</p>';
+          }
+        })
+        .catch(err => {
+          content.innerHTML = '<p class="text-red-400">Erro ao carregar conteudo.</p>';
+        });
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal-overlay');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>

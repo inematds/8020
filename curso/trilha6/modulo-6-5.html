@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 6.5: Metricas de evolucao | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span><span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span><span class="hidden sm:inline">Diagnostico</span>
+            </a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span><span class="hidden sm:inline">Gestao</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span><span class="hidden sm:inline">Estrategia</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-cyan-500/10 text-cyan-400">
+              <span class="sm:hidden">T6</span><span class="hidden sm:inline">Treinamento</span>
+            </a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all">
+              <span class="sm:hidden">T7</span><span class="hidden sm:inline">Ferramentas</span>
+            </a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all">
+              <span class="sm:hidden">T8</span><span class="hidden sm:inline">Avancado</span>
+            </a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2">
+              <span id="theme-icon" class="text-lg">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4 text-sm">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <a href="index.html" class="text-neutral-500 hover:text-neutral-300">Trilha 6</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-cyan-400 font-medium">Modulo 6.5</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">
+        MODULO 6.5
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">📈 Metricas de evolucao</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        O que nao se mede, nao se melhora. Aprenda a criar um sistema simples de medicao que prove o ROI do treinamento e guie decisoes com dados, nao achismos.
+      </p>
+
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-cyan-400">5</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-cyan-400">~60</div>
+          <div class="text-xs text-neutral-400">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-cyan-400">Pratico</div>
+          <div class="text-xs text-neutral-400">Nivel</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-cyan-400">Analise</div>
+          <div class="text-xs text-neutral-400">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteudo Principal -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 font-bold">1</span>
+        <h2 class="text-2xl font-bold">📊 O que medir</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Nem tudo que pode ser medido importa. E nem tudo que importa pode ser medido facilmente. O segredo e escolher os <strong class="text-cyan-400">indicadores certos</strong>: poucos, relevantes e faceis de coletar.
+      </p>
+
+      <div class="bg-gradient-to-br from-cyan-900/20 to-dark-800 rounded-xl p-6 border border-cyan-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Os 6 indicadores essenciais</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🎯</div>
+            <div class="font-semibold text-neutral-200 text-sm">Taxa de conversao</div>
+            <div class="text-xs text-neutral-400">% de atendimentos que viram venda</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">💰</div>
+            <div class="font-semibold text-neutral-200 text-sm">Ticket medio</div>
+            <div class="text-xs text-neutral-400">Valor medio por venda</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">❓</div>
+            <div class="font-semibold text-neutral-200 text-sm">Perguntas feitas</div>
+            <div class="text-xs text-neutral-400">% dos atendimentos com diagnostico</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🛡️</div>
+            <div class="font-semibold text-neutral-200 text-sm">Contorno de objecoes</div>
+            <div class="text-xs text-neutral-400">% de objecoes contornadas</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">⭐</div>
+            <div class="font-semibold text-neutral-200 text-sm">Satisfacao do cliente</div>
+            <div class="text-xs text-neutral-400">NPS ou nota pos-atendimento</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">📋</div>
+            <div class="font-semibold text-neutral-200 text-sm">Nota na simulacao</div>
+            <div class="text-xs text-neutral-400">Score no checklist semanal</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Simplificando</h3>
+        <p class="text-neutral-300">
+          Se voce so puder medir UMA coisa, meça a <strong class="text-primary">taxa de conversao</strong>. Se puder medir duas, adicione o <strong class="text-primary">ticket medio</strong>. Essas duas metricas juntas contam 80% da historia.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 font-bold">2</span>
+        <h2 class="text-2xl font-bold">👥 Metricas por perfil</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Comparar um vendedor do Grupo C com um do Grupo A e injusto e contraproducente. Cada perfil precisa de <strong class="text-cyan-400">metas calibradas</strong> que reflitam seu ponto de partida e seu potencial realista.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Metas por grupo</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-dark-600">
+                <th class="text-left py-3 text-cyan-400">Metrica</th>
+                <th class="text-center py-3 text-emerald-400">Grupo A</th>
+                <th class="text-center py-3 text-yellow-400">Grupo B</th>
+                <th class="text-center py-3 text-red-400">Grupo C</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-300">
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3">Conversao</td>
+                <td class="py-3 text-center">+5-10%</td>
+                <td class="py-3 text-center">+20-40%</td>
+                <td class="py-3 text-center">Atingir baseline</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3">Ticket medio</td>
+                <td class="py-3 text-center">+10-15%</td>
+                <td class="py-3 text-center">+5-10%</td>
+                <td class="py-3 text-center">Manter</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3">Diagnostico</td>
+                <td class="py-3 text-center">100%</td>
+                <td class="py-3 text-center">80%+</td>
+                <td class="py-3 text-center">50%+</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3">Score simulacao</td>
+                <td class="py-3 text-center">8/8</td>
+                <td class="py-3 text-center">6/8+</td>
+                <td class="py-3 text-center">4/8+</td>
+              </tr>
+              <tr>
+                <td class="py-3">Prazo</td>
+                <td class="py-3 text-center">2 semanas</td>
+                <td class="py-3 text-center">60 dias</td>
+                <td class="py-3 text-center">30 dias</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 A metrica mais motivadora</h3>
+        <p class="text-neutral-300">
+          Nao compare vendedores entre si. Compare <strong class="text-blue-400">cada vendedor com ele mesmo do mes passado</strong>. "Voce estava em 3/8 e agora esta em 5/8. Isso e uma melhoria de 67%!" Isso motiva mais que qualquer ranking.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 font-bold">3</span>
+        <h2 class="text-2xl font-bold">✅ Como saber se o treinamento funciona</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Resultado em vendas pode demorar semanas para aparecer. Mas existem <strong class="text-cyan-400">sinais antecedentes</strong> que mostram que o treinamento esta funcionando antes mesmo dos numeros mudarem.
+      </p>
+
+      <div class="bg-gradient-to-br from-cyan-900/20 to-dark-800 rounded-xl p-6 border border-cyan-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Sinais de que esta funcionando</h3>
+        <ul class="space-y-3 text-neutral-300">
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-400 mt-1">✓</span>
+            <span>Vendedores usam as perguntas de diagnostico <strong>espontaneamente</strong></span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-400 mt-1">✓</span>
+            <span>Objecoes deixam de ser motivo de panico</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-400 mt-1">✓</span>
+            <span>Clientes elogiam o atendimento sem serem perguntados</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-400 mt-1">✓</span>
+            <span>Score nas simulacoes sobe semana a semana</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-400 mt-1">✓</span>
+            <span>A equipe pede mais treino em vez de evitar</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-red-400 mb-4">Sinais de que NAO esta funcionando</h3>
+        <ul class="space-y-3 text-neutral-300">
+          <li class="flex items-start space-x-3">
+            <span class="text-red-400 mt-1">✗</span>
+            <span>Metricas estagnadas por mais de 3 semanas</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-red-400 mt-1">✗</span>
+            <span>Equipe reclama do treinamento constantemente</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-red-400 mt-1">✗</span>
+            <span>Vendedores voltam aos velhos habitos na segunda-feira</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-red-400 mt-1">✗</span>
+            <span>Score nas simulacoes nao evolui</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Paciencia estrategica</h3>
+        <p class="text-neutral-300">
+          De pelo menos <strong class="text-primary">3 semanas</strong> antes de julgar se o programa funciona. Mudanca comportamental nao e instantanea. Mas se em 3 semanas nao ha nenhum sinal positivo, ajuste o programa - nao persista no que nao funciona.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 font-bold">4</span>
+        <h2 class="text-2xl font-bold">📱 Dashboard simples de acompanhamento</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Voce nao precisa de software caro. Uma <strong class="text-cyan-400">planilha simples</strong> com as metricas certas e mais poderosa que qualquer dashboard sofisticado. O segredo esta na consistencia de atualizacao, nao na beleza do painel.
+      </p>
+
+      <div class="bg-gradient-to-br from-cyan-900/20 to-dark-800 rounded-xl p-6 border border-cyan-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Template do dashboard semanal</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-dark-600">
+                <th class="text-left py-2 text-cyan-400">Vendedor</th>
+                <th class="text-center py-2 text-cyan-400">Grupo</th>
+                <th class="text-center py-2 text-cyan-400">Conversao</th>
+                <th class="text-center py-2 text-cyan-400">Ticket</th>
+                <th class="text-center py-2 text-cyan-400">Score</th>
+                <th class="text-center py-2 text-cyan-400">Tendencia</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-300">
+              <tr class="border-b border-dark-600/50">
+                <td class="py-2">Ana</td>
+                <td class="py-2 text-center"><span class="text-emerald-400">A</span></td>
+                <td class="py-2 text-center">42%</td>
+                <td class="py-2 text-center">R$ 850</td>
+                <td class="py-2 text-center">8/8</td>
+                <td class="py-2 text-center text-emerald-400">↑</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-2">Bruno</td>
+                <td class="py-2 text-center"><span class="text-yellow-400">B</span></td>
+                <td class="py-2 text-center">28%</td>
+                <td class="py-2 text-center">R$ 620</td>
+                <td class="py-2 text-center">6/8</td>
+                <td class="py-2 text-center text-emerald-400">↑</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-2">Carlos</td>
+                <td class="py-2 text-center"><span class="text-yellow-400">B</span></td>
+                <td class="py-2 text-center">22%</td>
+                <td class="py-2 text-center">R$ 540</td>
+                <td class="py-2 text-center">5/8</td>
+                <td class="py-2 text-center text-yellow-400">→</td>
+              </tr>
+              <tr>
+                <td class="py-2">Diana</td>
+                <td class="py-2 text-center"><span class="text-red-400">C</span></td>
+                <td class="py-2 text-center">12%</td>
+                <td class="py-2 text-center">R$ 380</td>
+                <td class="py-2 text-center">3/8</td>
+                <td class="py-2 text-center text-red-400">↓</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 A forca da visibilidade</h3>
+        <p class="text-neutral-300">
+          Quando os numeros sao visiveis para todos, a equipe se auto-regula. Quem esta subindo quer manter. Quem esta parado quer subir. <strong class="text-blue-400">Transparencia e a melhor ferramenta de gestao</strong>. Atualize toda sexta-feira.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 font-bold">5</span>
+        <h2 class="text-2xl font-bold">🔧 Quando ajustar o programa</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Um programa de treinamento nao e estatico. Ele precisa <strong class="text-cyan-400">evoluir com a equipe e com o mercado</strong>. Mas mudar demais cedo demais e tao ruim quanto nunca mudar. Use gatilhos objetivos para decidir.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Gatilhos de ajuste</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center">
+              <span class="text-red-400 font-bold text-sm">!</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Metricas estagnaram por 2+ semanas</h4>
+              <p class="text-sm text-neutral-400">O conteudo pode estar desconectado das necessidades reais. Revise os cenarios e os temas.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
+              <span class="text-yellow-400 font-bold text-sm">!</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Equipe desmotivada com o formato</h4>
+              <p class="text-sm text-neutral-400">Mude a dinamica: troque role play por estudo de caso, ou vice-versa. Mantenha o conteudo, mude o formato.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
+              <span class="text-blue-400 font-bold text-sm">!</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Novo produto ou mudanca no mercado</h4>
+              <p class="text-sm text-neutral-400">Atualize cenarios, scripts e respostas de objecoes. O treinamento precisa refletir a realidade atual.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
+              <span class="text-emerald-400 font-bold text-sm">!</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Equipe dominou o conteudo atual</h4>
+              <p class="text-sm text-neutral-400">Hora de avancar para o proximo nivel. Nao repita o que ja foi internalizado. Desafie com temas novos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Ciclo de revisao</h3>
+        <p class="text-neutral-300">
+          Revise o programa formalmente <strong class="text-primary">uma vez por mes</strong>. Pergunte a si mesmo: as metricas estao evoluindo? O formato ainda engaja? O conteudo e relevante? Se duas dessas respostas forem "nao", e hora de ajustar.
+        </p>
+      </div>
+    </section>
+
+    <!-- Resumo Final -->
+    <section class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+      <h2 class="text-2xl font-bold mb-6 flex items-center">
+        <span class="mr-3">📝</span> Resumo do Modulo
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-cyan-400 mb-4">O que voce aprendeu:</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2"><span class="text-cyan-400">✓</span><span>Os 6 indicadores essenciais de treinamento</span></li>
+            <li class="flex items-start space-x-2"><span class="text-cyan-400">✓</span><span>Metas calibradas por perfil A, B e C</span></li>
+            <li class="flex items-start space-x-2"><span class="text-cyan-400">✓</span><span>Sinais antecedentes de progresso</span></li>
+            <li class="flex items-start space-x-2"><span class="text-cyan-400">✓</span><span>Dashboard simples e funcional</span></li>
+            <li class="flex items-start space-x-2"><span class="text-cyan-400">✓</span><span>Gatilhos objetivos para ajustar o programa</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-cyan-400 mb-4">Proximo modulo:</h3>
+          <div class="bg-dark-700/50 rounded-xl p-4 border border-dark-600">
+            <span class="text-cyan-400 font-bold text-sm">6.6</span>
+            <h4 class="font-bold mt-1">🔄 Treinamento continuo vs pontual</h4>
+            <p class="text-neutral-400 text-sm mt-2">
+              Transformar treinamento de evento isolado em cultura permanente de desenvolvimento.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="modulo-6-4.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+          ← Modulo 6.4
+        </a>
+        <a href="modulo-6-6.html" class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors">
+          Proximo: Modulo 6.6 →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Modulo 6.5: Metricas de evolucao</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) { html.classList.remove('dark'); icon.textContent = '☀️'; localStorage.setItem('theme', 'light'); }
+      else { html.classList.add('dark'); icon.textContent = '🌙'; localStorage.setItem('theme', 'dark'); }
+    }
+    if (localStorage.getItem('theme') === 'light') { document.documentElement.classList.remove('dark'); document.getElementById('theme-icon').textContent = '☀️'; }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 4.7: Rotina de gestao comercial | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors"><span class="text-3xl">💰</span><span class="font-bold text-xl hidden sm:inline">8020</span></a>
+          <span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Metodo</span></a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Diagnostico</span></a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-amber-500/10 text-amber-400"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Gestao</span></a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Estrategia</span></a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Treinamento</span></a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Ferramentas</span></a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-red-400 hover:bg-red-500/10 transition-all"><span class="sm:hidden">T8</span><span class="hidden sm:inline">Avancado</span></a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2"><span id="theme-icon" class="text-lg">🌙</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- Header -->
+    <div class="mb-8">
+      <div class="flex items-center space-x-3 mb-4">
+        <a href="index.html" class="text-amber-400 hover:text-amber-300 text-sm transition-colors">← Trilha 4</a>
+        <span class="text-neutral-600">|</span>
+        <span class="text-neutral-400 text-sm">Modulo 4.7</span>
+      </div>
+      <div class="bg-gradient-to-r from-amber-900/30 to-dark-800 border border-amber-500/20 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-start space-x-4">
+          <span class="text-4xl sm:text-5xl">🗓️</span>
+          <div>
+            <h1 class="text-2xl sm:text-3xl font-bold text-neutral-100 mb-2">Rotina de gestao comercial</h1>
+            <p class="text-neutral-300 text-lg">A gestao comercial nao acontece em momentos epicos. Ela acontece na rotina — nas pequenas acoes repetidas toda semana que criam previsibilidade, corrigem desvios rapido e constroem uma equipe que melhora continuamente.</p>
+            <div class="flex flex-wrap gap-3 mt-4">
+              <span class="px-3 py-1 bg-amber-900/20 text-amber-400 rounded-full text-sm font-medium">5 Topicos</span>
+              <span class="px-3 py-1 bg-amber-900/20 text-amber-400 rounded-full text-sm font-medium">~45 min</span>
+              <span class="px-3 py-1 bg-amber-900/20 text-amber-400 rounded-full text-sm font-medium">Gestao</span>
+              <span class="px-3 py-1 bg-amber-900/20 text-amber-400 rounded-full text-sm font-medium">Rotina</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Topico 1 -->
+    <section class="mb-10">
+      <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">📅</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-amber-400">1. Cadencia semanal</h2>
+        </div>
+        <p class="text-neutral-300 mb-6">O que o gestor comercial deve fazer toda semana. Sem cadencia, a gestao vira apagar incendio. Com cadencia, voce antecipa problemas, corrige rapido e cria ritmo na equipe.</p>
+
+        <div class="bg-amber-900/20 border border-amber-500/20 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-amber-400 mb-3">Template de agenda semanal do gestor</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="bg-dark-700 rounded-lg p-4">
+              <div class="font-semibold text-neutral-100 mb-1">Segunda-feira</div>
+              <div class="text-neutral-300 text-sm">Revisao de pipeline. Olhar para todos os negocios em andamento: quais avancaram? Quais estagnaram? Quais morreram? Priorizar follow-ups criticos da semana.</div>
+            </div>
+            <div class="bg-dark-700 rounded-lg p-4">
+              <div class="font-semibold text-neutral-100 mb-1">Terca-feira</div>
+              <div class="text-neutral-300 text-sm">Acompanhamento individual (1:1). Duas a tres conversas de 15 min com vendedores. Foco: diagnosticar, orientar, destravar. Nao cobrar — direcionar.</div>
+            </div>
+            <div class="bg-dark-700 rounded-lg p-4">
+              <div class="font-semibold text-neutral-100 mb-1">Quarta-feira</div>
+              <div class="text-neutral-300 text-sm">Acompanhamento individual (continuacao). Completar os 1:1 restantes. Revisar gravacoes de ligacoes ou calls da equipe. Anotar padroes.</div>
+            </div>
+            <div class="bg-dark-700 rounded-lg p-4">
+              <div class="font-semibold text-neutral-100 mb-1">Quinta-feira</div>
+              <div class="text-neutral-300 text-sm">Acompanhamento e correcao de rota. Verificar se os ajustes orientados estao sendo aplicados. Intervir em negocios criticos se necessario.</div>
+            </div>
+            <div class="bg-dark-700 rounded-lg p-4">
+              <div class="font-semibold text-neutral-100 mb-1">Sexta-feira</div>
+              <div class="text-neutral-300 text-sm">Simulacao em equipe (30 min). Um cenario da semana real. Todos praticam. Fecha a semana com energia e aprendizado coletivo.</div>
+            </div>
+            <div class="bg-dark-700 rounded-lg p-4">
+              <div class="font-semibold text-neutral-100 mb-1">Sexta (extra)</div>
+              <div class="text-neutral-300 text-sm">Revisao de metricas da semana: leads gerados, propostas enviadas, fechamentos, perdas. Preparar a pauta da segunda seguinte.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700 border border-dark-600 rounded-xl p-5">
+          <h3 class="font-bold text-neutral-100 mb-3">Por que cadencia importa mais que talento gerencial</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">▸</span><span><strong class="text-neutral-100">Previsibilidade:</strong> a equipe sabe o que esperar e se prepara. Ninguem e pego de surpresa.</span></li>
+            <li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">▸</span><span><strong class="text-neutral-100">Velocidade de correcao:</strong> problemas sao identificados em dias, nao em meses. Um vendedor travado na terca ja tem orientacao na quarta.</span></li>
+            <li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">▸</span><span><strong class="text-neutral-100">Ritmo:</strong> gestao com ritmo contagia a equipe. Quando o gestor tem disciplina, o time absorve disciplina.</span></li>
+            <li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">▸</span><span><strong class="text-neutral-100">Dados acumulados:</strong> toda semana voce coleta informacao. Em 4 semanas, voce tem um mapa completo da equipe.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section class="mb-10">
+      <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">🤝</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-amber-400">2. Reunioes que funcionam</h2>
+        </div>
+        <p class="text-neutral-300 mb-6">A maioria das reunioes comerciais e uma perda de tempo. Longas demais, sem pauta, sem acao concreta no final. Aqui voce aprende o formato que funciona: curto, objetivo e orientado a acao.</p>
+
+        <div class="bg-amber-900/20 border border-amber-500/20 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-amber-400 mb-3">Regras de ouro: 30 minutos, pauta fixa</h3>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3">
+              <span class="bg-amber-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
+              <div>
+                <div class="font-semibold text-neutral-100">Maximo 30 minutos</div>
+                <div class="text-neutral-300 text-sm">Se nao cabe em 30 min, a pauta esta errada. Reunioes longas diluem a atencao e nao geram mais resultado. Coloque timer visivel.</div>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="bg-amber-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
+              <div>
+                <div class="font-semibold text-neutral-100">Pauta fixa: Resultados → Bloqueios → Proximos passos</div>
+                <div class="text-neutral-300 text-sm">Sempre nessa ordem. Primeiro: o que aconteceu (dados). Segundo: o que esta travando (problemas). Terceiro: o que cada um vai fazer ate a proxima (compromisso).</div>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="bg-amber-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
+              <div>
+                <div class="font-semibold text-neutral-100">Todos falam, ninguem discursa</div>
+                <div class="text-neutral-300 text-sm">Cada vendedor tem 3-5 min para seu update. Sem monologos do gestor. Se alguem precisa de mais tempo, agendar 1:1 separado.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700 border border-dark-600 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-neutral-100 mb-3">Template de pauta — Reuniao semanal de equipe</h3>
+          <div class="bg-dark-800 rounded-lg p-4 font-mono text-sm text-neutral-300 space-y-2">
+            <div class="text-amber-400 font-bold">REUNIAO COMERCIAL SEMANAL — [DATA]</div>
+            <div class="text-neutral-400">Duracao: 30 min | Participantes: equipe comercial</div>
+            <div class="border-t border-dark-600 my-2"></div>
+            <div><strong class="text-neutral-100">BLOCO 1 — RESULTADOS (10 min)</strong></div>
+            <div>- Leads novos esta semana: ___</div>
+            <div>- Propostas enviadas: ___</div>
+            <div>- Fechamentos: ___</div>
+            <div>- Perdas: ___</div>
+            <div>- Pipeline total: R$ ___</div>
+            <div class="border-t border-dark-600 my-2"></div>
+            <div><strong class="text-neutral-100">BLOCO 2 — BLOQUEIOS (10 min)</strong></div>
+            <div>- O que esta travando conversoes?</div>
+            <div>- Algum padrao de objecao recorrente?</div>
+            <div>- Falta algo: material, acesso, ferramenta?</div>
+            <div class="border-t border-dark-600 my-2"></div>
+            <div><strong class="text-neutral-100">BLOCO 3 — PROXIMOS PASSOS (10 min)</strong></div>
+            <div>- [Nome]: compromisso ate sexta ___</div>
+            <div>- [Nome]: compromisso ate sexta ___</div>
+            <div>- Gestor: acao de suporte ___</div>
+          </div>
+        </div>
+
+        <div class="bg-red-900/20 border border-red-500/20 rounded-xl p-5">
+          <h3 class="font-bold text-red-400 mb-3">O que NAO fazer em reunioes comerciais</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2"><span class="text-red-400 mt-1">✗</span><span><strong class="text-neutral-100">Reuniao de cobranca sem direcao:</strong> "Por que voce nao bateu a meta?" sem oferecer nenhum caminho. Isso gera medo, nao melhoria.</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400 mt-1">✗</span><span><strong class="text-neutral-100">Monologo do gestor:</strong> falar 25 dos 30 minutos. A reuniao e da equipe, nao do gestor.</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400 mt-1">✗</span><span><strong class="text-neutral-100">Sem pauta definida:</strong> "vamos ver o que rola" garante que nada vai rolar. Sempre enviar pauta antes.</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400 mt-1">✗</span><span><strong class="text-neutral-100">Expor individualmente em publico:</strong> problemas individuais se resolvem no 1:1, nao na frente de todos.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section class="mb-10">
+      <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">👤</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-amber-400">3. Acompanhamento individual</h2>
+        </div>
+        <p class="text-neutral-300 mb-6">O 1:1 semanal e a ferramenta mais poderosa do gestor comercial. Em 15-20 minutos, voce diagnostica, orienta e destrapa. Nao e cobranca — e o momento onde o vendedor mais cresce.</p>
+
+        <div class="bg-amber-900/20 border border-amber-500/20 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-amber-400 mb-3">Estrutura do 1:1 semanal (15-20 min)</h3>
+          <div class="space-y-4">
+            <div class="bg-dark-700 rounded-lg p-4">
+              <div class="font-semibold text-neutral-100 mb-2">Minutos 1-5: O que voce vendeu esta semana?</div>
+              <p class="text-neutral-300 text-sm">Deixe o vendedor contar. Quais negocios avancaram? Quais fecharam? O que deu certo? Comece pelo positivo — isso abre a conversa.</p>
+            </div>
+            <div class="bg-dark-700 rounded-lg p-4">
+              <div class="font-semibold text-neutral-100 mb-2">Minutos 5-10: O que voce perdeu e por que?</div>
+              <p class="text-neutral-300 text-sm">Aqui esta o ouro. Quais negocios foram perdidos? Em que etapa? Qual foi a objecao? O vendedor consegue identificar onde errou? Se nao consegue, ajude ele a enxergar.</p>
+            </div>
+            <div class="bg-dark-700 rounded-lg p-4">
+              <div class="font-semibold text-neutral-100 mb-2">Minutos 10-15: Diagnostico e orientacao</div>
+              <p class="text-neutral-300 text-sm">Com base no que ouviu, faca o diagnostico: o problema e tecnico (nao sabe fazer), comportamental (nao quer fazer) ou estrutural (nao consegue fazer)? Dê uma orientacao especifica e praticavel.</p>
+            </div>
+            <div class="bg-dark-700 rounded-lg p-4">
+              <div class="font-semibold text-neutral-100 mb-2">Minutos 15-20: Compromisso da semana</div>
+              <p class="text-neutral-300 text-sm">O que o vendedor vai fazer diferente na proxima semana? Uma coisa so. Especifica. Mensuravel. "Vou usar as 4 perguntas de diagnostico em todas as calls de quarta e quinta."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div class="bg-emerald-900/20 border border-emerald-500/20 rounded-xl p-4">
+            <h4 class="font-bold text-emerald-400 mb-2">1:1 BEM feito</h4>
+            <ul class="space-y-1 text-neutral-300 text-sm">
+              <li>✓ Vendedor sai motivado e com direcao</li>
+              <li>✓ Sabe exatamente o que melhorar</li>
+              <li>✓ Sente que o gestor esta do lado dele</li>
+              <li>✓ Tem um compromisso claro</li>
+              <li>✓ Espera pela proxima conversa</li>
+            </ul>
+          </div>
+          <div class="bg-red-900/20 border border-red-500/20 rounded-xl p-4">
+            <h4 class="font-bold text-red-400 mb-2">1:1 MAL feito</h4>
+            <ul class="space-y-1 text-neutral-300 text-sm">
+              <li>✗ Vendedor sai desmotivado e com medo</li>
+              <li>✗ Nao sabe o que fazer diferente</li>
+              <li>✗ Sente que o gestor e um cobrador</li>
+              <li>✗ Sem acao concreta definida</li>
+              <li>✗ Tenta evitar a proxima conversa</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-dark-700 border border-dark-600 rounded-xl p-5">
+          <h3 class="font-bold text-neutral-100 mb-3">A diferenca fundamental: diagnostico vs cobranca</h3>
+          <p class="text-neutral-300 mb-3">Cobranca diz: "Voce nao bateu a meta." Diagnostico pergunta: "O que aconteceu nos negocios que nao fecharam?" A cobranca gera defesa. O diagnostico gera aprendizado.</p>
+          <p class="text-neutral-300">O gestor que cobra e substituivel por um dashboard. O gestor que diagnostica e insubstituivel — ele e o tecnico que melhora o jogador semana a semana.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section class="mb-10">
+      <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">💬</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-amber-400">4. Feedback que muda comportamento</h2>
+        </div>
+        <p class="text-neutral-300 mb-6">Feedback generico nao muda nada. "Voce precisa melhorar" nao e feedback — e ruido. O que muda comportamento e um modelo preciso: observacao especifica, impacto claro e sugestao acionavel.</p>
+
+        <div class="bg-amber-900/20 border border-amber-500/20 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-amber-400 mb-4">Modelo de feedback: O.I.S.</h3>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-4">
+              <div class="bg-amber-600 text-white rounded-xl w-10 h-10 flex items-center justify-center text-lg font-bold flex-shrink-0">O</div>
+              <div>
+                <div class="font-semibold text-neutral-100 text-lg">Observacao especifica</div>
+                <p class="text-neutral-300 text-sm">Descreva exatamente o que voce viu ou ouviu. Sem julgamento, sem generalizacao. "Na ligacao com o cliente X na quarta, voce pulou as perguntas de diagnostico e foi direto para o preco."</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="bg-amber-600 text-white rounded-xl w-10 h-10 flex items-center justify-center text-lg font-bold flex-shrink-0">I</div>
+              <div>
+                <div class="font-semibold text-neutral-100 text-lg">Impacto</div>
+                <p class="text-neutral-300 text-sm">Explique o que aquilo causou. Conecte o comportamento ao resultado. "Isso fez o cliente travar porque ele ainda nao entendia o valor. Ele comparou direto com o concorrente e pediu desconto."</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="bg-amber-600 text-white rounded-xl w-10 h-10 flex items-center justify-center text-lg font-bold flex-shrink-0">S</div>
+              <div>
+                <div class="font-semibold text-neutral-100 text-lg">Sugestao</div>
+                <p class="text-neutral-300 text-sm">Ofereca uma alternativa concreta. "Na proxima, tenta usar as 4 perguntas de diagnostico antes de mencionar preco. Isso constroi o valor antes da negociacao."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-dark-700 border border-dark-600 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-neutral-100 mb-3">Exemplo completo de feedback OIS</h3>
+          <div class="bg-dark-800 rounded-lg p-4 border-l-4 border-amber-500">
+            <p class="text-neutral-300 italic mb-3">"Joao, percebi que na ligacao com a Empresa ABC na quarta voce pulou o diagnostico e foi direto para apresentar o plano e o preco. Isso fez o cliente travar — ele perguntou 'mas por que esse valor?' porque ainda nao tinha entendido o problema que a gente resolve. Na proxima call, tenta usar as 4 perguntas antes: qual o cenario atual, o que ja tentou, qual o impacto disso, e o que mudaria se resolvesse. Isso constroi o valor antes de falar em dinheiro. Quer praticar isso agora em 5 minutos?"</p>
+            <p class="text-amber-400 text-sm font-medium">Resultado: O vendedor sabe exatamente o que fez, entende por que nao funcionou, e tem um caminho claro para melhorar.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-dark-700 rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">❌</div>
+            <div class="font-semibold text-red-400 mb-1">Feedback ruim</div>
+            <p class="text-neutral-400 text-sm">"Voce precisa vender mais."</p>
+          </div>
+          <div class="bg-dark-700 rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">😐</div>
+            <div class="font-semibold text-yellow-400 mb-1">Feedback medio</div>
+            <p class="text-neutral-400 text-sm">"Voce esta pulando etapas na call."</p>
+          </div>
+          <div class="bg-dark-700 rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">✅</div>
+            <div class="font-semibold text-emerald-400 mb-1">Feedback OIS</div>
+            <p class="text-neutral-400 text-sm">"Na call X, voce pulou Y, causou Z. Tenta W na proxima."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section class="mb-10">
+      <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">🎭</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-amber-400">5. Simulacao como rotina de equipe</h2>
+        </div>
+        <p class="text-neutral-300 mb-6">Simulacao nao e "dinâmica de grupo" — e treino. Atletas treinam todo dia. Vendedores deveriam treinar toda semana. 30 minutos de simulacao bem conduzida valem mais que 8 horas de teoria.</p>
+
+        <div class="bg-amber-900/20 border border-amber-500/20 rounded-xl p-5 mb-6">
+          <h3 class="font-bold text-amber-400 mb-3">Formato da simulacao semanal (30 min)</h3>
+          <div class="space-y-3">
+            <div class="flex items-start space-x-3">
+              <span class="bg-amber-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
+              <div>
+                <div class="font-semibold text-neutral-100">Minutos 1-5: Apresentar o cenario</div>
+                <div class="text-neutral-300 text-sm">Baseie-se em uma situacao real da semana. "O cliente e dono de uma academia, fatura R$30k/mes, quer crescer mas acha que nao tem dinheiro. Ele ja fez uma consultoria que nao deu resultado."</div>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="bg-amber-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
+              <div>
+                <div class="font-semibold text-neutral-100">Minutos 5-15: Simulacao ao vivo</div>
+                <div class="text-neutral-300 text-sm">Um vendedor faz o papel de vendedor, outro faz o cliente. O resto observa. Sem pausas — e como se fosse uma ligacao real. Quem observa anota pontos fortes e pontos a melhorar.</div>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="bg-amber-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
+              <div>
+                <div class="font-semibold text-neutral-100">Minutos 15-25: Feedback coletivo</div>
+                <div class="text-neutral-300 text-sm">Primeiro o vendedor avalia a si mesmo. Depois a equipe contribui (usando o modelo OIS). O gestor fecha com as observacoes mais importantes.</div>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="bg-amber-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">4</span>
+              <div>
+                <div class="font-semibold text-neutral-100">Minutos 25-30: Aprendizado chave</div>
+                <div class="text-neutral-300 text-sm">Qual o principal aprendizado? O que todos devem aplicar na semana? Fechar com um compromisso coletivo. Se possivel, registrar em documento compartilhado.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div class="bg-dark-700 border border-dark-600 rounded-xl p-4">
+            <h4 class="font-bold text-neutral-100 mb-2">Rotacionar papeis</h4>
+            <p class="text-neutral-300 text-sm mb-2">Cada semana, diferentes pessoas assumem os papeis. Isso e crucial porque:</p>
+            <ul class="space-y-1 text-neutral-300 text-sm">
+              <li>▸ Fazer o papel de cliente ensina empatia</li>
+              <li>▸ Observar ensina analise critica</li>
+              <li>▸ Vender sob pressao social treina controle emocional</li>
+              <li>▸ Todos aprendem de todos</li>
+            </ul>
+          </div>
+          <div class="bg-dark-700 border border-dark-600 rounded-xl p-4">
+            <h4 class="font-bold text-neutral-100 mb-2">Gravar quando possivel</h4>
+            <p class="text-neutral-300 text-sm mb-2">Gravacao potencializa o aprendizado porque:</p>
+            <ul class="space-y-1 text-neutral-300 text-sm">
+              <li>▸ O vendedor se ve de fora (autoconhecimento)</li>
+              <li>▸ Pode revisar em outro momento</li>
+              <li>▸ Cria banco de exemplos para novos vendedores</li>
+              <li>▸ Permite comparar evolucao ao longo dos meses</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-dark-700 border border-dark-600 rounded-xl p-5">
+          <h3 class="font-bold text-neutral-100 mb-3">Cenarios sugeridos por semana (ciclo de 4 semanas)</h3>
+          <div class="space-y-3">
+            <div class="flex items-start space-x-3">
+              <span class="text-amber-400 font-bold">Sem 1:</span>
+              <span class="text-neutral-300">Cliente que diz "esta caro". Treinar construcao de valor e ancoragem de preco.</span>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="text-amber-400 font-bold">Sem 2:</span>
+              <span class="text-neutral-300">Cliente que diz "preciso pensar". Treinar tecnicas de urgencia e compromisso de proximo passo.</span>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="text-amber-400 font-bold">Sem 3:</span>
+              <span class="text-neutral-300">Cliente frio — nunca ouviu falar de voce. Treinar abertura, rapport e diagnostico.</span>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="text-amber-400 font-bold">Sem 4:</span>
+              <span class="text-neutral-300">Cliente que ja comprou do concorrente e se frustrou. Treinar diferenciacao e reconstrucao de confianca.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegacao -->
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mt-12 mb-8">
+      <a href="modulo-4-6.html" class="w-full sm:w-auto flex items-center justify-center space-x-2 px-6 py-3 bg-dark-800 border border-dark-600 rounded-xl text-neutral-300 hover:text-amber-400 hover:border-amber-500/30 transition-all">
+        <span>←</span><span>Modulo anterior</span>
+      </a>
+      <a href="../trilha5/index.html" class="w-full sm:w-auto flex items-center justify-center space-x-2 px-6 py-3 bg-amber-600 hover:bg-amber-500 text-dark-900 font-bold rounded-xl transition-all">
+        <span>Trilha 5 — Estrategia por Nivel de Consciencia</span><span>→</span>
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4"><span class="text-2xl">💰</span><span class="font-bold text-neutral-200">8020</span><span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a></div>
+        <div class="text-neutral-500 text-sm">Modulo 4.7: Rotina de gestao comercial</div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() { const html = document.documentElement; const icon = document.getElementById('theme-icon'); if (html.classList.contains('dark')) { html.classList.remove('dark'); icon.textContent = '☀️'; localStorage.setItem('theme', 'light'); } else { html.classList.add('dark'); icon.textContent = '🌙'; localStorage.setItem('theme', 'dark'); } }
+    if (localStorage.getItem('theme') === 'light') { document.documentElement.classList.remove('dark'); document.getElementById('theme-icon').textContent = '☀️'; }
+  </script>
+
+</body>
+</html>

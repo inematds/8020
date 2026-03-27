@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 7.4: Checklist do Gestor Comercial | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Metodo</span></a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Diagnostico</span></a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Gestao</span></a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Estrategia</span></a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Treinamento</span></a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-orange-500/10 text-orange-400"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Ferramentas</span></a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all"><span class="sm:hidden">T8</span><span class="hidden sm:inline">Avancado</span></a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2"><span id="theme-icon" class="text-lg">🌙</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-orange-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4 text-sm">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <a href="index.html" class="text-neutral-500 hover:text-neutral-300">Trilha 7</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-orange-400 font-medium">Modulo 7.4</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-orange-500/20 text-orange-400 text-xs font-semibold rounded-full mb-4">MODULO 7.4</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">✅ Checklist do Gestor Comercial</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        A rotina completa do gestor comercial: o que fazer toda semana, todo mes, o que observar e o que corrigir. Template pronto para adotar.
+      </p>
+
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-orange-400">5</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-orange-400">~60</div>
+          <div class="text-xs text-neutral-400">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-orange-400">Pratico</div>
+          <div class="text-xs text-neutral-400">Nivel</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-orange-400">Checklist</div>
+          <div class="text-xs text-neutral-400">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteudo Principal -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/20 text-orange-400 font-bold">1</span>
+        <h2 class="text-2xl font-bold">📅 Checklist Semanal</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A rotina semanal e o <strong class="text-orange-400">sistema operacional do gestor</strong>. Cumprir essa lista toda semana garante que nenhum problema cresça sem ser notado.
+      </p>
+
+      <div class="bg-gradient-to-br from-orange-900/20 to-dark-800 rounded-xl p-6 border border-orange-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-orange-400 mb-4">Checklist Semanal do Gestor</h3>
+        <div class="space-y-3">
+          <div class="flex items-start space-x-3 bg-dark-800/50 rounded-lg p-4">
+            <span class="text-orange-400 font-bold text-lg mt-0.5">☐</span>
+            <div>
+              <span class="text-neutral-200 font-medium">Reuniao de pipeline (segunda-feira)</span>
+              <p class="text-neutral-400 text-sm mt-1">Revisar todos os deals em andamento. Perguntar: qual o proximo passo? Quando? O que falta para fechar? Remover deals mortos.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3 bg-dark-800/50 rounded-lg p-4">
+            <span class="text-orange-400 font-bold text-lg mt-0.5">☐</span>
+            <div>
+              <span class="text-neutral-200 font-medium">Escutar 2-3 ligacoes/gravacoes por vendedor</span>
+              <p class="text-neutral-400 text-sm mt-1">Nao precisa ouvir tudo. Ouça abertura e fechamento. Anote pontos de melhoria especificos para o feedback.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3 bg-dark-800/50 rounded-lg p-4">
+            <span class="text-orange-400 font-bold text-lg mt-0.5">☐</span>
+            <div>
+              <span class="text-neutral-200 font-medium">One-on-one com cada vendedor (15-20 min)</span>
+              <p class="text-neutral-400 text-sm mt-1">Perguntar: como voce esta? O que esta travando? O que precisa de mim? Dar 1 feedback especifico baseado na escuta.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3 bg-dark-800/50 rounded-lg p-4">
+            <span class="text-orange-400 font-bold text-lg mt-0.5">☐</span>
+            <div>
+              <span class="text-neutral-200 font-medium">Revisar metricas de atividade da equipe</span>
+              <p class="text-neutral-400 text-sm mt-1">Ligacoes feitas, reunioes agendadas, propostas enviadas, follow-ups realizados. Quem esta abaixo da meta de atividade?</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3 bg-dark-800/50 rounded-lg p-4">
+            <span class="text-orange-400 font-bold text-lg mt-0.5">☐</span>
+            <div>
+              <span class="text-neutral-200 font-medium">Planejar a semana seguinte (sexta-feira)</span>
+              <p class="text-neutral-400 text-sm mt-1">Definir prioridades, preparar pautas, identificar quem precisa de atencao especial. Nunca comecar segunda sem plano.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/20 text-orange-400 font-bold">2</span>
+        <h2 class="text-2xl font-bold">📆 Checklist Mensal</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O ciclo mensal e onde o gestor faz <strong class="text-orange-400">ajustes estrategicos</strong>. E a visao de mais alto nivel que conecta atividade diaria com resultados de longo prazo.
+      </p>
+
+      <div class="bg-gradient-to-br from-orange-900/20 to-dark-800 rounded-xl p-6 border border-orange-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-orange-400 mb-4">Checklist Mensal do Gestor</h3>
+        <div class="space-y-3">
+          <div class="flex items-start space-x-3 bg-dark-800/50 rounded-lg p-4">
+            <span class="text-orange-400 font-bold text-lg mt-0.5">☐</span>
+            <div>
+              <span class="text-neutral-200 font-medium">Analise de resultados vs metas</span>
+              <p class="text-neutral-400 text-sm mt-1">Cada vendedor atingiu a meta? Se nao, por que? Foi falta de atividade, taxa de conversao ou ticket medio? Identificar causa raiz.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3 bg-dark-800/50 rounded-lg p-4">
+            <span class="text-orange-400 font-bold text-lg mt-0.5">☐</span>
+            <div>
+              <span class="text-neutral-200 font-medium">Avaliacao individual de cada vendedor</span>
+              <p class="text-neutral-400 text-sm mt-1">Usar o Diagnostico Comercial (Modulo 7.1) como referencia. Comparar com o mes anterior. Houve evolucao?</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3 bg-dark-800/50 rounded-lg p-4">
+            <span class="text-orange-400 font-bold text-lg mt-0.5">☐</span>
+            <div>
+              <span class="text-neutral-200 font-medium">Revisao de processos e ferramentas</span>
+              <p class="text-neutral-400 text-sm mt-1">O CRM esta sendo usado? Os scripts estao atualizados? Algum processo precisa de ajuste? Alguma ferramenta nova e necessaria?</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3 bg-dark-800/50 rounded-lg p-4">
+            <span class="text-orange-400 font-bold text-lg mt-0.5">☐</span>
+            <div>
+              <span class="text-neutral-200 font-medium">Reuniao de resultados com a equipe</span>
+              <p class="text-neutral-400 text-sm mt-1">Apresentar numeros, reconhecer destaques, apontar gaps coletivos. Tom construtivo, nao punitivo. Celebrar vitorias.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3 bg-dark-800/50 rounded-lg p-4">
+            <span class="text-orange-400 font-bold text-lg mt-0.5">☐</span>
+            <div>
+              <span class="text-neutral-200 font-medium">Planejamento do mes seguinte</span>
+              <p class="text-neutral-400 text-sm mt-1">Definir metas, temas de treinamento, acoes de melhoria, recursos necessarios. Alinhar com a direcao da empresa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/20 text-orange-400 font-bold">3</span>
+        <h2 class="text-2xl font-bold">👀 O que Observar na Equipe</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Numeros mostram o passado. <strong class="text-orange-400">Comportamento mostra o futuro</strong>. O gestor que observa sinais precoces age antes dos resultados cairem.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-red-900/20 rounded-xl p-6 border border-red-500/30">
+          <h4 class="font-bold text-red-400 mb-4">🚨 Sinais de Alerta</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2">
+              <span class="text-red-400">!</span>
+              <span>Queda no volume de atividades sem justificativa</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-red-400">!</span>
+              <span>Atrasos em follow-ups e respostas</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-red-400">!</span>
+              <span>CRM desatualizado ou abandonado</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-red-400">!</span>
+              <span>Desculpas repetidas para resultados baixos</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-red-400">!</span>
+              <span>Isolamento — nao participa de reunioes, evita feedback</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-red-400">!</span>
+              <span>Conflitos frequentes com clientes ou colegas</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-red-400">!</span>
+              <span>Pipeline estagnado — sem novos deals entrando</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-emerald-900/20 rounded-xl p-6 border border-emerald-500/30">
+          <h4 class="font-bold text-emerald-400 mb-4">✓ Sinais de Progresso</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Volume de atividade crescente ou estavel</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Pergunta sobre melhores praticas — busca evoluir</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Aplica feedback recebido na proxima interacao</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Pipeline saudavel com deals em diferentes estagios</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Compartilha aprendizados com a equipe</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Taxa de conversao melhorando mes a mes</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Autonomia crescente — resolve mais sem precisar do gestor</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/20 text-orange-400 font-bold">4</span>
+        <h2 class="text-2xl font-bold">🎯 O que Corrigir Primeiro</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A ordem de correcao importa. Corrigir na sequencia errada desperdicamos tempo e frustra todo mundo. Siga a <strong class="text-orange-400">hierarquia de prioridades</strong>:
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-orange-400 mb-4">Piramide de Correcao Comercial</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center">
+              <span class="text-red-400 font-bold">1</span>
+            </div>
+            <div class="flex-1 bg-red-900/10 rounded-lg p-4 border border-red-500/20">
+              <h4 class="font-semibold text-red-400 mb-1">VOLUME DE ATIVIDADE</h4>
+              <p class="text-sm text-neutral-300">O vendedor esta fazendo atividade suficiente? Se nao faz ligacao, nao agenda reuniao, nao envia proposta — nada mais importa. Corrigir PRIMEIRO.</p>
+              <p class="text-xs text-neutral-500 mt-2">Diagnostico: quantas ligacoes/dia? Quantas reunioes/semana? Quantas propostas/mes?</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center">
+              <span class="text-orange-400 font-bold">2</span>
+            </div>
+            <div class="flex-1 bg-orange-900/10 rounded-lg p-4 border border-orange-500/20">
+              <h4 class="font-semibold text-orange-400 mb-1">QUALIDADE DA ABORDAGEM</h4>
+              <p class="text-sm text-neutral-300">Faz atividade mas nao converte? Provavelmente a abordagem e fraca. Ouvir ligacoes, revisar e-mails, corrigir script.</p>
+              <p class="text-xs text-neutral-500 mt-2">Diagnostico: taxa de conversao de ligacao para reuniao? Feedback dos clientes?</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center">
+              <span class="text-yellow-400 font-bold">3</span>
+            </div>
+            <div class="flex-1 bg-yellow-900/10 rounded-lg p-4 border border-yellow-500/20">
+              <h4 class="font-semibold text-yellow-400 mb-1">GESTAO DE PIPELINE</h4>
+              <p class="text-sm text-neutral-300">Agenda reunioes mas os deals nao avancem? Problema de follow-up, priorizacao ou gestao do funil. Ensinar a gerenciar oportunidades.</p>
+              <p class="text-xs text-neutral-500 mt-2">Diagnostico: tempo medio no funil? Deals parados ha mais de X dias? Taxa de no-show?</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center">
+              <span class="text-emerald-400 font-bold">4</span>
+            </div>
+            <div class="flex-1 bg-emerald-900/10 rounded-lg p-4 border border-emerald-500/20">
+              <h4 class="font-semibold text-emerald-400 mb-1">TECNICA DE FECHAMENTO</h4>
+              <p class="text-sm text-neutral-300">Chega ate o final mas nao fecha? Ai sim — treinar tecnicas de fechamento, tratamento de objecoes, negociacao.</p>
+              <p class="text-xs text-neutral-500 mt-2">Diagnostico: quantas propostas viram venda? Qual a principal objecao ouvida?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Erro Classico</h3>
+        <p class="text-neutral-300">
+          O gestor vê resultado baixo e manda o vendedor para um curso de "tecnica de negociacao". Mas o problema era que ele fazia <strong class="text-primary">3 ligacoes por dia em vez de 15</strong>. Nenhuma tecnica salva quem nao tem volume. Sempre comece pelo nivel 1.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/20 text-orange-400 font-bold">5</span>
+        <h2 class="text-2xl font-bold">📋 Template de Rotina do Gestor</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Uma agenda modelo com <strong class="text-orange-400">distribuicao de atividades por dia da semana</strong>. Adapte ao seu contexto, mas mantenha a estrutura.
+      </p>
+
+      <div class="bg-dark-800 rounded-xl p-6 border-2 border-orange-500/30 mb-6">
+        <h3 class="text-xl font-bold text-orange-400 mb-6 text-center">AGENDA SEMANAL DO GESTOR COMERCIAL</h3>
+
+        <div class="space-y-4">
+          <div class="bg-dark-700/50 rounded-lg p-4 border border-dark-600">
+            <h4 class="font-bold text-orange-400 mb-3">SEGUNDA — Dia de Pipeline</h4>
+            <div class="space-y-2 text-sm text-neutral-300">
+              <p>08:00-09:00 — Revisar metricas da semana anterior</p>
+              <p>09:00-10:30 — Reuniao de pipeline com equipe</p>
+              <p>10:30-12:00 — One-on-one com vendedores (2-3)</p>
+              <p>14:00-16:00 — Escutar gravacoes/acompanhar vendas ao vivo</p>
+              <p>16:00-17:00 — Anotar feedbacks e planejar intervencoes</p>
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-lg p-4 border border-dark-600">
+            <h4 class="font-bold text-blue-400 mb-3">TERCA — Dia de Desenvolvimento</h4>
+            <div class="space-y-2 text-sm text-neutral-300">
+              <p>08:00-09:00 — Preparar treinamento/capacitacao da semana</p>
+              <p>09:00-10:30 — Sessao de treinamento com equipe</p>
+              <p>10:30-12:00 — One-on-one com vendedores (2-3)</p>
+              <p>14:00-16:00 — Coaching individual com vendedor em gap</p>
+              <p>16:00-17:00 — Atualizar PDIs</p>
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-lg p-4 border border-dark-600">
+            <h4 class="font-bold text-purple-400 mb-3">QUARTA — Dia de Acompanhamento</h4>
+            <div class="space-y-2 text-sm text-neutral-300">
+              <p>08:00-10:00 — Acompanhar vendas ao vivo / sombra em reunioes</p>
+              <p>10:00-12:00 — Atender escalacoes e ajudar em negociacoes</p>
+              <p>14:00-16:00 — Revisar CRM e qualidade dos registros</p>
+              <p>16:00-17:00 — Feedback imediato sobre acompanhamentos do dia</p>
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-lg p-4 border border-dark-600">
+            <h4 class="font-bold text-emerald-400 mb-3">QUINTA — Dia Estrategico</h4>
+            <div class="space-y-2 text-sm text-neutral-300">
+              <p>08:00-10:00 — Analise de dados e tendencias</p>
+              <p>10:00-12:00 — Reuniao com direcao/alinhamento estrategico</p>
+              <p>14:00-16:00 — Planejamento de acoes de melhoria</p>
+              <p>16:00-17:00 — Criar/atualizar materiais de apoio</p>
+            </div>
+          </div>
+
+          <div class="bg-dark-700/50 rounded-lg p-4 border border-dark-600">
+            <h4 class="font-bold text-rose-400 mb-3">SEXTA — Dia de Fechamento e Planejamento</h4>
+            <div class="space-y-2 text-sm text-neutral-300">
+              <p>08:00-10:00 — Apoiar fechamentos pendentes</p>
+              <p>10:00-11:00 — Reuniao rapida de resultados da semana</p>
+              <p>11:00-12:00 — Reconhecer destaques da semana</p>
+              <p>14:00-16:00 — Planejar semana seguinte</p>
+              <p>16:00-17:00 — Autoavaliacao: o que eu fiz bem? O que preciso melhorar?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resumo Final -->
+    <section class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+      <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📝</span> Resumo do Modulo</h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-orange-400 mb-4">O que voce aprendeu:</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2"><span class="text-orange-400">✓</span><span>5 atividades do checklist semanal</span></li>
+            <li class="flex items-start space-x-2"><span class="text-orange-400">✓</span><span>5 atividades do checklist mensal</span></li>
+            <li class="flex items-start space-x-2"><span class="text-orange-400">✓</span><span>Sinais de alerta e progresso</span></li>
+            <li class="flex items-start space-x-2"><span class="text-orange-400">✓</span><span>Piramide de correcao comercial</span></li>
+            <li class="flex items-start space-x-2"><span class="text-orange-400">✓</span><span>Agenda modelo completa</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-orange-400 mb-4">Proximo modulo:</h3>
+          <div class="bg-dark-700/50 rounded-xl p-4 border border-dark-600">
+            <span class="text-orange-400 font-bold text-sm">7.5</span>
+            <h4 class="font-bold mt-1">📢 Plano de Conteudo por Nivel de Consciencia</h4>
+            <p class="text-neutral-400 text-sm mt-2">Templates completos de conteudo para cada nivel de consciencia do cliente.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="modulo-7-3.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Modulo 7.3</a>
+        <a href="modulo-7-5.html" class="flex-1 text-center px-6 py-3 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-500 transition-colors">Proximo: Modulo 7.5 →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Modulo 7.4: Checklist do Gestor Comercial</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) { html.classList.remove('dark'); icon.textContent = '☀️'; localStorage.setItem('theme', 'light'); }
+      else { html.classList.add('dark'); icon.textContent = '🌙'; localStorage.setItem('theme', 'dark'); }
+    }
+    if (localStorage.getItem('theme') === 'light') { document.documentElement.classList.remove('dark'); document.getElementById('theme-icon').textContent = '☀️'; }
+  </script>
+
+</body>
+</html>

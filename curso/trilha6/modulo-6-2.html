@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 6.2: Treinamento por perfil | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span><span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span><span class="hidden sm:inline">Diagnostico</span>
+            </a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span><span class="hidden sm:inline">Gestao</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span><span class="hidden sm:inline">Estrategia</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-cyan-500/10 text-cyan-400">
+              <span class="sm:hidden">T6</span><span class="hidden sm:inline">Treinamento</span>
+            </a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all">
+              <span class="sm:hidden">T7</span><span class="hidden sm:inline">Ferramentas</span>
+            </a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all">
+              <span class="sm:hidden">T8</span><span class="hidden sm:inline">Avancado</span>
+            </a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2">
+              <span id="theme-icon" class="text-lg">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4 text-sm">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <a href="index.html" class="text-neutral-500 hover:text-neutral-300">Trilha 6</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-cyan-400 font-medium">Modulo 6.2</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">
+        MODULO 6.2
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">👥 Treinamento por perfil</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        Cada grupo merece um treinamento diferente. O que funciona para o Grupo A desmotiva o C. O que o C precisa entedia o A. Personalize para multiplicar resultados.
+      </p>
+
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-cyan-400">5</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-cyan-400">~60</div>
+          <div class="text-xs text-neutral-400">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-cyan-400">Pratico</div>
+          <div class="text-xs text-neutral-400">Nivel</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-cyan-400">Gestao</div>
+          <div class="text-xs text-neutral-400">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteudo Principal -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 font-bold">1</span>
+        <h2 class="text-2xl font-bold">⭐ O que ensinar ao Grupo A</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O Grupo A sao seus <strong class="text-cyan-400">top performers</strong>. Eles ja dominam o basico, ja vendem bem, ja sabem contornar objecoes. Treina-los no basico e desperdicar o talento deles e irritar profissionais competentes.
+      </p>
+
+      <div class="bg-gradient-to-br from-cyan-900/20 to-dark-800 rounded-xl p-6 border border-cyan-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Agenda de treinamento do Grupo A</h3>
+        <ul class="space-y-3 text-neutral-300">
+          <li class="flex items-start space-x-3">
+            <span class="text-cyan-400 mt-1">✓</span>
+            <span><strong>Negociacoes complexas:</strong> clientes grandes, contratos longos, multiplos decisores</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-cyan-400 mt-1">✓</span>
+            <span><strong>Upsell e cross-sell:</strong> como aumentar o ticket sem forcar</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-cyan-400 mt-1">✓</span>
+            <span><strong>Mentoria dos colegas:</strong> transformar o A em multiplicador do metodo</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-cyan-400 mt-1">✓</span>
+            <span><strong>Estudo de casos:</strong> analisar vendas perdidas e ganhas para extrair aprendizado</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 O papel estrategico do Grupo A</h3>
+        <p class="text-neutral-300">
+          Seu melhor vendedor treinando os demais vale mais que qualquer consultor externo. Ele conhece o produto, o cliente e a cultura da empresa. <strong class="text-blue-400">Transforme A em treinadores</strong> e voce escala o conhecimento sem custo.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 font-bold">2</span>
+        <h2 class="text-2xl font-bold">📊 O que ensinar ao Grupo B</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O Grupo B e onde esta o <strong class="text-cyan-400">maior ROI do treinamento</strong>. Sao pessoas que tem potencial mas falta consistencia. Com o metodo certo, muitos migram para o A em 60 dias. O segredo: script, repeticao e acompanhamento.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Plano de desenvolvimento do Grupo B</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
+              <span class="text-cyan-400 font-bold text-sm">1</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Semana 1-2: Script na mao</h4>
+              <p class="text-sm text-neutral-400">Decorar e praticar o script completo. Atender com o roteiro visivel. Zero improviso.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
+              <span class="text-cyan-400 font-bold text-sm">2</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Semana 3-4: Script na cabeca</h4>
+              <p class="text-sm text-neutral-400">Internalizar o roteiro. Atender sem consultar. Manter a estrutura naturalmente.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
+              <span class="text-cyan-400 font-bold text-sm">3</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Semana 5-8: Ajustes finos</h4>
+              <p class="text-sm text-neutral-400">Refinar objecoes especificas. Trabalhar pontos fracos individuais. Comemorar evolucao.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Dica critica</h3>
+        <p class="text-neutral-300">
+          O Grupo B precisa de <strong class="text-primary">acompanhamento semanal</strong>. Nao mensal. Semanal. Uma reuniao individual de 15 minutos por semana para revisar metricas e ajustar. Sem isso, eles voltam aos velhos habitos.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 font-bold">3</span>
+        <h2 class="text-2xl font-bold">🔄 O que ensinar ao Grupo C</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O Grupo C e o mais delicado. Sao pessoas com <strong class="text-cyan-400">desempenho consistentemente abaixo do minimo</strong>. O treinamento precisa ser intensivo, focado no basico absoluto, e com prazo definido para avaliacao.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-cyan-900/20 rounded-xl p-6 border border-cyan-500/30">
+          <h4 class="font-bold text-cyan-400 mb-4">O que treinar</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>Postura e linguagem corporal</li>
+            <li>Escuta ativa (parar de interromper)</li>
+            <li>As 4 perguntas basicas</li>
+            <li>Seguir o script sem desviar</li>
+            <li>Cumprimentar e se despedir corretamente</li>
+          </ul>
+        </div>
+        <div class="bg-red-900/20 rounded-xl p-6 border border-red-500/30">
+          <h4 class="font-bold text-red-400 mb-4">Sinais de que nao vai funcionar</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>Recusa em seguir o script</li>
+            <li>Nao pratica fora do treinamento</li>
+            <li>Desculpas constantes</li>
+            <li>Zero evolucao em 30 dias</li>
+            <li>Atitude negativa com o processo</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Protocolo de 30 dias para Grupo C</h3>
+        <div class="flex items-center justify-between text-center">
+          <div class="flex-1">
+            <div class="text-3xl mb-2">📋</div>
+            <div class="font-semibold text-neutral-200 text-sm">Dia 1-10</div>
+            <div class="text-xs text-neutral-400">Treino diario intensivo</div>
+          </div>
+          <div class="flex-1 px-4">
+            <div class="h-1 bg-gradient-to-r from-cyan-500 to-yellow-500 rounded-full mb-2"></div>
+            <div class="text-xs text-neutral-400">Avaliacao continua</div>
+          </div>
+          <div class="flex-1">
+            <div class="text-3xl mb-2">📊</div>
+            <div class="font-semibold text-neutral-200 text-sm">Dia 11-20</div>
+            <div class="text-xs text-neutral-400">Pratica com supervisao</div>
+          </div>
+          <div class="flex-1 px-4">
+            <div class="h-1 bg-gradient-to-r from-yellow-500 to-red-500 rounded-full mb-2"></div>
+            <div class="text-xs text-neutral-400">Decisao objetiva</div>
+          </div>
+          <div class="flex-1">
+            <div class="text-3xl mb-2">✅</div>
+            <div class="font-semibold text-neutral-200 text-sm">Dia 21-30</div>
+            <div class="text-xs text-neutral-400">Evolui ou reposiciona</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 A decisao mais dificil</h3>
+        <p class="text-neutral-300">
+          Se depois de 30 dias de treinamento intensivo a pessoa nao atingiu o baseline minimo, <strong class="text-blue-400">considere uma funcao diferente</strong>. Nao e crueldade - e respeito. Manter alguem onde ela nao performa prejudica ela e a equipe inteira.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 font-bold">4</span>
+        <h2 class="text-2xl font-bold">⚡ Intensidade e formato por perfil</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Cada grupo precisa de uma <strong class="text-cyan-400">carga e formato diferente</strong>. Dar o mesmo treinamento para todos e como prescrever o mesmo remedio para doencas diferentes. A personalizacao e o que faz o programa funcionar.
+      </p>
+
+      <div class="bg-gradient-to-br from-cyan-900/20 to-dark-800 rounded-xl p-6 border border-cyan-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Matriz de intensidade</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-dark-600">
+                <th class="text-left py-3 text-cyan-400">Aspecto</th>
+                <th class="text-center py-3 text-emerald-400">Grupo A</th>
+                <th class="text-center py-3 text-yellow-400">Grupo B</th>
+                <th class="text-center py-3 text-red-400">Grupo C</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-300">
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium">Frequencia</td>
+                <td class="py-3 text-center">Quinzenal</td>
+                <td class="py-3 text-center">Semanal</td>
+                <td class="py-3 text-center">Diario</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium">Duracao</td>
+                <td class="py-3 text-center">30-45 min</td>
+                <td class="py-3 text-center">30 min</td>
+                <td class="py-3 text-center">15-20 min</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium">Formato</td>
+                <td class="py-3 text-center">Estudo de caso</td>
+                <td class="py-3 text-center">Role play</td>
+                <td class="py-3 text-center">Repeticao guiada</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium">Foco</td>
+                <td class="py-3 text-center">Avancado</td>
+                <td class="py-3 text-center">Consistencia</td>
+                <td class="py-3 text-center">Fundamentos</td>
+              </tr>
+              <tr>
+                <td class="py-3 font-medium">Supervisao</td>
+                <td class="py-3 text-center">Autonoma</td>
+                <td class="py-3 text-center">Acompanhada</td>
+                <td class="py-3 text-center">Intensiva</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Regra de ouro</h3>
+        <p class="text-neutral-300">
+          <strong class="text-primary">Quanto pior o desempenho, mais curta e mais frequente deve ser a sessao</strong>. O Grupo C nao aguenta 1 hora de treinamento - mas aguenta 15 minutos todo dia. E 15 minutos todo dia supera 1 hora por semana.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 font-bold">5</span>
+        <h2 class="text-2xl font-bold">⏳ Duracao e expectativa por perfil</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Definir <strong class="text-cyan-400">prazos realistas</strong> e essencial para nao frustrar ninguem. Cada perfil evolui em velocidades diferentes. O gestor precisa calibrar expectativas com a equipe e consigo mesmo.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Linha do tempo por grupo</h3>
+        <div class="space-y-6">
+          <div>
+            <div class="flex items-center space-x-2 mb-2">
+              <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded">GRUPO A</span>
+              <span class="text-neutral-400 text-sm">1-2 semanas para resultado visivel</span>
+            </div>
+            <div class="w-full bg-dark-600 rounded-full h-2">
+              <div class="bg-emerald-500 h-2 rounded-full" style="width: 15%"></div>
+            </div>
+            <p class="text-neutral-400 text-xs mt-1">Evolucao rapida: refinamento e habilidades avancadas</p>
+          </div>
+          <div>
+            <div class="flex items-center space-x-2 mb-2">
+              <span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs font-bold rounded">GRUPO B</span>
+              <span class="text-neutral-400 text-sm">30-60 dias para resultado consistente</span>
+            </div>
+            <div class="w-full bg-dark-600 rounded-full h-2">
+              <div class="bg-yellow-500 h-2 rounded-full" style="width: 50%"></div>
+            </div>
+            <p class="text-neutral-400 text-xs mt-1">Evolucao gradual: internalizacao do metodo e mudanca de habito</p>
+          </div>
+          <div>
+            <div class="flex items-center space-x-2 mb-2">
+              <span class="px-2 py-1 bg-red-500/20 text-red-400 text-xs font-bold rounded">GRUPO C</span>
+              <span class="text-neutral-400 text-sm">30 dias para avaliacao definitiva</span>
+            </div>
+            <div class="w-full bg-dark-600 rounded-full h-2">
+              <div class="bg-red-500 h-2 rounded-full" style="width: 25%"></div>
+            </div>
+            <p class="text-neutral-400 text-xs mt-1">Evolui para B ou sai: decisao baseada em dados, nao em esperanca</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Comunicacao de expectativas</h3>
+        <p class="text-neutral-300">
+          Comunique os prazos para cada pessoa individualmente. "Joao, nos proximos 30 dias vamos focar em X. Minha expectativa e que voce consiga Y ate o dia Z. Vou te acompanhar de perto e te ajudar." <strong class="text-blue-400">Clareza gera comprometimento</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Resumo Final -->
+    <section class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+      <h2 class="text-2xl font-bold mb-6 flex items-center">
+        <span class="mr-3">📝</span> Resumo do Modulo
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-cyan-400 mb-4">O que voce aprendeu:</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2">
+              <span class="text-cyan-400">✓</span>
+              <span>Grupo A: refinamento e papel de multiplicador</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-cyan-400">✓</span>
+              <span>Grupo B: script, repeticao e acompanhamento semanal</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-cyan-400">✓</span>
+              <span>Grupo C: intensivo de 30 dias com decisao objetiva</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-cyan-400">✓</span>
+              <span>Intensidade e formato variam por perfil</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-cyan-400">✓</span>
+              <span>Prazos realistas evitam frustracao</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-cyan-400 mb-4">Proximo modulo:</h3>
+          <div class="bg-dark-700/50 rounded-xl p-4 border border-dark-600">
+            <span class="text-cyan-400 font-bold text-sm">6.3</span>
+            <h4 class="font-bold mt-1">📆 O metodo de 7 dias na pratica</h4>
+            <p class="text-neutral-400 text-sm mt-2">
+              Um roteiro dia a dia para treinar um vendedor do zero em uma semana completa.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="modulo-6-1.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+          ← Modulo 6.1
+        </a>
+        <a href="modulo-6-3.html" class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors">
+          Proximo: Modulo 6.3 →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Modulo 6.2: Treinamento por perfil</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) { html.classList.remove('dark'); icon.textContent = '☀️'; localStorage.setItem('theme', 'light'); }
+      else { html.classList.add('dark'); icon.textContent = '🌙'; localStorage.setItem('theme', 'dark'); }
+    }
+    if (localStorage.getItem('theme') === 'light') { document.documentElement.classList.remove('dark'); document.getElementById('theme-icon').textContent = '☀️'; }
+  </script>
+
+</body>
+</html>

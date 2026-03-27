@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 7.5: Plano de Conteudo por Nivel de Consciencia | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Metodo</span></a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Diagnostico</span></a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Gestao</span></a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Estrategia</span></a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Treinamento</span></a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-orange-500/10 text-orange-400"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Ferramentas</span></a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all"><span class="sm:hidden">T8</span><span class="hidden sm:inline">Avancado</span></a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2"><span id="theme-icon" class="text-lg">🌙</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-orange-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4 text-sm">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <a href="index.html" class="text-neutral-500 hover:text-neutral-300">Trilha 7</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-orange-400 font-medium">Modulo 7.5</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-orange-500/20 text-orange-400 text-xs font-semibold rounded-full mb-4">MODULO 7.5</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">📢 Plano de Conteudo por Nivel de Consciencia</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        Templates completos de conteudo para cada nivel de consciencia do cliente. O que publicar, onde, com que frequencia e exemplos prontos.
+      </p>
+
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-orange-400">5</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-orange-400">~60</div>
+          <div class="text-xs text-neutral-400">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-orange-400">5</div>
+          <div class="text-xs text-neutral-400">Templates</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-orange-400">Pratico</div>
+          <div class="text-xs text-neutral-400">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteudo Principal -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/20 text-orange-400 font-bold">1</span>
+        <h2 class="text-2xl font-bold">😴 Template para Inconsciente</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O <strong class="text-orange-400">inconsciente nao sabe que tem um problema</strong>. Ele nao esta buscando solucao porque nao sabe que precisa de uma. O conteudo para esse publico deve despertar curiosidade sem vender.
+      </p>
+
+      <div class="bg-dark-800 rounded-xl p-6 border-2 border-orange-500/30 mb-6">
+        <h3 class="text-lg font-bold text-orange-400 mb-4">TEMPLATE: Conteudo para Inconsciente</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-dark-600">
+                <th class="text-left py-3 text-orange-400">Criterio</th>
+                <th class="text-left py-3 text-neutral-300">Especificacao</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-300">
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-orange-400">Tipo de conteudo</td>
+                <td class="py-3">Entretenimento, curiosidades, dados surpreendentes, historias do dia-a-dia</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-orange-400">Canal principal</td>
+                <td class="py-3">Instagram Reels, TikTok, YouTube Shorts, posts virais no LinkedIn</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-orange-400">Frequencia</td>
+                <td class="py-3">5-7x por semana (volume alto, formato curto)</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-orange-400">Tom</td>
+                <td class="py-3">Leve, curioso, provocativo. Sem mencionar produto ou servico.</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-orange-400">CTA</td>
+                <td class="py-3">Seguir, compartilhar, comentar. Nenhum CTA de venda.</td>
+              </tr>
+              <tr>
+                <td class="py-3 font-medium text-orange-400">Exemplo</td>
+                <td class="py-3 italic">"Voce sabia que 80% das empresas perdem vendas por nao ter um processo comercial? Aqui vai um dado que vai te surpreender..." (video de 30s com dado impactante)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Metrica de Sucesso</h3>
+        <p class="text-neutral-300">
+          Alcance e engajamento (curtidas, compartilhamentos, comentarios). <strong class="text-primary">Nao espere vendas desse conteudo</strong>. O objetivo e atrair audiencia e plantar sementes. A colheita vem nos niveis seguintes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/20 text-orange-400 font-bold">2</span>
+        <h2 class="text-2xl font-bold">😟 Template para Consciente do Problema</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Esse publico <strong class="text-orange-400">sabe que tem um problema mas nao sabe como resolver</strong>. Ele busca informacao, consome conteudo educativo e esta aberto a aprender. E o momento de nomear a dor e amplificar.
+      </p>
+
+      <div class="bg-dark-800 rounded-xl p-6 border-2 border-blue-500/30 mb-6">
+        <h3 class="text-lg font-bold text-blue-400 mb-4">TEMPLATE: Conteudo para Consciente do Problema</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-dark-600">
+                <th class="text-left py-3 text-blue-400">Criterio</th>
+                <th class="text-left py-3 text-neutral-300">Especificacao</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-300">
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-blue-400">Tipo de conteudo</td>
+                <td class="py-3">Posts educativos, listas de erros comuns, diagnosticos, "sinais de que voce tem esse problema"</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-blue-400">Canal principal</td>
+                <td class="py-3">Blog, Instagram carrossel, YouTube (videos de 5-10 min), newsletter</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-blue-400">Frequencia</td>
+                <td class="py-3">3-5x por semana (formato medio, conteudo denso)</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-blue-400">Tom</td>
+                <td class="py-3">Empatico, educativo, diagnostico. Mostra que entende a dor.</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-blue-400">CTA</td>
+                <td class="py-3">Baixar material, se inscrever, agendar diagnostico gratuito.</td>
+              </tr>
+              <tr>
+                <td class="py-3 font-medium text-blue-400">Exemplo</td>
+                <td class="py-3 italic">"5 sinais de que sua equipe comercial esta vendendo menos do que deveria (e o que fazer sobre isso)" — carrossel no Instagram com 7 slides</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/20 text-orange-400 font-bold">3</span>
+        <h2 class="text-2xl font-bold">🔎 Template para Consciente da Solucao</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Esse publico <strong class="text-orange-400">sabe que existem solucoes mas ainda nao conhece a sua</strong>. Esta comparando opcoes, pesquisando alternativas. O conteudo deve posicionar voce como a melhor escolha.
+      </p>
+
+      <div class="bg-dark-800 rounded-xl p-6 border-2 border-purple-500/30 mb-6">
+        <h3 class="text-lg font-bold text-purple-400 mb-4">TEMPLATE: Conteudo para Consciente da Solucao</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-dark-600">
+                <th class="text-left py-3 text-purple-400">Criterio</th>
+                <th class="text-left py-3 text-neutral-300">Especificacao</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-300">
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-purple-400">Tipo de conteudo</td>
+                <td class="py-3">Cases de sucesso, comparativos, demonstracoes, webinars, entrevistas com clientes</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-purple-400">Canal principal</td>
+                <td class="py-3">YouTube (videos longos), webinars, e-mail marketing, LinkedIn artigos</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-purple-400">Frequencia</td>
+                <td class="py-3">2-3x por semana (formato longo, alta profundidade)</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-purple-400">Tom</td>
+                <td class="py-3">Autoridade, prova, confianca. Mostra resultados concretos.</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-purple-400">CTA</td>
+                <td class="py-3">Agendar demonstracao, falar com consultor, assistir case completo.</td>
+              </tr>
+              <tr>
+                <td class="py-3 font-medium text-purple-400">Exemplo</td>
+                <td class="py-3 italic">"Como a empresa X saiu de R$50k/mes para R$200k/mes em vendas em 6 meses — o case completo" — video de 15 min no YouTube</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/20 text-orange-400 font-bold">4</span>
+        <h2 class="text-2xl font-bold">🎁 Template para Consciente do Produto</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Esse publico <strong class="text-orange-400">ja conhece seu produto mas ainda nao comprou</strong>. Esta quase la. O conteudo deve remover as ultimas objecoes e criar o impulso final.
+      </p>
+
+      <div class="bg-dark-800 rounded-xl p-6 border-2 border-emerald-500/30 mb-6">
+        <h3 class="text-lg font-bold text-emerald-400 mb-4">TEMPLATE: Conteudo para Consciente do Produto</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-dark-600">
+                <th class="text-left py-3 text-emerald-400">Criterio</th>
+                <th class="text-left py-3 text-neutral-300">Especificacao</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-300">
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-emerald-400">Tipo de conteudo</td>
+                <td class="py-3">Depoimentos em video, FAQ detalhado, garantias, demonstracoes ao vivo, bastidores</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-emerald-400">Canal principal</td>
+                <td class="py-3">E-mail marketing, remarketing, WhatsApp, pagina de vendas, stories</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-emerald-400">Frequencia</td>
+                <td class="py-3">1-2x por semana (formato variado, alta persuasao)</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-emerald-400">Tom</td>
+                <td class="py-3">Transparente, confiante, direto. Mostra o que o cliente vai receber.</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-emerald-400">CTA</td>
+                <td class="py-3">Comprar, comecar agora, aproveitar condicao especial.</td>
+              </tr>
+              <tr>
+                <td class="py-3 font-medium text-emerald-400">Exemplo</td>
+                <td class="py-3 italic">"Veja o que o Joao disse depois de 3 meses usando o 8020 na equipe dele" — video depoimento de 2 min + link direto para compra</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/20 text-orange-400 font-bold">5</span>
+        <h2 class="text-2xl font-bold">🔥 Template para Muito Consciente</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O <strong class="text-orange-400">muito consciente ja quer comprar</strong>. So precisa do empurrao final. Nao precisa de mais educacao — precisa de facilidade para agir agora.
+      </p>
+
+      <div class="bg-dark-800 rounded-xl p-6 border-2 border-rose-500/30 mb-6">
+        <h3 class="text-lg font-bold text-rose-400 mb-4">TEMPLATE: Conteudo para Muito Consciente</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-dark-600">
+                <th class="text-left py-3 text-rose-400">Criterio</th>
+                <th class="text-left py-3 text-neutral-300">Especificacao</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-300">
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-rose-400">Tipo de conteudo</td>
+                <td class="py-3">Ofertas diretas, condicoes especiais, bonus, countdown, lancamento</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-rose-400">Canal principal</td>
+                <td class="py-3">E-mail direto, WhatsApp, ligacao, remarketing com oferta</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-rose-400">Frequencia</td>
+                <td class="py-3">Pontual e concentrada (janela de 3-7 dias no maximo)</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-rose-400">Tom</td>
+                <td class="py-3">Direto, urgente, escasso. Sem enrolacao — va direto ao ponto.</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-medium text-rose-400">CTA</td>
+                <td class="py-3">Compre agora, garanta sua vaga, aproveite antes que acabe.</td>
+              </tr>
+              <tr>
+                <td class="py-3 font-medium text-rose-400">Exemplo</td>
+                <td class="py-3 italic">"Ultimas 5 vagas com o bonus de implementacao incluso. Acesso fecha sexta as 23h59. Link na bio." — stories com countdown</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Visao consolidada -->
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-orange-400 mb-4">Visao Consolidada: Funil de Conteudo</h3>
+        <div class="space-y-3">
+          <div class="flex items-center space-x-4">
+            <div class="w-24 text-right text-xs text-neutral-500">Topo</div>
+            <div class="flex-1 bg-orange-500/20 rounded-lg p-3 text-sm text-neutral-300">😴 Inconsciente → Entretenimento, dados, curiosidade (5-7x/sem)</div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-24 text-right text-xs text-neutral-500">Meio-alto</div>
+            <div class="flex-1 bg-blue-500/20 rounded-lg p-3 text-sm text-neutral-300">😟 Problema → Educacao, diagnostico, erros comuns (3-5x/sem)</div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-24 text-right text-xs text-neutral-500">Meio</div>
+            <div class="flex-1 bg-purple-500/20 rounded-lg p-3 text-sm text-neutral-300">🔎 Solucao → Cases, comparativos, demonstracoes (2-3x/sem)</div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-24 text-right text-xs text-neutral-500">Meio-baixo</div>
+            <div class="flex-1 bg-emerald-500/20 rounded-lg p-3 text-sm text-neutral-300">🎁 Produto → Depoimentos, garantias, FAQ (1-2x/sem)</div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-24 text-right text-xs text-neutral-500">Fundo</div>
+            <div class="flex-1 bg-rose-500/20 rounded-lg p-3 text-sm text-neutral-300">🔥 Muito consciente → Oferta direta, urgencia, CTA (pontual)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Erro Fatal</h3>
+        <p class="text-neutral-300">
+          O erro mais comum e fazer conteudo de fundo de funil (oferta) para publico de topo (inconsciente). E como pedir em casamento no primeiro encontro. <strong class="text-primary">Cada nivel precisa do conteudo certo</strong>. Respeite a jornada.
+        </p>
+      </div>
+    </section>
+
+    <!-- Resumo Final -->
+    <section class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+      <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📝</span> Resumo do Modulo</h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-orange-400 mb-4">O que voce aprendeu:</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2"><span class="text-orange-400">✓</span><span>Template para publico inconsciente</span></li>
+            <li class="flex items-start space-x-2"><span class="text-orange-400">✓</span><span>Template para consciente do problema</span></li>
+            <li class="flex items-start space-x-2"><span class="text-orange-400">✓</span><span>Template para consciente da solucao</span></li>
+            <li class="flex items-start space-x-2"><span class="text-orange-400">✓</span><span>Template para consciente do produto</span></li>
+            <li class="flex items-start space-x-2"><span class="text-orange-400">✓</span><span>Template para muito consciente</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-orange-400 mb-4">Proximo modulo:</h3>
+          <div class="bg-dark-700/50 rounded-xl p-4 border border-dark-600">
+            <span class="text-orange-400 font-bold text-sm">7.6</span>
+            <h4 class="font-bold mt-1">📊 Avaliacao de Desempenho Comercial</h4>
+            <p class="text-neutral-400 text-sm mt-2">Indicadores, acompanhamento mensal, feedback baseado em dados e plano de desenvolvimento individual.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="modulo-7-4.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Modulo 7.4</a>
+        <a href="modulo-7-6.html" class="flex-1 text-center px-6 py-3 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-500 transition-colors">Proximo: Modulo 7.6 →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Modulo 7.5: Plano de Conteudo por Nivel de Consciencia</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) { html.classList.remove('dark'); icon.textContent = '☀️'; localStorage.setItem('theme', 'light'); }
+      else { html.classList.add('dark'); icon.textContent = '🌙'; localStorage.setItem('theme', 'dark'); }
+    }
+    if (localStorage.getItem('theme') === 'light') { document.documentElement.classList.remove('dark'); document.getElementById('theme-icon').textContent = '☀️'; }
+  </script>
+
+</body>
+</html>

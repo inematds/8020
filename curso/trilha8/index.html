@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha 8: Referencias e Pensamento Avancado | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Diagnostico</span>
+            </a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Gestao</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Estrategia</span>
+            </a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Treinamento</span>
+            </a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all">
+              <span class="sm:hidden">T7</span>
+              <span class="hidden sm:inline">Ferramentas</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-indigo-500/10 text-indigo-400">
+              <span class="sm:hidden">T8</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2">
+              <span id="theme-icon" class="text-lg">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-indigo-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300 text-sm">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-indigo-400 text-sm font-medium">Trilha 8</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-400 text-xs font-semibold rounded-full mb-4">
+        TRILHA 8 - REFERENCIAS E PENSAMENTO AVANCADO
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">📚 Referencias e Pensamento Avancado</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        Os livros essenciais, os pensamentos mais avancados em vendas, as diferencas B2B vs B2C e o futuro do vendedor na era da IA. Esta trilha consolida e expande tudo que voce aprendeu.
+      </p>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-indigo-400">4</div>
+          <div class="text-xs text-neutral-400">Modulos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-indigo-400">~20</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-indigo-400">~4h</div>
+          <div class="text-xs text-neutral-400">Duracao</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-indigo-400">Avancado</div>
+          <div class="text-xs text-neutral-400">Nivel</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Modulos -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Modulo 8.1 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-indigo-400 font-bold">8.1</span>
+          <span class="text-xs text-neutral-500">~90 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">📖 Os 10 livros essenciais</h3>
+        <p class="text-neutral-400 text-sm">A biblioteca definitiva para quem quer dominar vendas baseadas em valor, preco e negociacao.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🔄</span>
+            <div class="flex-1">
+              <span class="font-medium">SPIN Selling — Neil Rackham</span>
+              <span class="text-neutral-500 text-sm ml-2">- Perguntas que constroem valor</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">Tese central:</span>
+                <p class="text-neutral-300 text-sm mt-1">Em vendas complexas, perguntas vendem mais que argumentos. O metodo SPIN (Situacao, Problema, Implicacao, Necessidade de Solucao) guia o comprador a descobrir o proprio valor da solucao, sem que o vendedor precise "empurrar" nada.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que ler:</span>
+                <p class="text-neutral-300 text-sm mt-1">E o livro fundador das vendas consultivas modernas. Baseado em pesquisa com mais de 35.000 calls de vendas. Muda a mentalidade de "apresentar" para "diagnosticar".</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceito-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Perguntas de Implicacao — ao explorar as consequencias de um problema nao resolvido, o vendedor amplifica a urgencia sem precisar pressionar. O comprador se convence sozinho.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">⚔️</span>
+            <div class="flex-1">
+              <span class="font-medium">The Challenger Sale — Dixon & Adamson</span>
+              <span class="text-neutral-500 text-sm ml-2">- Ensinar, reposicionar, conduzir</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">Tese central:</span>
+                <p class="text-neutral-300 text-sm mt-1">Os melhores vendedores nao se limitam a construir relacionamento — eles desafiam o cliente com insights novos, reposicionam a forma como ele ve o problema e conduzem a conversa de forma assertiva. O perfil "Challenger" supera todos os outros em vendas complexas.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que ler:</span>
+                <p class="text-neutral-300 text-sm mt-1">Revolucionou a ideia de que "bom vendedor e quem agrada o cliente". Mostra que ensinar algo novo ao comprador e mais poderoso que simplesmente atender demandas.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceito-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Commercial Teaching — criar um insight que o cliente nao tinha, conectar esse insight a um problema real e mostrar que sua solucao e a unica que resolve dessa forma.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">⚡</span>
+            <div class="flex-1">
+              <span class="font-medium">The JOLT Effect — Dixon & McKenna</span>
+              <span class="text-neutral-500 text-sm ml-2">- Resolver indecisao, nao so objecao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">Tese central:</span>
+                <p class="text-neutral-300 text-sm mt-1">A maior ameaca em vendas nao e perder para o concorrente — e perder para a indecisao do cliente. 40-60% dos deals morrem em "no decision". O JOLT Effect ensina a superar o medo de decidir, nao apenas objecoes racionais.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que ler:</span>
+                <p class="text-neutral-300 text-sm mt-1">Complementa o Challenger Sale com uma nova camada: mesmo quando o cliente quer comprar, ele trava. Entender indecisao e fundamental para fechar deals complexos.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceito-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">JOLT — Judge the indecision, Offer a recommendation, Limit the exploration, Take risk off the table. Um framework para destravar o cliente paralisado pelo medo de errar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">🤝</span>
+            <div class="flex-1">
+              <span class="font-medium">The Challenger Customer — Adamson, Dixon et al</span>
+              <span class="text-neutral-500 text-sm ml-2">- Consenso interno em vendas complexas</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">Tese central:</span>
+                <p class="text-neutral-300 text-sm mt-1">Em vendas B2B, o desafio nao e convencer uma pessoa — e construir consenso entre 6-10 stakeholders. O livro mostra que voce precisa encontrar e capacitar "mobilizadores" dentro da empresa do cliente para vender por voce.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que ler:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vendas complexas falham quando voce depende de um unico contato. Este livro ensina a mapear, priorizar e ativar os stakeholders certos para construir consenso interno.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceito-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Mobilizadores vs Talkers — nem todo contato entusiasmado e util. Os mobilizadores sao pessoas que tem credibilidade interna e capacidade de mover a organizacao. Identifica-los e a chave.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">💎</span>
+            <div class="flex-1">
+              <span class="font-medium">The Power of Value Selling — Julie Thomas</span>
+              <span class="text-neutral-500 text-sm ml-2">- Conduzir para valor e confianca</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">Tese central:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vender valor nao e um slogan — e um processo disciplinado de descoberta, quantificacao e comunicacao do impacto economico que sua solucao gera. Confianca se constroi quando o cliente ve numeros reais, nao promessas vagas.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que ler:</span>
+                <p class="text-neutral-300 text-sm mt-1">Conecta o conceito de valor com execucao pratica. Mostra como criar business cases, calcular ROI e apresentar valor de forma que o CFO aprove.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceito-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Visionario Plan — um documento compartilhado com o cliente que alinha problema, solucao, metricas de sucesso e cronograma. Transforma a conversa de "voce quer comprar?" para "vamos construir juntos".</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg mr-2">🎯</span>
+            <div class="flex-1">
+              <span class="font-medium">Gap Selling — Keenan</span>
+              <span class="text-neutral-500 text-sm ml-2">- Estado atual vs estado futuro</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">Tese central:</span>
+                <p class="text-neutral-300 text-sm mt-1">Toda venda e sobre o GAP — a distancia entre onde o cliente esta (estado atual) e onde ele quer chegar (estado futuro). Quanto maior o gap percebido, maior a urgencia e a disposicao para pagar. O vendedor existe para tornar esse gap visivel e insuportavel.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que ler:</span>
+                <p class="text-neutral-300 text-sm mt-1">Framework simples e poderoso. Funciona como diagnostico: se o cliente nao percebe o gap, nao ha venda. Ensina a fazer perguntas que revelam a dor real, nao a dor superficial.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceito-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Current State Discovery — antes de falar de solucao, mapeie profundamente o estado atual do cliente: processos, metricas, frustracao, custo da inacao. O gap se revela na comparacao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
+            <span class="text-lg mr-2">🧭</span>
+            <div class="flex-1">
+              <span class="font-medium">Stop Selling and Start Leading — Richardson</span>
+              <span class="text-neutral-500 text-sm ml-2">- Vendedor como lider de pensamento</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">Tese central:</span>
+                <p class="text-neutral-300 text-sm mt-1">Os compradores nao querem ser "vendidos" — querem ser liderados. O vendedor moderno precisa agir como lider: inspirar confianca, criar visao de futuro, remover incertezas e guiar o cliente por um processo de decisao complexo.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que ler:</span>
+                <p class="text-neutral-300 text-sm mt-1">Baseado em pesquisa da Kouzes & Posner sobre lideranca aplicada a vendas. Mostra que os comportamentos que inspiram confianca em lideres sao os mesmos que fecham vendas complexas.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceito-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">As 5 Praticas de Lideranca em Vendas — modelar o caminho, inspirar uma visao compartilhada, desafiar o processo, capacitar os outros a agir e encorajar o coracao. Lideranca aplicada ao pipeline.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">8</span>
+            <span class="text-lg mr-2">💡</span>
+            <div class="flex-1">
+              <span class="font-medium">Monetizing Innovation — Ramanujam & Tacke</span>
+              <span class="text-neutral-500 text-sm ml-2">- Pensar preco antes do produto</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">Tese central:</span>
+                <p class="text-neutral-300 text-sm mt-1">A maioria das inovacoes falha nao por falta de tecnologia, mas por falta de estrategia de preco. Pensar em preco e valor ANTES de desenvolver o produto muda radicalmente as chances de sucesso. 72% dos lancamentos falham por erro de monetizacao.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que ler:</span>
+                <p class="text-neutral-300 text-sm mt-1">Conecta produto, preco e valor de forma pratica. Essencial para quem trabalha com solucoes premium e precisa justificar preco antes de o cliente ver o produto funcionando.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceito-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Willingness to Pay (WTP) — descubra quanto o cliente esta disposto a pagar ANTES de definir features. Construa o produto ao redor do valor percebido, nao ao contrario.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">9</span>
+            <span class="text-lg mr-2">💲</span>
+            <div class="flex-1">
+              <span class="font-medium">Confessions of the Pricing Man — Hermann Simon</span>
+              <span class="text-neutral-500 text-sm ml-2">- Preco como expressao de valor</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">Tese central:</span>
+                <p class="text-neutral-300 text-sm mt-1">Preco nao e custo + margem. Preco e a expressao monetaria do valor percebido pelo cliente. Hermann Simon, o maior especialista em pricing do mundo, mostra que a maioria das empresas deixa dinheiro na mesa por medo de cobrar o que vale.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que ler:</span>
+                <p class="text-neutral-300 text-sm mt-1">Muda a relacao do vendedor com preco. Para de pedir desculpas pelo preco e passa a defendê-lo com conviccao. Essencial para quem trabalha com preco premium.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceito-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Value-Based Pricing — definir preco com base no valor que o cliente recebe, nao no custo de producao. Uma solucao que economiza R$1M/ano pode custar R$200K sem parecer cara.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">10</span>
+            <span class="text-lg mr-2">🏆</span>
+            <div class="flex-1">
+              <span class="font-medium">Negotiation Genius — Malhotra & Bazerman</span>
+              <span class="text-neutral-500 text-sm ml-2">- Criacao e captura de valor</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">Tese central:</span>
+                <p class="text-neutral-300 text-sm mt-1">Negociacao nao e guerra — e criacao de valor. Os melhores negociadores expandem o bolo antes de dividir. De Harvard Business School, o livro ensina a criar acordos que geram mais valor para ambos os lados, depois capturar sua parte justa.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que ler:</span>
+                <p class="text-neutral-300 text-sm mt-1">Eleva a negociacao de "quem ganha mais" para "como criamos mais". Frameworks aplicaveis tanto em vendas de R$10K quanto em deals de R$10M.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceito-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">ZOPA e BATNA — Zone of Possible Agreement e Best Alternative to Negotiated Agreement. Conhecer seus limites e os do outro lado transforma negociacao de intuicao em estrategia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-8-1.html')" class="px-4 py-2 text-sm bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-400 border border-indigo-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-8-1.html" class="px-4 py-2 text-sm bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 8.2 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-indigo-400 font-bold">8.2</span>
+          <span class="text-xs text-neutral-500">~60 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">🧠 Os 6 pensamentos mais avancados em vendas (2026)</h3>
+        <p class="text-neutral-400 text-sm">As ideias de fronteira que separam vendedores comuns de vendedores estrategicos.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">💡</span>
+            <div class="flex-1">
+              <span class="font-medium">O vendedor moderno cria clareza, nao so persuasao</span>
+              <span class="text-neutral-500 text-sm ml-2">- O problema central e indecisao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">O maior obstaculo em vendas nao e o "nao" — e o "ainda nao sei". Compradores modernos tem acesso a mais informacao do que nunca, mas isso gera paralisia, nao clareza. O vendedor que cria clareza vence.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Muda o papel do vendedor de "convencer" para "simplificar". Em um mundo com excesso de opcoes e informacao, clareza e o ativo mais valioso que voce pode oferecer.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Indecisao como inimigo, paradoxo da escolha, simplificacao da jornada de compra, buyer enablement, recomendacao assertiva.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">📊</span>
+            <div class="flex-1">
+              <span class="font-medium">Vender valor e provar impacto economico cedo</span>
+              <span class="text-neutral-500 text-sm ml-2">- Resultado mensuravel, custo da inacao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Nao basta dizer "nosso produto e bom". O vendedor moderno quantifica o impacto economico da solucao na primeira conversa. Custo da inacao, ROI projetado e payback period sao armas de venda, nao de pos-venda.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Compradores exigem justificativa financeira cada vez mais cedo. Quem apresenta numeros concretos antes do concorrente ganha posicao privilegiada no processo decisorio.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">ROI antecipado, custo da inacao (cost of doing nothing), business case early-stage, metricas de impacto, total cost of ownership.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">🛡️</span>
+            <div class="flex-1">
+              <span class="font-medium">O campo de batalha mudou do preco para a confianca na decisao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Compra sem vendedor vs com consultor</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">O comprador ja pesquisou tudo online antes de falar com voce. Preco ele ja sabe. Features ele ja comparou. O que ele nao tem e confianca de que esta fazendo a escolha certa. O vendedor que gera essa confianca ganha.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Competir por preco e uma corrida para o fundo. Competir por confianca e uma corrida para o topo. O diferencial sustentavel nao e feature — e a sensacao de seguranca que voce transmite.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Decision confidence, trusted advisor, risk mitigation, social proof estrategico, garantias inteligentes, compra autoservico vs compra consultiva.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">🏗️</span>
+            <div class="flex-1">
+              <span class="font-medium">Em vendas complexas, vender e construir consenso interno</span>
+              <span class="text-neutral-500 text-sm ml-2">- Buyer enablement e mutual action plans</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Com 6-10 decisores envolvidos, o vendedor precisa vender nao para uma pessoa, mas para um comite. Isso exige materiais internos, champions equipados e planos de acao compartilhados (mutual action plans).</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">A maioria dos deals morre entre stakeholders, nao na call com o vendedor. Equipar seu champion para vender internamente e tao importante quanto sua propria performance.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Buyer enablement, mutual action plan, champion enablement, stakeholder mapping, consensus building, internal selling deck.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">💰</span>
+            <div class="flex-1">
+              <span class="font-medium">Preco premium se sustenta quando valor fica concreto</span>
+              <span class="text-neutral-500 text-sm ml-2">- Amarrar preco a valor percebido</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Preco alto so e problema quando valor e abstrato. Quando voce conecta preco a um resultado concreto e mensuravel, o preco para de ser objecao e vira investimento. "Custa R$50K" vs "Custa R$50K e gera R$300K em 12 meses".</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">O medo de cobrar caro e o maior limitador de receita em vendas. Quando voce domina a ancoragem em valor, preco premium se torna natural e defensavel.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Ancoragem em valor, price framing, ROI selling, value gap analysis, preco como investimento, defesa de preco premium.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg mr-2">🤖</span>
+            <div class="flex-1">
+              <span class="font-medium">IA muda a execucao mas nao substitui a parte humana nobre</span>
+              <span class="text-neutral-500 text-sm ml-2">- Automacao + interpretacao humana</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">IA automatiza pesquisa, personalizacao de emails, scoring de leads e analise de dados. Mas a interpretacao de contexto, a construcao de confianca e o julgamento estrategico continuam sendo exclusivamente humanos.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Para nao ser substituido, o vendedor precisa entender o que a IA faz melhor e o que so ele faz. O futuro e hibrido: IA na eficiencia, humano na estrategia e confianca.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Automacao de low-value tasks, augmented selling, human-in-the-loop, inteligencia emocional como diferencial, IA como copiloto nao como piloto.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-8-2.html')" class="px-4 py-2 text-sm bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-400 border border-indigo-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-8-2.html" class="px-4 py-2 text-sm bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 8.3 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-indigo-400 font-bold">8.3</span>
+          <span class="text-xs text-neutral-500">~45 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">🔀 Vendas B2B vs B2C: o que muda</h3>
+        <p class="text-neutral-400 text-sm">Entender as diferencas estruturais e o que se aplica em ambos os mundos.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">⏱️</span>
+            <div class="flex-1">
+              <span class="font-medium">Ciclo de decisao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Curto vs longo, individual vs comite</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">B2C: decisao individual, emocional, ciclo curto (minutos a dias). B2B: decisao coletiva, racional + politica, ciclo longo (semanas a meses). Entender essa diferenca muda toda a abordagem.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Aplicar tecnicas B2C em B2B frustra. Aplicar tecnicas B2B em B2C complica. Saber qual contexto voce esta operando define quais ferramentas usar.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Ciclo de compra, decisao individual vs comite, impulso vs deliberacao, stakeholder mapping, lead time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">🧩</span>
+            <div class="flex-1">
+              <span class="font-medium">Niveis de consciencia em B2B</span>
+              <span class="text-neutral-500 text-sm ml-2">- Mais pessoas, mais complexidade</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Em B2B, cada stakeholder pode estar em um nivel de consciencia diferente. O CFO quer numeros, o CTO quer tecnologia, o usuario quer facilidade. Voce precisa falar linguas diferentes na mesma venda.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Uma apresentacao unica para todos os stakeholders falha. Personalizar a mensagem para cada nivel de consciencia e papel organizacional e o que fecha deals complexos.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Niveis de consciencia por persona, multi-threading, mensagem por stakeholder, champion vs decision maker vs influencer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">📈</span>
+            <div class="flex-1">
+              <span class="font-medium">Construcao de valor em B2B</span>
+              <span class="text-neutral-500 text-sm ml-2">- ROI, business case, reducao de risco</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Em B2C, valor e emocional e imediato. Em B2B, valor precisa ser quantificado em ROI, reducao de risco, ganho de eficiencia e impacto no P&L. Sem business case, nao ha aprovacao.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Muitos vendedores B2B vendem como B2C — com emocao e features. Aprender a construir valor quantificavel e o que separa vendedores de R$10K de vendedores de R$500K.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">ROI calculation, business case, total cost of ownership, risk mitigation value, payback period, executive summary financeiro.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">🎤</span>
+            <div class="flex-1">
+              <span class="font-medium">Script e objecoes em B2B</span>
+              <span class="text-neutral-500 text-sm ml-2">- O que muda na abordagem</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Em B2B, objecoes sao mais sofisticadas: "preciso aprovar internamente", "nao esta no orcamento deste trimestre", "temos contrato com outro fornecedor". O script precisa antecipar e resolver cada camada.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Scripts B2C nao funcionam em B2B. As objecoes sao sistemicas, nao pessoais. Aprender a navegar objecoes organizacionais e fundamental para vendas enterprise.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Objecoes organizacionais, ciclo orcamentario, procurement, RFP, objecoes de timing vs objecoes de valor, multi-level selling.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">🔗</span>
+            <div class="flex-1">
+              <span class="font-medium">O que se aplica igual</span>
+              <span class="text-neutral-500 text-sm ml-2">- Os principios universais</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Apesar das diferencas, os principios fundamentais sao os mesmos: pessoas compram de quem confiam, valor precede preco, emocao influencia toda decisao (mesmo B2B), e follow-up disciplinado fecha vendas.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Saber o que e universal permite transitar entre B2B e B2C sem perder eficacia. Os fundamentos das Trilhas 1-7 se aplicam em qualquer contexto de venda.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Confianca como base, valor antes de preco, escuta ativa, diagnostico antes de prescricao, follow-up, principio 80/20 em qualquer contexto.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-8-3.html')" class="px-4 py-2 text-sm bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-400 border border-indigo-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-8-3.html" class="px-4 py-2 text-sm bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Modulo 8.4 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-indigo-400 font-bold">8.4</span>
+          <span class="text-xs text-neutral-500">~45 min</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">🚀 O futuro: IA, autoservico e o papel humano</h3>
+        <p class="text-neutral-400 text-sm">Como se preparar para o futuro das vendas na era da inteligencia artificial.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🤖</span>
+            <div class="flex-1">
+              <span class="font-medium">O que a IA ja substitui</span>
+              <span class="text-neutral-500 text-sm ml-2">- Automacao de processos repetitivos</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">IA ja automatiza prospeccao, qualificacao inicial, personalizacao de emails em massa, analise de calls, previsao de pipeline e scoring de leads. Tarefas que antes tomavam horas agora levam minutos.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vendedores que nao usam IA para tarefas operacionais estao em desvantagem competitiva. Mas vendedores que so fazem tarefas operacionais estao em risco de substituicao.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sales automation, AI SDR, conversational intelligence, predictive analytics, lead scoring automatizado, email sequencing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">🧠</span>
+            <div class="flex-1">
+              <span class="font-medium">O que so humano resolve</span>
+              <span class="text-neutral-500 text-sm ml-2">- Interpretacao, contexto, confianca</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Interpretar o nao-dito, navegar politica organizacional, construir confianca genuina, fazer julgamentos eticos, adaptar estrategia em tempo real e criar conexao emocional — isso permanece humano.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Saber o que e insubstituivel permite investir tempo nas habilidades certas. O vendedor do futuro nao faz o que a IA faz — faz o que a IA nao consegue.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Inteligencia emocional, leitura de contexto, navegacao politica, confianca interpessoal, julgamento estrategico, empatia genuina.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">⚡</span>
+            <div class="flex-1">
+              <span class="font-medium">O modelo hibrido</span>
+              <span class="text-neutral-500 text-sm ml-2">- Digital + humano, cada um no seu papel</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">O futuro nao e 100% IA nem 100% humano. E hibrido: IA faz o volume e a eficiencia, humano faz a estrategia e a confianca. Autoservico para compras simples, consultor para compras complexas.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Entender o modelo hibrido permite posicionar-se corretamente. Nao e "eu vs IA" — e "eu + IA". O vendedor que domina as duas dimensoes e imbativel.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Product-led growth + sales-led, self-service + consultivo, digital-first + human-close, AI copilot, augmented selling.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">🎯</span>
+            <div class="flex-1">
+              <span class="font-medium">Como se posicionar como vendedor no futuro</span>
+              <span class="text-neutral-500 text-sm ml-2">- Habilidades que nao se automatizam</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">As habilidades a prova de futuro: pensamento estrategico, construcao de relacionamento, negociacao complexa, lideranca de pensamento, capacidade de diagnostico e comunicacao de valor. Invista aqui.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">O mercado vai eliminar vendedores que so processam pedidos. Vai valorizar ainda mais vendedores que pensam, diagnosticam e lideram. O gap salarial entre os dois vai aumentar dramaticamente.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">T-shaped seller, deep expertise, strategic thinking, executive presence, continuous learning, personal brand em vendas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">🌟</span>
+            <div class="flex-1">
+              <span class="font-medium">O vendedor do futuro</span>
+              <span class="text-neutral-500 text-sm ml-2">- Conselheiro, diagnosticador, construtor de confianca</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-indigo-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">O vendedor do futuro e tres coisas: conselheiro de confianca que o cliente busca antes de decidir, diagnosticador que identifica problemas antes do cliente e construtor de confianca que torna a decisao segura.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Este e o destino final de tudo que voce aprendeu nas 8 trilhas. O vendedor do futuro ja existe — sao os top performers de hoje. O metodo 8020 prepara voce para ser esse profissional.</p>
+              </div>
+              <div>
+                <span class="text-indigo-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Trusted advisor, diagnostic selling, confidence builder, value architect, strategic partner, customer success mindset.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modulo-8-4.html')" class="px-4 py-2 text-sm bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-400 border border-indigo-500/30 rounded-lg font-medium transition-colors">
+          📖 Ver em Modal
+        </button>
+        <a href="modulo-8-4.html" class="px-4 py-2 text-sm bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium transition-colors">
+          📄 Ver Completo
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col sm:flex-row gap-4">
+      <a href="../trilha7/index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+        ← Voltar: Trilha 7 - Ferramentas
+      </a>
+      <a href="../../index.html" class="flex-1 text-center px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-500 transition-colors">
+        Voltar ao Inicio →
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Trilha 8: Referencias e Pensamento Avancado</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Overlay -->
+  <div id="modal-overlay" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+    <div class="relative flex items-start justify-center min-h-screen p-4 pt-8 overflow-y-auto">
+      <div class="relative bg-dark-800 rounded-2xl border border-dark-600 w-full max-w-4xl max-h-[90vh] overflow-hidden shadow-2xl">
+        <div class="sticky top-0 z-10 flex items-center justify-between p-4 bg-dark-800 border-b border-dark-600">
+          <h3 class="font-bold text-lg text-indigo-400">Conteudo do Modulo</h3>
+          <button onclick="closeModal()" class="p-2 hover:bg-dark-700 rounded-lg transition-colors text-neutral-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="modal-content" class="p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
+          <div class="flex items-center justify-center py-12">
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-400"></div>
+            <span class="ml-3 text-neutral-400">Carregando...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) {
+          exp.classList.remove('active');
+        }
+      });
+
+      explanation.classList.toggle('active');
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+
+    function openModal(moduloUrl) {
+      const modal = document.getElementById('modal-overlay');
+      const content = document.getElementById('modal-content');
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      content.innerHTML = `
+        <div class="flex items-center justify-center py-12">
+          <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-400"></div>
+          <span class="ml-3 text-neutral-400">Carregando...</span>
+        </div>
+      `;
+
+      fetch(moduloUrl)
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const mainContent = doc.querySelector('main');
+
+          if (mainContent) {
+            content.innerHTML = mainContent.innerHTML;
+          } else {
+            content.innerHTML = '<p class="text-neutral-400">Conteudo nao encontrado.</p>';
+          }
+        })
+        .catch(err => {
+          content.innerHTML = '<p class="text-red-400">Erro ao carregar conteudo.</p>';
+        });
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal-overlay');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>

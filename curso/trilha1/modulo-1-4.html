@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 1.4: A arte de perguntar | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span><span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-emerald-500/10 text-emerald-400"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Metodo</span></a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Diagnostico</span></a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Gestao</span></a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Estrategia</span></a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Treinamento</span></a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Ferramentas</span></a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all"><span class="sm:hidden">T8</span><span class="hidden sm:inline">Avancado</span></a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2"><span id="theme-icon" class="text-lg">🌙</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4 text-sm">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <a href="index.html" class="text-neutral-500 hover:text-neutral-300">Trilha 1</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-emerald-400 font-medium">Modulo 1.4</span>
+      </div>
+      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MODULO 1.4</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">❓ A arte de perguntar</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Dominar perguntas estrategicas e a habilidade mais valiosa em vendas. Quem pergunta melhor, vende mais.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Topicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-xl font-bold text-emerald-400">~60</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-xl font-bold text-emerald-400">Basico</div><div class="text-xs text-neutral-400">Nivel</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-xl font-bold text-emerald-400">Pratico</div><div class="text-xs text-neutral-400">Tipo</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">1</span>
+        <h2 class="text-2xl font-bold">🩺 Por que perguntar antes de oferecer</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Imagine um medico que prescreve remedio antes de perguntar o que voce sente. Absurdo, certo? Em vendas, a maioria faz exatamente isso: <strong class="text-emerald-400">oferece antes de entender</strong>. Perguntar antes de oferecer e a base de toda venda consultiva. E o que separa o vendedor profissional do amador.
+      </p>
+      <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">O que muda quando voce pergunta primeiro</h3>
+        <ul class="space-y-3 text-neutral-300">
+          <li class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><span>Voce descobre o que realmente importa para o cliente</span></li>
+          <li class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><span>Sua oferta se encaixa perfeitamente na necessidade</span></li>
+          <li class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><span>Objecoes diminuem porque o cliente se sente ouvido</span></li>
+          <li class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><span>O cliente faz a venda por voce ao verbalizar a propria dor</span></li>
+        </ul>
+      </div>
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Regra de ouro</h3>
+        <p class="text-neutral-300">Nos primeiros 60% da conversa de vendas, <strong class="text-primary">o cliente deve falar mais do que voce</strong>. Se voce esta falando mais, esta vendendo errado.</p>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">2</span>
+        <h2 class="text-2xl font-bold">🔑 As 4 perguntas que mudam tudo</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Existem <strong class="text-emerald-400">4 perguntas universais</strong> que funcionam em qualquer contexto de vendas. Decorar e praticar essas perguntas ja coloca voce a frente de 90% dos vendedores.
+      </p>
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">As 4 Perguntas Essenciais</h3>
+        <div class="space-y-4">
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-emerald-500/20">
+            <h4 class="font-semibold text-emerald-400 mb-1">1. "O que te incomoda?"</h4>
+            <p class="text-sm text-neutral-400">Revela a dor. O cliente verbaliza o problema com as proprias palavras.</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-emerald-500/20">
+            <h4 class="font-semibold text-emerald-400 mb-1">2. "Quanto isso te custa?"</h4>
+            <p class="text-sm text-neutral-400">Quantifica a dor. Transforma sentimento em numero. Cria referencia de valor.</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-emerald-500/20">
+            <h4 class="font-semibold text-emerald-400 mb-1">3. "O que acontece se nada mudar?"</h4>
+            <p class="text-sm text-neutral-400">Cria urgencia. O cliente projeta as consequencias da inacao. Amplifica a dor.</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-emerald-500/20">
+            <h4 class="font-semibold text-emerald-400 mb-1">4. "O que seria ideal?"</h4>
+            <p class="text-sm text-neutral-400">Revela o desejo. O cliente descreve o cenario perfeito — e voce pode mostrar que entrega exatamente isso.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">3</span>
+        <h2 class="text-2xl font-bold">🔥 Perguntas que ampliam a dor</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        As perguntas de implicacao sao as mais poderosas do SPIN Selling. Elas fazem o cliente <strong class="text-emerald-400">calcular o custo real de nao resolver o problema</strong>. Nao e manipulacao — e clareza. Voce esta ajudando o cliente a ver o que ele ja sabe mas nao quantificou.
+      </p>
+      <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">Exemplos de perguntas de implicacao</h3>
+        <ul class="space-y-3 text-neutral-300">
+          <li class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">→</span><span>"Se isso continuar por mais 6 meses, qual o impacto no faturamento?"</span></li>
+          <li class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">→</span><span>"Quantas horas por semana seu time perde com esse problema?"</span></li>
+          <li class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">→</span><span>"Esse problema afeta outras areas da empresa tambem?"</span></li>
+          <li class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">→</span><span>"Qual o custo de perder mais um cliente por causa disso?"</span></li>
+        </ul>
+      </div>
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Dado importante</h3>
+        <p class="text-neutral-300">Na pesquisa original do SPIN Selling (35.000+ conversas de vendas), <strong class="text-blue-400">perguntas de implicacao foram o fator #1 que diferenciou vendedores de alta performance</strong> dos medianos.</p>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">4</span>
+        <h2 class="text-2xl font-bold">🌟 Perguntas que revelam o desejo</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Apos ampliar a dor, e hora de fazer o cliente <strong class="text-emerald-400">visualizar o cenario ideal</strong>. Perguntas de necessidade de solucao criam uma ponte emocional entre o problema atual e o futuro desejado. O cliente para de pensar em custo e comeca a pensar em investimento.
+      </p>
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">Exemplos de perguntas de desejo</h3>
+        <div class="space-y-3">
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+            <p class="text-neutral-300 text-sm">"Se pudesse resolver isso, como seria o dia a dia da sua equipe?"</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+            <p class="text-neutral-300 text-sm">"Imagine que esse problema nao existisse mais. O que mudaria?"</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+            <p class="text-neutral-300 text-sm">"Quanto valeria para voce recuperar essas 20 horas por semana?"</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Por que funciona</h3>
+        <p class="text-neutral-300">Pessoas compram por emocao e justificam com logica. Quando o cliente <strong class="text-primary">visualiza e sente o futuro desejado</strong>, o desejo de chegar la supera qualquer objecao de preco.</p>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">5</span>
+        <h2 class="text-2xl font-bold">🔄 SPIN como base</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O <strong class="text-emerald-400">SPIN Selling</strong> de Neil Rackham e o framework de perguntas mais pesquisado e validado da historia das vendas. Baseado em pesquisa com mais de 35.000 conversas de vendas em 12 anos, ele identifica 4 tipos de perguntas que, usadas na sequencia certa, aumentam dramaticamente a taxa de fechamento.
+      </p>
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">O Modelo SPIN</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🔍</div>
+            <div class="font-semibold text-neutral-200 text-sm">S — Situacao</div>
+            <div class="text-xs text-neutral-400">Entender o contexto atual do cliente</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">😟</div>
+            <div class="font-semibold text-neutral-200 text-sm">P — Problema</div>
+            <div class="text-xs text-neutral-400">Revelar dificuldades e insatisfacoes</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🔥</div>
+            <div class="font-semibold text-neutral-200 text-sm">I — Implicacao</div>
+            <div class="text-xs text-neutral-400">Amplificar consequencias do problema</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🌟</div>
+            <div class="font-semibold text-neutral-200 text-sm">N — Necessidade</div>
+            <div class="text-xs text-neutral-400">Criar visao do futuro desejado</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Resultados da pesquisa</h3>
+        <p class="text-neutral-300">Vendedores que usam SPIN sistematicamente tem <strong class="text-blue-400">taxa de fechamento 17% maior</strong> em vendas complexas comparado com vendedores que usam abordagens tradicionais de pressao.</p>
+      </div>
+    </section>
+
+    <!-- Topico 6 -->
+    <section id="topico-6" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">6</span>
+        <h2 class="text-2xl font-bold">⚠️ Erros comuns ao perguntar</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Perguntar e uma arte, e como toda arte, tem <strong class="text-emerald-400">erros comuns que devem ser evitados</strong>. A diferenca entre um bom diagnostico e um interrogatorio desconfortavel esta na forma, no tom e no ritmo das perguntas.
+      </p>
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-red-900/20 rounded-xl p-6 border border-red-500/30">
+          <h4 class="font-bold text-red-400 mb-4">✗ Erros frequentes</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>Perguntar sem ouvir a resposta</li>
+            <li>Fazer 10 perguntas seguidas sem comentar</li>
+            <li>Perguntas fechadas demais (sim/nao)</li>
+            <li>Tom de interrogatorio policial</li>
+            <li>Nao conectar uma resposta com a proxima pergunta</li>
+          </ul>
+        </div>
+        <div class="bg-emerald-900/20 rounded-xl p-6 border border-emerald-500/30">
+          <h4 class="font-bold text-emerald-400 mb-4">✓ Boas praticas</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>Perguntar, ouvir, validar, depois perguntar novamente</li>
+            <li>Maximo 2-3 perguntas antes de um comentario</li>
+            <li>Perguntas abertas que convocam narrativa</li>
+            <li>Tom de conversa entre amigos</li>
+            <li>"Voce mencionou X — me conta mais sobre isso"</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Exercicio Pratico</h3>
+        <p class="text-neutral-300">Na proxima conversa de vendas, <strong class="text-primary">grave o audio (com permissao)</strong> e depois ouca. Conte quantas vezes voce perguntou vs quantas vezes voce falou sobre o produto. O ratio ideal e 70% perguntas/escuta, 30% apresentacao.</p>
+      </div>
+    </section>
+
+    <!-- Resumo Final -->
+    <section class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+      <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📝</span> Resumo do Modulo</h2>
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-emerald-400 mb-4">O que voce aprendeu:</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Perguntar antes de oferecer — sempre</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>As 4 perguntas que mudam tudo</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Perguntas de implicacao amplificam urgencia</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Perguntas de desejo criam motivacao emocional</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>SPIN Selling como framework base</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Erros comuns e como evita-los</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-emerald-400 mb-4">Proximo modulo:</h3>
+          <div class="bg-dark-700/50 rounded-xl p-4 border border-dark-600">
+            <span class="text-emerald-400 font-bold text-sm">1.5</span>
+            <h4 class="font-bold mt-1">🔄 Traduzir caracteristicas em impacto</h4>
+            <p class="text-neutral-400 text-sm mt-2">Parar de listar funcionalidades e comecar a mostrar resultados reais.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="modulo-1-3.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Modulo 1.3</a>
+        <a href="modulo-1-5.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Proximo: Modulo 1.5 →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4"><span class="text-2xl">💰</span><span class="font-bold text-neutral-200">8020</span><span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a></div>
+        <div class="text-neutral-500 text-sm">Modulo 1.4: A arte de perguntar</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() { const html = document.documentElement; const icon = document.getElementById('theme-icon'); if (html.classList.contains('dark')) { html.classList.remove('dark'); icon.textContent = '☀️'; localStorage.setItem('theme', 'light'); } else { html.classList.add('dark'); icon.textContent = '🌙'; localStorage.setItem('theme', 'dark'); } }
+    if (localStorage.getItem('theme') === 'light') { document.documentElement.classList.remove('dark'); document.getElementById('theme-icon').textContent = '☀️'; }
+  </script>
+</body>
+</html>

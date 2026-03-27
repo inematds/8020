@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 4.6: A matriz vendedor x nivel de consciencia | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Metodo</span></a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Diagnostico</span></a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-amber-500/10 text-amber-400"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Gestao</span></a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Estrategia</span></a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Treinamento</span></a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Ferramentas</span></a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all"><span class="sm:hidden">T8</span><span class="hidden sm:inline">Avancado</span></a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2"><span id="theme-icon" class="text-lg">🌙</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4 text-sm">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <a href="index.html" class="text-neutral-500 hover:text-neutral-300">Trilha 4</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-amber-400 font-medium">Modulo 4.6</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MODULO 4.6</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">📊 A matriz vendedor x nivel de consciencia</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        O cruzamento mais poderoso da gestao comercial: qual vendedor colocar em qual tipo de cliente para maximizar conversao e receita.
+      </p>
+
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-amber-400">5</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-amber-400">~60</div>
+          <div class="text-xs text-neutral-400">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-amber-400">Avanc.</div>
+          <div class="text-xs text-neutral-400">Nivel</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-amber-400">Estrat.</div>
+          <div class="text-xs text-neutral-400">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteudo Principal -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold">1</span>
+        <h2 class="text-2xl font-bold">🔀 O cruzamento que define quem faz o que</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A matriz cruza dois eixos: <strong class="text-amber-400">perfil do vendedor</strong> (talentoso, treinavel, resistente) e <strong class="text-amber-400">nivel de consciencia do cliente</strong> (inconsciente, consciente do problema, consciente da solucao, consciente do produto, muito consciente). O resultado e um mapa de alocacao que maximiza resultado.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6 overflow-x-auto">
+        <h3 class="text-lg font-semibold text-amber-400 mb-4">Visao geral da matriz</h3>
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-dark-600">
+              <th class="text-left p-2 text-neutral-400">Vendedor / Cliente</th>
+              <th class="text-center p-2 text-neutral-400">Inconsciente</th>
+              <th class="text-center p-2 text-neutral-400">Ciente do Problema</th>
+              <th class="text-center p-2 text-neutral-400">Ciente da Solucao</th>
+              <th class="text-center p-2 text-neutral-400">Ciente do Produto</th>
+              <th class="text-center p-2 text-neutral-400">Muito Consciente</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-dark-600">
+              <td class="p-2 font-semibold text-amber-400">Talentoso</td>
+              <td class="text-center p-2 text-green-400">Ideal</td>
+              <td class="text-center p-2 text-green-400">Ideal</td>
+              <td class="text-center p-2 text-amber-400">Bom</td>
+              <td class="text-center p-2 text-amber-400">Bom</td>
+              <td class="text-center p-2 text-neutral-400">OK</td>
+            </tr>
+            <tr class="border-b border-dark-600">
+              <td class="p-2 font-semibold text-blue-400">Treinavel</td>
+              <td class="text-center p-2 text-red-400">Dificil</td>
+              <td class="text-center p-2 text-amber-400">Possivel</td>
+              <td class="text-center p-2 text-green-400">Ideal</td>
+              <td class="text-center p-2 text-green-400">Ideal</td>
+              <td class="text-center p-2 text-amber-400">Bom</td>
+            </tr>
+            <tr>
+              <td class="p-2 font-semibold text-purple-400">Resistente</td>
+              <td class="text-center p-2 text-neutral-400">Suporte</td>
+              <td class="text-center p-2 text-neutral-400">Suporte</td>
+              <td class="text-center p-2 text-neutral-400">Suporte</td>
+              <td class="text-center p-2 text-amber-400">Conteudo</td>
+              <td class="text-center p-2 text-green-400">Consultoria</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Como usar esta matriz</h3>
+        <p class="text-neutral-300">
+          Imprima esta matriz e coloque na sua parede. Toda vez que um novo lead chegar, <strong class="text-primary">classifique o nivel de consciencia e aloque para o perfil de vendedor mais adequado</strong>. Em 30 dias voce vai ver a diferenca nos numeros.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold">2</span>
+        <h2 class="text-2xl font-bold">⭐ Talentoso: como atua em cada nivel</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O talentoso brilha mais com clientes de <strong class="text-amber-400">baixa consciencia</strong>, onde sua capacidade de criar conexao emocional, gerar urgencia e conduzir conversas complexas faz a diferenca entre vender e nao vender.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-amber-400 mb-4">Atuacao por nivel de consciencia</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
+              <span class="text-green-400 font-bold text-sm">★</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Inconsciente → Abordagem criativa</h4>
+              <p class="text-sm text-neutral-400">O talentoso usa storytelling e provocacoes para despertar o cliente que nem sabe que tem um problema. "Voce sabia que 80% das empresas do seu setor estao perdendo dinheiro com..."</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
+              <span class="text-green-400 font-bold text-sm">★</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Consciente do problema → Amplificar a dor</h4>
+              <p class="text-sm text-neutral-400">Faz perguntas que aprofundam a percepcao do problema. "O que acontece se voce nao resolver isso nos proximos 6 meses?"</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center">
+              <span class="text-amber-400 font-bold text-sm">●</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Consciente da solucao → Diferenciar</h4>
+              <p class="text-sm text-neutral-400">Posiciona a solucao como unica. Usa cases, diferenciais e conexao pessoal para se destacar da concorrencia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Perspectiva</h3>
+        <p class="text-neutral-300">
+          Com clientes muito conscientes, o talentoso pode ser "demais" — o cliente ja pesquisou, ja sabe o que quer, e so precisa de <strong class="text-blue-400">eficiencia e confianca</strong>. Nesse nivel, o treinavel com processo pode converter tao bem quanto o talentoso.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold">3</span>
+        <h2 class="text-2xl font-bold">📏 Treinavel: o que usar em cada nivel</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O treinavel funciona melhor com clientes de <strong class="text-amber-400">media a alta consciencia</strong>, onde scripts e processos bem definidos sao suficientes para conduzir a venda. Cada nivel pede um roteiro diferente.
+      </p>
+
+      <div class="bg-gradient-to-br from-amber-900/20 to-dark-800 rounded-xl p-6 border border-amber-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-amber-400 mb-4">Scripts por nivel</h3>
+        <ul class="space-y-3 text-neutral-300">
+          <li class="flex items-start space-x-3">
+            <span class="text-amber-400 mt-1">✓</span>
+            <span><strong class="text-amber-400">Consciente da solucao:</strong> Script de demonstracao comparativa — "Veja como nosso produto resolve especificamente o problema X..."</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-amber-400 mt-1">✓</span>
+            <span><strong class="text-amber-400">Consciente do produto:</strong> Script de proposta de valor — "Nossos clientes do seu segmento reportam Y% de melhoria em Z..."</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-amber-400 mt-1">✓</span>
+            <span><strong class="text-amber-400">Muito consciente:</strong> Script de fechamento — "Baseado no que discutimos, a melhor opcao para voce e o plano X. Podemos comecar na proxima semana?"</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Regra Pratica</h3>
+        <p class="text-neutral-300">
+          Crie um <strong class="text-primary">banco de scripts</strong> organizado por nivel de consciencia. O treinavel escolhe o roteiro certo para cada lead antes da ligacao. Isso elimina improvisacao e garante consistencia.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold">4</span>
+        <h2 class="text-2xl font-bold">🔄 Resistente: onde encaixar</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O resistente <strong class="text-amber-400">nao e um vendedor pior — e um profissional com habilidades diferentes</strong>. Na matriz, ele contribui nas funcoes de suporte que viabilizam as vendas dos outros perfis.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-amber-400 mb-4">Funcao por nivel de consciencia do cliente</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+              <span class="text-purple-400 font-bold text-sm">1</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Clientes inconscientes → Conteudo educativo</h4>
+              <p class="text-sm text-neutral-400">Cria artigos, posts e materiais que despertam o mercado. Gera demanda sem abordagem direta.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+              <span class="text-purple-400 font-bold text-sm">2</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Clientes em avaliacao → Pesquisa e qualificacao</h4>
+              <p class="text-sm text-neutral-400">Investiga o lead, prepara briefings, qualifica oportunidades para os closers.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+              <span class="text-purple-400 font-bold text-sm">3</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Clientes muito conscientes → Consultoria tecnica</h4>
+              <p class="text-sm text-neutral-400">Participa de reunioes tecnicas, responde duvidas profundas, prepara propostas customizadas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold">5</span>
+        <h2 class="text-2xl font-bold">📋 A tabela completa de acoes</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Esta e a ferramenta mais pratica desta trilha. A <strong class="text-amber-400">tabela completa de acoes</strong> define para cada cruzamento perfil x nivel: a acao principal, a ferramenta a usar, a metrica de acompanhamento e o prazo de revisao.
+      </p>
+
+      <div class="bg-gradient-to-br from-amber-900/20 to-dark-800 rounded-xl p-6 border border-amber-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-amber-400 mb-4">Template de acoes (exemplo simplificado)</h3>
+        <div class="grid grid-cols-1 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-amber-400 font-bold text-sm">Talentoso + Cliente Inconsciente</span>
+              <span class="text-xs text-neutral-500">Revisao: Semanal</span>
+            </div>
+            <p class="text-sm text-neutral-300"><strong>Acao:</strong> Cold outreach criativo com storytelling</p>
+            <p class="text-sm text-neutral-300"><strong>Ferramenta:</strong> E-mail personalizado + LinkedIn</p>
+            <p class="text-sm text-neutral-300"><strong>Metrica:</strong> Taxa de resposta > 15%</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-blue-400 font-bold text-sm">Treinavel + Cliente Consciente do Produto</span>
+              <span class="text-xs text-neutral-500">Revisao: Semanal</span>
+            </div>
+            <p class="text-sm text-neutral-300"><strong>Acao:</strong> Demo estruturada com script de proposta</p>
+            <p class="text-sm text-neutral-300"><strong>Ferramenta:</strong> Script de demo + calculadora de ROI</p>
+            <p class="text-sm text-neutral-300"><strong>Metrica:</strong> Taxa de conversao demo → proposta > 40%</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-purple-400 font-bold text-sm">Resistente + Cliente Muito Consciente</span>
+              <span class="text-xs text-neutral-500">Revisao: Quinzenal</span>
+            </div>
+            <p class="text-sm text-neutral-300"><strong>Acao:</strong> Suporte tecnico em reuniao de fechamento</p>
+            <p class="text-sm text-neutral-300"><strong>Ferramenta:</strong> Apresentacao tecnica + analise de caso</p>
+            <p class="text-sm text-neutral-300"><strong>Metrica:</strong> NPS de reuniao tecnica > 8</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Exercicio Pratico</h3>
+        <p class="text-neutral-300">
+          Monte a tabela completa para sua equipe esta semana. Liste cada vendedor, classifique seu perfil, e defina as acoes para cada tipo de lead que ele vai receber. <strong class="text-primary">Compartilhe com a equipe</strong> — transparencia gera alinhamento e confianca.
+        </p>
+      </div>
+    </section>
+
+    <!-- Resumo Final -->
+    <section class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+      <h2 class="text-2xl font-bold mb-6 flex items-center">
+        <span class="mr-3">📝</span> Resumo do Modulo
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-amber-400 mb-4">O que voce aprendeu:</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2">
+              <span class="text-amber-400">✓</span>
+              <span>A matriz perfil x nivel de consciencia</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-amber-400">✓</span>
+              <span>O talentoso brilha com baixa consciencia</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-amber-400">✓</span>
+              <span>O treinavel performa com scripts por nivel</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-amber-400">✓</span>
+              <span>O resistente tem funcao de suporte estrategico</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-amber-400">✓</span>
+              <span>A tabela de acoes e a ferramenta pratica de gestao</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-amber-400 mb-4">Proximo modulo:</h3>
+          <div class="bg-dark-700/50 rounded-xl p-4 border border-dark-600">
+            <span class="text-amber-400 font-bold text-sm">4.7</span>
+            <h4 class="font-bold mt-1">🔁 Rotina de gestao comercial</h4>
+            <p class="text-neutral-400 text-sm mt-2">
+              A cadencia semanal, reunioes, acompanhamentos e praticas que sustentam resultados no longo prazo.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="modulo-4-5.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+          ← Modulo 4.5
+        </a>
+        <a href="modulo-4-7.html" class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors">
+          Proximo: Modulo 4.7 →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Modulo 4.6: A matriz vendedor x nivel de consciencia</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) { html.classList.remove('dark'); icon.textContent = '☀️'; localStorage.setItem('theme', 'light'); }
+      else { html.classList.add('dark'); icon.textContent = '🌙'; localStorage.setItem('theme', 'dark'); }
+    }
+    if (localStorage.getItem('theme') === 'light') { document.documentElement.classList.remove('dark'); document.getElementById('theme-icon').textContent = '☀️'; }
+  </script>
+
+</body>
+</html>

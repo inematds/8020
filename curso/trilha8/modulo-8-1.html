@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 8.1: Os 10 livros essenciais | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Diagnostico</span>
+            </a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Gestao</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Estrategia</span>
+            </a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Treinamento</span>
+            </a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all">
+              <span class="sm:hidden">T7</span>
+              <span class="hidden sm:inline">Ferramentas</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-indigo-500/10 text-indigo-400">
+              <span class="sm:hidden">T8</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2">
+              <span id="theme-icon" class="text-lg">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-indigo-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Breadcrumb -->
+      <div class="flex items-center space-x-2 mb-4 text-sm">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <a href="index.html" class="text-neutral-500 hover:text-neutral-300">Trilha 8</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-indigo-400 font-medium">Modulo 8.1</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-400 text-xs font-semibold rounded-full mb-4">
+        MODULO 8.1
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">📖 Os 10 livros essenciais</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        A biblioteca definitiva para dominar vendas baseadas em valor. Cada livro com tese central, conceito-chave e aplicacao pratica.
+      </p>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-indigo-400">10</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-indigo-400">~90</div>
+          <div class="text-xs text-neutral-400">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-indigo-400">Avancado</div>
+          <div class="text-xs text-neutral-400">Nivel</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-indigo-400">Leitura</div>
+          <div class="text-xs text-neutral-400">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteudo Principal -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Ordem Recomendada -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-br from-indigo-900/20 to-dark-800 rounded-xl p-6 border border-indigo-500/20">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">📋 Ordem recomendada de leitura</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+            <div class="text-xs text-indigo-400 font-semibold mb-2">BASE</div>
+            <div class="text-sm text-neutral-300">SPIN Selling → Challenger Sale</div>
+            <div class="text-xs text-neutral-500 mt-1">Fundamentos da venda consultiva</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+            <div class="text-xs text-indigo-400 font-semibold mb-2">AVANCADO</div>
+            <div class="text-sm text-neutral-300">JOLT Effect → Challenger Customer</div>
+            <div class="text-xs text-neutral-500 mt-1">Indecisao e consenso interno</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+            <div class="text-xs text-indigo-400 font-semibold mb-2">ESTRATEGICO</div>
+            <div class="text-sm text-neutral-300">Monetizing Innovation → Confessions of the Pricing Man</div>
+            <div class="text-xs text-neutral-500 mt-1">Preco e monetizacao</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 1: SPIN Selling -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-bold">1</span>
+        <h2 class="text-2xl font-bold">🔄 SPIN Selling — Neil Rackham</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Publicado em 1988, baseado na maior pesquisa ja feita sobre vendas (35.000 calls analisadas em 12 anos), SPIN Selling demonstrou cientificamente que <strong class="text-indigo-400">perguntas vendem mais que argumentos</strong> em vendas complexas. O metodo SPIN revolucionou a forma como vendedores conduzem conversas de descoberta.
+      </p>
+
+      <!-- Box Principal -->
+      <div class="bg-gradient-to-br from-indigo-900/20 to-dark-800 rounded-xl p-6 border border-indigo-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">Tese central</h3>
+        <p class="text-neutral-300 mb-4">
+          Em vendas grandes, tecnicas de fechamento agressivas REDUZEM a taxa de sucesso. O que funciona e uma sequencia estruturada de perguntas que faz o proprio comprador articular a necessidade e o valor da solucao.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+            <div class="text-2xl mb-1">🔍</div>
+            <div class="font-semibold text-indigo-400 text-sm">Situacao</div>
+            <div class="text-xs text-neutral-400">Contexto atual</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+            <div class="text-2xl mb-1">⚠️</div>
+            <div class="font-semibold text-indigo-400 text-sm">Problema</div>
+            <div class="text-xs text-neutral-400">Dores e dificuldades</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+            <div class="text-2xl mb-1">💥</div>
+            <div class="font-semibold text-indigo-400 text-sm">Implicacao</div>
+            <div class="text-xs text-neutral-400">Consequencias</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+            <div class="text-2xl mb-1">✨</div>
+            <div class="font-semibold text-indigo-400 text-sm">Necessidade</div>
+            <div class="text-xs text-neutral-400">Valor da solucao</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Como aplicar -->
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Como aplicar na pratica</h3>
+        <p class="text-neutral-300">
+          Na sua proxima call de discovery, nao comece apresentando seu produto. Comece com perguntas de Situacao para entender o contexto, evolua para Problemas, aprofunde com Implicacoes ("o que acontece se nao resolver?") e finalize com Necessidade de Solucao ("como seria o ideal?"). O cliente vai pedir para ver seu produto — voce nao precisara empurrar.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 2: Challenger Sale -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-bold">2</span>
+        <h2 class="text-2xl font-bold">⚔️ The Challenger Sale — Dixon & Adamson</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Pesquisa da CEB (agora Gartner) com milhares de vendedores revelou 5 perfis de vendedores. O <strong class="text-indigo-400">Challenger</strong> — que ensina, adapta e toma controle — supera todos os outros, especialmente em vendas complexas. O "relacionamento" sozinho nao basta.
+      </p>
+
+      <div class="bg-gradient-to-br from-indigo-900/20 to-dark-800 rounded-xl p-6 border border-indigo-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">Tese central</h3>
+        <p class="text-neutral-300 mb-4">
+          Os vendedores de alta performance nao so respondem a necessidades — eles criam necessidades. Ensinam o cliente algo que ele nao sabia, reposicionam o problema e conduzem a decisao com assertividade construtiva.
+        </p>
+        <ul class="space-y-3 text-neutral-300">
+          <li class="flex items-start space-x-3">
+            <span class="text-indigo-400 mt-1">✓</span>
+            <span><strong class="text-indigo-400">Teach</strong> — Traga um insight que o cliente nao tinha. Mude a forma como ele ve o problema.</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-indigo-400 mt-1">✓</span>
+            <span><strong class="text-indigo-400">Tailor</strong> — Adapte a mensagem para o contexto especifico de cada stakeholder.</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-indigo-400 mt-1">✓</span>
+            <span><strong class="text-indigo-400">Take Control</strong> — Conduza a conversa sobre dinheiro e decisao sem medo.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Como aplicar na pratica</h3>
+        <p class="text-neutral-300">
+          Antes da proxima reuniao, prepare um insight sobre o mercado do cliente que ele provavelmente nao tem. Comece a conversa com "A maioria das empresas do seu setor acredita X, mas os dados mostram Y..." — isso posiciona voce como consultor, nao como vendedor.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 3: JOLT Effect -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-bold">3</span>
+        <h2 class="text-2xl font-bold">⚡ The JOLT Effect — Dixon & McKenna</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Depois do Challenger Sale, a mesma equipe descobriu um problema ainda maior: <strong class="text-indigo-400">40-60% dos deals qualificados morrem em "no decision"</strong>. O inimigo nao e o concorrente nem o "nao" — e o medo de decidir errado.
+      </p>
+
+      <div class="bg-gradient-to-br from-indigo-900/20 to-dark-800 rounded-xl p-6 border border-indigo-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">Tese central</h3>
+        <p class="text-neutral-300 mb-4">
+          Indecisao nao e objecao. Objecao e racional ("seu preco e alto"). Indecisao e emocional ("e se eu escolher errado?"). Tratar indecisao como objecao piora a situacao — mais informacao gera mais paralisia.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+            <div class="text-2xl mb-1">⚖️</div>
+            <div class="font-semibold text-indigo-400 text-sm">Judge</div>
+            <div class="text-xs text-neutral-400">Avalie o nivel de indecisao</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+            <div class="text-2xl mb-1">🎯</div>
+            <div class="font-semibold text-indigo-400 text-sm">Offer</div>
+            <div class="text-xs text-neutral-400">Ofereca recomendacao clara</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+            <div class="text-2xl mb-1">🚧</div>
+            <div class="font-semibold text-indigo-400 text-sm">Limit</div>
+            <div class="text-xs text-neutral-400">Limite a exploracao</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+            <div class="text-2xl mb-1">🛡️</div>
+            <div class="font-semibold text-indigo-400 text-sm">Take risk off</div>
+            <div class="text-xs text-neutral-400">Remova o risco</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Como aplicar na pratica</h3>
+        <p class="text-neutral-300">
+          Quando o deal estagnar, pare de enviar mais materiais. Em vez disso, diga: "Com base no que eu vi em empresas similares, eu recomendo a opcao X. Posso explicar por que?" Dar uma recomendacao clara reduz a ansiedade do comprador. Limite opcoes a 2-3, nao 10.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 4: Challenger Customer -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-bold">4</span>
+        <h2 class="text-2xl font-bold">🤝 The Challenger Customer — Adamson, Dixon et al</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O Challenger Sale ensina como vender. O Challenger Customer ensina <strong class="text-indigo-400">para quem vender dentro da organizacao</strong>. Com 6.8 stakeholders em media envolvidos em cada compra B2B, vender para a pessoa errada e a forma mais cara de perder tempo.
+      </p>
+
+      <div class="bg-gradient-to-br from-indigo-900/20 to-dark-800 rounded-xl p-6 border border-indigo-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">Tese central</h3>
+        <p class="text-neutral-300 mb-4">
+          Nao venda para quem concorda com voce (Talkers). Venda para quem tem capacidade de mobilizar a organizacao (Mobilizers). O melhor contato nao e o mais amigavel — e o mais influente internamente.
+        </p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-indigo-900/20 rounded-xl p-4 border border-indigo-500/30">
+            <h4 class="font-bold text-indigo-400 mb-3">✓ Mobilizadores</h4>
+            <ul class="space-y-2 text-neutral-300 text-sm">
+              <li>Tem credibilidade interna</li>
+              <li>Fazem perguntas dificeis</li>
+              <li>Podem nao ser os mais amigaveis</li>
+              <li>Movem a organizacao para decidir</li>
+            </ul>
+          </div>
+          <div class="bg-red-900/20 rounded-xl p-4 border border-red-500/30">
+            <h4 class="font-bold text-red-400 mb-3">✗ Talkers</h4>
+            <ul class="space-y-2 text-neutral-300 text-sm">
+              <li>Adoram conversar com vendedores</li>
+              <li>Concordam com tudo que voce diz</li>
+              <li>Nao tem influencia real</li>
+              <li>Dao falsa sensacao de progresso</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Como aplicar na pratica</h3>
+        <p class="text-neutral-300">
+          No seu proximo deal, pergunte ao seu contato: "Quando voce levou uma ideia como essa internamente pela ultima vez, como funcionou o processo de aprovacao?" Se a resposta for vaga, voce provavelmente esta falando com um Talker, nao com um Mobilizador. Busque quem ja moveu mudancas antes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 5: Power of Value Selling -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-bold">5</span>
+        <h2 class="text-2xl font-bold">💎 The Power of Value Selling — Julie Thomas</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Julie Thomas, CEO da ValueSelling Associates, mostra que <strong class="text-indigo-400">vender valor nao e um conceito abstrato — e um processo disciplinado</strong> de descoberta, quantificacao e comunicacao do impacto economico. O livro transforma "vender valor" de slogan em metodo.
+      </p>
+
+      <div class="bg-gradient-to-br from-indigo-900/20 to-dark-800 rounded-xl p-6 border border-indigo-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">Tese central</h3>
+        <p class="text-neutral-300 mb-4">
+          Confianca se constroi quando o cliente ve numeros reais, nao promessas vagas. O vendedor que quantifica valor cedo no processo ganha vantagem competitiva irreversivel — porque nenhum concorrente pode competir contra o business case que voce construiu junto com o cliente.
+        </p>
+        <ul class="space-y-3 text-neutral-300">
+          <li class="flex items-start space-x-3">
+            <span class="text-indigo-400 mt-1">✓</span>
+            <span>Descubra o problema com profundidade (nao aceite a primeira resposta)</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-indigo-400 mt-1">✓</span>
+            <span>Quantifique o impacto em reais, horas ou porcentagem</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-indigo-400 mt-1">✓</span>
+            <span>Construa o business case junto com o cliente</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-indigo-400 mt-1">✓</span>
+            <span>Use o Visionario Plan para alinhar todas as partes</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Como aplicar na pratica</h3>
+        <p class="text-neutral-300">
+          Crie um template de "Plano de Valor" com 4 colunas: Problema, Impacto Financeiro, Solucao Proposta, ROI Esperado. Preencha junto com o cliente na segunda reuniao. Isso transforma a conversa de "voce quer comprar?" para "vamos construir o caso juntos".
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 6: Gap Selling -->
+    <section id="topico-6" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-bold">6</span>
+        <h2 class="text-2xl font-bold">🎯 Gap Selling — Keenan</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Keenan (sim, so um nome) defende que <strong class="text-indigo-400">toda venda e sobre o gap entre estado atual e estado futuro</strong>. Se nao ha gap, nao ha venda. Se o gap e pequeno, o preco parece alto. Se o gap e enorme, qualquer preco parece justo.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">O Gap como motor da venda</h3>
+        <div class="flex items-center justify-between text-center">
+          <div class="flex-1">
+            <div class="text-4xl mb-2">😰</div>
+            <div class="font-semibold text-neutral-200">Estado Atual</div>
+            <div class="text-xs text-neutral-500">Dor, ineficiencia, perda</div>
+          </div>
+          <div class="flex-1 px-4">
+            <div class="h-1 bg-gradient-to-r from-red-500 to-indigo-500 rounded-full mb-2"></div>
+            <div class="text-xs text-neutral-400">← O GAP →</div>
+            <div class="text-xs text-indigo-400 mt-1">Quanto maior, mais urgente</div>
+          </div>
+          <div class="flex-1">
+            <div class="text-4xl mb-2">🎯</div>
+            <div class="font-semibold text-neutral-200">Estado Futuro</div>
+            <div class="text-xs text-neutral-500">Resultado, eficiencia, ganho</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Como aplicar na pratica</h3>
+        <p class="text-neutral-300">
+          Em toda discovery, mapeie 3 coisas: (1) Como o cliente opera hoje, com numeros. (2) Como ele gostaria de operar. (3) O que o gap custa por mes/ano. Quando voce mostra "este gap esta custando R$50K/mes", seu produto de R$10K/mes parece barato.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 7: Stop Selling and Start Leading -->
+    <section id="topico-7" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-bold">7</span>
+        <h2 class="text-2xl font-bold">🧭 Stop Selling and Start Leading — Richardson</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Duff Richardson, junto com James Kouzes e Barry Posner (autores do classico "The Leadership Challenge"), fez uma descoberta surpreendente: <strong class="text-indigo-400">os comportamentos que fazem um lider ser seguido sao os mesmos que fazem um vendedor ser escolhido</strong>.
+      </p>
+
+      <div class="bg-gradient-to-br from-indigo-900/20 to-dark-800 rounded-xl p-6 border border-indigo-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">Tese central</h3>
+        <p class="text-neutral-300 mb-4">
+          Compradores nao querem ser "vendidos" — querem ser liderados com seguranca por um processo de decisao complexo. O vendedor que age como lider inspira confianca, cria visao de futuro e remove incertezas.
+        </p>
+        <div class="grid grid-cols-2 gap-4 text-center">
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <div class="text-2xl mb-1">🗺️</div>
+            <div class="text-xs text-neutral-400">Modela o caminho</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <div class="text-2xl mb-1">🔭</div>
+            <div class="text-xs text-neutral-400">Inspira visao compartilhada</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <div class="text-2xl mb-1">🔄</div>
+            <div class="text-xs text-neutral-400">Desafia o processo</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3">
+            <div class="text-2xl mb-1">💪</div>
+            <div class="text-xs text-neutral-400">Capacita outros a agir</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Como aplicar na pratica</h3>
+        <p class="text-neutral-300">
+          Na proxima negociacao, em vez de perguntar "o que voce precisa para decidir?", diga "deixe-me compartilhar como eu guiaria esse processo se estivesse no seu lugar". Assuma a lideranca da jornada de compra. O comprador quer alguem que simplifique, nao alguem que espere instrucoes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 8: Monetizing Innovation -->
+    <section id="topico-8" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-bold">8</span>
+        <h2 class="text-2xl font-bold">💡 Monetizing Innovation — Ramanujam & Tacke</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Da Simon-Kucher & Partners, a maior consultoria de pricing do mundo, este livro revela que <strong class="text-indigo-400">72% dos lancamentos de produtos falham nao por tecnologia, mas por estrategia de preco</strong>. A solucao? Pensar em preco e valor ANTES de construir o produto.
+      </p>
+
+      <div class="bg-gradient-to-br from-indigo-900/20 to-dark-800 rounded-xl p-6 border border-indigo-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">Tese central</h3>
+        <p class="text-neutral-300 mb-4">
+          A conversa sobre preco nao pode acontecer no final — precisa acontecer no inicio. Descubra Willingness to Pay (WTP) antes de definir features. Construa o produto ao redor do valor que o cliente esta disposto a pagar, nao ao contrario.
+        </p>
+        <div class="bg-dark-800/50 rounded-lg p-4">
+          <h4 class="font-semibold text-neutral-200 mb-3">4 tipos de falha de monetizacao:</h4>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div class="text-neutral-300"><span class="text-red-400">1.</span> Feature Shock — muito feature, pouco foco</div>
+            <div class="text-neutral-300"><span class="text-red-400">2.</span> Minivation — inovacao pequena demais</div>
+            <div class="text-neutral-300"><span class="text-red-400">3.</span> Hidden Gem — bom produto, mal precificado</div>
+            <div class="text-neutral-300"><span class="text-red-400">4.</span> Undead — ninguem quer, mas ninguem mata</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Como aplicar na pratica</h3>
+        <p class="text-neutral-300">
+          Antes de criar uma nova oferta, entreviste 10 clientes com uma pergunta: "Se isso resolvesse [problema X], quanto voce pagaria por mes?" Se a resposta for consistentemente maior que seu custo, voce tem um produto viavel. Se nao, redesenhe antes de investir.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 9: Confessions of the Pricing Man -->
+    <section id="topico-9" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-bold">9</span>
+        <h2 class="text-2xl font-bold">💲 Confessions of the Pricing Man — Hermann Simon</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Hermann Simon e o maior especialista em pricing do mundo. Fundador da Simon-Kucher, consultou mais de 5.000 empresas sobre preco. Sua tese principal: <strong class="text-indigo-400">a maioria das empresas cobra menos do que deveria porque nao entende que preco e expressao de valor, nao de custo</strong>.
+      </p>
+
+      <div class="bg-gradient-to-br from-indigo-900/20 to-dark-800 rounded-xl p-6 border border-indigo-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">Tese central</h3>
+        <p class="text-neutral-300 mb-4">
+          Preco nao e custo + margem. Preco e a expressao monetaria do valor percebido. Um aumento de 1% no preco gera, em media, 11% de aumento no lucro. Nenhuma outra alavanca tem esse impacto.
+        </p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-indigo-900/20 rounded-xl p-4 border border-indigo-500/30">
+            <h4 class="font-bold text-indigo-400 mb-3">✓ Value-Based Pricing</h4>
+            <ul class="space-y-2 text-neutral-300 text-sm">
+              <li>Preco baseado no valor para o cliente</li>
+              <li>Margem proporcional ao impacto</li>
+              <li>Defesa de preco com conviccao</li>
+              <li>Premium sustentavel</li>
+            </ul>
+          </div>
+          <div class="bg-red-900/20 rounded-xl p-4 border border-red-500/30">
+            <h4 class="font-bold text-red-400 mb-3">✗ Cost-Plus Pricing</h4>
+            <ul class="space-y-2 text-neutral-300 text-sm">
+              <li>Preco baseado no custo de producao</li>
+              <li>Margem arbitraria e fina</li>
+              <li>Desconto facil, preco fragil</li>
+              <li>Corrida para o fundo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Como aplicar na pratica</h3>
+        <p class="text-neutral-300">
+          Pare de justificar preco pelo custo ("nosso time custa X, entao cobramos Y"). Comece a justificar pelo resultado: "Nosso servico gera R$500K de economia por ano. O investimento e R$100K." Quando valor excede preco em 3-5x, a objecao de preco desaparece.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 10: Negotiation Genius -->
+    <section id="topico-10" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-bold">10</span>
+        <h2 class="text-2xl font-bold">🏆 Negotiation Genius — Malhotra & Bazerman</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        De Harvard Business School, este livro ensina que <strong class="text-indigo-400">negociacao nao e guerra — e criacao de valor</strong>. Os melhores negociadores expandem o bolo antes de dividir. Framework aplicavel tanto em vendas de R$10K quanto em deals de R$10M.
+      </p>
+
+      <div class="bg-gradient-to-br from-indigo-900/20 to-dark-800 rounded-xl p-6 border border-indigo-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">Tese central</h3>
+        <p class="text-neutral-300 mb-4">
+          Negociadores mediocres dividem o bolo existente. Negociadores geniais criam um bolo maior, depois capturam sua parte. As duas ferramentas mais poderosas: ZOPA (Zone of Possible Agreement) e BATNA (Best Alternative to Negotiated Agreement).
+        </p>
+        <div class="bg-dark-800/50 rounded-lg p-4 space-y-3">
+          <div>
+            <h4 class="font-semibold text-indigo-400 text-sm">ZOPA — Zone of Possible Agreement</h4>
+            <p class="text-neutral-400 text-sm">A faixa de preco em que ambas as partes podem fechar. Descobrir a ZOPA antes de negociar da vantagem estrategica.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-indigo-400 text-sm">BATNA — Best Alternative</h4>
+            <p class="text-neutral-400 text-sm">Qual e sua melhor alternativa se este deal nao fechar? E qual e a do cliente? Quem tem melhor BATNA negocia com mais poder.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-indigo-400 text-sm">Criacao de Valor</h4>
+            <p class="text-neutral-400 text-sm">Antes de dividir, adicione variáveis: prazo, escopo, exclusividade, pagamento. Cada variavel e uma oportunidade de criar valor para ambos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Como aplicar na pratica</h3>
+        <p class="text-neutral-300">
+          Antes de negociar preco, mapeie: (1) Qual e meu preco minimo? (2) Qual e o maximo que o cliente pagaria? (3) Quais variaveis alem de preco posso usar? Quando o cliente pedir desconto, em vez de baixar preco, ofereca algo a mais: "Posso manter o preco e incluir 3 meses extras de suporte. Funciona?"
+        </p>
+      </div>
+    </section>
+
+    <!-- Resumo Final -->
+    <section class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+      <h2 class="text-2xl font-bold mb-6 flex items-center">
+        <span class="mr-3">📝</span> Resumo do Modulo
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-indigo-400 mb-4">O que voce aprendeu:</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400">✓</span>
+              <span>SPIN: perguntas constroem valor</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400">✓</span>
+              <span>Challenger: ensine, adapte, conduza</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400">✓</span>
+              <span>JOLT: resolva indecisao, nao so objecao</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400">✓</span>
+              <span>Challenger Customer: encontre mobilizadores</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400">✓</span>
+              <span>Value Selling: quantifique impacto</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400">✓</span>
+              <span>Gap Selling: amplie o gap percebido</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400">✓</span>
+              <span>Stop Selling: lidere, nao venda</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400">✓</span>
+              <span>Monetizing Innovation: preco antes do produto</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400">✓</span>
+              <span>Pricing Man: preco e expressao de valor</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400">✓</span>
+              <span>Negotiation Genius: crie valor antes de dividir</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-indigo-400 mb-4">Proximo modulo:</h3>
+          <div class="bg-dark-700/50 rounded-xl p-4 border border-dark-600">
+            <span class="text-indigo-400 font-bold text-sm">8.2</span>
+            <h4 class="font-bold mt-1">🧠 Os 6 pensamentos mais avancados em vendas</h4>
+            <p class="text-neutral-400 text-sm mt-2">
+              As ideias de fronteira em 2026: clareza vs persuasao, confianca na decisao, consenso interno e IA como copiloto.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+          ← Voltar para Trilha 8
+        </a>
+        <a href="modulo-8-2.html" class="flex-1 text-center px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-500 transition-colors">
+          Proximo: Modulo 8.2 →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Modulo 8.1: Os 10 livros essenciais</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+  </script>
+
+</body>
+</html>

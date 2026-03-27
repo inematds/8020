@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 8.4: O futuro — IA, autoservico e o papel humano | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">💰</span>
+            <span class="font-bold text-xl hidden sm:inline">8020</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Diagnostico</span>
+            </a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Gestao</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Estrategia</span>
+            </a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Treinamento</span>
+            </a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all">
+              <span class="sm:hidden">T7</span>
+              <span class="hidden sm:inline">Ferramentas</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-indigo-500/10 text-indigo-400">
+              <span class="sm:hidden">T8</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2">
+              <span id="theme-icon" class="text-lg">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-indigo-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4 text-sm">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <a href="index.html" class="text-neutral-500 hover:text-neutral-300">Trilha 8</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-indigo-400 font-medium">Modulo 8.4</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-400 text-xs font-semibold rounded-full mb-4">
+        MODULO 8.4
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🚀 O futuro: IA, autoservico e o papel humano</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        Como se preparar para o futuro das vendas na era da inteligencia artificial. O que sera automatizado, o que permanece humano e como se posicionar.
+      </p>
+
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-indigo-400">5</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-indigo-400">~45</div>
+          <div class="text-xs text-neutral-400">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-indigo-400">Avancado</div>
+          <div class="text-xs text-neutral-400">Nivel</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-indigo-400">Visao</div>
+          <div class="text-xs text-neutral-400">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteudo Principal -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-bold">1</span>
+        <h2 class="text-2xl font-bold">🤖 O que a IA ja substitui</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A inteligencia artificial ja e melhor que humanos em diversas tarefas de vendas. Nao daqui a 5 anos — <strong class="text-indigo-400">agora</strong>. Reconhecer o que ja foi automatizado e o primeiro passo para nao ficar obsoleto.
+      </p>
+
+      <div class="bg-gradient-to-br from-indigo-900/20 to-dark-800 rounded-xl p-6 border border-indigo-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">Tarefas que a IA ja faz melhor que humanos</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">📧</div>
+            <div class="font-semibold text-neutral-200 text-sm">Prospeccao e outreach</div>
+            <div class="text-xs text-neutral-400 mt-1">IA pesquisa empresas, identifica ICP, gera emails personalizados em escala. Um SDR que mandava 50 emails/dia agora compete com IA que manda 500.</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">📊</div>
+            <div class="font-semibold text-neutral-200 text-sm">Lead scoring e priorizacao</div>
+            <div class="text-xs text-neutral-400 mt-1">Algoritmos analisam comportamento, historico e sinais de compra para priorizar leads com mais precisao que intuicao humana.</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🎙️</div>
+            <div class="font-semibold text-neutral-200 text-sm">Analise de conversas</div>
+            <div class="text-xs text-neutral-400 mt-1">Conversational intelligence analisa calls, detecta objecoes, mede sentimento e sugere melhorias em tempo real.</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">📈</div>
+            <div class="font-semibold text-neutral-200 text-sm">Forecast e pipeline</div>
+            <div class="text-xs text-neutral-400 mt-1">Previsao de receita baseada em dados, nao em "feeling" do vendedor. IA identifica deals em risco antes que o humano perceba.</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">📝</div>
+            <div class="font-semibold text-neutral-200 text-sm">Redacao de propostas</div>
+            <div class="text-xs text-neutral-400 mt-1">Primeiros rascunhos de propostas comerciais, emails de follow-up e materiais de habilitacao gerados automaticamente.</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🔄</div>
+            <div class="font-semibold text-neutral-200 text-sm">CRM e dados</div>
+            <div class="text-xs text-neutral-400 mt-1">Atualizacao automatica de CRM, logging de atividades, enriquecimento de dados e eliminacao de trabalho administrativo.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 A pergunta que importa</h3>
+        <p class="text-neutral-300">
+          Olhe para seu dia a dia: quanto tempo voce gasta em tarefas que a IA ja faz? Se a resposta for mais de 50%, voce esta em risco. Nao porque a IA vai roubar seu emprego, mas porque <strong class="text-primary">vendedores que usam IA para essas tarefas vao produzir 3-5x mais que voce</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-bold">2</span>
+        <h2 class="text-2xl font-bold">🧠 O que so humano resolve</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A IA processa dados. O humano processa <strong class="text-indigo-400">contexto, intencao e emocao</strong>. Existem dimensoes da venda que permanecem exclusivamente humanas — e sao justamente as mais valiosas.
+      </p>
+
+      <div class="bg-gradient-to-br from-indigo-900/20 to-dark-800 rounded-xl p-6 border border-indigo-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">As 6 capacidades insubstituiveis</h3>
+        <ul class="space-y-4 text-neutral-300">
+          <li class="flex items-start space-x-3">
+            <span class="text-indigo-400 mt-1 font-bold">1.</span>
+            <div>
+              <strong class="text-indigo-400">Interpretar o nao-dito</strong>
+              <p class="text-sm text-neutral-400 mt-1">O cliente diz "vamos pensar" mas quer dizer "nao confiamos ainda". O humano le nas entrelinhas. A IA leva o texto ao pe da letra.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-indigo-400 mt-1 font-bold">2.</span>
+            <div>
+              <strong class="text-indigo-400">Navegar politica organizacional</strong>
+              <p class="text-sm text-neutral-400 mt-1">Quem tem poder real? Quem esta sabotando por baixo? Quem e aliado? Isso exige inteligencia social que nenhum algoritmo replica.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-indigo-400 mt-1 font-bold">3.</span>
+            <div>
+              <strong class="text-indigo-400">Construir confianca genuina</strong>
+              <p class="text-sm text-neutral-400 mt-1">Confianca se constroi em momentos de vulnerabilidade, honestidade e presenca. Uma IA pode simular empatia, mas nao pode SER empatica.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-indigo-400 mt-1 font-bold">4.</span>
+            <div>
+              <strong class="text-indigo-400">Fazer julgamentos eticos</strong>
+              <p class="text-sm text-neutral-400 mt-1">"Essa solucao realmente resolve o problema do cliente ou estou forcando?" Julgamento moral e responsabilidade sao humanos.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-indigo-400 mt-1 font-bold">5.</span>
+            <div>
+              <strong class="text-indigo-400">Adaptar estrategia em tempo real</strong>
+              <p class="text-sm text-neutral-400 mt-1">No meio da reuniao, o cliente muda de prioridade. O humano pivota instantaneamente. A IA precisaria de re-treinamento.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-indigo-400 mt-1 font-bold">6.</span>
+            <div>
+              <strong class="text-indigo-400">Criar conexao emocional</strong>
+              <p class="text-sm text-neutral-400 mt-1">O momento em que o cliente sente "essa pessoa me entende" nao pode ser algoritmizado. E o que transforma transacao em parceria.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 A equacao do futuro</h3>
+        <p class="text-neutral-300">
+          <strong class="text-blue-400">Vendedor substituivel = faz o que a IA faz.</strong> Vendedor insubstituivel = faz o que a IA nao consegue. A questao nao e "a IA vai me substituir?" — e "eu estou fazendo trabalho que so humano pode fazer?"
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-bold">3</span>
+        <h2 class="text-2xl font-bold">⚡ O modelo hibrido</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O futuro nao e "IA substitui humano" nem "humano ignora IA". E <strong class="text-indigo-400">hibrido</strong>: IA faz o volume e a eficiencia, humano faz a estrategia e a confianca. Cada um no seu melhor papel.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">O espectro digital-humano</h3>
+        <div class="space-y-4">
+          <div class="flex items-center justify-between text-center">
+            <div class="flex-1">
+              <div class="text-4xl mb-2">🖥️</div>
+              <div class="font-semibold text-neutral-200 text-sm">100% Digital</div>
+              <div class="text-xs text-neutral-500">Self-service, e-commerce</div>
+            </div>
+            <div class="flex-1 px-4">
+              <div class="h-1 bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 rounded-full mb-2"></div>
+              <div class="text-xs text-indigo-400">← Espectro →</div>
+            </div>
+            <div class="flex-1">
+              <div class="text-4xl mb-2">🤝</div>
+              <div class="font-semibold text-neutral-200 text-sm">100% Humano</div>
+              <div class="text-xs text-neutral-500">Enterprise, estrategico</div>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4 mt-6">
+            <div class="bg-dark-800/50 rounded-lg p-4 border border-cyan-500/20">
+              <h4 class="font-semibold text-cyan-400 text-sm mb-2">Autoservico puro</h4>
+              <p class="text-neutral-400 text-xs">Produtos simples, baixo ticket, compra repetida. PLG, free trial, checkout automatico.</p>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 border border-indigo-500/20">
+              <h4 class="font-semibold text-indigo-400 text-sm mb-2">Hibrido</h4>
+              <p class="text-neutral-400 text-xs">Autoservico para descoberta, humano para conversao. Mid-market, SMB tech, SaaS com onboarding.</p>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 border border-purple-500/20">
+              <h4 class="font-semibold text-purple-400 text-sm mb-2">Consultivo puro</h4>
+              <p class="text-neutral-400 text-xs">Solucoes complexas, alto ticket, multiplos stakeholders. Enterprise, servicos profissionais, deals de R$100K+.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Como isso muda seu dia a dia</h3>
+        <p class="text-neutral-300">
+          Use IA para: pesquisar prospects (5 min em vez de 1h), gerar primeiro rascunho de emails (2 min em vez de 20 min), analisar calls anteriores antes de uma reuniao, atualizar CRM automaticamente. Use o tempo liberado para: pensar estrategia, construir relacionamento, negociar e diagnosticar.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-bold">4</span>
+        <h2 class="text-2xl font-bold">🎯 Como se posicionar como vendedor no futuro</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O mercado de vendas esta se bifurcando: vendedores de volume (que vao competir com IA e perder) e <strong class="text-indigo-400">vendedores estrategicos (que vao valer cada vez mais)</strong>. A escolha de qual lado voce fica define seu futuro profissional.
+      </p>
+
+      <div class="bg-gradient-to-br from-indigo-900/20 to-dark-800 rounded-xl p-6 border border-indigo-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">Habilidades a prova de futuro</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-indigo-900/20 rounded-xl p-4 border border-indigo-500/30">
+            <h4 class="font-bold text-indigo-400 mb-3">✓ Invista aqui</h4>
+            <ul class="space-y-2 text-neutral-300 text-sm">
+              <li>→ Pensamento estrategico e consultivo</li>
+              <li>→ Construcao de relacionamento profundo</li>
+              <li>→ Negociacao complexa e criativa</li>
+              <li>→ Lideranca de pensamento no setor</li>
+              <li>→ Diagnostico de problemas complexos</li>
+              <li>→ Comunicacao de valor executiva</li>
+              <li>→ Deep expertise no dominio do cliente</li>
+            </ul>
+          </div>
+          <div class="bg-red-900/20 rounded-xl p-4 border border-red-500/30">
+            <h4 class="font-bold text-red-400 mb-3">✗ Nao dependa disso</h4>
+            <ul class="space-y-2 text-neutral-300 text-sm">
+              <li>→ Enviar emails em volume manualmente</li>
+              <li>→ Pesquisar prospects no LinkedIn</li>
+              <li>→ Preencher CRM e fazer reports</li>
+              <li>→ Fazer cold calls sem preparo</li>
+              <li>→ Seguir scripts rigidos</li>
+              <li>→ Apresentar features genericas</li>
+              <li>→ Processar pedidos sem agregar valor</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">O conceito do T-Shaped Seller</h3>
+        <p class="text-neutral-300 mb-4 text-sm">
+          O vendedor do futuro tem formato de "T": conhecimento amplo de vendas (a barra horizontal) + expertise profunda em um dominio (a barra vertical). Generalistas serao substituidos. Especialistas com habilidade comercial serao disputados.
+        </p>
+        <div class="flex items-center justify-center">
+          <div class="text-center">
+            <div class="bg-indigo-500/20 rounded-lg px-16 py-2 border border-indigo-500/30 mb-1">
+              <span class="text-indigo-400 text-sm font-semibold">Vendas, comunicacao, negociacao (amplo)</span>
+            </div>
+            <div class="bg-indigo-500/30 rounded-lg px-6 py-8 border border-indigo-500/40 mx-auto w-40">
+              <span class="text-indigo-300 text-sm font-semibold">Expertise profunda no dominio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Plano de acao pessoal</h3>
+        <p class="text-neutral-300">
+          Pergunte-se: "Em que assunto eu sou o vendedor que mais sabe no mercado?" Se nao tem resposta, escolha um dominio e mergulhe: leia os livros do setor do cliente, participe de eventos do mercado dele, converse com usuarios reais. Em 6 meses de imersao, voce tera um diferencial que nenhuma IA replica.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-bold">5</span>
+        <h2 class="text-2xl font-bold">🌟 O vendedor do futuro</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Tudo que voce aprendeu nas 8 trilhas do 8020 converge para um perfil: <strong class="text-indigo-400">o vendedor do futuro e conselheiro, diagnosticador e construtor de confianca</strong>. Esse profissional ja existe — sao os top performers de hoje. O metodo 8020 prepara voce para ser esse profissional.
+      </p>
+
+      <div class="bg-gradient-to-br from-indigo-900/20 to-dark-800 rounded-xl p-6 border border-indigo-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">Os 3 papeis do vendedor do futuro</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+            <div class="text-4xl mb-3">🧭</div>
+            <h4 class="font-bold text-indigo-400 mb-2">Conselheiro</h4>
+            <p class="text-neutral-400 text-sm">O cliente busca voce ANTES de decidir. Voce e a primeira ligacao quando surge um desafio. Confianca acumulada transforma voce em conselheiro permanente.</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+            <div class="text-4xl mb-3">🔍</div>
+            <h4 class="font-bold text-indigo-400 mb-2">Diagnosticador</h4>
+            <p class="text-neutral-400 text-sm">Voce identifica problemas que o cliente ainda nao viu. Faz as perguntas que ninguem fez. Revela gaps que custam dinheiro e abre possibilidades novas.</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+            <div class="text-4xl mb-3">🤝</div>
+            <h4 class="font-bold text-indigo-400 mb-2">Construtor de confianca</h4>
+            <p class="text-neutral-400 text-sm">Torna a decisao segura. Remove risco. Cria clareza onde havia confusao. O cliente compra nao porque precisa do produto, mas porque confia em VOCE.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Box de Visao -->
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-indigo-400 mb-4">A jornada completa do 8020</h3>
+        <div class="space-y-3">
+          <div class="flex items-center space-x-3">
+            <span class="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-xs font-bold">T1</span>
+            <span class="text-neutral-300 text-sm">Fundamentos — A base mental e os principios</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 text-xs font-bold">T2</span>
+            <span class="text-neutral-300 text-sm">Metodo — O processo estruturado de venda</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 text-xs font-bold">T3</span>
+            <span class="text-neutral-300 text-sm">Diagnostico — Descobrir o problema real</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 text-xs font-bold">T4</span>
+            <span class="text-neutral-300 text-sm">Gestao — Pipeline, metricas e disciplina</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="w-8 h-8 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 text-xs font-bold">T5</span>
+            <span class="text-neutral-300 text-sm">Estrategia — Posicionamento e diferenciacao</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xs font-bold">T6</span>
+            <span class="text-neutral-300 text-sm">Treinamento — Pratica deliberada e melhoria</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-400 text-xs font-bold">T7</span>
+            <span class="text-neutral-300 text-sm">Ferramentas — CRM, automacao, stack de vendas</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400 text-xs font-bold">T8</span>
+            <span class="text-neutral-300 text-sm font-semibold">Avancado — Referencias, visao de futuro e integracao</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 A mensagem final</h3>
+        <p class="text-neutral-300">
+          O futuro das vendas nao e sombrio — e <strong class="text-blue-400">o melhor momento da historia para ser um vendedor excelente</strong>. A IA eliminara os mediocres e amplificara os excelentes. Quem domina os fundamentos, usa a tecnologia como alavanca e investe nas habilidades humanas nobres vai prosperar como nunca. O metodo 8020 te deu o mapa. Agora cabe a voce caminhar.
+        </p>
+      </div>
+    </section>
+
+    <!-- Resumo Final -->
+    <section class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+      <h2 class="text-2xl font-bold mb-6 flex items-center">
+        <span class="mr-3">📝</span> Resumo do Modulo — e da Trilha 8
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-indigo-400 mb-4">O que voce aprendeu:</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400">✓</span>
+              <span>IA ja automatiza prospeccao, scoring e analise</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400">✓</span>
+              <span>Interpretacao, confianca e julgamento sao humanos</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400">✓</span>
+              <span>O futuro e hibrido: IA + humano</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400">✓</span>
+              <span>Invista em habilidades que nao se automatizam</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400">✓</span>
+              <span>O vendedor do futuro e conselheiro, diagnosticador e construtor de confianca</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-indigo-400 mb-4">Trilha 8 completa!</h3>
+          <div class="bg-dark-700/50 rounded-xl p-4 border border-dark-600">
+            <span class="text-indigo-400 font-bold text-sm">PARABENS</span>
+            <h4 class="font-bold mt-1">🏆 Voce completou o curso 8020</h4>
+            <p class="text-neutral-400 text-sm mt-2">
+              8 trilhas, dezenas de modulos, centenas de conceitos. Agora o trabalho real comeca: aplicar, praticar, iterar. Releia os modulos que mais fizeram sentido. Implemente um conceito por semana. O resultado vem da acao, nao do conhecimento.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="modulo-8-3.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+          ← Modulo 8.3
+        </a>
+        <a href="index.html" class="flex-1 text-center px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-500 transition-colors">
+          Voltar para Trilha 8 →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-bold text-neutral-200">8020</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Modulo 8.4: O futuro — IA, autoservico e o papel humano</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+  </script>
+
+</body>
+</html>

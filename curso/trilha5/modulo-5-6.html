@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 5.6: Plano de Conteudo para Todos os Niveis | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors"><span class="text-3xl">💰</span><span class="font-bold text-xl hidden sm:inline">8020</span></a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Metodo</span></a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Diagnostico</span></a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Gestao</span></a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-rose-500/10 text-rose-400"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Estrategia</span></a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Treinamento</span></a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Ferramentas</span></a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all"><span class="sm:hidden">T8</span><span class="hidden sm:inline">Avancado</span></a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2"><span id="theme-icon" class="text-lg">🌙</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4 text-sm">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300">Inicio</a><span class="text-neutral-600">/</span>
+        <a href="index.html" class="text-neutral-500 hover:text-neutral-300">Trilha 5</a><span class="text-neutral-600">/</span>
+        <span class="text-rose-400 font-medium">Modulo 5.6</span>
+      </div>
+      <span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">MODULO 5.6</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">📋 Plano de Conteudo para Todos os Niveis</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Monte um sistema de conteudo que atenda simultaneamente todos os niveis de consciencia. Da proporcao ideal ao template pronto para usar.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-xl font-bold text-rose-400">6</div><div class="text-xs text-neutral-400">Topicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-xl font-bold text-rose-400">~60</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-xl font-bold text-rose-400">Estrategico</div><div class="text-xs text-neutral-400">Nivel</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-xl font-bold text-rose-400">Pratico</div><div class="text-xs text-neutral-400">Tipo</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-rose-500/20 text-rose-400 font-bold">1</span>
+        <h2 class="text-2xl font-bold">⚖️ A regra 60/40</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A proporcao ideal de conteudo e <strong class="text-rose-400">60% educacao/valor e 40% oferta/conversao</strong>. Isso mantem a audiencia engajada sem parecer que voce so quer vender, mas sem perder oportunidades de converter.
+      </p>
+
+      <div class="bg-gradient-to-br from-rose-900/20 to-dark-800 rounded-xl p-6 border border-rose-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-rose-400 mb-4">Distribuicao Visual</h3>
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="flex-1">
+            <div class="bg-rose-500/30 rounded-lg h-8 flex items-center justify-center" style="width: 60%">
+              <span class="text-sm font-bold text-rose-300">60% Educacao</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="flex-1">
+            <div class="bg-rose-600/50 rounded-lg h-8 flex items-center justify-center" style="width: 40%">
+              <span class="text-sm font-bold text-rose-200">40% Oferta</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 grid grid-cols-2 gap-4 text-sm">
+          <div class="text-neutral-400">
+            <p class="font-semibold text-neutral-300 mb-1">60% Educacao inclui:</p>
+            <p>Historias, dados, tutoriais, comparacoes, bastidores, opinioes</p>
+          </div>
+          <div class="text-neutral-400">
+            <p class="font-semibold text-neutral-300 mb-1">40% Oferta inclui:</p>
+            <p>Cases com CTA, depoimentos, ofertas diretas, lancamentos, promos</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Por que essa proporcao?</h3>
+        <p class="text-neutral-300">
+          Quem posta <strong class="text-blue-400">100% educacao</strong> constroi audiencia mas nunca converte. Quem posta <strong class="text-blue-400">100% oferta</strong> afasta a audiencia. O 60/40 e o equilbrio comprovado por anos de marketing de conteudo.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-rose-500/20 text-rose-400 font-bold">2</span>
+        <h2 class="text-2xl font-bold">📡 Distribuicao por canal</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Cada canal tem seu formato nativo e seu publico predominante. <strong class="text-rose-400">Adaptar o conteudo ao canal</strong> — nao apenas republica-lo — multiplica resultados.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-rose-400 mb-4">Mapa Canal x Nivel de Consciencia</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-dark-600">
+                <th class="text-left py-3 px-2 text-neutral-400">Canal</th>
+                <th class="text-center py-3 px-2 text-neutral-400">Melhor para</th>
+                <th class="text-center py-3 px-2 text-neutral-400">Formato</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-300">
+              <tr class="border-b border-dark-700">
+                <td class="py-3 px-2 font-medium">Instagram/TikTok</td>
+                <td class="text-center py-3 px-2">Inconscientes</td>
+                <td class="text-center py-3 px-2">Reels curtos, carroseis</td>
+              </tr>
+              <tr class="border-b border-dark-700">
+                <td class="py-3 px-2 font-medium">YouTube</td>
+                <td class="text-center py-3 px-2">Consc. Problema/Solucao</td>
+                <td class="text-center py-3 px-2">Videos longos, tutoriais</td>
+              </tr>
+              <tr class="border-b border-dark-700">
+                <td class="py-3 px-2 font-medium">LinkedIn</td>
+                <td class="text-center py-3 px-2">Consc. Solucao</td>
+                <td class="text-center py-3 px-2">Artigos, posts de autoridade</td>
+              </tr>
+              <tr class="border-b border-dark-700">
+                <td class="py-3 px-2 font-medium">Email</td>
+                <td class="text-center py-3 px-2">Consc. Produto/Muito Consc.</td>
+                <td class="text-center py-3 px-2">Sequencias, ofertas</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-2 font-medium">WhatsApp</td>
+                <td class="text-center py-3 px-2">Muito Conscientes</td>
+                <td class="text-center py-3 px-2">Mensagens diretas, fechamento</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-rose-500/20 text-rose-400 font-bold">3</span>
+        <h2 class="text-2xl font-bold">📅 Calendario de conteudo por nivel</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Um calendario semanal que distribui conteudo para <strong class="text-rose-400">todos os niveis de consciencia</strong> garante que voce nunca negligencie nenhuma etapa do funil.
+      </p>
+
+      <div class="bg-gradient-to-br from-rose-900/20 to-dark-800 rounded-xl p-6 border border-rose-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-rose-400 mb-4">Template Semanal</h3>
+        <div class="space-y-3">
+          <div class="flex items-center space-x-3 bg-dark-800/50 rounded-lg p-3">
+            <span class="text-rose-400 font-bold w-16">Seg</span>
+            <span class="text-neutral-300"><strong class="text-neutral-200">Topo de funil:</strong> Post de identificacao para inconscientes (Reels/TikTok)</span>
+          </div>
+          <div class="flex items-center space-x-3 bg-dark-800/50 rounded-lg p-3">
+            <span class="text-rose-400 font-bold w-16">Ter</span>
+            <span class="text-neutral-300"><strong class="text-neutral-200">Meio de funil:</strong> Conteudo de aprofundamento da dor (YouTube/Blog)</span>
+          </div>
+          <div class="flex items-center space-x-3 bg-dark-800/50 rounded-lg p-3">
+            <span class="text-rose-400 font-bold w-16">Qua</span>
+            <span class="text-neutral-300"><strong class="text-neutral-200">Autoridade:</strong> Case de estudo ou analise profunda (LinkedIn/YouTube)</span>
+          </div>
+          <div class="flex items-center space-x-3 bg-dark-800/50 rounded-lg p-3">
+            <span class="text-rose-400 font-bold w-16">Qui</span>
+            <span class="text-neutral-300"><strong class="text-neutral-200">Prova social:</strong> Depoimento, resultado de cliente (Instagram/Email)</span>
+          </div>
+          <div class="flex items-center space-x-3 bg-dark-800/50 rounded-lg p-3">
+            <span class="text-rose-400 font-bold w-16">Sex</span>
+            <span class="text-neutral-300"><strong class="text-neutral-200">Oferta:</strong> Conteudo com CTA direto, oferta ou convite (Email/WhatsApp)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Exercicio</h3>
+        <p class="text-neutral-300">Preencha este calendario com temas especificos do SEU nicho. Para cada dia, escreva o titulo e o formato. Planeje 4 semanas de uma vez — isso garante consistencia.</p>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-rose-500/20 text-rose-400 font-bold">4</span>
+        <h2 class="text-2xl font-bold">🎬 Frequencia e formato</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Cada nivel de consciencia responde melhor a <strong class="text-rose-400">formatos diferentes</strong>. A frequencia ideal tambem varia por canal. Acertar a combinacao formato + frequencia + canal maximiza o retorno do conteudo.
+      </p>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-rose-400 mb-4">Formato Ideal por Nivel</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">📱</div>
+            <div class="font-semibold text-neutral-200 text-sm">Inconscientes</div>
+            <div class="text-xs text-neutral-400">Video curto (15-60s), carrossel visual, memes educativos</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">📝</div>
+            <div class="font-semibold text-neutral-200 text-sm">Consc. Problema</div>
+            <div class="text-xs text-neutral-400">Artigo, video medio (5-15min), webinar, email sequence</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🎓</div>
+            <div class="font-semibold text-neutral-200 text-sm">Consc. Solucao</div>
+            <div class="text-xs text-neutral-400">Case detalhado, comparativo, video longo, podcast</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">📧</div>
+            <div class="font-semibold text-neutral-200 text-sm">Consc. Produto / Muito Consc.</div>
+            <div class="text-xs text-neutral-400">Email direto, mensagem pessoal, pagina de vendas, retargeting</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-rose-500/20 text-rose-400 font-bold">5</span>
+        <h2 class="text-2xl font-bold">🤖 Automacao vs humano</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Nem tudo precisa ser manual, mas nem tudo pode ser automatizado. A chave e saber <strong class="text-rose-400">o que automatizar e o que manter pessoal</strong> para escalar sem perder qualidade.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-rose-900/20 rounded-xl p-6 border border-rose-500/30">
+          <h4 class="font-bold text-rose-400 mb-4">🤖 Automatize</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>Sequencias de email de nurturing</li>
+            <li>Posts agendados em redes sociais</li>
+            <li>Respostas automaticas iniciais</li>
+            <li>Segmentacao de leads por comportamento</li>
+            <li>Follow-ups padronizados</li>
+          </ul>
+        </div>
+        <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600">
+          <h4 class="font-bold text-neutral-200 mb-4">👤 Mantenha Pessoal</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>Conversas de fechamento</li>
+            <li>Atendimento a objecoes complexas</li>
+            <li>Negociacao e propostas customizadas</li>
+            <li>Onboarding de novos clientes</li>
+            <li>Relacionamento com clientes VIP</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Regra geral</h3>
+        <p class="text-neutral-300">
+          Automatize o que e <strong class="text-blue-400">repetitivo e previsivel</strong>. Mantenha humano o que e <strong class="text-blue-400">relacional e decisivo</strong>. Topo e meio de funil: automatize. Fundo de funil: humanize.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 6 -->
+    <section id="topico-6" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-rose-500/20 text-rose-400 font-bold">6</span>
+        <h2 class="text-2xl font-bold">📄 Template completo de plano de conteudo</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Aqui esta o template completo para voce montar seu plano de conteudo. <strong class="text-rose-400">Copie, adapte e use</strong>. Cada campo foi pensado para garantir que nenhum nivel de consciencia fique descoberto.
+      </p>
+
+      <div class="bg-gradient-to-br from-rose-900/20 to-dark-800 rounded-xl p-6 border border-rose-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-rose-400 mb-4">Template: Peca de Conteudo</h3>
+        <div class="space-y-3 text-sm">
+          <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <span class="text-rose-400 font-semibold">Nivel de consciencia:</span>
+            <span class="text-neutral-400 ml-2">[ ] Inconsciente [ ] Problema [ ] Solucao [ ] Produto [ ] Muito consciente</span>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <span class="text-rose-400 font-semibold">Canal:</span>
+            <span class="text-neutral-400 ml-2">[ ] Instagram [ ] YouTube [ ] LinkedIn [ ] Email [ ] WhatsApp [ ] Blog</span>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <span class="text-rose-400 font-semibold">Formato:</span>
+            <span class="text-neutral-400 ml-2">[ ] Video curto [ ] Video longo [ ] Artigo [ ] Carrossel [ ] Email [ ] Mensagem</span>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <span class="text-rose-400 font-semibold">Titulo/Hook:</span>
+            <span class="text-neutral-400 ml-2">_________________________________</span>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <span class="text-rose-400 font-semibold">Objetivo:</span>
+            <span class="text-neutral-400 ml-2">[ ] Conscientizar [ ] Aprofundar dor [ ] Posicionar [ ] Converter [ ] Fechar</span>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <span class="text-rose-400 font-semibold">CTA:</span>
+            <span class="text-neutral-400 ml-2">_________________________________</span>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <span class="text-rose-400 font-semibold">Metrica de sucesso:</span>
+            <span class="text-neutral-400 ml-2">[ ] Alcance [ ] Engajamento [ ] Cliques [ ] Leads [ ] Vendas</span>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <span class="text-rose-400 font-semibold">Data de publicacao:</span>
+            <span class="text-neutral-400 ml-2">___/___/______</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-rose-400 mb-4">Template: Plano Mensal (Resumo)</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-dark-600">
+                <th class="text-left py-2 px-2 text-neutral-400">Semana</th>
+                <th class="text-center py-2 px-2 text-neutral-400">Topo</th>
+                <th class="text-center py-2 px-2 text-neutral-400">Meio</th>
+                <th class="text-center py-2 px-2 text-neutral-400">Autoridade</th>
+                <th class="text-center py-2 px-2 text-neutral-400">Prova</th>
+                <th class="text-center py-2 px-2 text-neutral-400">Oferta</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-300">
+              <tr class="border-b border-dark-700"><td class="py-2 px-2">Sem 1</td><td class="text-center py-2 px-2">2</td><td class="text-center py-2 px-2">1</td><td class="text-center py-2 px-2">1</td><td class="text-center py-2 px-2">1</td><td class="text-center py-2 px-2">1</td></tr>
+              <tr class="border-b border-dark-700"><td class="py-2 px-2">Sem 2</td><td class="text-center py-2 px-2">2</td><td class="text-center py-2 px-2">1</td><td class="text-center py-2 px-2">1</td><td class="text-center py-2 px-2">1</td><td class="text-center py-2 px-2">1</td></tr>
+              <tr class="border-b border-dark-700"><td class="py-2 px-2">Sem 3</td><td class="text-center py-2 px-2">2</td><td class="text-center py-2 px-2">1</td><td class="text-center py-2 px-2">1</td><td class="text-center py-2 px-2">1</td><td class="text-center py-2 px-2">1</td></tr>
+              <tr><td class="py-2 px-2">Sem 4</td><td class="text-center py-2 px-2">1</td><td class="text-center py-2 px-2">1</td><td class="text-center py-2 px-2">1</td><td class="text-center py-2 px-2">1</td><td class="text-center py-2 px-2">2</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-neutral-400 text-xs mt-3">Total mensal: ~24 pecas de conteudo = ~6 por semana</p>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Exercicio Final</h3>
+        <p class="text-neutral-300">Use os templates acima para planejar as proximas 4 semanas de conteudo do seu negocio. Preencha cada campo. Ao final, voce tera 24 pecas de conteudo planejadas cobrindo todos os niveis de consciencia.</p>
+      </div>
+    </section>
+
+    <!-- Resumo Final -->
+    <section class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+      <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📝</span> Resumo do Modulo</h2>
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-rose-400 mb-4">O que voce aprendeu:</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2"><span class="text-rose-400">✓</span><span>Proporcao 60/40 educacao vs oferta</span></li>
+            <li class="flex items-start space-x-2"><span class="text-rose-400">✓</span><span>Distribuicao de conteudo por canal</span></li>
+            <li class="flex items-start space-x-2"><span class="text-rose-400">✓</span><span>Calendario semanal por nivel</span></li>
+            <li class="flex items-start space-x-2"><span class="text-rose-400">✓</span><span>Formato ideal para cada nivel</span></li>
+            <li class="flex items-start space-x-2"><span class="text-rose-400">✓</span><span>O que automatizar e o que manter pessoal</span></li>
+            <li class="flex items-start space-x-2"><span class="text-rose-400">✓</span><span>Template completo de plano de conteudo</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-rose-400 mb-4">Proximo modulo:</h3>
+          <div class="bg-dark-700/50 rounded-xl p-4 border border-dark-600">
+            <span class="text-rose-400 font-bold text-sm">5.7</span>
+            <h4 class="font-bold mt-1">🤝 Integrando Equipe e Estrategia</h4>
+            <p class="text-neutral-400 text-sm mt-2">Monte a operacao integrada: marketing, vendas e gestao alinhados por nivel.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="modulo-5-5.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Modulo 5.5</a>
+        <a href="modulo-5-7.html" class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors">Proximo: Modulo 5.7 →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4"><span class="text-2xl">💰</span><span class="font-bold text-neutral-200">8020</span><span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a></div>
+        <div class="text-neutral-500 text-sm">Modulo 5.6: Plano de Conteudo para Todos os Niveis</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() { const html = document.documentElement; const icon = document.getElementById('theme-icon'); if (html.classList.contains('dark')) { html.classList.remove('dark'); icon.textContent = '☀️'; localStorage.setItem('theme', 'light'); } else { html.classList.add('dark'); icon.textContent = '🌙'; localStorage.setItem('theme', 'dark'); } }
+    if (localStorage.getItem('theme') === 'light') { document.documentElement.classList.remove('dark'); document.getElementById('theme-icon').textContent = '☀️'; }
+  </script>
+</body>
+</html>
