@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 2.7: O treinamento de 7 dias | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors"><span class="text-3xl">💰</span><span class="font-bold text-xl hidden sm:inline">8020</span></a>
+          <span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-blue-500/10 text-blue-400"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Metodo</span></a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Diagnostico</span></a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Gestao</span></a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Estrategia</span></a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Treinamento</span></a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Ferramentas</span></a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all"><span class="sm:hidden">T8</span><span class="hidden sm:inline">Avancado</span></a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2"><span id="theme-icon" class="text-lg">🌙</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-b from-blue-900/30 to-dark-900 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div class="flex items-center space-x-2 text-sm text-neutral-400 mb-4">
+        <a href="index.html" class="hover:text-blue-400 transition-colors">Trilha 2</a>
+        <span>›</span>
+        <span class="text-neutral-300">Modulo 2.7</span>
+      </div>
+      <div class="flex items-center space-x-3 mb-4">
+        <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-semibold">Metodo</span>
+        <span class="px-3 py-1 bg-dark-700 text-neutral-400 rounded-full text-xs font-semibold">Programa</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-4">📅 O treinamento de 7 dias</h1>
+      <p class="text-lg text-neutral-300 max-w-2xl mb-6">Um programa completo, dia a dia, para transformar teoria em habilidade pratica. Cada dia foca em uma competencia especifica com exercicios claros e progressivos.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-dark-800 rounded-lg p-3 border border-dark-600">
+          <div class="text-blue-400 font-bold text-lg">7</div>
+          <div class="text-neutral-400 text-sm">Topicos</div>
+        </div>
+        <div class="bg-dark-800 rounded-lg p-3 border border-dark-600">
+          <div class="text-blue-400 font-bold text-lg">~60 min</div>
+          <div class="text-neutral-400 text-sm">Duracao</div>
+        </div>
+        <div class="bg-dark-800 rounded-lg p-3 border border-dark-600">
+          <div class="text-blue-400 font-bold text-lg">Pratico</div>
+          <div class="text-neutral-400 text-sm">Nivel</div>
+        </div>
+        <div class="bg-dark-800 rounded-lg p-3 border border-dark-600">
+          <div class="text-blue-400 font-bold text-lg">Programa</div>
+          <div class="text-neutral-400 text-sm">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+
+    <!-- INTRO -->
+    <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-6">
+      <h3 class="font-bold text-blue-400 text-lg mb-3">Como usar este programa</h3>
+      <p class="text-neutral-300 leading-relaxed mb-3">Este e um programa pratico de 7 dias. Cada dia tem um foco unico e exercicios especificos. Nao pule dias — a sequencia e progressiva. Reserve pelo menos 45-60 minutos por dia. Se possivel, faca com um parceiro de treino.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
+        <div class="bg-dark-800 rounded-lg p-3 text-center">
+          <span class="text-blue-400 font-bold">45-60 min</span>
+          <p class="text-neutral-400 text-xs">por dia</p>
+        </div>
+        <div class="bg-dark-800 rounded-lg p-3 text-center">
+          <span class="text-blue-400 font-bold">1 parceiro</span>
+          <p class="text-neutral-400 text-xs">minimo ideal</p>
+        </div>
+        <div class="bg-dark-800 rounded-lg p-3 text-center">
+          <span class="text-blue-400 font-bold">7 dias</span>
+          <p class="text-neutral-400 text-xs">consecutivos</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIA 1 -->
+    <section class="space-y-6">
+      <div class="flex items-start space-x-3">
+        <span class="text-2xl">📝</span>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h2 class="text-2xl font-bold text-neutral-100">Dia 1: Aprender as perguntas certas</h2>
+            <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs font-bold">DIA 1</span>
+          </div>
+          <p class="text-neutral-400 mt-1">Foco total nas 4 perguntas fundamentais</p>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 space-y-4">
+        <p class="text-neutral-300 leading-relaxed">O primeiro dia e dedicado exclusivamente a perguntas. Nao venda nada. Nao apresente produto. Nao fale de preco. Hoje voce so <strong class="text-blue-400">pergunta e ouve</strong>. Parece simples, mas e o exercicio mais dificil para a maioria dos vendedores porque vai contra o instinto de "convencer".</p>
+
+        <p class="text-neutral-300 leading-relaxed">As 4 perguntas fundamentais que voce vai dominar hoje:</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-dark-800 rounded-xl p-5 border border-blue-500/20">
+          <span class="text-blue-400 font-bold text-lg">P1</span>
+          <h4 class="font-bold text-neutral-100 mt-2 mb-2">Pergunta de situacao</h4>
+          <p class="text-neutral-400 text-sm mb-2">"Como funciona [processo X] na sua empresa hoje?"</p>
+          <p class="text-neutral-300 text-xs italic">Objetivo: entender o contexto atual sem assumir nada.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl p-5 border border-blue-500/20">
+          <span class="text-blue-400 font-bold text-lg">P2</span>
+          <h4 class="font-bold text-neutral-100 mt-2 mb-2">Pergunta de problema</h4>
+          <p class="text-neutral-400 text-sm mb-2">"Qual a maior dificuldade que voce enfrenta com isso?"</p>
+          <p class="text-neutral-300 text-xs italic">Objetivo: trazer a dor para a superficie.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl p-5 border border-blue-500/20">
+          <span class="text-blue-400 font-bold text-lg">P3</span>
+          <h4 class="font-bold text-neutral-100 mt-2 mb-2">Pergunta de impacto</h4>
+          <p class="text-neutral-400 text-sm mb-2">"Quanto esse problema custa em tempo/dinheiro/energia por mes?"</p>
+          <p class="text-neutral-300 text-xs italic">Objetivo: quantificar o custo de nao resolver.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl p-5 border border-blue-500/20">
+          <span class="text-blue-400 font-bold text-lg">P4</span>
+          <h4 class="font-bold text-neutral-100 mt-2 mb-2">Pergunta de desejo</h4>
+          <p class="text-neutral-400 text-sm mb-2">"Se pudesse mudar uma coisa nessa area, o que seria?"</p>
+          <p class="text-neutral-300 text-xs italic">Objetivo: revelar o estado futuro desejado.</p>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+        <h4 class="font-bold text-neutral-100 mb-3">🏋️ Exercicio do Dia 1</h4>
+        <ul class="space-y-2 text-neutral-300 text-sm">
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">1.</span><span>Escreva as 4 perguntas adaptadas para o SEU produto/servico.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">2.</span><span>Pratique em dupla: um pergunta, outro responde como cliente real. 10 minutos cada.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">3.</span><span>Repita 3 vezes, cada vez com um "cliente" diferente (segmentos diferentes).</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">4.</span><span>Regra: voce NAO pode apresentar produto. Se sentir vontade, pare e faca outra pergunta.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DIA 2 -->
+    <section class="space-y-6">
+      <div class="flex items-start space-x-3">
+        <span class="text-2xl">😣</span>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h2 class="text-2xl font-bold text-neutral-100">Dia 2: Identificar dor e desejo</h2>
+            <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs font-bold">DIA 2</span>
+          </div>
+          <p class="text-neutral-400 mt-1">Ouvir respostas e extrair o que realmente importa</p>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 space-y-4">
+        <p class="text-neutral-300 leading-relaxed">Ontem voce aprendeu a perguntar. Hoje vai aprender a <strong class="text-blue-400">ouvir as respostas de verdade</strong>. A maioria dos vendedores ouve as palavras, mas nao identifica o que esta por tras delas. O cliente diz "preciso de algo mais rapido" — a dor nao e "velocidade", e a <strong class="text-blue-400">frustracao com o atraso e o impacto que ele causa</strong>.</p>
+
+        <p class="text-neutral-300 leading-relaxed">Hoje voce vai treinar o mapeamento de <strong class="text-blue-400">estado atual vs estado futuro</strong>. Esse mapa e a arma mais poderosa de vendas porque mostra a distancia entre onde o cliente ESTA e onde ele QUER estar.</p>
+      </div>
+
+      <!-- Mapa visual -->
+      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+        <div class="bg-blue-500/10 p-4 border-b border-dark-600">
+          <h4 class="font-bold text-blue-400">Mapa: Estado Atual vs Estado Futuro</h4>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-0">
+          <div class="p-5 border-r border-dark-600">
+            <div class="text-center mb-4">
+              <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-xs font-bold">ESTADO ATUAL</span>
+            </div>
+            <ul class="space-y-2 text-neutral-400 text-sm">
+              <li>▸ Qual a situacao de hoje?</li>
+              <li>▸ O que causa frustacao?</li>
+              <li>▸ Quanto custa (tempo/dinheiro/energia)?</li>
+              <li>▸ Ha quanto tempo convive com isso?</li>
+              <li>▸ O que ja tentou fazer?</li>
+            </ul>
+          </div>
+          <div class="p-5">
+            <div class="text-center mb-4">
+              <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-bold">ESTADO FUTURO</span>
+            </div>
+            <ul class="space-y-2 text-neutral-300 text-sm">
+              <li>▸ Como seria o cenario ideal?</li>
+              <li>▸ O que mudaria na rotina?</li>
+              <li>▸ Quanto economizaria?</li>
+              <li>▸ Como se sentiria?</li>
+              <li>▸ O que poderia fazer que hoje nao pode?</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+        <h4 class="font-bold text-neutral-100 mb-3">🏋️ Exercicio do Dia 2</h4>
+        <ul class="space-y-2 text-neutral-300 text-sm">
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">1.</span><span>Faca as 4 perguntas do Dia 1 com um parceiro (como revisao).</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">2.</span><span>Apos cada resposta, identifique: qual e a DOR e qual e o DESEJO por tras.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">3.</span><span>Preencha o mapa Estado Atual vs Estado Futuro com as respostas do "cliente".</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">4.</span><span>Confirme com o cliente: "Se eu entendi bem, hoje voce esta [estado atual] e gostaria de estar [estado futuro]. E isso?"</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DIA 3 -->
+    <section class="space-y-6">
+      <div class="flex items-start space-x-3">
+        <span class="text-2xl">💎</span>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h2 class="text-2xl font-bold text-neutral-100">Dia 3: Transformar caracteristicas em valor</h2>
+            <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs font-bold">DIA 3</span>
+          </div>
+          <p class="text-neutral-400 mt-1">De features para impacto real na vida do cliente</p>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 space-y-4">
+        <p class="text-neutral-300 leading-relaxed">Caracteristica e o que o produto FAZ. Valor e o que ele MUDA na vida do cliente. O cliente nao compra caracteristicas — compra transformacao. Hoje voce vai treinar a habilidade de <strong class="text-blue-400">traduzir qualquer feature em impacto concreto</strong>.</p>
+
+        <p class="text-neutral-300 leading-relaxed">A formula e simples: pegue a caracteristica e complete com uma dessas frases — <strong class="text-blue-400">"isso reduz...", "isso acelera...", "isso evita...", "isso aumenta..."</strong>. Se voce nao consegue completar, a feature provavelmente nao e relevante para aquele cliente.</p>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+        <div class="bg-blue-500/10 p-4 border-b border-dark-600">
+          <h4 class="font-bold text-blue-400">Exemplos de traducao: Feature → Valor</h4>
+        </div>
+        <div class="divide-y divide-dark-600">
+          <div class="p-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="bg-dark-700 rounded-lg p-3">
+              <p class="text-red-400 text-xs font-bold mb-1">FEATURE</p>
+              <p class="text-neutral-400 text-sm">"Nosso sistema tem relatorios automaticos"</p>
+            </div>
+            <div class="bg-dark-700 rounded-lg p-3">
+              <p class="text-blue-400 text-xs font-bold mb-1">VALOR</p>
+              <p class="text-neutral-300 text-sm">"Isso <strong>reduz</strong> de 4 horas para 15 minutos o tempo que voce gasta montando relatorios toda semana"</p>
+            </div>
+          </div>
+          <div class="p-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="bg-dark-700 rounded-lg p-3">
+              <p class="text-red-400 text-xs font-bold mb-1">FEATURE</p>
+              <p class="text-neutral-400 text-sm">"Temos suporte 24h"</p>
+            </div>
+            <div class="bg-dark-700 rounded-lg p-3">
+              <p class="text-blue-400 text-xs font-bold mb-1">VALOR</p>
+              <p class="text-neutral-300 text-sm">"Isso <strong>evita</strong> que voce perca vendas no fim de semana porque o sistema travou e ninguem respondeu"</p>
+            </div>
+          </div>
+          <div class="p-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="bg-dark-700 rounded-lg p-3">
+              <p class="text-red-400 text-xs font-bold mb-1">FEATURE</p>
+              <p class="text-neutral-400 text-sm">"Integracao com WhatsApp"</p>
+            </div>
+            <div class="bg-dark-700 rounded-lg p-3">
+              <p class="text-blue-400 text-xs font-bold mb-1">VALOR</p>
+              <p class="text-neutral-300 text-sm">"Isso <strong>acelera</strong> o tempo de resposta ao lead de horas para segundos, antes que ele vá para o concorrente"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+        <h4 class="font-bold text-neutral-100 mb-3">🏋️ Exercicio do Dia 3</h4>
+        <ul class="space-y-2 text-neutral-300 text-sm">
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">1.</span><span>Liste 5 caracteristicas do seu produto ou servico.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">2.</span><span>Para cada uma, escreva: "Isso reduz/acelera/evita/aumenta [impacto concreto]".</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">3.</span><span>Pratique falando em voz alta. Cronometre: cada frase de valor deve ter no maximo 15 segundos.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">4.</span><span>Peca para o parceiro avaliar: "Isso me convenceu? Por que sim/nao?"</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DIA 4 -->
+    <section class="space-y-6">
+      <div class="flex items-start space-x-3">
+        <span class="text-2xl">📋</span>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h2 class="text-2xl font-bold text-neutral-100">Dia 4: Seguir o script completo</h2>
+            <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs font-bold">DIA 4</span>
+          </div>
+          <p class="text-neutral-400 mt-1">Praticar o roteiro de valor do inicio ao fim</p>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 space-y-4">
+        <p class="text-neutral-300 leading-relaxed">Nos 3 primeiros dias, voce treinou cada peca separadamente: perguntas, escuta, traducao de valor. Hoje e o dia de <strong class="text-blue-400">juntar tudo em um fluxo continuo</strong>. Voce vai seguir o roteiro completo do inicio ao fim, sem pular etapas.</p>
+
+        <p class="text-neutral-300 leading-relaxed">A chave e a <strong class="text-blue-400">repeticao</strong>. Faca pelo menos 3-5 vezes. Nas primeiras, vai parecer mecanico e forcado. Na terceira, comeca a fluir. Na quinta, ja parece natural. Isso e normal — e exatamente como funciona.</p>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl border border-blue-500/20 overflow-hidden">
+        <div class="bg-blue-500/10 p-4 border-b border-dark-600">
+          <h4 class="font-bold text-blue-400">Roteiro completo de atendimento</h4>
+        </div>
+        <div class="p-5 space-y-3">
+          <div class="flex items-start space-x-3">
+            <span class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">1</span>
+            <div>
+              <p class="text-neutral-100 font-semibold text-sm">Abertura (1-2 min)</p>
+              <p class="text-neutral-400 text-sm">Apresentacao + rapport + definir proposito da conversa</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">2</span>
+            <div>
+              <p class="text-neutral-100 font-semibold text-sm">Investigacao (5-8 min)</p>
+              <p class="text-neutral-400 text-sm">4 perguntas fundamentais + escuta ativa + mapeamento dor/desejo</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">3</span>
+            <div>
+              <p class="text-neutral-100 font-semibold text-sm">Confirmacao (1 min)</p>
+              <p class="text-neutral-400 text-sm">"Se eu entendi bem..." — confirmar dor e desejo antes de apresentar</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">4</span>
+            <div>
+              <p class="text-neutral-100 font-semibold text-sm">Apresentacao de valor (3-5 min)</p>
+              <p class="text-neutral-400 text-sm">Conectar cada feature com a dor/desejo especifico do cliente</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">5</span>
+            <div>
+              <p class="text-neutral-100 font-semibold text-sm">Verificacao (1 min)</p>
+              <p class="text-neutral-400 text-sm">"Faz sentido para voce?" — checar receptividade antes de fechar</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">6</span>
+            <div>
+              <p class="text-neutral-100 font-semibold text-sm">Proximo passo (1-2 min)</p>
+              <p class="text-neutral-400 text-sm">Propor acao concreta: agendar demo, enviar proposta, fechar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+        <h4 class="font-bold text-neutral-100 mb-3">🏋️ Exercicio do Dia 4</h4>
+        <ul class="space-y-2 text-neutral-300 text-sm">
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">1.</span><span>Faca o roteiro completo com um parceiro. Cronometre: deve durar 12-18 minutos.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">2.</span><span>O parceiro da nota de 1-5 para cada etapa usando o checklist do modulo anterior.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">3.</span><span>Repita pelo menos 3 vezes. A cada rodada, foque em melhorar o ponto mais fraco.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">4.</span><span>Na ultima rodada, grave audio para revisao posterior.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DIA 5 -->
+    <section class="space-y-6">
+      <div class="flex items-start space-x-3">
+        <span class="text-2xl">🛡️</span>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h2 class="text-2xl font-bold text-neutral-100">Dia 5: Responder objecoes</h2>
+            <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs font-bold">DIA 5</span>
+          </div>
+          <p class="text-neutral-400 mt-1">Treinar as 5 objecoes mais comuns ate ficarem naturais</p>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 space-y-4">
+        <p class="text-neutral-300 leading-relaxed">Objecoes nao sao rejeicoes — sao pedidos de informacao. Quando o cliente diz "esta caro", ele esta dizendo <strong class="text-blue-400">"me convenca de que vale o investimento"</strong>. Quando diz "preciso pensar", esta dizendo <strong class="text-blue-400">"ainda nao estou seguro o suficiente"</strong>.</p>
+
+        <p class="text-neutral-300 leading-relaxed">O protocolo AER (Acolher, Explorar, Responder) e a estrutura para lidar com qualquer objecao sem parecer defensivo ou desesperado.</p>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl border border-blue-500/20 overflow-hidden">
+        <div class="bg-blue-500/10 p-4 border-b border-dark-600">
+          <h4 class="font-bold text-blue-400">Protocolo AER — As 5 objecoes com resposta pronta</h4>
+        </div>
+        <div class="divide-y divide-dark-600">
+          <div class="p-5">
+            <p class="font-bold text-neutral-100 mb-3">1. "Esta caro"</p>
+            <div class="space-y-2 text-sm">
+              <p class="text-blue-400"><strong>A — Acolher:</strong> <span class="text-neutral-300">"Entendo, investimento e algo que precisa fazer sentido."</span></p>
+              <p class="text-blue-400"><strong>E — Explorar:</strong> <span class="text-neutral-300">"Caro comparado a que? Ou e uma questao de orcamento disponivel?"</span></p>
+              <p class="text-blue-400"><strong>R — Responder:</strong> <span class="text-neutral-300">"Voce mencionou que perde R$X por mes com [problema]. Em Y meses, o investimento se paga e começa a gerar economia."</span></p>
+            </div>
+          </div>
+          <div class="p-5">
+            <p class="font-bold text-neutral-100 mb-3">2. "Preciso pensar"</p>
+            <div class="space-y-2 text-sm">
+              <p class="text-blue-400"><strong>A — Acolher:</strong> <span class="text-neutral-300">"Claro, e uma decisao importante."</span></p>
+              <p class="text-blue-400"><strong>E — Explorar:</strong> <span class="text-neutral-300">"Para eu te ajudar a pensar: o que especificamente voce quer avaliar melhor?"</span></p>
+              <p class="text-blue-400"><strong>R — Responder:</strong> <span class="text-neutral-300">Responda a duvida especifica e proponha um prazo: "Faz sentido conversarmos novamente na quarta?"</span></p>
+            </div>
+          </div>
+          <div class="p-5">
+            <p class="font-bold text-neutral-100 mb-3">3. "Ja tenho fornecedor"</p>
+            <div class="space-y-2 text-sm">
+              <p class="text-blue-400"><strong>A — Acolher:</strong> <span class="text-neutral-300">"Otimo, e bom ter alguem de confianca."</span></p>
+              <p class="text-blue-400"><strong>E — Explorar:</strong> <span class="text-neutral-300">"Se pudesse melhorar uma coisa no servico atual, o que seria?"</span></p>
+              <p class="text-blue-400"><strong>R — Responder:</strong> <span class="text-neutral-300">Foque exatamente na lacuna que o fornecedor atual deixa.</span></p>
+            </div>
+          </div>
+          <div class="p-5">
+            <p class="font-bold text-neutral-100 mb-3">4. "Nao e o momento"</p>
+            <div class="space-y-2 text-sm">
+              <p class="text-blue-400"><strong>A — Acolher:</strong> <span class="text-neutral-300">"Entendo, timing e importante."</span></p>
+              <p class="text-blue-400"><strong>E — Explorar:</strong> <span class="text-neutral-300">"O que precisaria acontecer para ser o momento certo?"</span></p>
+              <p class="text-blue-400"><strong>R — Responder:</strong> <span class="text-neutral-300">"Enquanto isso, quanto voce continua perdendo por mes com [problema]? As vezes o melhor momento e antes que o custo acumule."</span></p>
+            </div>
+          </div>
+          <div class="p-5">
+            <p class="font-bold text-neutral-100 mb-3">5. "Vou ver com meu socio/esposa"</p>
+            <div class="space-y-2 text-sm">
+              <p class="text-blue-400"><strong>A — Acolher:</strong> <span class="text-neutral-300">"Faz total sentido decidir junto."</span></p>
+              <p class="text-blue-400"><strong>E — Explorar:</strong> <span class="text-neutral-300">"Para voce, pessoalmente, faz sentido? Qual seria a principal preocupacao do [socio/esposa]?"</span></p>
+              <p class="text-blue-400"><strong>R — Responder:</strong> <span class="text-neutral-300">"Posso preparar um resumo com os pontos principais para facilitar a conversa? Ou podemos fazer uma call rapida com ele/ela?"</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+        <h4 class="font-bold text-neutral-100 mb-3">🏋️ Exercicio do Dia 5</h4>
+        <ul class="space-y-2 text-neutral-300 text-sm">
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">1.</span><span>Parceiro faz o roteiro completo e joga UMA objecao. Voce responde com AER.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">2.</span><span>Repita com cada uma das 5 objecoes. Nao avise qual vem — deve ser surpresa.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">3.</span><span>Avalie: a resposta foi natural ou pareceu decorada? Se pareceu decorada, repita.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 font-bold">4.</span><span>Objetivo: responder qualquer das 5 objecoes em menos de 30 segundos, com naturalidade.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DIA 6 -->
+    <section class="space-y-6">
+      <div class="flex items-start space-x-3">
+        <span class="text-2xl">🎥</span>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h2 class="text-2xl font-bold text-neutral-100">Dia 6: Simulacoes gravadas</h2>
+            <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs font-bold">DIA 6</span>
+          </div>
+          <p class="text-neutral-400 mt-1">Simular, gravar, assistir e corrigir em 2-3 rodadas</p>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 space-y-4">
+        <p class="text-neutral-300 leading-relaxed">Hoje e o dia mais intenso do programa. Voce vai fazer <strong class="text-blue-400">simulacoes completas de atendimento, gravando tudo</strong>, e depois assistir junto com o parceiro para identificar pontos de melhoria. E desconfortavel? Sim. E o metodo mais eficaz? Sem duvida.</p>
+
+        <p class="text-neutral-300 leading-relaxed">O objetivo e fazer 2-3 rodadas completas, cada uma melhor que a anterior. Na primeira, voce identifica os problemas. Na segunda, tenta corrigir. Na terceira, consolida as melhorias.</p>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+        <h4 class="font-bold text-neutral-100 mb-4">Estrutura da sessao (60 min total)</h4>
+        <div class="space-y-4">
+          <div class="bg-dark-700 rounded-lg p-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-blue-400">Rodada 1 (20 min)</span>
+              <span class="text-neutral-400 text-xs">Gravacao + Revisao</span>
+            </div>
+            <p class="text-neutral-400 text-sm">10 min de simulacao gravada + 10 min assistindo junto e anotando. Identifique os 3 maiores pontos de melhoria.</p>
+          </div>
+          <div class="bg-dark-700 rounded-lg p-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-blue-400">Rodada 2 (20 min)</span>
+              <span class="text-neutral-400 text-xs">Correcao + Revisao</span>
+            </div>
+            <p class="text-neutral-400 text-sm">10 min de simulacao focando nos 3 pontos. Grave novamente. 10 min de revisao comparando com a primeira rodada.</p>
+          </div>
+          <div class="bg-dark-700 rounded-lg p-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-blue-400">Rodada 3 (20 min)</span>
+              <span class="text-neutral-400 text-xs">Consolidacao + Avaliacao</span>
+            </div>
+            <p class="text-neutral-400 text-sm">10 min de simulacao final — a "melhor versao". 10 min de avaliacao final: nota para cada etapa do checklist.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+        <h4 class="font-bold text-neutral-100 mb-3">O que anotar durante a revisao</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="flex items-start space-x-2 text-sm"><span class="text-blue-400">▸</span><span class="text-neutral-300">Momentos em que voce se perdeu ou ficou sem saber o que dizer</span></div>
+          <div class="flex items-start space-x-2 text-sm"><span class="text-blue-400">▸</span><span class="text-neutral-300">Perguntas que esqueceu de fazer</span></div>
+          <div class="flex items-start space-x-2 text-sm"><span class="text-blue-400">▸</span><span class="text-neutral-300">Transicoes que ficaram abruptas</span></div>
+          <div class="flex items-start space-x-2 text-sm"><span class="text-blue-400">▸</span><span class="text-neutral-300">Momentos em que falou demais sem ouvir</span></div>
+          <div class="flex items-start space-x-2 text-sm"><span class="text-blue-400">▸</span><span class="text-neutral-300">Linguagem corporal (se gravou video)</span></div>
+          <div class="flex items-start space-x-2 text-sm"><span class="text-blue-400">▸</span><span class="text-neutral-300">Momentos em que o "cliente" se engajou mais</span></div>
+        </div>
+      </div>
+
+      <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-5">
+        <h4 class="font-bold text-blue-400 mb-2">💡 Dica importante</h4>
+        <p class="text-neutral-300 text-sm leading-relaxed">Nao se julgue duramente na primeira rodada. Todo mundo fica estranho se vendo pela primeira vez. O desconforto e temporario — o aprendizado e permanente. Na segunda rodada, voce ja vai estar 30-50% melhor.</p>
+      </div>
+    </section>
+
+    <!-- DIA 7 -->
+    <section class="space-y-6">
+      <div class="flex items-start space-x-3">
+        <span class="text-2xl">🚀</span>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h2 class="text-2xl font-bold text-neutral-100">Dia 7: Atendimento real com supervisao</h2>
+            <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs font-bold">DIA 7</span>
+          </div>
+          <p class="text-neutral-400 mt-1">O primeiro atendimento real aplicando tudo que treinou</p>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 space-y-4">
+        <p class="text-neutral-300 leading-relaxed">Chegou o dia. Depois de 6 dias de preparacao, hoje voce vai fazer <strong class="text-blue-400">um atendimento real</strong> usando tudo que treinou. O diferencial e que voce nao vai sozinho — um gestor, colega experiente ou parceiro de treino vai observar (ao vivo ou ouvindo a ligacao) e dar feedback imediato apos o atendimento.</p>
+
+        <p class="text-neutral-300 leading-relaxed">Isso nao e "prova". E a ponte entre o treino e a realidade. O objetivo nao e perfeicao — e <strong class="text-blue-400">aplicacao consciente</strong> do que foi treinado.</p>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+        <h4 class="font-bold text-neutral-100 mb-4">Protocolo do Dia 7</h4>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <span class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">A</span>
+            <div>
+              <p class="text-neutral-100 font-semibold">Antes do atendimento (10 min)</p>
+              <ul class="text-neutral-400 text-sm space-y-1 mt-1">
+                <li>▸ Revise o roteiro mentalmente</li>
+                <li>▸ Relembre as 4 perguntas e o protocolo AER</li>
+                <li>▸ Defina com o observador: ele anota, nao interfere</li>
+                <li>▸ Respire. Voce treinou. Voce esta pronto.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">B</span>
+            <div>
+              <p class="text-neutral-100 font-semibold">Durante o atendimento</p>
+              <ul class="text-neutral-400 text-sm space-y-1 mt-1">
+                <li>▸ Siga o roteiro, mas nao tenha medo de adaptar</li>
+                <li>▸ Se travar, faca uma pergunta — perguntar sempre funciona</li>
+                <li>▸ Nao se cobre perfeicao; foque em executar cada etapa</li>
+                <li>▸ O observador fica em silencio, apenas anotando</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">C</span>
+            <div>
+              <p class="text-neutral-100 font-semibold">Depois do atendimento (15 min)</p>
+              <ul class="text-neutral-400 text-sm space-y-1 mt-1">
+                <li>▸ Feedback imediato — maximo 15 min depois, enquanto esta fresco</li>
+                <li>▸ Vendedor fala primeiro: "O que eu fiz bem? O que eu faria diferente?"</li>
+                <li>▸ Observador complementa usando formato OIS</li>
+                <li>▸ Definir 2-3 pontos para o proximo atendimento</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+        <h4 class="font-bold text-neutral-100 mb-3">O que esperar do Dia 7</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-dark-700 rounded-lg p-4">
+            <p class="text-blue-400 text-sm font-bold mb-2">Vai dar certo se...</p>
+            <ul class="text-neutral-300 text-sm space-y-1">
+              <li>▸ Voce seguiu o roteiro na maior parte</li>
+              <li>▸ Fez pelo menos 3 das 4 perguntas</li>
+              <li>▸ Ouviu mais do que falou</li>
+              <li>▸ Propôs um proximo passo claro</li>
+            </ul>
+          </div>
+          <div class="bg-dark-700 rounded-lg p-4">
+            <p class="text-neutral-400 text-sm font-bold mb-2">E normal se...</p>
+            <ul class="text-neutral-400 text-sm space-y-1">
+              <li>▸ Esqueceu uma etapa</li>
+              <li>▸ Ficou nervoso no comeco</li>
+              <li>▸ A objecao pegou de surpresa</li>
+              <li>▸ Nao fechou a venda</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-5">
+        <h4 class="font-bold text-blue-400 mb-2">🎯 O verdadeiro objetivo</h4>
+        <p class="text-neutral-300 text-sm leading-relaxed">O Dia 7 nao e sobre fechar uma venda. E sobre provar para voce mesmo que <strong class="text-blue-400">voce consegue seguir um metodo em uma situacao real</strong>. Se voce fez isso, o treinamento foi um sucesso. A venda vira como consequencia da repeticao.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SUMMARY -->
+  <section class="bg-dark-800 border-t border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+      <h2 class="text-2xl font-bold text-neutral-100">📋 O que voce aprendeu neste modulo</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-400 text-lg">✅</span>
+          <span class="text-neutral-300">Dia 1: Dominar as 4 perguntas fundamentais</span>
+        </div>
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-400 text-lg">✅</span>
+          <span class="text-neutral-300">Dia 2: Mapear dor e desejo (estado atual vs futuro)</span>
+        </div>
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-400 text-lg">✅</span>
+          <span class="text-neutral-300">Dia 3: Traduzir features em valor com impacto</span>
+        </div>
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-400 text-lg">✅</span>
+          <span class="text-neutral-300">Dia 4: Executar o roteiro completo com fluidez</span>
+        </div>
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-400 text-lg">✅</span>
+          <span class="text-neutral-300">Dia 5: Responder as 5 objecoes com protocolo AER</span>
+        </div>
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-400 text-lg">✅</span>
+          <span class="text-neutral-300">Dia 6: Gravar, revisar e evoluir em 3 rodadas</span>
+        </div>
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-400 text-lg">✅</span>
+          <span class="text-neutral-300">Dia 7: Aplicar tudo em atendimento real supervisionado</span>
+        </div>
+      </div>
+
+      <!-- Next module preview -->
+      <div class="bg-gradient-to-r from-purple-900/30 to-dark-700 rounded-xl p-6 border border-purple-500/20">
+        <div class="flex items-center space-x-2 text-sm text-neutral-400 mb-2">
+          <span>Proxima trilha</span>
+          <span>→</span>
+        </div>
+        <h3 class="text-xl font-bold text-neutral-100 mb-2">🔍 Trilha 3 — Diagnostico Comercial</h3>
+        <p class="text-neutral-400">Agora que voce domina o metodo, e hora de diagnosticar a saude comercial da sua operacao. Aprenda a identificar gargalos, medir o que importa e construir um painel de gestao que mostra exatamente onde agir.</p>
+        <a href="../trilha3/index.html" class="inline-flex items-center space-x-2 mt-4 px-5 py-2.5 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-lg transition-colors">
+          <span>Ir para Trilha 3</span><span>→</span>
+        </a>
+      </div>
+
+      <!-- Nav buttons -->
+      <div class="flex justify-between items-center pt-4">
+        <a href="modulo-2-6.html" class="flex items-center space-x-2 text-neutral-400 hover:text-blue-400 transition-colors">
+          <span>←</span><span>Modulo anterior</span>
+        </a>
+        <a href="index.html" class="text-neutral-400 hover:text-blue-400 transition-colors">
+          <span>Voltar para Trilha 2</span>
+        </a>
+        <a href="../trilha3/index.html" class="flex items-center space-x-2 text-neutral-400 hover:text-purple-400 transition-colors">
+          <span>Trilha 3</span><span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-900 border-t border-dark-600 py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-neutral-400 text-sm">💰 8020 — Vendas com inteligencia</p>
+      <p class="text-neutral-600 text-xs mt-2">Um curso <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+    </div>
+  </footer>
+
+  <!-- THEME SCRIPT -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      const icon = document.getElementById('theme-icon');
+      icon.textContent = html.classList.contains('dark') ? '🌙' : '☀️';
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    }
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+  </script>
+</body>
+</html>

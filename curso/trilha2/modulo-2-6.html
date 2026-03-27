@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 2.6: Simulacao e treino pratico | 8020</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors"><span class="text-3xl">💰</span><span class="font-bold text-xl hidden sm:inline">8020</span></a>
+          <span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-blue-500/10 text-blue-400"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Metodo</span></a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Diagnostico</span></a>
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Gestao</span></a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Estrategia</span></a>
+            <a href="../trilha6/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Treinamento</span></a>
+            <a href="../trilha7/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Ferramentas</span></a>
+            <a href="../trilha8/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all"><span class="sm:hidden">T8</span><span class="hidden sm:inline">Avancado</span></a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2"><span id="theme-icon" class="text-lg">🌙</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-b from-blue-900/30 to-dark-900 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div class="flex items-center space-x-2 text-sm text-neutral-400 mb-4">
+        <a href="index.html" class="hover:text-blue-400 transition-colors">Trilha 2</a>
+        <span>›</span>
+        <span class="text-neutral-300">Modulo 2.6</span>
+      </div>
+      <div class="flex items-center space-x-3 mb-4">
+        <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-semibold">Metodo</span>
+        <span class="px-3 py-1 bg-dark-700 text-neutral-400 rounded-full text-xs font-semibold">Execucao</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-4">🎬 Simulacao e treino pratico</h1>
+      <p class="text-lg text-neutral-300 max-w-2xl mb-6">Aprenda a montar simulacoes realistas, dar feedback que funciona e usar gravacoes como o metodo mais rapido de evolucao em vendas.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-dark-800 rounded-lg p-3 border border-dark-600">
+          <div class="text-blue-400 font-bold text-lg">5</div>
+          <div class="text-neutral-400 text-sm">Topicos</div>
+        </div>
+        <div class="bg-dark-800 rounded-lg p-3 border border-dark-600">
+          <div class="text-blue-400 font-bold text-lg">~45 min</div>
+          <div class="text-neutral-400 text-sm">Duracao</div>
+        </div>
+        <div class="bg-dark-800 rounded-lg p-3 border border-dark-600">
+          <div class="text-blue-400 font-bold text-lg">Pratico</div>
+          <div class="text-neutral-400 text-sm">Nivel</div>
+        </div>
+        <div class="bg-dark-800 rounded-lg p-3 border border-dark-600">
+          <div class="text-blue-400 font-bold text-lg">Execucao</div>
+          <div class="text-neutral-400 text-sm">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+
+    <!-- TOPICO 1 -->
+    <section class="space-y-6">
+      <div class="flex items-start space-x-3">
+        <span class="text-2xl">⏱️</span>
+        <div>
+          <h2 class="text-2xl font-bold text-neutral-100">1. A formula 15-30-15</h2>
+          <p class="text-neutral-400 mt-1">A proporcao ideal entre teoria, pratica e correcao</p>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 space-y-4">
+        <p class="text-neutral-300 leading-relaxed">A maioria dos treinamentos de vendas falha por um motivo simples: <strong class="text-blue-400">sao 100% teoria</strong>. O gestor explica durante 2 horas, a equipe anota, e na segunda-feira tudo volta ao normal. O conhecimento evapora porque nunca foi praticado.</p>
+
+        <p class="text-neutral-300 leading-relaxed">A formula 15-30-15 resolve isso com uma estrutura simples e comprovada: <strong class="text-blue-400">15 minutos de teoria, 30 minutos de simulacao pratica, 15 minutos de correcao e feedback</strong>. Em 1 hora, voce treina mais do que em 8 horas de palestra.</p>
+      </div>
+
+      <!-- Visual da formula -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-dark-800 rounded-xl p-5 border border-blue-500/20 text-center">
+          <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-blue-400 font-extrabold text-2xl">15</span>
+          </div>
+          <h4 class="font-bold text-blue-400 mb-2">Teoria</h4>
+          <p class="text-neutral-400 text-sm">Apresente UM conceito, UMA tecnica, UM script. Nao tente cobrir tudo de uma vez. Menos e mais.</p>
+        </div>
+
+        <div class="bg-dark-800 rounded-xl p-5 border border-blue-500/20 text-center">
+          <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-blue-400 font-extrabold text-2xl">30</span>
+          </div>
+          <h4 class="font-bold text-blue-400 mb-2">Simulacao</h4>
+          <p class="text-neutral-400 text-sm">Pratica em duplas ou trios. Um faz o vendedor, outro o cliente, terceiro observa. Rodizio a cada 10 min.</p>
+        </div>
+
+        <div class="bg-dark-800 rounded-xl p-5 border border-blue-500/20 text-center">
+          <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-blue-400 font-extrabold text-2xl">15</span>
+          </div>
+          <h4 class="font-bold text-blue-400 mb-2">Correcao</h4>
+          <p class="text-neutral-400 text-sm">Feedback especifico do observador e do "cliente". O que funcionou? O que pode melhorar? Qual o proximo passo?</p>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+        <h4 class="font-bold text-neutral-100 mb-3">Por que essa proporcao funciona?</h4>
+        <ul class="space-y-2 text-neutral-300">
+          <li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">▸</span><span><strong class="text-neutral-100">15 min de teoria e suficiente</strong> — O cerebro absorve melhor em blocos curtos. Apos 20 min de palestra, a retencao cai drasticamente.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">▸</span><span><strong class="text-neutral-100">30 min de pratica e o minimo</strong> — Menos que isso e voce nao tem tempo de errar, corrigir e tentar de novo. A repeticao e onde a habilidade se forma.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">▸</span><span><strong class="text-neutral-100">15 min de correcao e essencial</strong> — Sem feedback, a pessoa pratica o erro e consolida habitos ruins. O feedback e o que transforma pratica em melhoria.</span></li>
+        </ul>
+      </div>
+
+      <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-5">
+        <h4 class="font-bold text-blue-400 mb-2">💡 Dica pratica</h4>
+        <p class="text-neutral-300 text-sm leading-relaxed">Nao precisa de sala especial, projetor ou material elaborado. Um celular com cronometro, 2-3 pessoas e um tema claro sao suficientes. Voce pode fazer isso no intervalo do almoco, antes do expediente ou ao final do dia.</p>
+      </div>
+    </section>
+
+    <!-- TOPICO 2 -->
+    <section class="space-y-6">
+      <div class="flex items-start space-x-3">
+        <span class="text-2xl">🎭</span>
+        <div>
+          <h2 class="text-2xl font-bold text-neutral-100">2. Como montar uma simulacao realista</h2>
+          <p class="text-neutral-400 mt-1">Usar situacoes reais para treinar de verdade</p>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 space-y-4">
+        <p class="text-neutral-300 leading-relaxed">Simulacao ruim e quando alguem diz "finge que eu sou o cliente" e os dois comecam a rir porque ninguem leva a serio. Simulacao boa e quando voce <strong class="text-blue-400">usa uma situacao real</strong> — um atendimento que aconteceu ontem, um lead que esta no pipeline agora, uma objecao que surgiu na ultima semana.</p>
+
+        <p class="text-neutral-300 leading-relaxed">Quanto mais real o cenario, mais util o treino. A ideia nao e "brincar de vendas" — e ensaiar a venda real que vai acontecer amanha.</p>
+      </div>
+
+      <!-- Template de cenario -->
+      <div class="bg-dark-800 rounded-xl border border-blue-500/20 overflow-hidden">
+        <div class="bg-blue-500/10 p-4 border-b border-dark-600">
+          <h4 class="font-bold text-blue-400">📋 Template de cenario de simulacao</h4>
+        </div>
+        <div class="p-5 space-y-4">
+          <div class="bg-dark-700 rounded-lg p-4">
+            <p class="text-blue-400 text-xs font-bold mb-2">CONTEXTO</p>
+            <p class="text-neutral-400 text-sm">Descreva quem e o cliente, qual o segmento, porte da empresa, e como ele chegou ate voce (indicacao, anuncio, site, etc).</p>
+            <p class="text-neutral-300 text-sm mt-2 italic">Exemplo: "Dono de loja de roupas, 2 funcionarios, faturamento R$30k/mes. Veio pelo Instagram apos ver um post sobre gestao de estoque."</p>
+          </div>
+
+          <div class="bg-dark-700 rounded-lg p-4">
+            <p class="text-blue-400 text-xs font-bold mb-2">DOR PRINCIPAL</p>
+            <p class="text-neutral-400 text-sm">Qual o problema que o cliente sente? Seja especifico.</p>
+            <p class="text-neutral-300 text-sm mt-2 italic">Exemplo: "Perde vendas porque nunca sabe o que tem em estoque. Ja aconteceu de prometer um produto e nao ter."</p>
+          </div>
+
+          <div class="bg-dark-700 rounded-lg p-4">
+            <p class="text-blue-400 text-xs font-bold mb-2">OBJECAO PROVAVEL</p>
+            <p class="text-neutral-400 text-sm">Qual a objecao mais esperada nesse cenario?</p>
+            <p class="text-neutral-300 text-sm mt-2 italic">Exemplo: "Acho que e muito caro pra uma loja pequena como a minha."</p>
+          </div>
+
+          <div class="bg-dark-700 rounded-lg p-4">
+            <p class="text-blue-400 text-xs font-bold mb-2">OBJETIVO DA SIMULACAO</p>
+            <p class="text-neutral-400 text-sm">O que especificamente voce quer treinar nessa rodada?</p>
+            <p class="text-neutral-300 text-sm mt-2 italic">Exemplo: "Treinar a transicao entre levantamento de dor e apresentacao de valor."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+        <h4 class="font-bold text-neutral-100 mb-3">Regras para uma boa simulacao</h4>
+        <ul class="space-y-2 text-neutral-300">
+          <li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">▸</span><span><strong class="text-neutral-100">O "cliente" deve ser dificil, nao impossivel</strong> — Nao facilite demais (senao nao treina), nem bloqueie tudo (senao frustra).</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">▸</span><span><strong class="text-neutral-100">Mantenha o personagem</strong> — Se voce e o cliente, nao saia do papel para dar dica ao vendedor. Anote e fale depois.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">▸</span><span><strong class="text-neutral-100">Tempo limitado</strong> — Cada rodada de 7-10 minutos. Longo demais vira conversa e perde o foco.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">▸</span><span><strong class="text-neutral-100">Rotacione os papeis</strong> — Todos devem ser vendedor, cliente e observador. Cada papel ensina algo diferente.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TOPICO 3 -->
+    <section class="space-y-6">
+      <div class="flex items-start space-x-3">
+        <span class="text-2xl">👀</span>
+        <div>
+          <h2 class="text-2xl font-bold text-neutral-100">3. O que observar durante a simulacao</h2>
+          <p class="text-neutral-400 mt-1">Checklist para o observador avaliar cada aspecto da venda</p>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 space-y-4">
+        <p class="text-neutral-300 leading-relaxed">O papel do observador e o mais importante da simulacao. Ele nao esta ali para assistir — esta ali para <strong class="text-blue-400">avaliar com criterio</strong>. Sem um checklist claro, o feedback vira "foi legal" ou "precisa melhorar", que nao serve para nada.</p>
+      </div>
+
+      <!-- Checklist visual -->
+      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+        <div class="bg-blue-500/10 p-4 border-b border-dark-600">
+          <h4 class="font-bold text-blue-400">📋 Checklist do observador</h4>
+        </div>
+        <div class="divide-y divide-dark-600">
+          <div class="p-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-neutral-100">1. Abertura</span>
+              <span class="text-blue-400 text-xs font-semibold bg-blue-500/20 px-2 py-1 rounded">Primeiros 60s</span>
+            </div>
+            <ul class="text-neutral-400 text-sm space-y-1">
+              <li>▸ Se apresentou de forma clara e objetiva?</li>
+              <li>▸ Estabeleceu rapport sem enrolacao?</li>
+              <li>▸ Definiu o proposito da conversa?</li>
+            </ul>
+            <p class="text-neutral-300 text-xs mt-2 italic">Revela: seguranca inicial e capacidade de criar conexao rapida</p>
+          </div>
+
+          <div class="p-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-neutral-100">2. Perguntas</span>
+              <span class="text-blue-400 text-xs font-semibold bg-blue-500/20 px-2 py-1 rounded">Investigacao</span>
+            </div>
+            <ul class="text-neutral-400 text-sm space-y-1">
+              <li>▸ Fez perguntas abertas para entender a situacao?</li>
+              <li>▸ Aprofundou a dor com perguntas de impacto?</li>
+              <li>▸ Identificou o desejo/estado futuro do cliente?</li>
+            </ul>
+            <p class="text-neutral-300 text-xs mt-2 italic">Revela: capacidade de investigacao e empatia</p>
+          </div>
+
+          <div class="p-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-neutral-100">3. Escuta</span>
+              <span class="text-blue-400 text-xs font-semibold bg-blue-500/20 px-2 py-1 rounded">Atencao</span>
+            </div>
+            <ul class="text-neutral-400 text-sm space-y-1">
+              <li>▸ Ouviu sem interromper?</li>
+              <li>▸ Usou as palavras do cliente na resposta?</li>
+              <li>▸ Confirmou entendimento antes de prosseguir?</li>
+            </ul>
+            <p class="text-neutral-300 text-xs mt-2 italic">Revela: escuta ativa e respeito pelo cliente</p>
+          </div>
+
+          <div class="p-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-neutral-100">4. Transicao</span>
+              <span class="text-blue-400 text-xs font-semibold bg-blue-500/20 px-2 py-1 rounded">Fluidez</span>
+            </div>
+            <ul class="text-neutral-400 text-sm space-y-1">
+              <li>▸ A passagem de investigacao para apresentacao foi natural?</li>
+              <li>▸ Conectou a dor do cliente com a solucao?</li>
+              <li>▸ Pediu permissao para apresentar?</li>
+            </ul>
+            <p class="text-neutral-300 text-xs mt-2 italic">Revela: maestria na conducao da conversa</p>
+          </div>
+
+          <div class="p-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-neutral-100">5. Valor</span>
+              <span class="text-blue-400 text-xs font-semibold bg-blue-500/20 px-2 py-1 rounded">Impacto</span>
+            </div>
+            <ul class="text-neutral-400 text-sm space-y-1">
+              <li>▸ Falou de beneficios, nao de features?</li>
+              <li>▸ Conectou valor com a dor especifica do cliente?</li>
+              <li>▸ Usou prova social ou exemplo concreto?</li>
+            </ul>
+            <p class="text-neutral-300 text-xs mt-2 italic">Revela: capacidade de traduzir produto em solucao</p>
+          </div>
+
+          <div class="p-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-neutral-100">6. Fechamento</span>
+              <span class="text-blue-400 text-xs font-semibold bg-blue-500/20 px-2 py-1 rounded">Conversao</span>
+            </div>
+            <ul class="text-neutral-400 text-sm space-y-1">
+              <li>▸ Propôs um proximo passo claro?</li>
+              <li>▸ Lidou bem com a objecao?</li>
+              <li>▸ Fechou com confianca, sem desespero?</li>
+            </ul>
+            <p class="text-neutral-300 text-xs mt-2 italic">Revela: seguranca para conduzir ao compromisso</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-5">
+        <h4 class="font-bold text-blue-400 mb-2">🏋️ Exercicio</h4>
+        <p class="text-neutral-300 text-sm leading-relaxed">Imprima ou copie esse checklist e use na proxima simulacao. Para cada item, de uma nota de 1 a 5. Calcule a media. Essa e a "nota de execucao" do vendedor. Repita semanalmente e acompanhe a evolucao.</p>
+      </div>
+    </section>
+
+    <!-- TOPICO 4 -->
+    <section class="space-y-6">
+      <div class="flex items-start space-x-3">
+        <span class="text-2xl">💬</span>
+        <div>
+          <h2 class="text-2xl font-bold text-neutral-100">4. Como dar feedback construtivo</h2>
+          <p class="text-neutral-400 mt-1">A tecnica que realmente muda comportamento</p>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 space-y-4">
+        <p class="text-neutral-300 leading-relaxed">Esqueça a tecnica do "sanduiche" (elogio + critica + elogio). Todo mundo ja conhece e ninguem leva a serio. Quando alguem comeca com "foi muito bom, mas...", a pessoa ja sabe que vem critica e descarta o elogio como falso.</p>
+
+        <p class="text-neutral-300 leading-relaxed">O feedback que muda comportamento segue um formato mais honesto e direto: <strong class="text-blue-400">observacao especifica + impacto + sugestao concreta</strong>.</p>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+        <div class="bg-blue-500/10 p-4 border-b border-dark-600">
+          <h4 class="font-bold text-blue-400">Formula: OIS (Observacao + Impacto + Sugestao)</h4>
+        </div>
+        <div class="p-5 space-y-4">
+          <div class="bg-dark-700 rounded-lg p-4">
+            <p class="text-blue-400 text-xs font-bold mb-2">OBSERVACAO</p>
+            <p class="text-neutral-300 text-sm">"Quando o cliente disse que achava caro, voce imediatamente ofereceu desconto."</p>
+            <p class="text-neutral-400 text-xs mt-1 italic">Descreva o que aconteceu. Fato, sem julgamento.</p>
+          </div>
+
+          <div class="bg-dark-700 rounded-lg p-4">
+            <p class="text-blue-400 text-xs font-bold mb-2">IMPACTO</p>
+            <p class="text-neutral-300 text-sm">"Isso passou a mensagem de que o preco nao era justo e deu mais poder de negociacao ao cliente."</p>
+            <p class="text-neutral-400 text-xs mt-1 italic">Explique a consequencia. O que aquele comportamento causa?</p>
+          </div>
+
+          <div class="bg-dark-700 rounded-lg p-4">
+            <p class="text-blue-400 text-xs font-bold mb-2">SUGESTAO</p>
+            <p class="text-neutral-300 text-sm">"Da proxima vez, antes de falar de preco, pergunte: 'Caro comparado a que?' ou 'O que faria o investimento valer a pena para voce?'"</p>
+            <p class="text-neutral-400 text-xs mt-1 italic">De uma alternativa pratica e especifica. Nao diga "melhore" — diga como.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="bg-dark-800 rounded-xl p-5 border border-red-500/20">
+          <h4 class="font-bold text-red-400 mb-3">❌ Feedback inutil</h4>
+          <ul class="space-y-2 text-neutral-400 text-sm">
+            <li>"Foi bom, mas pode melhorar."</li>
+            <li>"Voce precisa ser mais confiante."</li>
+            <li>"Faltou energia."</li>
+            <li>"Tenta ser mais natural."</li>
+          </ul>
+          <p class="text-neutral-400 text-xs mt-3 italic">Vago, generico, impossivel de aplicar.</p>
+        </div>
+
+        <div class="bg-dark-800 rounded-xl p-5 border border-blue-500/20">
+          <h4 class="font-bold text-blue-400 mb-3">✅ Feedback util</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm">
+            <li>"No minuto 3, voce pulou a pergunta sobre impacto financeiro. Isso deixou o valor da solucao abstrato."</li>
+            <li>"Quando confirmou a dor do cliente, ele se abriu mais. Faca isso mais vezes."</li>
+            <li>"Sua transicao foi abrupta — tente usar 'com base no que voce me disse...'"</li>
+          </ul>
+          <p class="text-neutral-300 text-xs mt-3 italic">Especifico, acionavel, baseado em fatos.</p>
+        </div>
+      </div>
+
+      <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-5">
+        <h4 class="font-bold text-blue-400 mb-2">💡 Regra de ouro</h4>
+        <p class="text-neutral-300 text-sm leading-relaxed">Foque em comportamentos, nao em personalidade. "Voce nao fez a pergunta de impacto" e corrigivel. "Voce nao e bom com pessoas" e destrutivo e falso. O objetivo do feedback e mudar o que a pessoa FAZ, nao o que ela E.</p>
+      </div>
+    </section>
+
+    <!-- TOPICO 5 -->
+    <section class="space-y-6">
+      <div class="flex items-start space-x-3">
+        <span class="text-2xl">📹</span>
+        <div>
+          <h2 class="text-2xl font-bold text-neutral-100">5. Gravar e revisar</h2>
+          <p class="text-neutral-400 mt-1">O metodo mais rapido de evolucao em vendas</p>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 space-y-4">
+        <p class="text-neutral-300 leading-relaxed">Se voce pudesse adotar apenas UMA pratica de treinamento, deveria ser esta: <strong class="text-blue-400">gravar suas simulacoes e assistir junto</strong>. Esse metodo e tao eficaz que atletas de elite, musicos profissionais e pilotos de aviacao usam ha decadas. Em vendas, quase ninguem faz — e exatamente por isso que quem faz evolui tao rapido.</p>
+
+        <p class="text-neutral-300 leading-relaxed">A razao e neurologica: quando voce se assiste, ativa areas do cerebro diferentes de quando esta "no calor do momento". Voce percebe pausas, cacoetes, expressoes faciais e erros que sao completamente invisiveis durante a acao.</p>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+        <h4 class="font-bold text-neutral-100 mb-4">Como implementar</h4>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <span class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">1</span>
+            <div>
+              <p class="text-neutral-100 font-semibold">Grave a simulacao</p>
+              <p class="text-neutral-400 text-sm">Use o celular. Coloque apoiado em algo estavel. Video e ideal, mas audio ja funciona muito bem. Nao precisa de equipamento profissional.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">2</span>
+            <div>
+              <p class="text-neutral-100 font-semibold">Assista junto (nao sozinho)</p>
+              <p class="text-neutral-400 text-sm">O poder esta em assistir junto com quem observou ou participou. A conversa durante a revisao gera insights que nenhum dos dois teria sozinho.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">3</span>
+            <div>
+              <p class="text-neutral-100 font-semibold">Pause nos pontos criticos</p>
+              <p class="text-neutral-400 text-sm">Quando perceber um erro ou acerto, pause o video. Discuta o que aconteceu e o que poderia ser diferente. Depois continue.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">4</span>
+            <div>
+              <p class="text-neutral-100 font-semibold">Anote 2-3 melhorias</p>
+              <p class="text-neutral-400 text-sm">Nao tente corrigir tudo de uma vez. Escolha os 2-3 pontos mais impactantes e foque neles na proxima rodada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+        <h4 class="font-bold text-neutral-100 mb-3">O que as pessoas descobrem ao se assistirem</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="bg-dark-700 rounded-lg p-3 text-sm">
+            <span class="text-blue-400 font-bold">😱</span>
+            <span class="text-neutral-300 ml-2">"Eu falo muito rapido quando fico nervoso"</span>
+          </div>
+          <div class="bg-dark-700 rounded-lg p-3 text-sm">
+            <span class="text-blue-400 font-bold">😱</span>
+            <span class="text-neutral-300 ml-2">"Eu interrompo o cliente sem perceber"</span>
+          </div>
+          <div class="bg-dark-700 rounded-lg p-3 text-sm">
+            <span class="text-blue-400 font-bold">😱</span>
+            <span class="text-neutral-300 ml-2">"Eu repito a mesma palavra 15 vezes"</span>
+          </div>
+          <div class="bg-dark-700 rounded-lg p-3 text-sm">
+            <span class="text-blue-400 font-bold">😱</span>
+            <span class="text-neutral-300 ml-2">"Eu nao olho nos olhos quando falo de preco"</span>
+          </div>
+          <div class="bg-dark-700 rounded-lg p-3 text-sm">
+            <span class="text-blue-400 font-bold">😱</span>
+            <span class="text-neutral-300 ml-2">"Eu pulo direto para a oferta sem perguntar"</span>
+          </div>
+          <div class="bg-dark-700 rounded-lg p-3 text-sm">
+            <span class="text-blue-400 font-bold">😱</span>
+            <span class="text-neutral-300 ml-2">"Eu me desculpo antes de falar o preco"</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-5">
+        <h4 class="font-bold text-blue-400 mb-2">🏋️ Desafio</h4>
+        <p class="text-neutral-300 text-sm leading-relaxed">Grave sua proxima simulacao ou ate um atendimento real (com consentimento). Assista sozinho primeiro e anote o que notou. Depois assista com um colega. Garanto que voce vai descobrir pelo menos 3 coisas que nunca teria percebido sem a gravacao.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SUMMARY -->
+  <section class="bg-dark-800 border-t border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+      <h2 class="text-2xl font-bold text-neutral-100">📋 O que voce aprendeu neste modulo</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-400 text-lg">✅</span>
+          <span class="text-neutral-300">A formula 15-30-15 para treinos eficientes de 1 hora</span>
+        </div>
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-400 text-lg">✅</span>
+          <span class="text-neutral-300">Como montar simulacoes realistas com template de cenario</span>
+        </div>
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-400 text-lg">✅</span>
+          <span class="text-neutral-300">Checklist completo do observador com 6 dimensoes</span>
+        </div>
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-400 text-lg">✅</span>
+          <span class="text-neutral-300">Feedback OIS: observacao + impacto + sugestao</span>
+        </div>
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-400 text-lg">✅</span>
+          <span class="text-neutral-300">O poder de gravar e revisar para evolucao acelerada</span>
+        </div>
+      </div>
+
+      <!-- Next module preview -->
+      <div class="bg-dark-700 rounded-xl p-6 border border-dark-600">
+        <div class="flex items-center space-x-2 text-sm text-neutral-400 mb-2">
+          <span>Proximo modulo</span>
+          <span>→</span>
+        </div>
+        <h3 class="text-xl font-bold text-neutral-100 mb-2">📅 2.7 — O treinamento de 7 dias</h3>
+        <p class="text-neutral-400">Um programa dia a dia para transformar teoria em habilidade pratica. Cada dia foca em uma competencia especifica com exercicios claros.</p>
+        <a href="modulo-2-7.html" class="inline-flex items-center space-x-2 mt-4 px-5 py-2.5 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition-colors">
+          <span>Continuar para 2.7</span><span>→</span>
+        </a>
+      </div>
+
+      <!-- Nav buttons -->
+      <div class="flex justify-between items-center pt-4">
+        <a href="modulo-2-5.html" class="flex items-center space-x-2 text-neutral-400 hover:text-blue-400 transition-colors">
+          <span>←</span><span>Modulo anterior</span>
+        </a>
+        <a href="index.html" class="text-neutral-400 hover:text-blue-400 transition-colors">
+          <span>Voltar para Trilha 2</span>
+        </a>
+        <a href="modulo-2-7.html" class="flex items-center space-x-2 text-neutral-400 hover:text-blue-400 transition-colors">
+          <span>Proximo modulo</span><span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-900 border-t border-dark-600 py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-neutral-400 text-sm">💰 8020 — Vendas com inteligencia</p>
+      <p class="text-neutral-600 text-xs mt-2">Um curso <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+    </div>
+  </footer>
+
+  <!-- THEME SCRIPT -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      const icon = document.getElementById('theme-icon');
+      icon.textContent = html.classList.contains('dark') ? '🌙' : '☀️';
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    }
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+  </script>
+</body>
+</html>
